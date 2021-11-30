@@ -1,0 +1,420 @@
+pandaPIparser is configured as follows
+  Colors in output: true
+  Mode: parsing mode
+  Parameter splitting: true
+  Conditional effects: exponential encoding
+  Disjunctive preconditions as HTN: false
+  Replace goal with action: false
+  Output: pandaPI format
+General Options
+  Print timings: false
+  Quiet mode: false
+Inference Options
+  H2 mutexes: false
+  FAM groups: false
+Transformation Options
+  Add zero-cost no-op to empty methods: true
+  Remove duplicate actions: true
+  Remove useless literals: true
+  Expand abstract tasks with one method: true
+  Remove empty method preconditions: true
+  Two regularisation: false
+  Compile negative SAS variables: false
+Runtime Optimisations
+  Hierarchy Typing: true
+  Future Caching: false
+  Static Precondition Checking: false
+Output Options
+  Panda planner format: true
+  HDDL: false
+  SAS for Fast Downward (without hierarchy): false
+Output Formatting Options
+  Output only SAS+ variables: false
+  SAS+ delete mode: as input
+Reading input from /home/schnell/lilotane/sotaevaluation//PandaGBFS_runwatchtime_timeout1800_2021-11-16_21:14:14/runwatch_log/569/569.parsed.
+Writing output to /home/schnell/lilotane/sotaevaluation//PandaGBFS_runwatchtime_timeout1800_2021-11-16_21:14:14/runwatch_log/569/569.sas.
+Writing output to standard output.
+Parsing done.
+Conditional Effects expanded
+done.
+Starting Hierarchy Typing
+Total 1.012ms
+Contains 0.193ms
+Restrict 0.138ms
+MPrep 0.118ms
+Finished Hierarchy Typing
+Running PG.
+Process actions without preconditions
+Done.
+Returning from runGpg().
+PG done. Postprocessing
+PG postprocessing done.
+Calculated [552] grounded tasks and [222] reachable facts.
+Running TDG.
+Process actions without preconditions
+Done.
+Returning from runGpg().
+TDG done.
+Calculated [645] grounded tasks and [325] grounded decomposition methods.
+Performing DFS.
+DFS done.
+After DFS: 570 tasks, 285 methods.
+Grounded PG:
+Input was [492, 570], output was [492, 212].
+Simplifying instance.
+Removing useless facts/literals
+Removing method precondition actions whose precondition is empty
+Expanding abstract tasks with only one method
+Starting duplicate elimination.
+Data structure build.
+134 duplicates found.
+Duplicates replaced in methods.
+Further Mutex Groups: 0 strict 0 non strict
+Writing instance to output.
+Final Statistics: F 107 S 0 SC 0 SM 0 NSM 0 I 0 P 208 S 138 A 54 M 261
+Exiting.
+Random seed: 42
+Time limit: 1800 seconds
+Reading input from /home/schnell/lilotane/sotaevaluation//PandaGBFS_runwatchtime_timeout1800_2021-11-16_21:14:14/runwatch_log/569/569.sas.
+- State has 107 bits divided into 107 mutex groups.
+- Domain contains 346 actions.
+- Domain contains 400 tasks.
+- Domain contains 261 methods.
+- The initial state contains 51 set bits.
+- The initial task is "__top[]".
+- State-based goal contains 0 bits.
+- Instance is totally-ordered: yes
+- Instance has unique paths: yes
+- Instance is parallel sequences: yes
+Calculate SCCs...
+- Number of SCCs: 400
+- The problem is cyclic
+- Number of cyclic SCCs: 19
+- Number of cyclic SCCs of size 1: 19
+Selected Planning Algorithm: progression searchParsing heuristics ...
+Number of specified heuristics: 1
+- the option "store cuts" of the RC heuristic can only be used with the inner heuristic LM-Cut. It will be disabled.
+- Calculating minimal implied costs and distances (0 ms)
+Heuristic #0 = hhRC2(add;distance;correct count)
+Search config:
+ - type: path cost
+ - weight: 1
+ - suboptimal: false
+Visited List configured
+- mode: total order
+- hashs to use: state task task-sequence
+- memory information: topological ordering
+- Visited list allows deletion of search nodes: true
+Search Configuration
+- Using JAIR 2020 progression algorithm
+- Search is stopped after first solution is found.
+- A* Search
+- Distance G is "modification depth"
+Search Results
+- Search time 0.197 seconds
+- Visited list time 0.00832 seconds
+- Visited list inserts 1529
+- Visited list pruned 1101
+- Visited list contains 428
+- Visited list hash collisions 1101
+- Visited list used hash buckets 428
+- Generated 18350 search nodes
+  Calculated heuristic for 15476 nodes
+  One modifications 1297
+  Effectless actions 1577
+- including 1297 one modification actions
+- including 0 one modification methods
+- and       1577 progressions of effectless actions
+- Generated 78558 nodes per second
+- Final fringe contains 38 nodes
+- Status: Solved
+- Found solution of length 283
+- Total costs of actions: 66
+==>
+4 __method_precondition_M22-ACHIEVE-SERVED[P5]
+7 __method_precondition_M24-ACHIEVE-SERVED2_base[P5]
+8 __method_precondition_M8-DO-SERVED-DEPART2[P5]
+12 __method_precondition_M17-ACHIEVE-BOARDED[P5]
+15 __method_precondition_M19-ACHIEVE-BOARDED1_base[P5]
+16 __method_precondition_M7-DO-BOARDED-BOARD1[P5]
+20 __method_precondition_M11-ACHIEVE-LIFT-AT[F7]
+23 __method_precondition_M13-ACHIEVE-LIFT-AT0_base[F7]
+78 __method_precondition_M13-ACHIEVE-LIFT-AT0_split[F0,F6]
+79 UP[F0,F7]
+115 __method_precondition_M13-ACHIEVE-LIFT-AT0_split[F7,F11]
+116 i-LOCK-LIFT-AT[F7]
+126 __method_precondition_IFUNLOCK5-LIFT-AT[F7]
+127 i-UNLOCK-LIFT-AT[F7]
+128 BOARD[F7,P5]
+130 __method_precondition_M18-ACHIEVE-BOARDED1[P5]
+131 i-LOCK-BOARDED[P5]
+136 __method_precondition_M11-ACHIEVE-LIFT-AT[F6]
+141 __method_precondition_M13-ACHIEVE-LIFT-AT0_base[F6]
+429 __method_precondition_M13-ACHIEVE-LIFT-AT0_split[F7,F11]
+430 DOWN[F7,F6]
+488 __method_precondition_M12-ACHIEVE-LIFT-AT0[F6]
+489 i-LOCK-LIFT-AT[F6]
+494 __method_precondition_IFUNLOCK5-LIFT-AT[F6]
+495 i-UNLOCK-LIFT-AT[F6]
+498 __method_precondition_IFUNLOCK1-BOARDED[P5]
+499 i-UNLOCK-BOARDED[P5]
+500 DEPART[F6,P5]
+502 __method_precondition_M23-ACHIEVE-SERVED2[P5]
+503 i-LOCK-SERVED[P5]
+508 __method_precondition_M22-ACHIEVE-SERVED[P4]
+2021 __method_precondition_M24-ACHIEVE-SERVED2_base[P4]
+2022 __method_precondition_M8-DO-SERVED-DEPART2[P4]
+3566 __method_precondition_M17-ACHIEVE-BOARDED[P4]
+3569 __method_precondition_M19-ACHIEVE-BOARDED1_base[P4]
+3570 __method_precondition_M7-DO-BOARDED-BOARD1[P4]
+3574 __method_precondition_M11-ACHIEVE-LIFT-AT[F3]
+3579 __method_precondition_M13-ACHIEVE-LIFT-AT0_base[F3]
+3700 __method_precondition_M12-ACHIEVE-LIFT-AT0[F6]
+3701 DOWN[F6,F3]
+3740 __method_precondition_M13-ACHIEVE-LIFT-AT0_split[F3,F10]
+3741 i-LOCK-LIFT-AT[F3]
+3746 __method_precondition_IFUNLOCK5-LIFT-AT[F3]
+3747 i-UNLOCK-LIFT-AT[F3]
+3748 BOARD[F3,P4]
+3750 __method_precondition_M18-ACHIEVE-BOARDED1[P4]
+3751 i-LOCK-BOARDED[P4]
+3756 __method_precondition_M11-ACHIEVE-LIFT-AT[F8]
+3759 __method_precondition_M13-ACHIEVE-LIFT-AT0_base[F8]
+3994 __method_precondition_M13-ACHIEVE-LIFT-AT0_split[F3,F10]
+3995 UP[F3,F8]
+4044 __method_precondition_M13-ACHIEVE-LIFT-AT0_split[F8,F11]
+4045 i-LOCK-LIFT-AT[F8]
+4050 __method_precondition_IFUNLOCK5-LIFT-AT[F8]
+4051 i-UNLOCK-LIFT-AT[F8]
+4054 __method_precondition_IFUNLOCK1-BOARDED[P4]
+4055 i-UNLOCK-BOARDED[P4]
+4056 DEPART[F8,P4]
+4058 __method_precondition_M23-ACHIEVE-SERVED2[P4]
+4059 i-LOCK-SERVED[P4]
+4064 __method_precondition_M22-ACHIEVE-SERVED[P3]
+5575 __method_precondition_M24-ACHIEVE-SERVED2_base[P3]
+5576 __method_precondition_M8-DO-SERVED-DEPART2[P3]
+7120 __method_precondition_M17-ACHIEVE-BOARDED[P3]
+7123 __method_precondition_M19-ACHIEVE-BOARDED1_base[P3]
+7124 __method_precondition_M7-DO-BOARDED-BOARD1[P3]
+7128 __method_precondition_M11-ACHIEVE-LIFT-AT[F5]
+7133 __method_precondition_M13-ACHIEVE-LIFT-AT0_base[F5]
+7283 __method_precondition_M13-ACHIEVE-LIFT-AT0_split[F8,F11]
+7284 DOWN[F8,F5]
+7289 __method_precondition_M13-ACHIEVE-LIFT-AT0_split[F5,F7]
+7290 i-LOCK-LIFT-AT[F5]
+7300 __method_precondition_IFUNLOCK5-LIFT-AT[F5]
+7301 i-UNLOCK-LIFT-AT[F5]
+7302 BOARD[F5,P3]
+7304 __method_precondition_M18-ACHIEVE-BOARDED1[P3]
+7305 i-LOCK-BOARDED[P3]
+7310 __method_precondition_M11-ACHIEVE-LIFT-AT[F0]
+7315 __method_precondition_M13-ACHIEVE-LIFT-AT0_base[F0]
+7632 __method_precondition_M13-ACHIEVE-LIFT-AT0_split[F5,F7]
+7633 DOWN[F5,F0]
+7670 __method_precondition_M13-ACHIEVE-LIFT-AT0_split[F0,F6]
+7671 i-LOCK-LIFT-AT[F0]
+7676 __method_precondition_IFUNLOCK5-LIFT-AT[F0]
+7677 i-UNLOCK-LIFT-AT[F0]
+7680 __method_precondition_IFUNLOCK1-BOARDED[P3]
+7681 i-UNLOCK-BOARDED[P3]
+7682 DEPART[F0,P3]
+7684 __method_precondition_M23-ACHIEVE-SERVED2[P3]
+7685 i-LOCK-SERVED[P3]
+7690 __method_precondition_M22-ACHIEVE-SERVED[P2]
+9063 __method_precondition_M24-ACHIEVE-SERVED2_base[P2]
+9064 __method_precondition_M8-DO-SERVED-DEPART2[P2]
+10674 __method_precondition_M17-ACHIEVE-BOARDED[P2]
+10677 __method_precondition_M19-ACHIEVE-BOARDED1_base[P2]
+10678 __method_precondition_M7-DO-BOARDED-BOARD1[P2]
+10682 __method_precondition_M11-ACHIEVE-LIFT-AT[F3]
+10685 __method_precondition_M13-ACHIEVE-LIFT-AT0_base[F3]
+10716 __method_precondition_M13-ACHIEVE-LIFT-AT0_split[F0,F6]
+10717 UP[F0,F3]
+10777 __method_precondition_M13-ACHIEVE-LIFT-AT0_split[F3,F10]
+10778 i-LOCK-LIFT-AT[F3]
+10783 __method_precondition_IFUNLOCK5-LIFT-AT[F3]
+10784 i-UNLOCK-LIFT-AT[F3]
+10785 BOARD[F3,P2]
+10787 __method_precondition_M18-ACHIEVE-BOARDED1[P2]
+10788 i-LOCK-BOARDED[P2]
+10793 __method_precondition_M11-ACHIEVE-LIFT-AT[F0]
+10864 __method_precondition_M13-ACHIEVE-LIFT-AT0_base[F0]
+10971 __method_precondition_M13-ACHIEVE-LIFT-AT0_split[F3,F10]
+10972 DOWN[F3,F0]
+10988 __method_precondition_M13-ACHIEVE-LIFT-AT0_split[F0,F6]
+10989 i-LOCK-LIFT-AT[F0]
+10994 __method_precondition_IFUNLOCK5-LIFT-AT[F0]
+10995 i-UNLOCK-LIFT-AT[F0]
+11080 __method_precondition_IFUNLOCK1-BOARDED[P2]
+11081 i-UNLOCK-BOARDED[P2]
+11082 DEPART[F0,P2]
+11084 __method_precondition_M23-ACHIEVE-SERVED2[P2]
+11085 i-LOCK-SERVED[P2]
+11090 __method_precondition_M22-ACHIEVE-SERVED[P1]
+12683 __method_precondition_M24-ACHIEVE-SERVED2_base[P1]
+12684 __method_precondition_M8-DO-SERVED-DEPART2[P1]
+14228 __method_precondition_M17-ACHIEVE-BOARDED[P1]
+14231 __method_precondition_M19-ACHIEVE-BOARDED1_base[P1]
+14232 __method_precondition_M7-DO-BOARDED-BOARD1[P1]
+14236 __method_precondition_M11-ACHIEVE-LIFT-AT[F6]
+14239 __method_precondition_M13-ACHIEVE-LIFT-AT0_base[F6]
+14243 __method_precondition_M13-ACHIEVE-LIFT-AT0_split[F0,F6]
+14244 UP[F0,F6]
+14331 __method_precondition_M12-ACHIEVE-LIFT-AT0[F6]
+14332 i-LOCK-LIFT-AT[F6]
+14342 __method_precondition_IFUNLOCK5-LIFT-AT[F6]
+14343 i-UNLOCK-LIFT-AT[F6]
+14344 BOARD[F6,P1]
+14346 __method_precondition_M18-ACHIEVE-BOARDED1[P1]
+14347 i-LOCK-BOARDED[P1]
+14352 __method_precondition_M11-ACHIEVE-LIFT-AT[F7]
+14355 __method_precondition_M13-ACHIEVE-LIFT-AT0_base[F7]
+14678 __method_precondition_M12-ACHIEVE-LIFT-AT0[F6]
+14679 UP[F6,F7]
+14700 __method_precondition_M13-ACHIEVE-LIFT-AT0_split[F7,F11]
+14701 i-LOCK-LIFT-AT[F7]
+14706 __method_precondition_IFUNLOCK5-LIFT-AT[F7]
+14707 i-UNLOCK-LIFT-AT[F7]
+14788 __method_precondition_IFUNLOCK1-BOARDED[P1]
+14789 i-UNLOCK-BOARDED[P1]
+14790 DEPART[F7,P1]
+14792 __method_precondition_M23-ACHIEVE-SERVED2[P1]
+14793 i-LOCK-SERVED[P1]
+14798 __method_precondition_M22-ACHIEVE-SERVED[P0]
+16237 __method_precondition_M24-ACHIEVE-SERVED2_base[P0]
+16238 __method_precondition_M8-DO-SERVED-DEPART2[P0]
+17782 __method_precondition_M17-ACHIEVE-BOARDED[P0]
+17785 __method_precondition_M19-ACHIEVE-BOARDED1_base[P0]
+17786 __method_precondition_M7-DO-BOARDED-BOARD1[P0]
+17790 __method_precondition_M11-ACHIEVE-LIFT-AT[F5]
+17795 __method_precondition_M13-ACHIEVE-LIFT-AT0_base[F5]
+17900 __method_precondition_M13-ACHIEVE-LIFT-AT0_split[F7,F11]
+17901 DOWN[F7,F5]
+17956 __method_precondition_M13-ACHIEVE-LIFT-AT0_split[F5,F7]
+17957 i-LOCK-LIFT-AT[F5]
+17962 __method_precondition_IFUNLOCK5-LIFT-AT[F5]
+17963 i-UNLOCK-LIFT-AT[F5]
+17964 BOARD[F5,P0]
+17966 __method_precondition_M18-ACHIEVE-BOARDED1[P0]
+17967 i-LOCK-BOARDED[P0]
+17972 __method_precondition_M11-ACHIEVE-LIFT-AT[F11]
+17975 __method_precondition_M13-ACHIEVE-LIFT-AT0_base[F11]
+18158 __method_precondition_M13-ACHIEVE-LIFT-AT0_split[F5,F7]
+18159 UP[F5,F11]
+18190 __method_precondition_M14-ACHIEVE-LIFT-AT0_split[F11,F0]
+18191 i-LOCK-LIFT-AT[F11]
+18196 __method_precondition_IFUNLOCK5-LIFT-AT[F11]
+18197 i-UNLOCK-LIFT-AT[F11]
+18342 __method_precondition_IFUNLOCK1-BOARDED[P0]
+18343 i-UNLOCK-BOARDED[P0]
+18344 DEPART[F11,P0]
+18346 __method_precondition_M23-ACHIEVE-SERVED2[P0]
+18347 i-LOCK-SERVED[P0]
+root 0
+18345 ACHIEVE-SERVED2[P0] -> M23-ACHIEVE-SERVED2 18346
+18341 IFUNLOCK-BOARDED[P0] -> IFUNLOCK1-BOARDED 18342 18343
+18195 IFUNLOCK-LIFT-AT[F11] -> IFUNLOCK5-LIFT-AT 18196 18197
+18189 ACHIEVE-LIFT-AT0[F11] -> M12-ACHIEVE-LIFT-AT0 18190
+18157 M13-ACHIEVE-LIFT-AT0_splitted_2[] -> _splitting_method_M13-ACHIEVE-LIFT-AT0_splitted_2 18158 18159
+17974 ACHIEVE-LIFT-AT0[F11] -> M13-ACHIEVE-LIFT-AT0 17975 18157 18189
+17971 ACHIEVE-LIFT-AT[F11] -> M11-ACHIEVE-LIFT-AT 17972 17974 18191
+17965 ACHIEVE-BOARDED1[P0] -> M18-ACHIEVE-BOARDED1 17966
+17961 IFUNLOCK-LIFT-AT[F5] -> IFUNLOCK5-LIFT-AT 17962 17963
+17955 ACHIEVE-LIFT-AT0[F5] -> M12-ACHIEVE-LIFT-AT0 17956
+17899 M14-ACHIEVE-LIFT-AT0_splitted_3[] -> _splitting_method_M14-ACHIEVE-LIFT-AT0_splitted_3 17900 17901
+17794 ACHIEVE-LIFT-AT0[F5] -> M14-ACHIEVE-LIFT-AT0 17795 17899 17955
+17789 ACHIEVE-LIFT-AT[F5] -> M11-ACHIEVE-LIFT-AT 17790 17794 17957
+17784 ACHIEVE-BOARDED1[P0] -> <<M19-ACHIEVE-BOARDED1;M19-ACHIEVE-BOARDED1_splitted_1[P0];_splitting_method_M19-ACHIEVE-BOARDED1_splitted_1;1;0,-1,2>;DO-BOARDED-BOARD1[F5,P0];M7-DO-BOARDED-BOARD1;1;0,-1,-2,-3,-4,2> 17785 17786 17789 17961 17964 17965
+17781 ACHIEVE-BOARDED[P0] -> M17-ACHIEVE-BOARDED 17782 17784 17967
+16236 ACHIEVE-SERVED2[P0] -> <<M24-ACHIEVE-SERVED2;M24-ACHIEVE-SERVED2_splitted_4[P0];_splitting_method_M24-ACHIEVE-SERVED2_splitted_4;1;0,-1,2>;DO-SERVED-DEPART2[F11,P0];M8-DO-SERVED-DEPART2;1;0,-1,-2,-3,-4,-5,-6,2> 16237 16238 17781 17971 18195 18341 18344 18345
+14797 ACHIEVE-SERVED[P0] -> M22-ACHIEVE-SERVED 14798 16236 18347
+14791 ACHIEVE-SERVED2[P1] -> M23-ACHIEVE-SERVED2 14792
+14787 IFUNLOCK-BOARDED[P1] -> IFUNLOCK1-BOARDED 14788 14789
+14705 IFUNLOCK-LIFT-AT[F7] -> IFUNLOCK5-LIFT-AT 14706 14707
+14699 ACHIEVE-LIFT-AT0[F7] -> M12-ACHIEVE-LIFT-AT0 14700
+14677 M13-ACHIEVE-LIFT-AT0_splitted_2[] -> _splitting_method_M13-ACHIEVE-LIFT-AT0_splitted_2 14678 14679
+14354 ACHIEVE-LIFT-AT0[F7] -> M13-ACHIEVE-LIFT-AT0 14355 14677 14699
+14351 ACHIEVE-LIFT-AT[F7] -> M11-ACHIEVE-LIFT-AT 14352 14354 14701
+14345 ACHIEVE-BOARDED1[P1] -> M18-ACHIEVE-BOARDED1 14346
+14341 IFUNLOCK-LIFT-AT[F6] -> IFUNLOCK5-LIFT-AT 14342 14343
+14330 ACHIEVE-LIFT-AT0[F6] -> M12-ACHIEVE-LIFT-AT0 14331
+14242 M13-ACHIEVE-LIFT-AT0_splitted_2[] -> _splitting_method_M13-ACHIEVE-LIFT-AT0_splitted_2 14243 14244
+14238 ACHIEVE-LIFT-AT0[F6] -> M13-ACHIEVE-LIFT-AT0 14239 14242 14330
+14235 ACHIEVE-LIFT-AT[F6] -> M11-ACHIEVE-LIFT-AT 14236 14238 14332
+14230 ACHIEVE-BOARDED1[P1] -> <<M19-ACHIEVE-BOARDED1;M19-ACHIEVE-BOARDED1_splitted_1[P1];_splitting_method_M19-ACHIEVE-BOARDED1_splitted_1;1;0,-1,2>;DO-BOARDED-BOARD1[F6,P1];M7-DO-BOARDED-BOARD1;1;0,-1,-2,-3,-4,2> 14231 14232 14235 14341 14344 14345
+14227 ACHIEVE-BOARDED[P1] -> M17-ACHIEVE-BOARDED 14228 14230 14347
+12682 ACHIEVE-SERVED2[P1] -> <<M24-ACHIEVE-SERVED2;M24-ACHIEVE-SERVED2_splitted_4[P1];_splitting_method_M24-ACHIEVE-SERVED2_splitted_4;1;0,-1,2>;DO-SERVED-DEPART2[F7,P1];M8-DO-SERVED-DEPART2;1;0,-1,-2,-3,-4,-5,-6,2> 12683 12684 14227 14351 14705 14787 14790 14791
+11089 ACHIEVE-SERVED[P1] -> M22-ACHIEVE-SERVED 11090 12682 14793
+11083 ACHIEVE-SERVED2[P2] -> M23-ACHIEVE-SERVED2 11084
+11079 IFUNLOCK-BOARDED[P2] -> IFUNLOCK1-BOARDED 11080 11081
+10993 IFUNLOCK-LIFT-AT[F0] -> IFUNLOCK5-LIFT-AT 10994 10995
+10987 ACHIEVE-LIFT-AT0[F0] -> M12-ACHIEVE-LIFT-AT0 10988
+10970 M14-ACHIEVE-LIFT-AT0_splitted_3[] -> _splitting_method_M14-ACHIEVE-LIFT-AT0_splitted_3 10971 10972
+10863 ACHIEVE-LIFT-AT0[F0] -> M14-ACHIEVE-LIFT-AT0 10864 10970 10987
+10792 ACHIEVE-LIFT-AT[F0] -> M11-ACHIEVE-LIFT-AT 10793 10863 10989
+10786 ACHIEVE-BOARDED1[P2] -> M18-ACHIEVE-BOARDED1 10787
+10782 IFUNLOCK-LIFT-AT[F3] -> IFUNLOCK5-LIFT-AT 10783 10784
+10776 ACHIEVE-LIFT-AT0[F3] -> M12-ACHIEVE-LIFT-AT0 10777
+10715 M13-ACHIEVE-LIFT-AT0_splitted_2[] -> _splitting_method_M13-ACHIEVE-LIFT-AT0_splitted_2 10716 10717
+10684 ACHIEVE-LIFT-AT0[F3] -> M13-ACHIEVE-LIFT-AT0 10685 10715 10776
+10681 ACHIEVE-LIFT-AT[F3] -> M11-ACHIEVE-LIFT-AT 10682 10684 10778
+10676 ACHIEVE-BOARDED1[P2] -> <<M19-ACHIEVE-BOARDED1;M19-ACHIEVE-BOARDED1_splitted_1[P2];_splitting_method_M19-ACHIEVE-BOARDED1_splitted_1;1;0,-1,2>;DO-BOARDED-BOARD1[F3,P2];M7-DO-BOARDED-BOARD1;1;0,-1,-2,-3,-4,2> 10677 10678 10681 10782 10785 10786
+10673 ACHIEVE-BOARDED[P2] -> M17-ACHIEVE-BOARDED 10674 10676 10788
+9062 ACHIEVE-SERVED2[P2] -> <<M24-ACHIEVE-SERVED2;M24-ACHIEVE-SERVED2_splitted_4[P2];_splitting_method_M24-ACHIEVE-SERVED2_splitted_4;1;0,-1,2>;DO-SERVED-DEPART2[F0,P2];M8-DO-SERVED-DEPART2;1;0,-1,-2,-3,-4,-5,-6,2> 9063 9064 10673 10792 10993 11079 11082 11083
+7689 ACHIEVE-SERVED[P2] -> M22-ACHIEVE-SERVED 7690 9062 11085
+7683 ACHIEVE-SERVED2[P3] -> M23-ACHIEVE-SERVED2 7684
+7679 IFUNLOCK-BOARDED[P3] -> IFUNLOCK1-BOARDED 7680 7681
+7675 IFUNLOCK-LIFT-AT[F0] -> IFUNLOCK5-LIFT-AT 7676 7677
+7669 ACHIEVE-LIFT-AT0[F0] -> M12-ACHIEVE-LIFT-AT0 7670
+7631 M14-ACHIEVE-LIFT-AT0_splitted_3[] -> _splitting_method_M14-ACHIEVE-LIFT-AT0_splitted_3 7632 7633
+7314 ACHIEVE-LIFT-AT0[F0] -> M14-ACHIEVE-LIFT-AT0 7315 7631 7669
+7309 ACHIEVE-LIFT-AT[F0] -> M11-ACHIEVE-LIFT-AT 7310 7314 7671
+7303 ACHIEVE-BOARDED1[P3] -> M18-ACHIEVE-BOARDED1 7304
+7299 IFUNLOCK-LIFT-AT[F5] -> IFUNLOCK5-LIFT-AT 7300 7301
+7288 ACHIEVE-LIFT-AT0[F5] -> M12-ACHIEVE-LIFT-AT0 7289
+7282 M14-ACHIEVE-LIFT-AT0_splitted_3[] -> _splitting_method_M14-ACHIEVE-LIFT-AT0_splitted_3 7283 7284
+7132 ACHIEVE-LIFT-AT0[F5] -> M14-ACHIEVE-LIFT-AT0 7133 7282 7288
+7127 ACHIEVE-LIFT-AT[F5] -> M11-ACHIEVE-LIFT-AT 7128 7132 7290
+7122 ACHIEVE-BOARDED1[P3] -> <<M19-ACHIEVE-BOARDED1;M19-ACHIEVE-BOARDED1_splitted_1[P3];_splitting_method_M19-ACHIEVE-BOARDED1_splitted_1;1;0,-1,2>;DO-BOARDED-BOARD1[F5,P3];M7-DO-BOARDED-BOARD1;1;0,-1,-2,-3,-4,2> 7123 7124 7127 7299 7302 7303
+7119 ACHIEVE-BOARDED[P3] -> M17-ACHIEVE-BOARDED 7120 7122 7305
+5574 ACHIEVE-SERVED2[P3] -> <<M24-ACHIEVE-SERVED2;M24-ACHIEVE-SERVED2_splitted_4[P3];_splitting_method_M24-ACHIEVE-SERVED2_splitted_4;1;0,-1,2>;DO-SERVED-DEPART2[F0,P3];M8-DO-SERVED-DEPART2;1;0,-1,-2,-3,-4,-5,-6,2> 5575 5576 7119 7309 7675 7679 7682 7683
+4063 ACHIEVE-SERVED[P3] -> M22-ACHIEVE-SERVED 4064 5574 7685
+4057 ACHIEVE-SERVED2[P4] -> M23-ACHIEVE-SERVED2 4058
+4053 IFUNLOCK-BOARDED[P4] -> IFUNLOCK1-BOARDED 4054 4055
+4049 IFUNLOCK-LIFT-AT[F8] -> IFUNLOCK5-LIFT-AT 4050 4051
+4043 ACHIEVE-LIFT-AT0[F8] -> M12-ACHIEVE-LIFT-AT0 4044
+3993 M13-ACHIEVE-LIFT-AT0_splitted_2[] -> _splitting_method_M13-ACHIEVE-LIFT-AT0_splitted_2 3994 3995
+3758 ACHIEVE-LIFT-AT0[F8] -> M13-ACHIEVE-LIFT-AT0 3759 3993 4043
+3755 ACHIEVE-LIFT-AT[F8] -> M11-ACHIEVE-LIFT-AT 3756 3758 4045
+3749 ACHIEVE-BOARDED1[P4] -> M18-ACHIEVE-BOARDED1 3750
+3745 IFUNLOCK-LIFT-AT[F3] -> IFUNLOCK5-LIFT-AT 3746 3747
+3739 ACHIEVE-LIFT-AT0[F3] -> M12-ACHIEVE-LIFT-AT0 3740
+3699 M14-ACHIEVE-LIFT-AT0_splitted_3[] -> _splitting_method_M14-ACHIEVE-LIFT-AT0_splitted_3 3700 3701
+3578 ACHIEVE-LIFT-AT0[F3] -> M14-ACHIEVE-LIFT-AT0 3579 3699 3739
+3573 ACHIEVE-LIFT-AT[F3] -> M11-ACHIEVE-LIFT-AT 3574 3578 3741
+3568 ACHIEVE-BOARDED1[P4] -> <<M19-ACHIEVE-BOARDED1;M19-ACHIEVE-BOARDED1_splitted_1[P4];_splitting_method_M19-ACHIEVE-BOARDED1_splitted_1;1;0,-1,2>;DO-BOARDED-BOARD1[F3,P4];M7-DO-BOARDED-BOARD1;1;0,-1,-2,-3,-4,2> 3569 3570 3573 3745 3748 3749
+3565 ACHIEVE-BOARDED[P4] -> M17-ACHIEVE-BOARDED 3566 3568 3751
+2020 ACHIEVE-SERVED2[P4] -> <<M24-ACHIEVE-SERVED2;M24-ACHIEVE-SERVED2_splitted_4[P4];_splitting_method_M24-ACHIEVE-SERVED2_splitted_4;1;0,-1,2>;DO-SERVED-DEPART2[F8,P4];M8-DO-SERVED-DEPART2;1;0,-1,-2,-3,-4,-5,-6,2> 2021 2022 3565 3755 4049 4053 4056 4057
+507 ACHIEVE-SERVED[P4] -> M22-ACHIEVE-SERVED 508 2020 4059
+501 ACHIEVE-SERVED2[P5] -> M23-ACHIEVE-SERVED2 502
+497 IFUNLOCK-BOARDED[P5] -> IFUNLOCK1-BOARDED 498 499
+493 IFUNLOCK-LIFT-AT[F6] -> IFUNLOCK5-LIFT-AT 494 495
+487 ACHIEVE-LIFT-AT0[F6] -> M12-ACHIEVE-LIFT-AT0 488
+428 M14-ACHIEVE-LIFT-AT0_splitted_3[] -> _splitting_method_M14-ACHIEVE-LIFT-AT0_splitted_3 429 430
+140 ACHIEVE-LIFT-AT0[F6] -> M14-ACHIEVE-LIFT-AT0 141 428 487
+135 ACHIEVE-LIFT-AT[F6] -> M11-ACHIEVE-LIFT-AT 136 140 489
+129 ACHIEVE-BOARDED1[P5] -> M18-ACHIEVE-BOARDED1 130
+125 IFUNLOCK-LIFT-AT[F7] -> IFUNLOCK5-LIFT-AT 126 127
+114 ACHIEVE-LIFT-AT0[F7] -> M12-ACHIEVE-LIFT-AT0 115
+77 M13-ACHIEVE-LIFT-AT0_splitted_2[] -> _splitting_method_M13-ACHIEVE-LIFT-AT0_splitted_2 78 79
+22 ACHIEVE-LIFT-AT0[F7] -> M13-ACHIEVE-LIFT-AT0 23 77 114
+19 ACHIEVE-LIFT-AT[F7] -> M11-ACHIEVE-LIFT-AT 20 22 116
+14 ACHIEVE-BOARDED1[P5] -> <<M19-ACHIEVE-BOARDED1;M19-ACHIEVE-BOARDED1_splitted_1[P5];_splitting_method_M19-ACHIEVE-BOARDED1_splitted_1;1;0,-1,2>;DO-BOARDED-BOARD1[F7,P5];M7-DO-BOARDED-BOARD1;1;0,-1,-2,-3,-4,2> 15 16 19 125 128 129
+11 ACHIEVE-BOARDED[P5] -> M17-ACHIEVE-BOARDED 12 14 131
+6 ACHIEVE-SERVED2[P5] -> <<M24-ACHIEVE-SERVED2;M24-ACHIEVE-SERVED2_splitted_4[P5];_splitting_method_M24-ACHIEVE-SERVED2_splitted_4;1;0,-1,2>;DO-SERVED-DEPART2[F6,P5];M8-DO-SERVED-DEPART2;1;0,-1,-2,-3,-4,-5,-6,2> 7 8 11 135 493 497 500 501
+3 ACHIEVE-SERVED[P5] -> M22-ACHIEVE-SERVED 4 6 503
+0 __top[] -> __top_method 3 507 4063 7689 11089 14797
+<==
+
+RUNWATCH_RESULT EXIT RETVAL 0 TIME_SECS 0.34668 MEMPEAK_KBS 932

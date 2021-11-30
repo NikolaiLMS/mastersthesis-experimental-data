@@ -1,0 +1,117 @@
+    _           _         _
+   \ |         \ |       | |                       
+   | |     __  | |      _| |______                
+   | |     \/  | |     /_   ______\                
+   | |      _  | |   __  | |  ___   ___   ___       
+   | |___  | | | |  / .\ | | / , | |   \ / ·_\    
+   \_____\ |_| |__\ \__/ |_| \___) |_|_| \___\  
+[39mL i l o t a n e  version rls-glucose4
+by Dominik Schreiber <dominik.schreiber@kit.edu> 2020-2021
+using SAT solver glucose4
+
+0.019 Parser finished.
+0.020 Structures extracted.
+0.021 86 operators and 83 methods created.
+0.273 Mined 75 new reduction preconditions (+7500.0%).
+0.273 Iteration 0.
+0.273 Creating initial layer of size 2
+0.298 Attempting to solve formula with 5 clauses (6 literals) and 1 assumptions
+0.298 Unsolvable at layer 0 -- expanding.
+0.298 Iteration 1.
+0.298 New layer size: 2
+0.298 Instantiating ...
+0.716 Collected 1 relevant facts at this layer
+0.716 Encoding ...
+0.717 Attempting to solve formula with 496 clauses (1062 literals) and 1 assumptions
+0.717 Unsolvable at layer 1 -- expanding.
+0.717 Iteration 2.
+0.717 New layer size: 2
+0.717 Instantiating ...
+1.033 Collected 1 relevant facts at this layer
+1.033 Encoding ...
+1.034 Attempting to solve formula with 598 clauses (1329 literals) and 1 assumptions
+1.035 Unsolvable at layer 2 -- expanding.
+1.035 Iteration 3.
+1.035 New layer size: 7
+1.035 Instantiating ...
+1.139 Collected 49 relevant facts at this layer
+1.139 Encoding ...
+1.143 Attempting to solve formula with 1888 clauses (4721 literals) and 4 assumptions
+1.143 Unsolvable at layer 3 -- expanding.
+1.143 Iteration 4.
+1.144 New layer size: 27
+1.144 Instantiating ...
+1.460 Collected 312 relevant facts at this layer
+1.460 Encoding ...
+1.484 Attempting to solve formula with 22121 clauses (64605 literals) and 21 assumptions
+1.485 Unsolvable at layer 4 -- expanding.
+1.485 Iteration 5.
+1.485 New layer size: 70
+1.485 Instantiating ...
+1.832 Collected 478 relevant facts at this layer
+1.832 Encoding ...
+1.894 Attempting to solve formula with 81369 clauses (237109 literals) and 36 assumptions
+c last restart ## conflicts  :  2 1513 
+1.900 Found a solution at layer 5.
+==>
+6977 SHOP_methodm_get_to_person_drives_themself_precondition pcrew1 brighton_dump van1 pittsford_plaza
+7150 SHOP_methodm_drive_to_precondition van1 pittsford_plaza pcrew1
+7162 p_1Navegate_vehicle
+9901 SHOP_methodm_get_to_already_there_precondition van1 brighton_dump
+15255 SHOP_methodm_repair_line_without_tree_precondition brighton_dump pcrew1
+16350 SHOP_methodm_shut_off_power_precondition brighton_dump brighton rge
+16565 p_2Call
+16586 p_3Remove_wire
+17689 p_4String_wire
+18233 SHOP_methodm_turn_on_power_precondition brighton_dump brighton rge
+18283 call rge
+root 10
+10 tlt -> m_tlt_fix_power_line 59
+59 fix_power_line brighton_dump -> m_fix_power_line 89 9900 222
+89 get_to pcrew1 brighton_dump -> m_get_to_person_drives_themself 6977 749
+222 repair_line pcrew1 brighton_dump -> m_repair_line_without_tree 15255 3632 16585 17688 4524
+749 drive_to pcrew1 van1 brighton_dump -> m_drive_to 7150 7161
+3632 shut_off_power pcrew1 brighton_dump -> m_shut_off_power 16350 16564
+4524 turn_on_power pcrew1 brighton_dump -> m_turn_on_power 18233 18282
+7161 cnavegate_vehicle pcrew1 van1 brighton_dump pittsford_plaza -> prefix_1 7162
+9900 get_to van1 brighton_dump -> m_get_to_already_there 9901
+16564 ccall rge -> prefix_2 16565
+16585 cremove_wire pcrew1 brighton_dump -> prefix_3 16586
+17688 cstring_wire pcrew1 brighton_dump -> prefix_4 17689
+18282 ccall rge -> regular_2 18283
+<==
+1.902 End of solution plan. (counted length of 11)
+1.902 Total amount of clauses encoded: 81369
+1.902 - directframeaxioms : 51248 cls
+1.902 - qfactsemantics : 12229 cls
+1.902 - reductionconstraints : 8863 cls
+1.902 - actionconstraints : 3420 cls
+1.902 - indirectframeaxioms : 2299 cls
+1.902 - atmostoneelement : 1097 cls
+1.902 - expansions : 601 cls
+1.902 - truefacts : 478 cls
+1.902 - predecessors : 476 cls
+1.902 - substitutionconstraints : 392 cls
+1.902 - qconstequality : 112 cls
+1.902 - actioneffects : 93 cls
+1.902 - qtypeconstraints : 59 cls
+1.902 - axiomaticops : 2 cls
+1.902 # instantiated positions: 109
+1.902 # instantiated actions: 313
+1.902 # instantiated reductions: 164
+1.902 # introduced pseudo-constants: 122
+1.902 # retroactive prunings: 4
+1.902 # retroactively pruned operations: 4
+1.902 # dominated operations: 8
+1.902 # total invalid rigid preconditions found in getPFC: 2026
+1.902 # invalid rigid preconditions found in getPFC: 11
+1.902 # invalid rigid preconditions found in getPFC in varrestrictions: 2015
+1.902 # total invalid fluent preconditions found in getPFC: 11
+1.902 # invalid fluent preconditions found in getPFC: 11
+1.902 # invalid fluent preconditions found in getPFC in varrestrictions: 0
+1.902 # invalid fluent preconditions found in getPFC via postconditions: 0
+1.902 # invalid subtasks found in getPFC: 4
+1.902 # number effects in operation fact_frames: 678
+1.902 Exiting happily.
+
+RUNWATCH_RESULT EXIT RETVAL 0 TIME_SECS 1.91797 MEMPEAK_KBS 55224

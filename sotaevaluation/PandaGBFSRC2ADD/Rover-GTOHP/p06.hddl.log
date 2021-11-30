@@ -1,0 +1,236 @@
+pandaPIparser is configured as follows
+  Colors in output: true
+  Mode: parsing mode
+  Parameter splitting: true
+  Conditional effects: exponential encoding
+  Disjunctive preconditions as HTN: false
+  Replace goal with action: false
+  Output: pandaPI format
+General Options
+  Print timings: false
+  Quiet mode: false
+Inference Options
+  H2 mutexes: false
+  FAM groups: false
+Transformation Options
+  Add zero-cost no-op to empty methods: true
+  Remove duplicate actions: true
+  Remove useless literals: true
+  Expand abstract tasks with one method: true
+  Remove empty method preconditions: true
+  Two regularisation: false
+  Compile negative SAS variables: false
+Runtime Optimisations
+  Hierarchy Typing: true
+  Future Caching: false
+  Static Precondition Checking: false
+Output Options
+  Panda planner format: true
+  HDDL: false
+  SAS for Fast Downward (without hierarchy): false
+Output Formatting Options
+  Output only SAS+ variables: false
+  SAS+ delete mode: as input
+Reading input from /home/schnell/lilotane/sotaevaluation//PandaGBFS_runwatchtime_timeout1800_2021-11-16_21:14:14/runwatch_log/888/888.parsed.
+Writing output to /home/schnell/lilotane/sotaevaluation//PandaGBFS_runwatchtime_timeout1800_2021-11-16_21:14:14/runwatch_log/888/888.sas.
+Writing output to standard output.
+Parsing done.
+Conditional Effects expanded
+done.
+Starting Hierarchy Typing
+Total 0.677ms
+Contains 0.085ms
+Restrict 0.098ms
+MPrep 0.079ms
+Finished Hierarchy Typing
+Running PG.
+Process actions without preconditions
+Done.
+ ---> Disabling potentially consistent extension checking for action:           0 (navigate)
+Returning from runGpg().
+PG done. Postprocessing
+PG postprocessing done.
+Calculated [712] grounded tasks and [433] reachable facts.
+Running TDG.
+Process actions without preconditions
+Done.
+ ---> Disabling potentially consistent extension checking for action:           8 (m4_do_navigate2)
+ ---> Disabling potentially consistent extension checking for action:           5 (m1_do_navigate1)
+Returning from runGpg().
+TDG done.
+Calculated [1149] grounded tasks and [1103] grounded decomposition methods.
+Performing DFS.
+DFS done.
+After DFS: 1024 tasks, 974 methods.
+Grounded PG:
+Input was [642, 1024], output was [642, 433].
+Simplifying instance.
+Removing useless facts/literals
+Removing method precondition actions whose precondition is empty
+Expanding abstract tasks with only one method
+Starting duplicate elimination.
+Data structure build.
+279 duplicates found.
+Duplicates replaced in methods.
+Further Mutex Groups: 0 strict 0 non strict
+Writing instance to output.
+Final Statistics: F 82 S 0 SC 0 SM 0 NSM 0 I 0 P 201 S 45 A 277 M 869
+Exiting.
+Random seed: 42
+Time limit: 1800 seconds
+Reading input from /home/schnell/lilotane/sotaevaluation//PandaGBFS_runwatchtime_timeout1800_2021-11-16_21:14:14/runwatch_log/888/888.sas.
+- State has 82 bits divided into 82 mutex groups.
+- Domain contains 246 actions.
+- Domain contains 523 tasks.
+- Domain contains 869 methods.
+- The initial state contains 18 set bits.
+- The initial task is "__top[]".
+- State-based goal contains 6 bits.
+- Instance is totally-ordered: yes
+- Instance has unique paths: yes
+- Instance is parallel sequences: yes
+Calculate SCCs...
+- Number of SCCs: 478
+- The problem is cyclic
+- Number of cyclic SCCs: 18
+- Number of cyclic SCCs of size 1: 0
+Selected Planning Algorithm: progression searchParsing heuristics ...
+Number of specified heuristics: 1
+- the option "store cuts" of the RC heuristic can only be used with the inner heuristic LM-Cut. It will be disabled.
+- Calculating minimal implied costs and distances (0 ms)
+Heuristic #0 = hhRC2(add;distance;correct count)
+Search config:
+ - type: path cost
+ - weight: 1
+ - suboptimal: false
+Visited List configured
+- mode: total order
+- hashs to use: state task task-sequence
+- memory information: topological ordering
+- Visited list allows deletion of search nodes: true
+Search Configuration
+- Using JAIR 2020 progression algorithm
+- Search is stopped after first solution is found.
+- A* Search
+- Distance G is "modification depth"
+Search Results
+- Search time 0.009 seconds
+- Visited list time 0.000224 seconds
+- Visited list inserts 46
+- Visited list pruned 1
+- Visited list contains 45
+- Visited list hash collisions 1
+- Visited list used hash buckets 45
+- Generated 321 search nodes
+  Calculated heuristic for 230 nodes
+  One modifications 44
+  Effectless actions 47
+- including 44 one modification actions
+- including 0 one modification methods
+- and       47 progressions of effectless actions
+- Generated 25555 nodes per second
+- Final fringe contains 63 nodes
+- Status: Solved
+- Found solution of length 96
+- Total costs of actions: 39
+==>
+12 __method_precondition_m1_do_navigate1[rover2,waypoint7]
+13 visit[waypoint7]
+27 navigate[rover2,waypoint7,waypoint0]
+28 unvisit[waypoint7]
+30 __method_precondition_m5_empty_store[rover2store]
+31 nop[]
+32 sample_soil[rover2,rover2store,waypoint0]
+35 __method_precondition_m1_do_navigate1[rover2,waypoint0]
+36 communicate_soil_data2[rover2,general,waypoint0,waypoint2]
+49 __method_precondition_m1_do_navigate1[rover3,waypoint7]
+50 visit[waypoint7]
+53 navigate[rover3,waypoint7,waypoint3]
+54 unvisit[waypoint7]
+56 __method_precondition_m5_empty_store[rover3store]
+57 nop[]
+58 sample_rock[rover3,rover3store,waypoint3]
+61 __method_precondition_m1_do_navigate1[rover3,waypoint3]
+62 communicate_rock_data2[rover3,general,waypoint3,waypoint2]
+73 __method_precondition_m1_do_navigate1[rover1,waypoint4]
+74 visit[waypoint4]
+79 navigate[rover1,waypoint4,waypoint6]
+80 unvisit[waypoint4]
+82 __method_precondition_m5_empty_store[rover1store]
+83 nop[]
+84 sample_rock[rover1,rover1store,waypoint6]
+95 __method_precondition_m1_do_navigate1[rover1,waypoint6]
+96 visit[waypoint6]
+134 navigate[rover1,waypoint6,waypoint4]
+135 unvisit[waypoint6]
+136 communicate_rock_data1[rover1,general,waypoint6,waypoint4,waypoint2]
+146 __method_precondition_m1_do_navigate1[rover3,waypoint3]
+147 nop[]
+148 calibrate[rover3,camera3,objective3,waypoint3]
+165 __method_precondition_m1_do_navigate1[rover3,waypoint3]
+166 nop[]
+167 take_image[rover3,waypoint3,objective2,camera3,low_res]
+193 __method_precondition_m1_do_navigate1[rover3,waypoint3]
+194 nop[]
+195 communicate_image_data[rover3,general,objective2,low_res,waypoint3,waypoint2]
+213 __method_precondition_m1_do_navigate1[rover2,waypoint0]
+214 nop[]
+215 calibrate[rover2,camera1,objective1,waypoint0]
+230 __method_precondition_m1_do_navigate1[rover2,waypoint0]
+231 nop[]
+232 take_image[rover2,waypoint0,objective1,camera1,high_res]
+247 __method_precondition_m1_do_navigate1[rover2,waypoint0]
+248 nop[]
+249 communicate_image_data[rover2,general,objective1,high_res,waypoint0,waypoint2]
+268 __method_precondition_m1_do_navigate1[rover3,waypoint3]
+269 nop[]
+270 calibrate[rover3,camera3,objective3,waypoint3]
+288 __method_precondition_m1_do_navigate1[rover3,waypoint3]
+289 nop[]
+290 take_image[rover3,waypoint3,objective3,camera3,low_res]
+307 __method_precondition_m1_do_navigate1[rover3,waypoint3]
+308 nop[]
+309 communicate_image_data[rover3,general,objective3,low_res,waypoint3,waypoint2]
+root 0
+306 do_navigate1[rover3,waypoint3] -> m0_do_navigate1 307 308
+303 m14_send_image_data_splitted_10[rover3,general,objective3,low_res] -> <_splitting_method_m14_send_image_data_splitted_10;m14_send_image_data_splitted_5[rover3,general,objective3,low_res,waypoint3];_splitting_method_m14_send_image_data_splitted_5;1;0,-1> 306 309
+287 do_navigate1[rover3,waypoint3] -> m0_do_navigate1 288 289
+286 m13_get_image_data_splitted_2[rover3,objective3,camera3,low_res] -> _splitting_method_m13_get_image_data_splitted_2 287 290
+267 do_navigate1[rover3,waypoint3] -> m0_do_navigate1 268 269
+262 m15_do_calibrate_splitted_8[rover3,camera3] -> <_splitting_method_m15_do_calibrate_splitted_8;m15_do_calibrate_splitted_1[rover3,camera3,waypoint3];_splitting_method_m15_do_calibrate_splitted_1;1;0,-1> 267 270
+260 get_image_data[objective3,low_res] -> <<<m13_get_image_data;m13_get_image_data_splitted_9[rover3,low_res,objective3];_splitting_method_m13_get_image_data_splitted_9;0;-1,-2,1>;do_calibrate[rover3,camera3];m15_do_calibrate;0;-1,1,2>;send_image_data[rover3,objective3,low_res];m14_send_image_data;2;0,1,-1> 262 286 303
+246 do_navigate1[rover2,waypoint0] -> m0_do_navigate1 247 248
+242 m14_send_image_data_splitted_10[rover2,general,objective1,high_res] -> <_splitting_method_m14_send_image_data_splitted_10;m14_send_image_data_splitted_5[rover2,general,objective1,high_res,waypoint0];_splitting_method_m14_send_image_data_splitted_5;1;0,-1> 246 249
+229 do_navigate1[rover2,waypoint0] -> m0_do_navigate1 230 231
+227 m13_get_image_data_splitted_2[rover2,objective1,camera1,high_res] -> _splitting_method_m13_get_image_data_splitted_2 229 232
+212 do_navigate1[rover2,waypoint0] -> m0_do_navigate1 213 214
+208 m15_do_calibrate_splitted_8[rover2,camera1] -> <_splitting_method_m15_do_calibrate_splitted_8;m15_do_calibrate_splitted_1[rover2,camera1,waypoint0];_splitting_method_m15_do_calibrate_splitted_1;1;0,-1> 212 215
+207 get_image_data[objective1,high_res] -> <<<m13_get_image_data;m13_get_image_data_splitted_9[rover2,high_res,objective1];_splitting_method_m13_get_image_data_splitted_9;0;-1,-2,1>;do_calibrate[rover2,camera1];m15_do_calibrate;0;-1,1,2>;send_image_data[rover2,objective1,high_res];m14_send_image_data;2;0,1,-1> 208 227 242
+192 do_navigate1[rover3,waypoint3] -> m0_do_navigate1 193 194
+189 m14_send_image_data_splitted_10[rover3,general,objective2,low_res] -> <_splitting_method_m14_send_image_data_splitted_10;m14_send_image_data_splitted_5[rover3,general,objective2,low_res,waypoint3];_splitting_method_m14_send_image_data_splitted_5;1;0,-1> 192 195
+164 do_navigate1[rover3,waypoint3] -> m0_do_navigate1 165 166
+163 m13_get_image_data_splitted_2[rover3,objective2,camera3,low_res] -> _splitting_method_m13_get_image_data_splitted_2 164 167
+145 do_navigate1[rover3,waypoint3] -> m0_do_navigate1 146 147
+140 m15_do_calibrate_splitted_8[rover3,camera3] -> <_splitting_method_m15_do_calibrate_splitted_8;m15_do_calibrate_splitted_1[rover3,camera3,waypoint3];_splitting_method_m15_do_calibrate_splitted_1;1;0,-1> 145 148
+138 get_image_data[objective2,low_res] -> <<m13_get_image_data;m13_get_image_data_splitted_9[rover3,low_res,objective2];<_splitting_method_m13_get_image_data_splitted_9;do_calibrate[rover3,camera3];m15_do_calibrate;0;-1,1>;0;-1,-2,1>;send_image_data[rover3,objective2,low_res];m14_send_image_data;2;0,1,-1> 140 163 189
+133 do_navigate2[rover1,waypoint6,waypoint4] -> m3_do_navigate2 134
+94 do_navigate1[rover1,waypoint4] -> m1_do_navigate1 95 96 133 135
+89 m11_send_rock_data_splitted_11[rover1,general,waypoint6] -> <_splitting_method_m11_send_rock_data_splitted_11;m11_send_rock_data_splitted_6[rover1,general,waypoint6,waypoint4];_splitting_method_m11_send_rock_data_splitted_6;1;0,-1> 94 136
+81 empty_store[rover1store,rover1] -> m5_empty_store 82 83
+78 do_navigate2[rover1,waypoint4,waypoint6] -> m3_do_navigate2 79
+72 do_navigate1[rover1,waypoint6] -> m1_do_navigate1 73 74 78 80
+65 get_rock_data[waypoint6] -> <<m10_get_rock_data;m10_get_rock_data_splitted_3[rover1,waypoint6];_splitting_method_m10_get_rock_data_splitted_3;1;0,-1,-2,2>;send_rock_data[rover1,waypoint6];m11_send_rock_data;3;0,1,2,-1> 72 81 84 89
+60 send_rock_data[rover3,waypoint3] -> m12_send_rock_data 61 62
+55 empty_store[rover3store,rover3] -> m5_empty_store 56 57
+52 do_navigate2[rover3,waypoint7,waypoint3] -> m3_do_navigate2 53
+48 do_navigate1[rover3,waypoint3] -> m1_do_navigate1 49 50 52 54
+39 get_rock_data[waypoint3] -> <m10_get_rock_data;m10_get_rock_data_splitted_3[rover3,waypoint3];_splitting_method_m10_get_rock_data_splitted_3;1;0,-1,-2,2> 48 55 58 60
+34 send_soil_data[rover2,waypoint0] -> m9_send_soil_data 35 36
+29 empty_store[rover2store,rover2] -> m5_empty_store 30 31
+26 do_navigate2[rover2,waypoint7,waypoint0] -> m3_do_navigate2 27
+11 do_navigate1[rover2,waypoint0] -> m1_do_navigate1 12 13 26 28
+2 get_soil_data[waypoint0] -> <m7_get_soil_data;m7_get_soil_data_splitted_4[rover2,waypoint0];_splitting_method_m7_get_soil_data_splitted_4;1;0,-1,-2,2> 11 29 32 34
+0 __top[] -> __top_method 2 39 65 138 207 260
+<==
+
+RUNWATCH_RESULT EXIT RETVAL 0 TIME_SECS 0.487305 MEMPEAK_KBS 932

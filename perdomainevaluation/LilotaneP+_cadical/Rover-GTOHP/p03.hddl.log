@@ -1,0 +1,114 @@
+    _           _         _
+   \ |         \ |       | |                       
+   | |     __  | |      _| |______                
+   | |     \/  | |     /_   ______\                
+   | |      _  | |   __  | |  ___   ___   ___       
+   | |___  | | | |  / .\ | | / , | |   \ / ·_\    
+   \_____\ |_| |__\ \__/ |_| \___) |_|_| \___\  
+[39mL i l o t a n e  version rls-cadical
+by Dominik Schreiber <dominik.schreiber@kit.edu> 2020-2021
+using SAT solver cadical
+
+0.007 Parser finished.
+0.007 Structures extracted.
+0.008 38 operators and 17 methods created.
+0.016 Mined 30 new reduction preconditions (+96.8%).
+0.016 Iteration 0.
+0.016 Creating initial layer of size 2
+0.022 Attempting to solve formula with 9 clauses (12 literals) and 1 assumptions
+0.022 Unsolvable at layer 0 -- expanding.
+0.022 Iteration 1.
+0.022 New layer size: 4
+0.022 Instantiating ...
+0.027 Collected 3 relevant facts at this layer
+0.027 Encoding ...
+0.027 Attempting to solve formula with 50 clauses (108 literals) and 3 assumptions
+0.027 Unsolvable at layer 1 -- expanding.
+0.027 Iteration 2.
+0.027 New layer size: 13
+0.027 Instantiating ...
+0.033 Collected 25 relevant facts at this layer
+0.033 Encoding ...
+0.034 Attempting to solve formula with 505 clauses (1333 literals) and 7 assumptions
+0.034 Unsolvable at layer 2 -- expanding.
+0.034 Iteration 3.
+0.034 New layer size: 23
+0.034 Instantiating ...
+0.042 Collected 29 relevant facts at this layer
+0.042 Encoding ...
+0.043 Attempting to solve formula with 1467 clauses (4149 literals) and 7 assumptions
+0.043 Found a solution at layer 3.
+==>
+240 nop
+277 nop
+282 sample_soil rover0 rover0store waypoint3
+285 communicate_soil_data2 rover0 general waypoint3 waypoint2
+312 visit waypoint2
+315 navigate rover1 waypoint2 waypoint1
+332 unvisit waypoint2
+351 nop
+358 sample_rock rover1 rover1store waypoint1
+360 communicate_rock_data2 rover1 general waypoint1 waypoint2
+388 nop
+397 calibrate rover1 camera0 objective0 waypoint1
+413 visit waypoint1
+416 nop
+433 unvisit waypoint1
+452 take_image rover1 waypoint1 objective0 camera0 high_res
+459 nop
+468 communicate_image_data rover1 general objective0 high_res waypoint1 waypoint2
+root 11 17 24
+11 get_soil_data waypoint3 -> m7_get_soil_data 239 276 282 284
+17 get_rock_data waypoint1 -> m10_get_rock_data 100 350 358 359
+24 get_image_data objective0 high_res -> m13_get_image_data 161 181 452 212
+100 do_navigate1 rover1 waypoint1 -> m1_do_navigate1 312 314 332
+161 do_calibrate rover1 camera0 -> m15_do_calibrate 387 397
+181 do_navigate1 rover1 waypoint1 -> m1_do_navigate1 413 415 433
+212 send_image_data rover1 objective0 high_res -> m14_send_image_data 458 468
+239 do_navigate1 rover0 waypoint3 -> m0_do_navigate1 240
+276 empty_store rover0store rover0 -> m5_empty_store 277
+284 send_soil_data rover0 waypoint3 -> m9_send_soil_data 285
+314 do_navigate2 rover1 waypoint2 waypoint1 -> m3_do_navigate2 315
+350 empty_store rover1store rover1 -> m5_empty_store 351
+359 send_rock_data rover1 waypoint1 -> m12_send_rock_data 360
+387 do_navigate1 rover1 waypoint1 -> m0_do_navigate1 388
+415 do_navigate2 rover1 waypoint1 waypoint1 -> m2_do_navigate2 416
+458 do_navigate1 rover1 waypoint1 -> m0_do_navigate1 459
+<==
+0.044 End of solution plan. (counted length of 18)
+0.044 Total amount of clauses encoded: 1467
+0.044 - directframeaxioms : 468 cls
+0.044 - qfactsemantics : 256 cls
+0.044 - substitutionconstraints : 187 cls
+0.044 - reductionconstraints : 171 cls
+0.044 - indirectframeaxioms : 84 cls
+0.044 - predecessors : 70 cls
+0.044 - actionconstraints : 63 cls
+0.044 - expansions : 54 cls
+0.044 - atmostoneelement : 41 cls
+0.044 - actioneffects : 30 cls
+0.044 - truefacts : 29 cls
+0.044 - qconstequality : 12 cls
+0.044 - axiomaticops : 2 cls
+0.044 # instantiated positions: 41
+0.044 # instantiated actions: 53
+0.044 # instantiated reductions: 18
+0.044 # introduced pseudo-constants: 27
+0.044 # retroactive prunings: 0
+0.044 # retroactively pruned operations: 0
+0.044 # dominated operations: 0
+0.044 # total invalid rigid preconditions found in getPFC: 0
+0.044 # invalid rigid preconditions found in getPFC: 0
+0.044 # invalid rigid preconditions found in getPFC in varrestrictions: 0
+0.044 # total invalid fluent preconditions found in getPFC: 2
+0.044 # invalid fluent preconditions found in getPFC: 2
+0.044 # invalid fluent preconditions found in getPFC in varrestrictions: 0
+0.044 # invalid fluent preconditions found in getPFC via postconditions: 0
+0.044 # invalid operations found in getPFC via subtasks: 0
+0.044 # invalid operations found in getPFC via postconditions: 0
+0.044 # number effects in operation fact_frames: 174
+0.044 # number of variables restricted: 101
+0.044 # number of nodes variables restricted: 79
+0.044 Exiting happily.
+
+RUNWATCH_RESULT EXIT RETVAL 0 TIME_SECS 0.0507812 MEMPEAK_KBS 680

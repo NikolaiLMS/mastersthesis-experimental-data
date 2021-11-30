@@ -1,0 +1,74 @@
+----------------------Tasks-----------------------
+0 tlt
+1 invisible_goal
+---------------------Planning---------------------
+Time: 2.114565372467041s
+-----------------------Plan-----------------------
+==>
+5 shop_methodm_get_electricity_noop_precondition brighton_high
+6 shop_methodm_get_to_already_there_precondition sleader1 brighton_high
+7 shop_methodm_get_to_as_cargo_precondition food1 brighton_high twelve_corners pvan1
+12 shop_methodm_get_to_already_there_precondition pvan1 twelve_corners
+13 shop_methodm_get_in_load_in_precondition food1 twelve_corners pvan1 tcrew1
+16 shop_methodm_get_to_as_cargo_precondition tcrew1 twelve_corners brighton_dump pvan1
+21 shop_methodm_get_to_vehicle_gets_driven_precondition pvan1 brighton_dump twelve_corners pu1
+23 shop_methodm_drive_to_precondition pvan1 twelve_corners pu1
+25 p_1navegate_vehicle
+26 shop_methodm_get_in_ambulatory_person_precondition tcrew1 brighton_dump pvan1
+28 p_2climb_in
+29 shop_methodm_get_to_vehicle_gets_driven_precondition pvan1 twelve_corners brighton_dump pu1
+31 shop_methodm_drive_to_precondition pvan1 brighton_dump pu1
+33 navegate_vehicle pu1 pvan1 twelve_corners brighton_dump
+34 climb_out tcrew1 pvan1 twelve_corners
+15 load tcrew1 food1 pvan1 twelve_corners
+35 shop_methodm_get_to_vehicle_gets_driven_precondition pvan1 brighton_high twelve_corners pu1
+37 shop_methodm_drive_to_precondition pvan1 twelve_corners pu1
+39 navegate_vehicle pu1 pvan1 brighton_high twelve_corners
+40 shop_methodm_get_out_unload_precondition pvan1 brighton_high tcrew1 food1
+43 shop_methodm_get_to_as_cargo_precondition tcrew1 brighton_high twelve_corners pvan1
+48 shop_methodm_get_to_vehicle_gets_driven_precondition pvan1 twelve_corners brighton_high pu1
+50 shop_methodm_drive_to_precondition pvan1 brighton_high pu1
+52 navegate_vehicle pu1 pvan1 twelve_corners brighton_high
+53 shop_methodm_get_in_ambulatory_person_precondition tcrew1 twelve_corners pvan1
+55 climb_in tcrew1 pvan1 twelve_corners
+56 shop_methodm_get_to_vehicle_gets_driven_precondition pvan1 brighton_high twelve_corners pu1
+58 shop_methodm_drive_to_precondition pvan1 twelve_corners pu1
+60 navegate_vehicle pu1 pvan1 brighton_high twelve_corners
+61 climb_out tcrew1 pvan1 brighton_high
+42 unload tcrew1 food1 pvan1 brighton_high
+root 0
+0 tlt  -> m_tlt_set_up_shelter 1
+1 set_up_shelter brighton_high -> m_set_up_shelter 2 3 4
+2 get_electricity brighton_high -> m_get_electricity_noop 5
+3 get_to sleader1 brighton_high -> m_get_to_already_there 6
+4 get_to food1 brighton_high -> m_get_to_as_cargo 7 8 9 10 11
+8 get_to pvan1 twelve_corners -> m_get_to_already_there 12
+9 get_in food1 pvan1 -> m_get_in_load_in 13 14 15
+14 get_to tcrew1 twelve_corners -> m_get_to_as_cargo 16 17 18 19 20
+17 get_to pvan1 brighton_dump -> m_get_to_vehicle_gets_driven 21 22
+22 drive_to pu1 pvan1 brighton_dump -> m_drive_to 23 24
+24 cnavegate_vehicle pu1 pvan1 brighton_dump twelve_corners -> prefix_1 25
+18 get_in tcrew1 pvan1 -> m_get_in_ambulatory_person 26 27
+27 cclimb_in tcrew1 pvan1 brighton_dump -> prefix_2 28
+19 get_to pvan1 twelve_corners -> m_get_to_vehicle_gets_driven 29 30
+30 drive_to pu1 pvan1 twelve_corners -> m_drive_to 31 32
+32 cnavegate_vehicle pu1 pvan1 twelve_corners brighton_dump -> regular_2 33
+20 get_out tcrew1 pvan1 -> m_get_out_ambulatory_person 34
+10 get_to pvan1 brighton_high -> m_get_to_vehicle_gets_driven 35 36
+36 drive_to pu1 pvan1 brighton_high -> m_drive_to 37 38
+38 cnavegate_vehicle pu1 pvan1 brighton_high twelve_corners -> regular_2 39
+11 get_out food1 pvan1 -> m_get_out_unload 40 41 42
+41 get_to tcrew1 brighton_high -> m_get_to_as_cargo 43 44 45 46 47
+44 get_to pvan1 twelve_corners -> m_get_to_vehicle_gets_driven 48 49
+49 drive_to pu1 pvan1 twelve_corners -> m_drive_to 50 51
+51 cnavegate_vehicle pu1 pvan1 twelve_corners brighton_high -> regular_2 52
+45 get_in tcrew1 pvan1 -> m_get_in_ambulatory_person 53 54
+54 cclimb_in tcrew1 pvan1 twelve_corners -> regular_1 55
+46 get_to pvan1 brighton_high -> m_get_to_vehicle_gets_driven 56 57
+57 drive_to pu1 pvan1 brighton_high -> m_drive_to 58 59
+59 cnavegate_vehicle pu1 pvan1 brighton_high twelve_corners -> regular_2 60
+47 get_out tcrew1 pvan1 -> m_get_out_ambulatory_person 61
+<==
+Total time: 2.1497085094451904s
+
+RUNWATCH_RESULT EXIT RETVAL 0 TIME_SECS 2.30518 MEMPEAK_KBS 24560

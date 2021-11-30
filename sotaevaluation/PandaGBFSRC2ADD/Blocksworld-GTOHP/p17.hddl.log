@@ -1,0 +1,748 @@
+pandaPIparser is configured as follows
+  Colors in output: true
+  Mode: parsing mode
+  Parameter splitting: true
+  Conditional effects: exponential encoding
+  Disjunctive preconditions as HTN: false
+  Replace goal with action: false
+  Output: pandaPI format
+General Options
+  Print timings: false
+  Quiet mode: false
+Inference Options
+  H2 mutexes: false
+  FAM groups: false
+Transformation Options
+  Add zero-cost no-op to empty methods: true
+  Remove duplicate actions: true
+  Remove useless literals: true
+  Expand abstract tasks with one method: true
+  Remove empty method preconditions: true
+  Two regularisation: false
+  Compile negative SAS variables: false
+Runtime Optimisations
+  Hierarchy Typing: true
+  Future Caching: false
+  Static Precondition Checking: false
+Output Options
+  Panda planner format: true
+  HDDL: false
+  SAS for Fast Downward (without hierarchy): false
+Output Formatting Options
+  Output only SAS+ variables: false
+  SAS+ delete mode: as input
+Reading input from /home/schnell/lilotane/sotaevaluation//PandaGBFS_runwatchtime_timeout1800_2021-11-16_21:14:14/runwatch_log/175/175.parsed.
+Writing output to /home/schnell/lilotane/sotaevaluation//PandaGBFS_runwatchtime_timeout1800_2021-11-16_21:14:14/runwatch_log/175/175.sas.
+Writing output to standard output.
+Parsing done.
+Conditional Effects expanded
+done.
+Starting Hierarchy Typing
+Total 2.779ms
+Contains 0.411ms
+Restrict 0.418ms
+MPrep 0.316ms
+Finished Hierarchy Typing
+Running PG.
+Process actions without preconditions
+Done.
+ ---> Disabling potentially consistent extension checking for action:           8 (__method_precondition_m5_do_move)
+ ---> Disabling potentially consistent extension checking for action:           2 (stack)
+ ---> Disabling potentially consistent extension checking for action:           3 (unstack)
+ ---> Disabling potentially consistent extension checking for action:           6 (__method_precondition_m7_do_clear)
+Returning from runGpg().
+PG done. Postprocessing
+PG postprocessing done.
+Calculated [431] grounded tasks and [246] reachable facts.
+Running TDG.
+Process actions without preconditions
+Done.
+ ---> Disabling potentially consistent extension checking for action:           2 (m7_do_clear)
+Returning from runGpg().
+TDG done.
+Calculated [632] grounded tasks and [416] grounded decomposition methods.
+Performing DFS.
+DFS done.
+After DFS: 632 tasks, 416 methods.
+Grounded PG:
+Input was [431, 632], output was [431, 246].
+Simplifying instance.
+Removing useless facts/literals
+Removing method precondition actions whose precondition is empty
+Expanding abstract tasks with only one method
+Starting duplicate elimination.
+Data structure build.
+33 duplicates found.
+Duplicates replaced in methods.
+Further Mutex Groups: 0 strict 0 non strict
+Writing instance to output.
+Final Statistics: F 242 S 0 SC 0 SM 0 NSM 0 I 0 P 166 S 232 A 189 M 404
+Exiting.
+Random seed: 42
+Time limit: 1800 seconds
+Reading input from /home/schnell/lilotane/sotaevaluation//PandaGBFS_runwatchtime_timeout1800_2021-11-16_21:14:14/runwatch_log/175/175.sas.
+- State has 242 bits divided into 242 mutex groups.
+- Domain contains 398 actions.
+- Domain contains 587 tasks.
+- Domain contains 404 methods.
+- The initial state contains 104 set bits.
+- The initial task is "__top[]".
+- State-based goal contains 32 bits.
+- Instance is totally-ordered: yes
+- Instance has unique paths: yes
+- Instance is parallel sequences: yes
+Calculate SCCs...
+- Number of SCCs: 553
+- The problem is cyclic
+- Number of cyclic SCCs: 1
+- Number of cyclic SCCs of size 1: 0
+Selected Planning Algorithm: progression searchParsing heuristics ...
+Number of specified heuristics: 1
+- the option "store cuts" of the RC heuristic can only be used with the inner heuristic LM-Cut. It will be disabled.
+- Calculating minimal implied costs and distances (0 ms)
+Heuristic #0 = hhRC2(add;distance;correct count)
+Search config:
+ - type: path cost
+ - weight: 1
+ - suboptimal: false
+Visited List configured
+- mode: total order
+- hashs to use: state task task-sequence
+- memory information: topological ordering
+- Visited list allows deletion of search nodes: true
+Search Configuration
+- Using JAIR 2020 progression algorithm
+- Search is stopped after first solution is found.
+- A* Search
+- Distance G is "modification depth"
+Search Results
+- Search time 0.046 seconds
+- Visited list time 0.003729 seconds
+- Visited list inserts 386
+- Visited list pruned 0
+- Visited list contains 386
+- Visited list hash collisions 0
+- Visited list used hash buckets 386
+- Generated 1745 search nodes
+  Calculated heuristic for 885 nodes
+  One modifications 290
+  Effectless actions 570
+- including 290 one modification actions
+- including 0 one modification methods
+- and       570 progressions of effectless actions
+- Generated 19239 nodes per second
+- Final fringe contains 1 nodes
+- Status: Solved
+- Found solution of length 606
+- Total costs of actions: 219
+==>
+3 __method_precondition_m1_do_put_on[]
+6 __method_precondition_m7_do_clear[b1,b12]
+11 __method_precondition_m7_do_clear[b12,b7]
+15 __method_precondition_m7_do_clear[b7,b28]
+17 __method_precondition_m6_do_clear[b28]
+18 nop[]
+19 unstack[b28,b7]
+20 put-down[b28]
+21 unstack[b7,b12]
+22 put-down[b7]
+23 unstack[b12,b1]
+24 put-down[b12]
+29 __method_precondition_m7_do_clear[b30,b8]
+31 __method_precondition_m6_do_clear[b8]
+32 nop[]
+33 unstack[b8,b30]
+34 put-down[b8]
+35 __method_precondition_m3_do_on_table[b30]
+36 nop[]
+40 __method_precondition_m5_do_move[b1,b30]
+43 unstack[b1,b25]
+44 stack[b1,b30]
+47 __method_precondition_m1_do_put_on[]
+50 __method_precondition_m7_do_clear[b21,b5]
+55 __method_precondition_m7_do_clear[b5,b31]
+57 __method_precondition_m3_do_on_table[b31]
+58 nop[]
+59 unstack[b31,b5]
+60 put-down[b31]
+61 unstack[b5,b21]
+62 put-down[b5]
+65 __method_precondition_m6_do_clear[b1]
+66 nop[]
+70 __method_precondition_m6_do_clear[b1]
+71 nop[]
+75 __method_precondition_m4_do_move[b21,b1]
+76 pick-up[b21]
+77 stack[b21,b1]
+81 __method_precondition_m1_do_put_on[]
+88 __method_precondition_m7_do_clear[b26,b4]
+91 __method_precondition_m7_do_clear[b4,b6]
+95 __method_precondition_m7_do_clear[b6,b13]
+100 __method_precondition_m7_do_clear[b13,b14]
+104 __method_precondition_m7_do_clear[b14,b11]
+106 __method_precondition_m6_do_clear[b11]
+107 nop[]
+108 unstack[b11,b14]
+109 put-down[b11]
+110 unstack[b14,b13]
+111 put-down[b14]
+112 unstack[b13,b6]
+113 put-down[b13]
+114 unstack[b6,b4]
+115 put-down[b6]
+116 unstack[b4,b26]
+117 put-down[b4]
+120 __method_precondition_m6_do_clear[b21]
+121 nop[]
+125 __method_precondition_m6_do_clear[b21]
+126 nop[]
+133 __method_precondition_m5_do_move[b26,b21]
+136 unstack[b26,b23]
+137 stack[b26,b21]
+140 __method_precondition_m1_do_put_on[]
+142 __method_precondition_m6_do_clear[b37]
+143 nop[]
+148 __method_precondition_m7_do_clear[b32,b3]
+152 __method_precondition_m7_do_clear[b3,b10]
+155 __method_precondition_m7_do_clear[b10,b24]
+159 __method_precondition_m7_do_clear[b24,b17]
+162 __method_precondition_m7_do_clear[b17,b9]
+166 __method_precondition_m7_do_clear[b9,b18]
+170 __method_precondition_m7_do_clear[b18,b33]
+174 __method_precondition_m7_do_clear[b33,b19]
+177 __method_precondition_m7_do_clear[b19,b22]
+182 __method_precondition_m7_do_clear[b22,b27]
+185 __method_precondition_m7_do_clear[b27,b2]
+189 __method_precondition_m7_do_clear[b2,b15]
+192 __method_precondition_m7_do_clear[b15,b20]
+197 __method_precondition_m7_do_clear[b20,b23]
+199 __method_precondition_m6_do_clear[b23]
+200 nop[]
+201 unstack[b23,b20]
+202 put-down[b23]
+203 unstack[b20,b15]
+204 put-down[b20]
+205 unstack[b15,b2]
+206 put-down[b15]
+207 unstack[b2,b27]
+208 put-down[b2]
+209 unstack[b27,b22]
+210 put-down[b27]
+211 unstack[b22,b19]
+212 put-down[b22]
+213 unstack[b19,b33]
+214 put-down[b19]
+215 unstack[b33,b18]
+216 put-down[b33]
+217 unstack[b18,b9]
+218 put-down[b18]
+219 unstack[b9,b17]
+220 put-down[b9]
+221 unstack[b17,b24]
+222 put-down[b17]
+223 unstack[b24,b10]
+224 put-down[b24]
+225 unstack[b10,b3]
+226 put-down[b10]
+227 unstack[b3,b32]
+228 put-down[b3]
+229 __method_precondition_m3_do_on_table[b32]
+230 nop[]
+235 __method_precondition_m5_do_move[b37,b32]
+237 unstack[b37,b29]
+238 stack[b37,b32]
+242 __method_precondition_m1_do_put_on[]
+244 __method_precondition_m6_do_clear[b27]
+245 nop[]
+249 __method_precondition_m6_do_clear[b37]
+250 nop[]
+253 __method_precondition_m6_do_clear[b37]
+254 nop[]
+258 __method_precondition_m4_do_move[b27,b37]
+259 pick-up[b27]
+260 stack[b27,b37]
+264 __method_precondition_m1_do_put_on[]
+278 __method_precondition_m6_do_clear[b5]
+279 nop[]
+283 __method_precondition_m6_do_clear[b27]
+284 nop[]
+288 __method_precondition_m6_do_clear[b27]
+289 nop[]
+303 __method_precondition_m4_do_move[b5,b27]
+304 pick-up[b5]
+305 stack[b5,b27]
+309 __method_precondition_m1_do_put_on[]
+332 __method_precondition_m6_do_clear[b8]
+333 nop[]
+336 __method_precondition_m6_do_clear[b5]
+337 nop[]
+345 __method_precondition_m6_do_clear[b5]
+346 nop[]
+350 __method_precondition_m4_do_move[b8,b5]
+351 pick-up[b8]
+352 stack[b8,b5]
+356 __method_precondition_m1_do_put_on[]
+384 __method_precondition_m6_do_clear[b11]
+385 nop[]
+388 __method_precondition_m6_do_clear[b8]
+389 nop[]
+392 __method_precondition_m6_do_clear[b8]
+393 nop[]
+405 __method_precondition_m4_do_move[b11,b8]
+406 pick-up[b11]
+407 stack[b11,b8]
+411 __method_precondition_m1_do_put_on[]
+434 __method_precondition_m6_do_clear[b17]
+435 nop[]
+439 __method_precondition_m6_do_clear[b11]
+440 nop[]
+443 __method_precondition_m6_do_clear[b11]
+444 nop[]
+457 __method_precondition_m4_do_move[b17,b11]
+458 pick-up[b17]
+459 stack[b17,b11]
+463 __method_precondition_m1_do_put_on[]
+488 __method_precondition_m7_do_clear[b36,b35]
+494 __method_precondition_m6_do_clear[b35]
+495 nop[]
+496 unstack[b35,b36]
+497 put-down[b35]
+500 __method_precondition_m6_do_clear[b17]
+501 nop[]
+505 __method_precondition_m6_do_clear[b17]
+506 nop[]
+510 __method_precondition_m4_do_move[b36,b17]
+511 pick-up[b36]
+512 stack[b36,b17]
+516 __method_precondition_m1_do_put_on[]
+522 __method_precondition_m6_do_clear[b22]
+523 nop[]
+555 __method_precondition_m6_do_clear[b36]
+556 nop[]
+560 __method_precondition_m6_do_clear[b36]
+561 nop[]
+577 __method_precondition_m4_do_move[b22,b36]
+578 pick-up[b22]
+579 stack[b22,b36]
+583 __method_precondition_m1_do_put_on[]
+600 __method_precondition_m6_do_clear[b2]
+601 nop[]
+604 __method_precondition_m6_do_clear[b22]
+605 nop[]
+609 __method_precondition_m6_do_clear[b22]
+610 nop[]
+623 __method_precondition_m4_do_move[b2,b22]
+624 pick-up[b2]
+625 stack[b2,b22]
+629 __method_precondition_m1_do_put_on[]
+652 __method_precondition_m6_do_clear[b18]
+653 nop[]
+657 __method_precondition_m6_do_clear[b7]
+658 nop[]
+667 __method_precondition_m6_do_clear[b7]
+668 nop[]
+671 __method_precondition_m4_do_move[b18,b7]
+672 pick-up[b18]
+673 stack[b18,b7]
+677 __method_precondition_m1_do_put_on[]
+697 __method_precondition_m7_do_clear[b16,b25]
+704 __method_precondition_m6_do_clear[b25]
+705 nop[]
+706 unstack[b25,b16]
+707 put-down[b25]
+711 __method_precondition_m6_do_clear[b18]
+712 nop[]
+716 __method_precondition_m6_do_clear[b18]
+717 nop[]
+722 __method_precondition_m5_do_move[b16,b18]
+725 unstack[b16,b34]
+726 stack[b16,b18]
+729 __method_precondition_m1_do_put_on[]
+731 __method_precondition_m6_do_clear[b10]
+732 nop[]
+740 __method_precondition_m6_do_clear[b16]
+741 nop[]
+745 __method_precondition_m6_do_clear[b16]
+746 nop[]
+750 __method_precondition_m4_do_move[b10,b16]
+751 pick-up[b10]
+752 stack[b10,b16]
+756 __method_precondition_m1_do_put_on[]
+820 __method_precondition_m6_do_clear[b28]
+821 nop[]
+824 __method_precondition_m6_do_clear[b10]
+825 nop[]
+829 __method_precondition_m6_do_clear[b10]
+830 nop[]
+843 __method_precondition_m4_do_move[b28,b10]
+844 pick-up[b28]
+845 stack[b28,b10]
+849 __method_precondition_m1_do_put_on[]
+872 __method_precondition_m6_do_clear[b13]
+873 nop[]
+877 __method_precondition_m6_do_clear[b28]
+878 nop[]
+881 __method_precondition_m6_do_clear[b28]
+882 nop[]
+891 __method_precondition_m4_do_move[b13,b28]
+892 pick-up[b13]
+893 stack[b13,b28]
+897 __method_precondition_m1_do_put_on[]
+924 __method_precondition_m6_do_clear[b6]
+925 nop[]
+929 __method_precondition_m6_do_clear[b13]
+930 nop[]
+934 __method_precondition_m6_do_clear[b13]
+935 nop[]
+949 __method_precondition_m4_do_move[b6,b13]
+950 pick-up[b6]
+951 stack[b6,b13]
+955 __method_precondition_m1_do_put_on[]
+978 __method_precondition_m6_do_clear[b34]
+979 nop[]
+983 __method_precondition_m6_do_clear[b6]
+984 nop[]
+993 __method_precondition_m6_do_clear[b6]
+994 nop[]
+1003 __method_precondition_m4_do_move[b34,b6]
+1004 pick-up[b34]
+1005 stack[b34,b6]
+1009 __method_precondition_m1_do_put_on[]
+1032 __method_precondition_m6_do_clear[b29]
+1033 nop[]
+1037 __method_precondition_m6_do_clear[b34]
+1038 nop[]
+1047 __method_precondition_m6_do_clear[b34]
+1048 nop[]
+1059 __method_precondition_m4_do_move[b29,b34]
+1060 pick-up[b29]
+1061 stack[b29,b34]
+1065 __method_precondition_m1_do_put_on[]
+1082 __method_precondition_m6_do_clear[b20]
+1083 nop[]
+1087 __method_precondition_m6_do_clear[b29]
+1088 nop[]
+1097 __method_precondition_m6_do_clear[b29]
+1098 nop[]
+1109 __method_precondition_m4_do_move[b20,b29]
+1110 pick-up[b20]
+1111 stack[b20,b29]
+1115 __method_precondition_m1_do_put_on[]
+1132 __method_precondition_m6_do_clear[b14]
+1133 nop[]
+1137 __method_precondition_m6_do_clear[b20]
+1138 nop[]
+1147 __method_precondition_m6_do_clear[b20]
+1148 nop[]
+1152 __method_precondition_m4_do_move[b14,b20]
+1153 pick-up[b14]
+1154 stack[b14,b20]
+1158 __method_precondition_m1_do_put_on[]
+1186 __method_precondition_m6_do_clear[b12]
+1187 nop[]
+1191 __method_precondition_m6_do_clear[b14]
+1192 nop[]
+1201 __method_precondition_m6_do_clear[b14]
+1202 nop[]
+1206 __method_precondition_m4_do_move[b12,b14]
+1207 pick-up[b12]
+1208 stack[b12,b14]
+1212 __method_precondition_m1_do_put_on[]
+1240 __method_precondition_m6_do_clear[b9]
+1241 nop[]
+1245 __method_precondition_m6_do_clear[b12]
+1246 nop[]
+1250 __method_precondition_m6_do_clear[b12]
+1251 nop[]
+1265 __method_precondition_m4_do_move[b9,b12]
+1266 pick-up[b9]
+1267 stack[b9,b12]
+1271 __method_precondition_m1_do_put_on[]
+1294 __method_precondition_m6_do_clear[b23]
+1295 nop[]
+1299 __method_precondition_m6_do_clear[b9]
+1300 nop[]
+1309 __method_precondition_m6_do_clear[b9]
+1310 nop[]
+1319 __method_precondition_m4_do_move[b23,b9]
+1320 pick-up[b23]
+1321 stack[b23,b9]
+1325 __method_precondition_m1_do_put_on[]
+1348 __method_precondition_m6_do_clear[b15]
+1349 nop[]
+1353 __method_precondition_m6_do_clear[b23]
+1354 nop[]
+1363 __method_precondition_m6_do_clear[b23]
+1364 nop[]
+1368 __method_precondition_m4_do_move[b15,b23]
+1369 pick-up[b15]
+1370 stack[b15,b23]
+1374 __method_precondition_m1_do_put_on[]
+1402 __method_precondition_m6_do_clear[b35]
+1403 nop[]
+1406 __method_precondition_m6_do_clear[b15]
+1407 nop[]
+1411 __method_precondition_m6_do_clear[b15]
+1412 nop[]
+1425 __method_precondition_m4_do_move[b35,b15]
+1426 pick-up[b35]
+1427 stack[b35,b15]
+1431 __method_precondition_m1_do_put_on[]
+1454 __method_precondition_m6_do_clear[b19]
+1455 nop[]
+1459 __method_precondition_m6_do_clear[b35]
+1460 nop[]
+1468 __method_precondition_m6_do_clear[b35]
+1469 nop[]
+1477 __method_precondition_m4_do_move[b19,b35]
+1478 pick-up[b19]
+1479 stack[b19,b35]
+1483 __method_precondition_m1_do_put_on[]
+1506 __method_precondition_m6_do_clear[b4]
+1507 nop[]
+1511 __method_precondition_m6_do_clear[b19]
+1512 nop[]
+1516 __method_precondition_m6_do_clear[b19]
+1517 nop[]
+1531 __method_precondition_m4_do_move[b4,b19]
+1532 pick-up[b4]
+1533 stack[b4,b19]
+1537 __method_precondition_m1_do_put_on[]
+1560 __method_precondition_m6_do_clear[b3]
+1561 nop[]
+1565 __method_precondition_m6_do_clear[b4]
+1566 nop[]
+1570 __method_precondition_m6_do_clear[b4]
+1571 nop[]
+1585 __method_precondition_m4_do_move[b3,b4]
+1586 pick-up[b3]
+1587 stack[b3,b4]
+1591 __method_precondition_m1_do_put_on[]
+1614 __method_precondition_m6_do_clear[b25]
+1615 nop[]
+1619 __method_precondition_m6_do_clear[b3]
+1620 nop[]
+1624 __method_precondition_m6_do_clear[b3]
+1625 nop[]
+1639 __method_precondition_m4_do_move[b25,b3]
+1640 pick-up[b25]
+1641 stack[b25,b3]
+1645 __method_precondition_m1_do_put_on[]
+1668 __method_precondition_m6_do_clear[b33]
+1669 nop[]
+1672 __method_precondition_m6_do_clear[b25]
+1673 nop[]
+1681 __method_precondition_m6_do_clear[b25]
+1682 nop[]
+1691 __method_precondition_m4_do_move[b33,b25]
+1692 pick-up[b33]
+1693 stack[b33,b25]
+1697 __method_precondition_m1_do_put_on[]
+1720 __method_precondition_m6_do_clear[b24]
+1721 nop[]
+1724 __method_precondition_m3_do_on_table[b31]
+1725 nop[]
+1728 __method_precondition_m3_do_on_table[b31]
+1729 nop[]
+1740 __method_precondition_m4_do_move[b24,b31]
+1741 pick-up[b24]
+1742 stack[b24,b31]
+root 0
+1739 do_move[b24,b31] -> m4_do_move 1740 1741 1742
+1727 do_on_table[b31] -> m3_do_on_table 1728 1729
+1723 do_clear[b31] -> m6_do_clear 1724 1725
+1719 do_clear[b24] -> m6_do_clear 1720 1721
+1696 do_put_on[b24,b31] -> m1_do_put_on 1697 1719 1723 1727 1739
+1690 do_move[b33,b25] -> m4_do_move 1691 1692 1693
+1680 do_on_table[b25] -> m3_do_on_table 1681 1682
+1671 do_clear[b25] -> m6_do_clear 1672 1673
+1667 do_clear[b33] -> m6_do_clear 1668 1669
+1644 do_put_on[b33,b25] -> m1_do_put_on 1645 1667 1671 1680 1690
+1638 do_move[b25,b3] -> m4_do_move 1639 1640 1641
+1623 do_on_table[b3] -> m3_do_on_table 1624 1625
+1618 do_clear[b3] -> m6_do_clear 1619 1620
+1613 do_clear[b25] -> m6_do_clear 1614 1615
+1590 do_put_on[b25,b3] -> m1_do_put_on 1591 1613 1618 1623 1638
+1584 do_move[b3,b4] -> m4_do_move 1585 1586 1587
+1569 do_on_table[b4] -> m3_do_on_table 1570 1571
+1564 do_clear[b4] -> m6_do_clear 1565 1566
+1559 do_clear[b3] -> m6_do_clear 1560 1561
+1536 do_put_on[b3,b4] -> m1_do_put_on 1537 1559 1564 1569 1584
+1530 do_move[b4,b19] -> m4_do_move 1531 1532 1533
+1515 do_on_table[b19] -> m3_do_on_table 1516 1517
+1510 do_clear[b19] -> m6_do_clear 1511 1512
+1505 do_clear[b4] -> m6_do_clear 1506 1507
+1482 do_put_on[b4,b19] -> m1_do_put_on 1483 1505 1510 1515 1530
+1476 do_move[b19,b35] -> m4_do_move 1477 1478 1479
+1467 do_on_table[b35] -> m3_do_on_table 1468 1469
+1458 do_clear[b35] -> m6_do_clear 1459 1460
+1453 do_clear[b19] -> m6_do_clear 1454 1455
+1430 do_put_on[b19,b35] -> m1_do_put_on 1431 1453 1458 1467 1476
+1424 do_move[b35,b15] -> m4_do_move 1425 1426 1427
+1410 do_on_table[b15] -> m3_do_on_table 1411 1412
+1405 do_clear[b15] -> m6_do_clear 1406 1407
+1401 do_clear[b35] -> m6_do_clear 1402 1403
+1373 do_put_on[b35,b15] -> m1_do_put_on 1374 1401 1405 1410 1424
+1367 do_move[b15,b23] -> m4_do_move 1368 1369 1370
+1362 do_on_table[b23] -> m3_do_on_table 1363 1364
+1352 do_clear[b23] -> m6_do_clear 1353 1354
+1347 do_clear[b15] -> m6_do_clear 1348 1349
+1324 do_put_on[b15,b23] -> m1_do_put_on 1325 1347 1352 1362 1367
+1318 do_move[b23,b9] -> m4_do_move 1319 1320 1321
+1308 do_on_table[b9] -> m3_do_on_table 1309 1310
+1298 do_clear[b9] -> m6_do_clear 1299 1300
+1293 do_clear[b23] -> m6_do_clear 1294 1295
+1270 do_put_on[b23,b9] -> m1_do_put_on 1271 1293 1298 1308 1318
+1264 do_move[b9,b12] -> m4_do_move 1265 1266 1267
+1249 do_on_table[b12] -> m3_do_on_table 1250 1251
+1244 do_clear[b12] -> m6_do_clear 1245 1246
+1239 do_clear[b9] -> m6_do_clear 1240 1241
+1211 do_put_on[b9,b12] -> m1_do_put_on 1212 1239 1244 1249 1264
+1205 do_move[b12,b14] -> m4_do_move 1206 1207 1208
+1200 do_on_table[b14] -> m3_do_on_table 1201 1202
+1190 do_clear[b14] -> m6_do_clear 1191 1192
+1185 do_clear[b12] -> m6_do_clear 1186 1187
+1157 do_put_on[b12,b14] -> m1_do_put_on 1158 1185 1190 1200 1205
+1151 do_move[b14,b20] -> m4_do_move 1152 1153 1154
+1146 do_on_table[b20] -> m3_do_on_table 1147 1148
+1136 do_clear[b20] -> m6_do_clear 1137 1138
+1131 do_clear[b14] -> m6_do_clear 1132 1133
+1114 do_put_on[b14,b20] -> m1_do_put_on 1115 1131 1136 1146 1151
+1108 do_move[b20,b29] -> m4_do_move 1109 1110 1111
+1096 do_on_table[b29] -> m3_do_on_table 1097 1098
+1086 do_clear[b29] -> m6_do_clear 1087 1088
+1081 do_clear[b20] -> m6_do_clear 1082 1083
+1064 do_put_on[b20,b29] -> m1_do_put_on 1065 1081 1086 1096 1108
+1058 do_move[b29,b34] -> m4_do_move 1059 1060 1061
+1046 do_on_table[b34] -> m3_do_on_table 1047 1048
+1036 do_clear[b34] -> m6_do_clear 1037 1038
+1031 do_clear[b29] -> m6_do_clear 1032 1033
+1008 do_put_on[b29,b34] -> m1_do_put_on 1009 1031 1036 1046 1058
+1002 do_move[b34,b6] -> m4_do_move 1003 1004 1005
+992 do_on_table[b6] -> m3_do_on_table 993 994
+982 do_clear[b6] -> m6_do_clear 983 984
+977 do_clear[b34] -> m6_do_clear 978 979
+954 do_put_on[b34,b6] -> m1_do_put_on 955 977 982 992 1002
+948 do_move[b6,b13] -> m4_do_move 949 950 951
+933 do_on_table[b13] -> m3_do_on_table 934 935
+928 do_clear[b13] -> m6_do_clear 929 930
+923 do_clear[b6] -> m6_do_clear 924 925
+896 do_put_on[b6,b13] -> m1_do_put_on 897 923 928 933 948
+890 do_move[b13,b28] -> m4_do_move 891 892 893
+880 do_on_table[b28] -> m3_do_on_table 881 882
+876 do_clear[b28] -> m6_do_clear 877 878
+871 do_clear[b13] -> m6_do_clear 872 873
+848 do_put_on[b13,b28] -> m1_do_put_on 849 871 876 880 890
+842 do_move[b28,b10] -> m4_do_move 843 844 845
+828 do_on_table[b10] -> m3_do_on_table 829 830
+823 do_clear[b10] -> m6_do_clear 824 825
+819 do_clear[b28] -> m6_do_clear 820 821
+755 do_put_on[b28,b10] -> m1_do_put_on 756 819 823 828 842
+749 do_move[b10,b16] -> m4_do_move 750 751 752
+744 do_on_table[b16] -> m3_do_on_table 745 746
+739 do_clear[b16] -> m6_do_clear 740 741
+730 do_clear[b10] -> m6_do_clear 731 732
+728 do_put_on[b10,b16] -> m1_do_put_on 729 730 739 744 749
+724 m5_do_move_splitted_1[b16] -> _splitting_method_m5_do_move_splitted_1 725
+721 do_move[b16,b18] -> m5_do_move 722 724 726
+715 do_on_table[b18] -> m3_do_on_table 716 717
+710 do_clear[b18] -> m6_do_clear 711 712
+703 do_clear[b25] -> m6_do_clear 704 705
+696 do_clear[b16] -> m7_do_clear 697 703 706 707
+676 do_put_on[b16,b18] -> m1_do_put_on 677 696 710 715 721
+670 do_move[b18,b7] -> m4_do_move 671 672 673
+666 do_on_table[b7] -> m3_do_on_table 667 668
+656 do_clear[b7] -> m6_do_clear 657 658
+651 do_clear[b18] -> m6_do_clear 652 653
+628 do_put_on[b18,b7] -> m1_do_put_on 629 651 656 666 670
+622 do_move[b2,b22] -> m4_do_move 623 624 625
+608 do_on_table[b22] -> m3_do_on_table 609 610
+603 do_clear[b22] -> m6_do_clear 604 605
+599 do_clear[b2] -> m6_do_clear 600 601
+582 do_put_on[b2,b22] -> m1_do_put_on 583 599 603 608 622
+576 do_move[b22,b36] -> m4_do_move 577 578 579
+559 do_on_table[b36] -> m3_do_on_table 560 561
+554 do_clear[b36] -> m6_do_clear 555 556
+521 do_clear[b22] -> m6_do_clear 522 523
+515 do_put_on[b22,b36] -> m1_do_put_on 516 521 554 559 576
+509 do_move[b36,b17] -> m4_do_move 510 511 512
+504 do_on_table[b17] -> m3_do_on_table 505 506
+499 do_clear[b17] -> m6_do_clear 500 501
+493 do_clear[b35] -> m6_do_clear 494 495
+487 do_clear[b36] -> m7_do_clear 488 493 496 497
+462 do_put_on[b36,b17] -> m1_do_put_on 463 487 499 504 509
+456 do_move[b17,b11] -> m4_do_move 457 458 459
+442 do_on_table[b11] -> m3_do_on_table 443 444
+438 do_clear[b11] -> m6_do_clear 439 440
+433 do_clear[b17] -> m6_do_clear 434 435
+410 do_put_on[b17,b11] -> m1_do_put_on 411 433 438 442 456
+404 do_move[b11,b8] -> m4_do_move 405 406 407
+391 do_on_table[b8] -> m3_do_on_table 392 393
+387 do_clear[b8] -> m6_do_clear 388 389
+383 do_clear[b11] -> m6_do_clear 384 385
+355 do_put_on[b11,b8] -> m1_do_put_on 356 383 387 391 404
+349 do_move[b8,b5] -> m4_do_move 350 351 352
+344 do_on_table[b5] -> m3_do_on_table 345 346
+335 do_clear[b5] -> m6_do_clear 336 337
+331 do_clear[b8] -> m6_do_clear 332 333
+308 do_put_on[b8,b5] -> m1_do_put_on 309 331 335 344 349
+302 do_move[b5,b27] -> m4_do_move 303 304 305
+287 do_on_table[b27] -> m3_do_on_table 288 289
+282 do_clear[b27] -> m6_do_clear 283 284
+277 do_clear[b5] -> m6_do_clear 278 279
+263 do_put_on[b5,b27] -> m1_do_put_on 264 277 282 287 302
+257 do_move[b27,b37] -> m4_do_move 258 259 260
+252 do_on_table[b37] -> m3_do_on_table 253 254
+248 do_clear[b37] -> m6_do_clear 249 250
+243 do_clear[b27] -> m6_do_clear 244 245
+241 do_put_on[b27,b37] -> m1_do_put_on 242 243 248 252 257
+236 m5_do_move_splitted_1[b37] -> _splitting_method_m5_do_move_splitted_1 237
+234 do_move[b37,b32] -> m5_do_move 235 236 238
+198 do_clear[b23] -> m6_do_clear 199 200
+196 do_clear[b20] -> m7_do_clear 197 198 201 202
+191 do_clear[b15] -> m7_do_clear 192 196 203 204
+188 do_clear[b2] -> m7_do_clear 189 191 205 206
+184 do_clear[b27] -> m7_do_clear 185 188 207 208
+181 do_clear[b22] -> m7_do_clear 182 184 209 210
+176 do_clear[b19] -> m7_do_clear 177 181 211 212
+173 do_clear[b33] -> m7_do_clear 174 176 213 214
+169 do_clear[b18] -> m7_do_clear 170 173 215 216
+165 do_clear[b9] -> m7_do_clear 166 169 217 218
+161 do_clear[b17] -> m7_do_clear 162 165 219 220
+158 do_clear[b24] -> m7_do_clear 159 161 221 222
+154 do_clear[b10] -> m7_do_clear 155 158 223 224
+151 do_clear[b3] -> m7_do_clear 152 154 225 226
+147 do_clear[b32] -> m7_do_clear 148 151 227 228
+141 do_clear[b37] -> m6_do_clear 142 143
+139 do_put_on[b37,b32] -> <m1_do_put_on;do_on_table[b32];m3_do_on_table;3;0,1,2,-1,-2,4> 140 141 147 229 230 234
+135 m5_do_move_splitted_1[b26] -> _splitting_method_m5_do_move_splitted_1 136
+132 do_move[b26,b21] -> m5_do_move 133 135 137
+124 do_on_table[b21] -> m3_do_on_table 125 126
+119 do_clear[b21] -> m6_do_clear 120 121
+105 do_clear[b11] -> m6_do_clear 106 107
+103 do_clear[b14] -> m7_do_clear 104 105 108 109
+99 do_clear[b13] -> m7_do_clear 100 103 110 111
+94 do_clear[b6] -> m7_do_clear 95 99 112 113
+90 do_clear[b4] -> m7_do_clear 91 94 114 115
+87 do_clear[b26] -> m7_do_clear 88 90 116 117
+80 do_put_on[b26,b21] -> m1_do_put_on 81 87 119 124 132
+74 do_move[b21,b1] -> m4_do_move 75 76 77
+69 do_on_table[b1] -> m3_do_on_table 70 71
+64 do_clear[b1] -> m6_do_clear 65 66
+56 do_clear[b31] -> m6_do_clear 57 58
+54 do_clear[b5] -> m7_do_clear 55 56 59 60
+49 do_clear[b21] -> m7_do_clear 50 54 61 62
+46 do_put_on[b21,b1] -> m1_do_put_on 47 49 64 69 74
+42 m5_do_move_splitted_1[b1] -> _splitting_method_m5_do_move_splitted_1 43
+39 do_move[b1,b30] -> m5_do_move 40 42 44
+30 do_clear[b8] -> m6_do_clear 31 32
+28 do_clear[b30] -> m7_do_clear 29 30 33 34
+16 do_clear[b28] -> m6_do_clear 17 18
+14 do_clear[b7] -> m7_do_clear 15 16 19 20
+10 do_clear[b12] -> m7_do_clear 11 14 21 22
+5 do_clear[b1] -> m7_do_clear 6 10 23 24
+2 do_put_on[b1,b30] -> <m1_do_put_on;do_on_table[b30];m3_do_on_table;3;0,1,2,-1,-2,4> 3 5 28 35 36 39
+0 __top[] -> __top_method 2 46 80 139 241 263 308 355 410 462 515 582 628 676 728 755 848 896 954 1008 1064 1114 1157 1211 1270 1324 1373 1430 1482 1536 1590 1644 1696
+<==
+
+RUNWATCH_RESULT EXIT RETVAL 0 TIME_SECS 0.222656 MEMPEAK_KBS 932

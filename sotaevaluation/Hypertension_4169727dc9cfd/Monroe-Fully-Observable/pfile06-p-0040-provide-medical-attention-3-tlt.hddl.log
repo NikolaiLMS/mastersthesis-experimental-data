@@ -1,0 +1,36 @@
+----------------------Tasks-----------------------
+0 tlt
+1 invisible_goal
+---------------------Planning---------------------
+Time: 633.3661897182465s
+-----------------------Plan-----------------------
+==>
+2 shop_methodm_provide_medical_attention_in_hospital_precondition person_208195 light_burn strong
+5 shop_methodm_get_to_as_cargo_precondition person_208195 strong park_ridge plow1
+10 shop_methodm_get_to_vehicle_gets_driven_precondition plow1 park_ridge marketplace pdriver2
+12 shop_methodm_drive_to_precondition plow1 marketplace pdriver2
+14 p_1navegate_vehicle
+15 shop_methodm_get_in_ambulatory_person_precondition person_208195 park_ridge plow1
+17 p_2climb_in
+18 shop_methodm_get_to_vehicle_gets_driven_precondition plow1 strong park_ridge pdriver2
+20 shop_methodm_drive_to_precondition plow1 park_ridge pdriver2
+22 p_3navegate_vehicle
+23 climb_out person_208195 plow1 strong
+4 treat_in_hospital person_208195 strong
+root 0
+0 tlt  -> m_tlt_provide_medical_attention 1
+1 provide_medical_attention person_208195 -> m_provide_medical_attention_in_hospital 2 3 4
+3 get_to person_208195 strong -> m_get_to_as_cargo 5 6 7 8 9
+6 get_to plow1 park_ridge -> m_get_to_vehicle_gets_driven 10 11
+11 drive_to pdriver2 plow1 park_ridge -> m_drive_to 12 13
+13 cnavegate_vehicle pdriver2 plow1 park_ridge marketplace -> prefix_1 14
+7 get_in person_208195 plow1 -> m_get_in_ambulatory_person 15 16
+16 cclimb_in person_208195 plow1 park_ridge -> prefix_2 17
+8 get_to plow1 strong -> m_get_to_vehicle_gets_driven 18 19
+19 drive_to pdriver2 plow1 strong -> m_drive_to 20 21
+21 cnavegate_vehicle pdriver2 plow1 strong park_ridge -> prefix_3 22
+9 get_out person_208195 plow1 -> m_get_out_ambulatory_person 23
+<==
+Total time: 633.4022996425629s
+
+RUNWATCH_RESULT EXIT RETVAL 0 TIME_SECS 633.559 MEMPEAK_KBS 24900

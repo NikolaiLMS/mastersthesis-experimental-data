@@ -1,0 +1,129 @@
+    _           _         _
+   \ |         \ |       | |                       
+   | |     __  | |      _| |______                
+   | |     \/  | |     /_   ______\                
+   | |      _  | |   __  | |  ___   ___   ___       
+   | |___  | | | |  / .\ | | / , | |   \ / ·_\    
+   \_____\ |_| |__\ \__/ |_| \___) |_|_| \___\  
+[39mL i l o t a n e  version rls-cadical
+by Dominik Schreiber <dominik.schreiber@kit.edu> 2020-2021
+using SAT solver cadical
+
+0.020 Parser finished.
+0.021 Structures extracted.
+0.022 77 operators and 77 methods created.
+0.034 Mined 66 new reduction preconditions (+6600.0%).
+0.034 Iteration 0.
+0.034 Creating initial layer of size 2
+0.044 Attempting to solve formula with 5 clauses (6 literals) and 1 assumptions
+0.044 Unsolvable at layer 0 -- expanding.
+0.044 Iteration 1.
+0.044 New layer size: 2
+0.044 Instantiating ...
+0.098 Collected 1 relevant facts at this layer
+0.098 Encoding ...
+0.099 Attempting to solve formula with 1065 clauses (2286 literals) and 1 assumptions
+0.099 Unsolvable at layer 1 -- expanding.
+0.099 Iteration 2.
+0.099 New layer size: 2
+0.099 Instantiating ...
+0.101 Retroactively prune reduction (m_tlt_clear_road_tree Q_1,0_point:0_fe43d525445a2e9a Q_1,0_point:1_fe43d525445a2e9a)@(1,0): no children at offset 0
+0.150 Collected 1 relevant facts at this layer
+0.150 Encoding ...
+0.151 Attempting to solve formula with 1235 clauses (2697 literals) and 1 assumptions
+0.151 Unsolvable at layer 2 -- expanding.
+0.151 Iteration 3.
+0.151 New layer size: 7
+0.151 Instantiating ...
+0.153 Retroactively prune reduction (m_provide_medical_attention_simple_on_site Q_1,0_adult:0_c5408f34f4c9a346)@(2,0): no children at offset 0
+0.153 Retroactively prune reduction (m_provide_medical_attention_in_hospital Q_2,0_hospital:0_5a8417e4a4fc0351 Q_1,0_adult:0_c5408f34f4c9a346)@(2,0): no children at offset 0
+0.172 Retroactively prune reduction (m_clear_road_wreck Q_1,0_point:0_fe43d525445a2e9a Q_1,0_point:1_fe43d525445a2e9a)@(2,0): no children at offset 1
+0.228 Collected 49 relevant facts at this layer
+0.228 Encoding ...
+0.232 Attempting to solve formula with 2574 clauses (6190 literals) and 4 assumptions
+0.233 Unsolvable at layer 3 -- expanding.
+0.233 Iteration 4.
+0.233 New layer size: 27
+0.233 Instantiating ...
+0.321 Retroactively prune reduction (m_clean_up_hazard_normal Q_1,0_point:0_fe43d525445a2e9a Q_3,1_hazard_team:0_31c66ac45f6259ea Q_1,0_point:1_fe43d525445a2e9a very_hazardous very_hazardous)@(3,1): no children at offset 2
+0.415 Collected 335 relevant facts at this layer
+0.415 Encoding ...
+0.446 Attempting to solve formula with 25379 clauses (73099 literals) and 21 assumptions
+0.447 Unsolvable at layer 4 -- expanding.
+0.447 Iteration 5.
+0.447 New layer size: 72
+0.447 Instantiating ...
+0.698 Collected 475 relevant facts at this layer
+0.698 Encoding ...
+0.769 Attempting to solve formula with 85794 clauses (246677 literals) and 36 assumptions
+0.779 Unsolvable at layer 5 -- expanding.
+0.779 Iteration 6.
+0.779 New layer size: 178
+0.779 Instantiating ...
+1.109 Collected 585 relevant facts at this layer
+1.109 Encoding ...
+1.283 Attempting to solve formula with 220241 clauses (653613 literals) and 81 assumptions
+1.299 Found a solution at layer 6.
+==>
+23088 SHOP_methodm_shut_off_water_precondition brighton_high brighton roch_water
+23210 p_1Call
+29111 SHOP_methodm_get_to_person_drives_themself_precondition wcrew1 brighton_high wtruck1 pittsford_plaza
+30310 SHOP_methodm_drive_to_precondition wtruck1 pittsford_plaza wcrew1
+30440 navegate_vehicle wcrew1 wtruck1 brighton_high pittsford_plaza
+33777 SHOP_methodm_get_to_already_there_precondition ccrew1 brighton_high
+35972 place_cones ccrew1
+37481 SHOP_methodm_get_to_already_there_precondition backhoe1 brighton_high
+37515 dig backhoe1 brighton_high
+37519 replace_pipe wcrew1 brighton_high henrietta_dump
+37523 SHOP_methodm_get_to_already_there_precondition backhoe1 brighton_high
+37558 fill_in backhoe1 brighton_high
+37560 SHOP_methodm_get_to_already_there_precondition ccrew1 brighton_high
+39754 pickup_cones ccrew1
+39872 SHOP_methodm_turn_on_water_precondition brighton_high brighton roch_water
+41240 call roch_water
+root 10
+10 tlt -> m_tlt_fix_water_main 68
+68 fix_water_main brighton_high henrietta_dump -> m_fix_water_main 101 173 236
+101 shut_off_water brighton_high henrietta_dump -> m_shut_off_water 23088 23209
+173 repair_pipe brighton_high henrietta_dump -> m_repair_pipe 2585 2911 3284 37519 3957 3960
+236 turn_on_water brighton_high henrietta_dump -> m_turn_on_water 39872 41239
+2585 get_to wcrew1 brighton_high -> m_get_to_person_drives_themself 29111 11077
+2911 set_up_cones brighton_high henrietta_dump -> m_set_up_cones 33776 35972
+3284 open_hole brighton_high henrietta_dump -> m_open_hole 37480 37515
+3957 close_hole brighton_high henrietta_dump -> m_close_hole 37522 37558
+3960 take_down_cones brighton_high henrietta_dump -> m_take_down_cones 37559 39754
+11077 drive_to wcrew1 wtruck1 brighton_high -> m_drive_to 30310 30440
+23209 ccall roch_water -> prefix_1 23210
+33776 get_to ccrew1 brighton_high -> m_get_to_already_there 33777
+37480 get_to backhoe1 brighton_high -> m_get_to_already_there 37481
+37522 get_to backhoe1 brighton_high -> m_get_to_already_there 37523
+37559 get_to ccrew1 brighton_high -> m_get_to_already_there 37560
+41239 ccall roch_water -> regular_1 41240
+<==
+1.307 End of solution plan. (counted length of 16)
+1.307 Total amount of clauses encoded: 220241
+1.307 - directframeaxioms : 137534 cls
+1.307 - qfactsemantics : 38419 cls
+1.307 - reductionconstraints : 17869 cls
+1.307 - indirectframeaxioms : 11414 cls
+1.307 - actionconstraints : 7488 cls
+1.307 - atmostoneelement : 2410 cls
+1.307 - expansions : 1571 cls
+1.307 - predecessors : 1168 cls
+1.307 - substitutionconstraints : 1066 cls
+1.307 - truefacts : 585 cls
+1.307 - qconstequality : 484 cls
+1.307 - actioneffects : 216 cls
+1.307 - forbiddenoperations : 11 cls
+1.307 - qtypeconstraints : 4 cls
+1.307 - axiomaticops : 2 cls
+1.307 # instantiated positions: 289
+1.307 # instantiated actions: 837
+1.307 # instantiated reductions: 341
+1.307 # introduced pseudo-constants: 289
+1.307 # retroactive prunings: 5
+1.307 # retroactively pruned operations: 18
+1.307 # dominated operations: 32
+1.307 Exiting happily (no cleaning up).
+
+RUNWATCH_RESULT EXIT RETVAL 0 TIME_SECS 1.3241 MEMPEAK_KBS 104224

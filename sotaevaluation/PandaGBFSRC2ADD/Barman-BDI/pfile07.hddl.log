@@ -1,0 +1,320 @@
+pandaPIparser is configured as follows
+  Colors in output: true
+  Mode: parsing mode
+  Parameter splitting: true
+  Conditional effects: exponential encoding
+  Disjunctive preconditions as HTN: false
+  Replace goal with action: false
+  Output: pandaPI format
+General Options
+  Print timings: false
+  Quiet mode: false
+Inference Options
+  H2 mutexes: false
+  FAM groups: false
+Transformation Options
+  Add zero-cost no-op to empty methods: true
+  Remove duplicate actions: true
+  Remove useless literals: true
+  Expand abstract tasks with one method: true
+  Remove empty method preconditions: true
+  Two regularisation: false
+  Compile negative SAS variables: false
+Runtime Optimisations
+  Hierarchy Typing: true
+  Future Caching: false
+  Static Precondition Checking: false
+Output Options
+  Panda planner format: true
+  HDDL: false
+  SAS for Fast Downward (without hierarchy): false
+Output Formatting Options
+  Output only SAS+ variables: false
+  SAS+ delete mode: as input
+Reading input from /home/schnell/lilotane/sotaevaluation//PandaGBFS_runwatchtime_timeout1800_2021-11-16_21:14:14/runwatch_log/322/322.parsed.
+Writing output to /home/schnell/lilotane/sotaevaluation//PandaGBFS_runwatchtime_timeout1800_2021-11-16_21:14:14/runwatch_log/322/322.sas.
+Writing output to standard output.
+Parsing done.
+Conditional Effects expanded
+done.
+Starting Hierarchy Typing
+Total 0.652ms
+Contains 0.079ms
+Restrict 0.095ms
+MPrep 0.099ms
+Finished Hierarchy Typing
+Running PG.
+Process actions without preconditions
+Done.
+ ---> Disabling potentially consistent extension checking for action:           8 (pour-shot-to-clean-shaker)
+ ---> Disabling potentially consistent extension checking for action:           1 (clean-shot)
+ ---> Disabling potentially consistent extension checking for action:           4 (empty-shot)
+ ---> Disabling potentially consistent extension checking for action:           9 (pour-shot-to-used-shaker)
+Returning from runGpg().
+PG done. Postprocessing
+PG postprocessing done.
+Calculated [1219] grounded tasks and [279] reachable facts.
+Running TDG.
+Process actions without preconditions
+Done.
+ ---> Disabling potentially consistent extension checking for action:           31 (_splitting_method_AddIngredientToShot_splitted_9)
+ ---> Disabling potentially consistent extension checking for action:           11 (_splitting_method_CleanEmptyShot_splitted_4)
+ ---> Disabling potentially consistent extension checking for action:           21 (_splitting_method__splitting_method_AddIngredientToEmptyShaker_splitted_6_splitted_15)
+ ---> Disabling potentially consistent extension checking for action:           24 (_splitting_method__splitting_method_AddIngredientToUsedShaker_splitted_7_splitted_16)
+ ---> Disabling potentially consistent extension checking for action:           32 (_splitting_method_AddIngredientToShot_splitted_17)
+ ---> Disabling potentially consistent extension checking for action:           9 (_splitting_method_CleanFullShot_splitted_12)
+Returning from runGpg().
+TDG done.
+Calculated [2028] grounded tasks and [1416] grounded decomposition methods.
+Performing DFS.
+DFS done.
+After DFS: 1189 tasks, 873 methods.
+Grounded PG:
+Input was [743, 1189], output was [533, 214].
+Grounded TDG:
+Input was [873, 533], output was [663, 533].
+Simplifying instance.
+Removing useless facts/literals
+Removing method precondition actions whose precondition is empty
+Expanding abstract tasks with only one method
+Starting duplicate elimination.
+Data structure build.
+82 duplicates found.
+Duplicates replaced in methods.
+Further Mutex Groups: 0 strict 0 non strict
+Writing instance to output.
+Final Statistics: F 139 S 0 SC 0 SM 0 NSM 0 I 0 P 290 S 142 A 196 M 503
+Exiting.
+Random seed: 42
+Time limit: 1800 seconds
+Reading input from /home/schnell/lilotane/sotaevaluation//PandaGBFS_runwatchtime_timeout1800_2021-11-16_21:14:14/runwatch_log/322/322.sas.
+- State has 139 bits divided into 139 mutex groups.
+- Domain contains 432 actions.
+- Domain contains 628 tasks.
+- Domain contains 503 methods.
+- The initial state contains 63 set bits.
+- The initial task is "__top[]".
+- State-based goal contains 0 bits.
+- Instance is totally-ordered: yes
+- Instance has unique paths: yes
+- Instance is parallel sequences: yes
+Calculate SCCs...
+- Number of SCCs: 628
+- The problem is acyclic
+Selected Planning Algorithm: progression searchParsing heuristics ...
+Number of specified heuristics: 1
+- the option "store cuts" of the RC heuristic can only be used with the inner heuristic LM-Cut. It will be disabled.
+- Calculating minimal implied costs and distances (0 ms)
+Heuristic #0 = hhRC2(add;distance;correct count)
+Search config:
+ - type: path cost
+ - weight: 1
+ - suboptimal: false
+Visited List configured
+- mode: total order
+- hashs to use: state task task-sequence
+- memory information: topological ordering
+- Visited list allows deletion of search nodes: true
+Search Configuration
+- Using JAIR 2020 progression algorithm
+- Search is stopped after first solution is found.
+- A* Search
+- Distance G is "modification depth"
+   1s visitime    0.03s generated nodes     25012 nodes/sec   21580 cur h  142 mod.depth   16 inserts      4749 dups       330 size      4419 hash fail    330 hash buckets   4419
+Search Results
+- Search time 1.33 seconds
+- Visited list time 0.03 seconds
+- Visited list inserts 5465
+- Visited list pruned 348
+- Visited list contains 5117
+- Visited list hash collisions 348
+- Visited list used hash buckets 5117
+- Generated 28515 search nodes
+  Calculated heuristic for 21773 nodes
+  One modifications 2093
+  Effectless actions 4649
+- including 2093 one modification actions
+- including 0 one modification methods
+- and       4649 progressions of effectless actions
+- Generated 16321 nodes per second
+- Final fringe contains 444 nodes
+- Status: Solved
+- Found solution of length 172
+- Total costs of actions: 28
+==>
+3 __method_precondition_MakeAndPourCocktail[shot4,cocktail1]
+7 __method_precondition_CleanShakerNull[shaker1]
+12 __method_precondition_AddIngredientToEmptyShaker[shaker1,level1,level1]
+31 __method_precondition_AddIngredientToShot_base_base[shot2,ingredient3]
+55 __method_precondition_CleanShotNull[shot2]
+113 __method_precondition_PickUp[left,shot2]
+267 __method_precondition_HandEmptyNull[right]
+271 __method_precondition_OnTableNull[shot2]
+272 grasp[left,shot2]
+282 __method_precondition_HandEmptyNull[right]
+283 fill-shot[shot2,ingredient3,left,right,dispenser3]
+287 __method_precondition_EmptyHand[left,shot2]
+288 pour-shot-to-clean-shaker[shot2,ingredient3,shaker1,left,level1,level1]
+293 __method_precondition_AddIngredientToUsedShaker[shaker1,level1,level1]
+619 __method_precondition_AddIngredientToShot_base_base[shot6,ingredient4]
+767 __method_precondition_CleanShotNull[shot6]
+813 __method_precondition_PickUp[right,shot6]
+900 __method_precondition_HandEmptyNull[right]
+1660 __method_precondition_OnTableNull[shot6]
+1661 grasp[right,shot6]
+1667 __method_precondition_EmptyHand[left,shot2]
+1668 drop[left,shot2]
+1669 fill-shot[shot6,ingredient4,right,left,dispenser4]
+1677 __method_precondition_EmptyHand[right,shot6]
+1678 pour-shot-to-used-shaker[shot6,ingredient4,shaker1,right,level1,level1]
+1687 __method_precondition_PickUp[right,shaker1]
+1701 __method_precondition_EmptyHand[right,shot6]
+1702 drop[right,shot6]
+1713 __method_precondition_OnTableNull[shaker1]
+1714 grasp[right,shaker1]
+1723 __method_precondition_HandEmptyNull[left]
+1724 shake[cocktail1,ingredient3,ingredient4,shaker1,right,left]
+1727 __method_precondition_CleanShotNull[shot4]
+1738 __method_precondition_EmptyHand[right,shaker1]
+1742 __method_precondition_pour_shaker_to_shot_action[shaker1,shot4,cocktail1,level1,right,level1]
+1743 pour-shaker-to-shot[cocktail1,shot4,right,shaker1,level1,level1]
+1746 __method_precondition_MakeAndPourCocktail[shot5,cocktail2]
+3465 __method_precondition_CleanFullShaker_base_base[shaker1]
+3498 __method_precondition_EmptyHand[right,shaker1]
+17541 __method_precondition_CleanFullShaker_split[shaker1,level1,cocktail1,level1]
+17542 empty-shaker[right,shaker1,cocktail1,level1,level1]
+25338 __method_precondition_HandEmptyNull[left]
+25339 clean-shaker[shaker1,right,left]
+25403 __method_precondition_AddIngredientToEmptyShaker[shaker1,level1,level1]
+26204 __method_precondition_AddIngredientToShot_base_base[shot5,ingredient5]
+26979 __method_precondition_CleanShotNull[shot5]
+27259 __method_precondition_PickUp[right,shot5]
+28130 __method_precondition_EmptyHand[right,shaker1]
+28131 drop[right,shaker1]
+28144 __method_precondition_OnTableNull[shot5]
+28145 grasp[right,shot5]
+28154 __method_precondition_HandEmptyNull[left]
+28155 fill-shot[shot5,ingredient5,right,left,dispenser5]
+28160 __method_precondition_EmptyHand[right,shot5]
+28161 pour-shot-to-clean-shaker[shot5,ingredient5,shaker1,right,level1,level1]
+28166 __method_precondition_AddIngredientToUsedShaker[shaker1,level1,level1]
+28175 __method_precondition_AddIngredientToShot_base_base[shot5,ingredient2]
+28183 __method_precondition_CleanEmptyShot_base[shot5]
+28187 __method_precondition_EmptyHand[right,shot5]
+28192 __method_precondition_CleanEmptyShot_split[shot5,right,ingredient5,left]
+28203 __method_precondition_HandEmptyNull[left]
+28204 clean-shot[shot5,ingredient5,right,left]
+28209 __method_precondition_EmptyHand[right,shot5]
+28219 __method_precondition_HandEmptyNull[left]
+28220 fill-shot[shot5,ingredient2,right,left,dispenser2]
+28225 __method_precondition_EmptyHand[right,shot5]
+28226 pour-shot-to-used-shaker[shot5,ingredient2,shaker1,right,level1,level1]
+28232 __method_precondition_PickUp[left,shaker1]
+28244 __method_precondition_HandEmptyNull[left]
+28293 __method_precondition_OnTableNull[shaker1]
+28294 grasp[left,shaker1]
+28299 __method_precondition_EmptyHand[right,shot5]
+28300 drop[right,shot5]
+28301 shake[cocktail2,ingredient5,ingredient2,shaker1,left,right]
+28314 __method_precondition_CleanEmptyShot_base[shot5]
+28319 __method_precondition_PickUp[right,shot5]
+28332 __method_precondition_HandEmptyNull[right]
+28362 __method_precondition_OnTableNull[shot5]
+28363 grasp[right,shot5]
+28369 __method_precondition_CleanEmptyShot_split[shot5,right,ingredient2,left]
+28373 __method_precondition_HoldingNull[left,shaker1]
+28374 drop[left,shaker1]
+28375 clean-shot[shot5,ingredient2,right,left]
+28386 __method_precondition_PickUp[left,shaker1]
+28487 __method_precondition_HandEmptyNull[left]
+28508 __method_precondition_OnTableNull[shaker1]
+28509 grasp[left,shaker1]
+28512 __method_precondition_pour_shaker_to_shot_action[shaker1,shot5,cocktail2,level1,left,level1]
+28513 pour-shaker-to-shot[cocktail2,shot5,left,shaker1,level1,level1]
+root 0
+28511 DoPourShakerToShot[shaker1,shot5,cocktail2] -> pour_shaker_to_shot_action 28512 28513
+28507 AchieveOnTable[shaker1] -> OnTableNull 28508
+28486 AchieveHandEmpty[left] -> HandEmptyNull 28487
+28385 AchieveHolding[left,shaker1] -> PickUp 28386 28486 28507 28509
+28383 MakeAndPourCocktail_splitted_8[shaker1] -> _splitting_method_MakeAndPourCocktail_splitted_8 28385
+28372 AchieveHandEmpty[left] -> EmptyHand 28373 28374
+28368 CleanEmptyShot_splitted_4[shot5,right] -> _splitting_method_CleanEmptyShot_splitted_4 28369 28372 28375
+28361 AchieveOnTable[shot5] -> OnTableNull 28362
+28331 AchieveHandEmpty[right] -> HandEmptyNull 28332
+28318 AchieveHolding[right,shot5] -> PickUp 28319 28331 28361 28363
+28316 CleanEmptyShot_splitted_13[shot5] -> _splitting_method_CleanEmptyShot_splitted_13 28318 28368
+28313 AchieveCleanShot[shot5] -> CleanEmptyShot 28314 28316
+28298 AchieveHandEmpty[right] -> EmptyHand 28299 28300
+28292 AchieveOnTable[shaker1] -> OnTableNull 28293
+28243 AchieveHandEmpty[left] -> HandEmptyNull 28244
+28231 AchieveHolding[left,shaker1] -> PickUp 28232 28243 28292 28294
+28228 MakeCocktail_splitted_14[shaker1,cocktail2,ingredient5,ingredient2] -> <_splitting_method_MakeCocktail_splitted_14;MakeCocktail_splitted_5[cocktail2,ingredient5,ingredient2,shaker1,left];_splitting_method_MakeCocktail_splitted_5;1;0,-1,-2> 28231 28298 28301
+28224 AchieveHolding[right,shot5] -> HoldingNull 28225
+28223 _splitting_method_AddIngredientToUsedShaker_splitted_7_splitted_16[shot5,ingredient2,shaker1,level1,level1] -> _splitting_method__splitting_method_AddIngredientToUsedShaker_splitted_7_splitted_16 28224 28226
+28218 AchieveHandEmpty[left] -> HandEmptyNull 28219
+28208 AchieveHolding[right,shot5] -> HoldingNull 28209
+28207 AddIngredientToShot_splitted_20[shot5,ingredient2] -> <<_splitting_method_AddIngredientToShot_splitted_20;AddIngredientToShot_splitted_17[right,shot5,ingredient2];_splitting_method_AddIngredientToShot_splitted_17;1;0,-1,-2>;AddIngredientToShot_splitted_9[shot5,ingredient2,right,left];_splitting_method_AddIngredientToShot_splitted_9;2;0,1,-1> 28208 28218 28220
+28202 AchieveHandEmpty[left] -> HandEmptyNull 28203
+28191 CleanEmptyShot_splitted_4[shot5,right] -> _splitting_method_CleanEmptyShot_splitted_4 28192 28202 28204
+28186 AchieveHolding[right,shot5] -> HoldingNull 28187
+28185 CleanEmptyShot_splitted_13[shot5] -> _splitting_method_CleanEmptyShot_splitted_13 28186 28191
+28182 AchieveCleanShot[shot5] -> CleanEmptyShot 28183 28185
+28174 AchieveContainsShotIngredient[shot5,ingredient2] -> AddIngredientToShot 28175 28182 28207
+28172 AddIngredientToUsedShaker_splitted_7[ingredient2,shaker1,level1,level1] -> _splitting_method_AddIngredientToUsedShaker_splitted_7 28174 28223
+28165 AchieveContainsShakerIngredient[shaker1,ingredient2] -> AddIngredientToUsedShaker 28166 28172
+28159 AchieveHolding[right,shot5] -> HoldingNull 28160
+28158 _splitting_method_AddIngredientToEmptyShaker_splitted_6_splitted_15[shot5,ingredient5,shaker1,level1,level1] -> _splitting_method__splitting_method_AddIngredientToEmptyShaker_splitted_6_splitted_15 28159 28161
+28153 AchieveHandEmpty[left] -> HandEmptyNull 28154
+28143 AchieveOnTable[shot5] -> OnTableNull 28144
+28129 AchieveHandEmpty[right] -> EmptyHand 28130 28131
+27258 AchieveHolding[right,shot5] -> PickUp 27259 28129 28143 28145
+26988 AddIngredientToShot_splitted_20[shot5,ingredient5] -> <<_splitting_method_AddIngredientToShot_splitted_20;AddIngredientToShot_splitted_17[right,shot5,ingredient5];_splitting_method_AddIngredientToShot_splitted_17;1;0,-1,-2>;AddIngredientToShot_splitted_9[shot5,ingredient5,right,left];_splitting_method_AddIngredientToShot_splitted_9;2;0,1,-1> 27258 28153 28155
+26978 AchieveCleanShot[shot5] -> CleanShotNull 26979
+26203 AchieveContainsShotIngredient[shot5,ingredient5] -> AddIngredientToShot 26204 26978 26988
+26195 AddIngredientToEmptyShaker_splitted_6[ingredient5,shaker1,level1,level1] -> _splitting_method_AddIngredientToEmptyShaker_splitted_6 26203 28158
+25402 AchieveContainsShakerIngredient[shaker1,ingredient5] -> AddIngredientToEmptyShaker 25403 26195
+25337 AchieveHandEmpty[left] -> HandEmptyNull 25338
+17540 CleanFullShaker_splitted_2[right,shaker1] -> _splitting_method_CleanFullShaker_splitted_2 17541 17542
+3497 AchieveHolding[right,shaker1] -> HoldingNull 3498
+3496 CleanFullShaker_splitted_18[shaker1] -> <_splitting_method_CleanFullShaker_splitted_18;CleanFullShaker_splitted_11[shaker1,right];_splitting_method_CleanFullShaker_splitted_11;2;0,1,-1,-2> 3497 17540 25337 25339
+3464 AchieveCleanShaker[shaker1] -> CleanFullShaker 3465 3496
+1939 AchieveContainsShakerCocktail[shaker1,cocktail2] -> <<MakeCocktail;MakeCocktail_splitted_21[shaker1,cocktail2];_splitting_method_MakeCocktail_splitted_21;1;0,-1,-2>;MakeCocktail_splitted_19[shaker1,cocktail2,ingredient5];_splitting_method_MakeCocktail_splitted_19;2;0,1,-1,-2> 3464 25402 28165 28228
+1745 AchieveContainsShotCocktail[shot5,cocktail2] -> MakeAndPourCocktail 1746 1939 28313 28383 28511
+1741 DoPourShakerToShot[shaker1,shot4,cocktail1] -> pour_shaker_to_shot_action 1742 1743
+1737 AchieveHolding[right,shaker1] -> HoldingNull 1738
+1735 MakeAndPourCocktail_splitted_8[shaker1] -> _splitting_method_MakeAndPourCocktail_splitted_8 1737
+1726 AchieveCleanShot[shot4] -> CleanShotNull 1727
+1722 AchieveHandEmpty[left] -> HandEmptyNull 1723
+1712 AchieveOnTable[shaker1] -> OnTableNull 1713
+1700 AchieveHandEmpty[right] -> EmptyHand 1701 1702
+1686 AchieveHolding[right,shaker1] -> PickUp 1687 1700 1712 1714
+1681 MakeCocktail_splitted_14[shaker1,cocktail1,ingredient3,ingredient4] -> <_splitting_method_MakeCocktail_splitted_14;MakeCocktail_splitted_5[cocktail1,ingredient3,ingredient4,shaker1,right];_splitting_method_MakeCocktail_splitted_5;1;0,-1,-2> 1686 1722 1724
+1676 AchieveHolding[right,shot6] -> HoldingNull 1677
+1675 _splitting_method_AddIngredientToUsedShaker_splitted_7_splitted_16[shot6,ingredient4,shaker1,level1,level1] -> _splitting_method__splitting_method_AddIngredientToUsedShaker_splitted_7_splitted_16 1676 1678
+1666 AchieveHandEmpty[left] -> EmptyHand 1667 1668
+1659 AchieveOnTable[shot6] -> OnTableNull 1660
+899 AchieveHandEmpty[right] -> HandEmptyNull 900
+812 AchieveHolding[right,shot6] -> PickUp 813 899 1659 1661
+786 AddIngredientToShot_splitted_20[shot6,ingredient4] -> <<_splitting_method_AddIngredientToShot_splitted_20;AddIngredientToShot_splitted_17[right,shot6,ingredient4];_splitting_method_AddIngredientToShot_splitted_17;1;0,-1,-2>;AddIngredientToShot_splitted_9[shot6,ingredient4,right,left];_splitting_method_AddIngredientToShot_splitted_9;2;0,1,-1> 812 1666 1669
+766 AchieveCleanShot[shot6] -> CleanShotNull 767
+618 AchieveContainsShotIngredient[shot6,ingredient4] -> AddIngredientToShot 619 766 786
+295 AddIngredientToUsedShaker_splitted_7[ingredient4,shaker1,level1,level1] -> _splitting_method_AddIngredientToUsedShaker_splitted_7 618 1675
+292 AchieveContainsShakerIngredient[shaker1,ingredient4] -> AddIngredientToUsedShaker 293 295
+286 AchieveHolding[left,shot2] -> HoldingNull 287
+285 _splitting_method_AddIngredientToEmptyShaker_splitted_6_splitted_15[shot2,ingredient3,shaker1,level1,level1] -> _splitting_method__splitting_method_AddIngredientToEmptyShaker_splitted_6_splitted_15 286 288
+281 AchieveHandEmpty[right] -> HandEmptyNull 282
+270 AchieveOnTable[shot2] -> OnTableNull 271
+266 AchieveHandEmpty[left] -> HandEmptyNull 267
+112 AchieveHolding[left,shot2] -> PickUp 113 266 270 272
+106 AddIngredientToShot_splitted_20[shot2,ingredient3] -> <<_splitting_method_AddIngredientToShot_splitted_20;AddIngredientToShot_splitted_17[left,shot2,ingredient3];_splitting_method_AddIngredientToShot_splitted_17;1;0,-1,-2>;AddIngredientToShot_splitted_9[shot2,ingredient3,left,right];_splitting_method_AddIngredientToShot_splitted_9;2;0,1,-1> 112 281 283
+54 AchieveCleanShot[shot2] -> CleanShotNull 55
+30 AchieveContainsShotIngredient[shot2,ingredient3] -> AddIngredientToShot 31 54 106
+14 AddIngredientToEmptyShaker_splitted_6[ingredient3,shaker1,level1,level1] -> _splitting_method_AddIngredientToEmptyShaker_splitted_6 30 285
+11 AchieveContainsShakerIngredient[shaker1,ingredient3] -> AddIngredientToEmptyShaker 12 14
+6 AchieveCleanShaker[shaker1] -> CleanShakerNull 7
+5 AchieveContainsShakerCocktail[shaker1,cocktail1] -> <<MakeCocktail;MakeCocktail_splitted_21[shaker1,cocktail1];_splitting_method_MakeCocktail_splitted_21;1;0,-1,-2>;MakeCocktail_splitted_19[shaker1,cocktail1,ingredient3];_splitting_method_MakeCocktail_splitted_19;2;0,1,-1,-2> 6 11 292 1681
+2 AchieveContainsShotCocktail[shot4,cocktail1] -> MakeAndPourCocktail 3 5 1726 1735 1741
+0 __top[] -> __top_method 2 1745
+<==
+
+RUNWATCH_RESULT EXIT RETVAL 0 TIME_SECS 1.81055 MEMPEAK_KBS 3676

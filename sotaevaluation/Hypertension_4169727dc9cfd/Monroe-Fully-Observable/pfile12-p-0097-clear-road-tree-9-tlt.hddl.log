@@ -1,0 +1,131 @@
+----------------------Tasks-----------------------
+0 tlt
+1 invisible_goal
+---------------------Planning---------------------
+Time: 386.73637795448303s
+-----------------------Plan-----------------------
+==>
+2 shop_methodm_clear_road_tree_precondition park_ridge twelve_corners tree_546679
+8 shop_methodm_get_to_person_drives_themself_precondition ccrew1 park_ridge backhoe1 airport
+10 shop_methodm_drive_to_precondition backhoe1 airport ccrew1
+12 p_1navegate_vehicle
+13 p_2place_cones
+14 shop_methodm_clear_tree_precondition tree_546679 park_ridge
+18 shop_methodm_get_to_as_cargo_precondition tcrew1 park_ridge rochester_general pvan1
+23 shop_methodm_get_to_vehicle_gets_driven_precondition pvan1 rochester_general airport pu1
+25 shop_methodm_drive_to_precondition pvan1 airport pu1
+27 p_3navegate_vehicle
+28 shop_methodm_get_in_ambulatory_person_precondition tcrew1 rochester_general pvan1
+30 p_4climb_in
+31 shop_methodm_get_to_vehicle_gets_driven_precondition pvan1 park_ridge rochester_general pu1
+33 shop_methodm_drive_to_precondition pvan1 rochester_general pu1
+35 p_5navegate_vehicle
+37 p_6climb_out
+38 p_7cut_tree
+40 shop_methodm_get_to_as_cargo_precondition tree_546679 henrietta_dump park_ridge dtruck1
+45 shop_methodm_get_to_vehicle_gets_driven_precondition dtruck1 park_ridge henrietta_dump tdriver1
+47 shop_methodm_drive_to_precondition dtruck1 henrietta_dump tdriver1
+49 p_8navegate_vehicle
+50 shop_methodm_get_in_load_in_precondition tree_546679 park_ridge dtruck1 pcrew1
+53 shop_methodm_get_to_as_cargo_precondition pcrew1 park_ridge strong backhoe1
+58 shop_methodm_get_to_vehicle_gets_driven_precondition backhoe1 strong park_ridge ccrew1
+60 shop_methodm_drive_to_precondition backhoe1 park_ridge ccrew1
+62 p_9navegate_vehicle
+63 shop_methodm_get_in_ambulatory_person_precondition pcrew1 strong backhoe1
+65 climb_in pcrew1 backhoe1 strong
+66 shop_methodm_get_to_vehicle_gets_driven_precondition backhoe1 park_ridge strong ccrew1
+68 shop_methodm_drive_to_precondition backhoe1 strong ccrew1
+70 navegate_vehicle ccrew1 backhoe1 park_ridge strong
+72 climb_out pcrew1 backhoe1 park_ridge
+52 load pcrew1 tree_546679 dtruck1 park_ridge
+73 shop_methodm_get_to_vehicle_gets_driven_precondition dtruck1 henrietta_dump park_ridge tdriver1
+75 shop_methodm_drive_to_precondition dtruck1 park_ridge tdriver1
+77 navegate_vehicle tdriver1 dtruck1 henrietta_dump park_ridge
+78 shop_methodm_get_out_unload_precondition dtruck1 henrietta_dump ccrew1 tree_546679
+81 shop_methodm_get_to_as_cargo_precondition ccrew1 henrietta_dump park_ridge dtruck1
+86 shop_methodm_get_to_vehicle_gets_driven_precondition dtruck1 park_ridge henrietta_dump tdriver1
+88 shop_methodm_drive_to_precondition dtruck1 henrietta_dump tdriver1
+90 navegate_vehicle tdriver1 dtruck1 park_ridge henrietta_dump
+91 shop_methodm_get_in_ambulatory_person_precondition ccrew1 park_ridge dtruck1
+93 climb_in ccrew1 dtruck1 park_ridge
+94 shop_methodm_get_to_vehicle_gets_driven_precondition dtruck1 henrietta_dump park_ridge tdriver1
+96 shop_methodm_drive_to_precondition dtruck1 park_ridge tdriver1
+98 navegate_vehicle tdriver1 dtruck1 henrietta_dump park_ridge
+100 climb_out ccrew1 dtruck1 henrietta_dump
+80 unload ccrew1 tree_546679 dtruck1 henrietta_dump
+103 shop_methodm_get_to_as_cargo_precondition ccrew1 park_ridge henrietta_dump dtruck1
+108 shop_methodm_get_to_already_there_precondition dtruck1 henrietta_dump
+109 shop_methodm_get_in_ambulatory_person_precondition ccrew1 henrietta_dump dtruck1
+111 climb_in ccrew1 dtruck1 henrietta_dump
+112 shop_methodm_get_to_vehicle_gets_driven_precondition dtruck1 park_ridge henrietta_dump tdriver1
+114 shop_methodm_drive_to_precondition dtruck1 henrietta_dump tdriver1
+116 navegate_vehicle tdriver1 dtruck1 park_ridge henrietta_dump
+118 climb_out ccrew1 dtruck1 park_ridge
+102 pickup_cones ccrew1
+root 0
+0 tlt  -> m_tlt_clear_road_tree 1
+1 clear_road_tree park_ridge twelve_corners -> m_clear_road_tree 2 3 4 5
+3 set_up_cones park_ridge twelve_corners -> m_set_up_cones 6 7
+6 get_to ccrew1 park_ridge -> m_get_to_person_drives_themself 8 9
+9 drive_to ccrew1 backhoe1 park_ridge -> m_drive_to 10 11
+11 cnavegate_vehicle ccrew1 backhoe1 park_ridge airport -> prefix_1 12
+7 cplace_cones ccrew1 -> prefix_2 13
+4 clear_tree tree_546679 -> m_clear_tree 14 15 16 17
+15 get_to tcrew1 park_ridge -> m_get_to_as_cargo 18 19 20 21 22
+19 get_to pvan1 rochester_general -> m_get_to_vehicle_gets_driven 23 24
+24 drive_to pu1 pvan1 rochester_general -> m_drive_to 25 26
+26 cnavegate_vehicle pu1 pvan1 rochester_general airport -> prefix_3 27
+20 get_in tcrew1 pvan1 -> m_get_in_ambulatory_person 28 29
+29 cclimb_in tcrew1 pvan1 rochester_general -> prefix_4 30
+21 get_to pvan1 park_ridge -> m_get_to_vehicle_gets_driven 31 32
+32 drive_to pu1 pvan1 park_ridge -> m_drive_to 33 34
+34 cnavegate_vehicle pu1 pvan1 park_ridge rochester_general -> prefix_5 35
+22 get_out tcrew1 pvan1 -> m_get_out_ambulatory_person 36
+36 cclimb_out tcrew1 pvan1 park_ridge -> prefix_6 37
+16 ccut_tree tcrew1 tree_546679 -> prefix_7 38
+17 remove_blockage tree_546679 -> m_remove_blockage_carry_away 39
+39 get_to tree_546679 henrietta_dump -> m_get_to_as_cargo 40 41 42 43 44
+41 get_to dtruck1 park_ridge -> m_get_to_vehicle_gets_driven 45 46
+46 drive_to tdriver1 dtruck1 park_ridge -> m_drive_to 47 48
+48 cnavegate_vehicle tdriver1 dtruck1 park_ridge henrietta_dump -> prefix_8 49
+42 get_in tree_546679 dtruck1 -> m_get_in_load_in 50 51 52
+51 get_to pcrew1 park_ridge -> m_get_to_as_cargo 53 54 55 56 57
+54 get_to backhoe1 strong -> m_get_to_vehicle_gets_driven 58 59
+59 drive_to ccrew1 backhoe1 strong -> m_drive_to 60 61
+61 cnavegate_vehicle ccrew1 backhoe1 strong park_ridge -> prefix_9 62
+55 get_in pcrew1 backhoe1 -> m_get_in_ambulatory_person 63 64
+64 cclimb_in pcrew1 backhoe1 strong -> regular_4 65
+56 get_to backhoe1 park_ridge -> m_get_to_vehicle_gets_driven 66 67
+67 drive_to ccrew1 backhoe1 park_ridge -> m_drive_to 68 69
+69 cnavegate_vehicle ccrew1 backhoe1 park_ridge strong -> regular_2 70
+57 get_out pcrew1 backhoe1 -> m_get_out_ambulatory_person 71
+71 cclimb_out pcrew1 backhoe1 park_ridge -> regular_5 72
+43 get_to dtruck1 henrietta_dump -> m_get_to_vehicle_gets_driven 73 74
+74 drive_to tdriver1 dtruck1 henrietta_dump -> m_drive_to 75 76
+76 cnavegate_vehicle tdriver1 dtruck1 henrietta_dump park_ridge -> regular_2 77
+44 get_out tree_546679 dtruck1 -> m_get_out_unload 78 79 80
+79 get_to ccrew1 henrietta_dump -> m_get_to_as_cargo 81 82 83 84 85
+82 get_to dtruck1 park_ridge -> m_get_to_vehicle_gets_driven 86 87
+87 drive_to tdriver1 dtruck1 park_ridge -> m_drive_to 88 89
+89 cnavegate_vehicle tdriver1 dtruck1 park_ridge henrietta_dump -> regular_2 90
+83 get_in ccrew1 dtruck1 -> m_get_in_ambulatory_person 91 92
+92 cclimb_in ccrew1 dtruck1 park_ridge -> regular_4 93
+84 get_to dtruck1 henrietta_dump -> m_get_to_vehicle_gets_driven 94 95
+95 drive_to tdriver1 dtruck1 henrietta_dump -> m_drive_to 96 97
+97 cnavegate_vehicle tdriver1 dtruck1 henrietta_dump park_ridge -> regular_2 98
+85 get_out ccrew1 dtruck1 -> m_get_out_ambulatory_person 99
+99 cclimb_out ccrew1 dtruck1 henrietta_dump -> regular_5 100
+5 take_down_cones park_ridge twelve_corners -> m_take_down_cones 101 102
+101 get_to ccrew1 park_ridge -> m_get_to_as_cargo 103 104 105 106 107
+104 get_to dtruck1 henrietta_dump -> m_get_to_already_there 108
+105 get_in ccrew1 dtruck1 -> m_get_in_ambulatory_person 109 110
+110 cclimb_in ccrew1 dtruck1 henrietta_dump -> regular_4 111
+106 get_to dtruck1 park_ridge -> m_get_to_vehicle_gets_driven 112 113
+113 drive_to tdriver1 dtruck1 park_ridge -> m_drive_to 114 115
+115 cnavegate_vehicle tdriver1 dtruck1 park_ridge henrietta_dump -> regular_2 116
+107 get_out ccrew1 dtruck1 -> m_get_out_ambulatory_person 117
+117 cclimb_out ccrew1 dtruck1 park_ridge -> regular_5 118
+<==
+Total time: 386.77391171455383s
+
+RUNWATCH_RESULT EXIT RETVAL 0 TIME_SECS 386.954 MEMPEAK_KBS 24796

@@ -1,0 +1,436 @@
+pandaPIparser is configured as follows
+  Colors in output: true
+  Mode: parsing mode
+  Parameter splitting: true
+  Conditional effects: exponential encoding
+  Disjunctive preconditions as HTN: false
+  Replace goal with action: false
+  Output: pandaPI format
+General Options
+  Print timings: false
+  Quiet mode: false
+Inference Options
+  H2 mutexes: false
+  FAM groups: false
+Transformation Options
+  Add zero-cost no-op to empty methods: true
+  Remove duplicate actions: true
+  Remove useless literals: true
+  Expand abstract tasks with one method: true
+  Remove empty method preconditions: true
+  Two regularisation: false
+  Compile negative SAS variables: false
+Runtime Optimisations
+  Hierarchy Typing: true
+  Future Caching: false
+  Static Precondition Checking: false
+Output Options
+  Panda planner format: true
+  HDDL: false
+  SAS for Fast Downward (without hierarchy): false
+Output Formatting Options
+  Output only SAS+ variables: false
+  SAS+ delete mode: as input
+Reading input from /home/schnell/lilotane/sotaevaluation//PandaGBFS_runwatchtime_timeout1800_2021-11-16_21:14:14/runwatch_log/711/711.parsed.
+Writing output to /home/schnell/lilotane/sotaevaluation//PandaGBFS_runwatchtime_timeout1800_2021-11-16_21:14:14/runwatch_log/711/711.sas.
+Writing output to standard output.
+Parsing done.
+Conditional Effects expanded
+done.
+Starting Hierarchy Typing
+Total 6.591ms
+Contains 0.202ms
+Restrict 0.927ms
+MPrep 1.177ms
+Finished Hierarchy Typing
+Running PG.
+Process actions without preconditions
+Done.
+ ---> Disabling potentially consistent extension checking for action:           12 (__method_precondition_find-way-change-dir)
+ ---> Disabling potentially consistent extension checking for action:           0 (walk)
+Returning from runGpg().
+PG done. Postprocessing
+PG postprocessing done.
+Calculated [3191107] grounded tasks and [113259] reachable facts.
+Running TDG.
+Process actions without preconditions
+Done.
+Memory usage exceeds 3 GiB, dropping prediction data structures.
+3222192128 3222192128
+3222192128 3222192128
+Returning from runGpg().
+TDG done.
+Calculated [3326657] grounded tasks and [12253470] grounded decomposition methods.
+Performing DFS.
+DFS done.
+After DFS: 835470 tasks, 2165503 methods.
+Grounded PG:
+Input was [818666, 835470], output was [650900, 113018].
+Grounded TDG:
+Input was [2165503, 650900], output was [1512646, 650900].
+Grounded PG:
+Input was [570400, 113018], output was [570400, 113018].
+Simplifying instance.
+Removing useless facts/literals
+Removing method precondition actions whose precondition is empty
+Expanding abstract tasks with only one method
+Starting duplicate elimination.
+Data structure build.
+548885 duplicates found.
+Duplicates replaced in methods.
+Further Mutex Groups: 0 strict 0 non strict
+Writing instance to output.
+Final Statistics: F 251 S 0 SC 0 SM 0 NSM 0 I 0 P 15709 S 5459 A 13936 M 1512525
+Exiting.
+Random seed: 42
+Time limit: 1800 seconds
+Reading input from /home/schnell/lilotane/sotaevaluation//PandaGBFS_runwatchtime_timeout1800_2021-11-16_21:14:14/runwatch_log/711/711.sas.
+- State has 251 bits divided into 251 mutex groups.
+- Domain contains 21168 actions.
+- Domain contains 35104 tasks.
+- Domain contains 1512525 methods.
+- The initial state contains 43 set bits.
+- The initial task is "__top[]".
+- State-based goal contains 0 bits.
+- Instance is totally-ordered: yes
+- Instance has unique paths: yes
+- Instance is parallel sequences: yes
+Calculate SCCs...
+- Number of SCCs: 23649
+- The problem is cyclic
+- Number of cyclic SCCs: 174
+- Number of cyclic SCCs of size 1: 29
+Selected Planning Algorithm: progression searchParsing heuristics ...
+Number of specified heuristics: 1
+- the option "store cuts" of the RC heuristic can only be used with the inner heuristic LM-Cut. It will be disabled.
+- Calculating minimal implied costs and distances (2134 ms)
+Heuristic #0 = hhRC2(add;distance;correct count)
+Search config:
+ - type: path cost
+ - weight: 1
+ - suboptimal: false
+Visited List configured
+- mode: total order
+- hashs to use: state task task-sequence
+- memory information: topological ordering
+- Visited list allows deletion of search nodes: true
+Search Configuration
+- Using JAIR 2020 progression algorithm
+- Search is stopped after first solution is found.
+- A* Search
+- Distance G is "modification depth"
+  33s visitime    0.00s generated nodes      5018 nodes/sec     148 cur h  128 mod.depth   39 inserts       130 dups         9 size       121 hash fail      9 hash buckets    121
+  63s visitime    0.00s generated nodes     10096 nodes/sec     159 cur h  100 mod.depth   88 inserts       279 dups        25 size       254 hash fail     25 hash buckets    254
+  86s visitime    0.01s generated nodes     15200 nodes/sec     175 cur h   79 mod.depth  127 inserts       396 dups        40 size       356 hash fail     40 hash buckets    356
+ 108s visitime    0.01s generated nodes     20245 nodes/sec     186 cur h   58 mod.depth  164 inserts       519 dups        56 size       463 hash fail     56 hash buckets    463
+ 131s visitime    0.01s generated nodes     25258 nodes/sec     191 cur h   46 mod.depth  199 inserts       665 dups        88 size       577 hash fail     88 hash buckets    577
+ 152s visitime    0.01s generated nodes     30377 nodes/sec     199 cur h   15 mod.depth  253 inserts       801 dups        98 size       703 hash fail     98 hash buckets    703
+Search Results
+- Search time 158.12 seconds
+- Visited list time 0.01 seconds
+- Visited list inserts 888
+- Visited list pruned 108
+- Visited list contains 780
+- Visited list hash collisions 108
+- Visited list used hash buckets 780
+- Generated 34452 search nodes
+  Calculated heuristic for 33610 nodes
+  One modifications 290
+  Effectless actions 552
+- including 290 one modification actions
+- including 0 one modification methods
+- and       552 progressions of effectless actions
+- Generated 212 nodes per second
+- Final fringe contains 4 nodes
+- Status: Solved
+- Found solution of length 284
+- Total costs of actions: 44
+==>
+5 __method_precondition_find-way-same-dir[l-1-0-1,l-1-0-0,w]
+404 __method_precondition_place-block-abstract-1_split[l-4-2-3,l-1-0-0]
+405 placeblock[l-1-0-0,stone]
+481 __method_precondition_find-way-same-dir[l-1-0-2,l-1-0-3,e]
+534 __method_precondition_place-block-abstract-1_split[l-4-2-3,l-1-0-0]
+535 placeblock[l-1-0-3,stone]
+849 __method_precondition_find-way-same-dir[l-1-0-1,l-1-0-2,e]
+1374 __method_precondition_place-block-abstract-1_split[l-4-2-3,l-1-0-0]
+1375 placeblock[l-1-0-2,stone]
+2091 __method_precondition_find-way-same-dir[l-1-1-1,l-1-0-1,s]
+2286 __method_precondition_place-block-abstract-1_split[l-4-2-3,l-1-0-0]
+2287 placeblock[l-1-0-1,stone]
+2638 __method_precondition_find-way-same-dir[l-2-0-1,l-2-0-0,w]
+3110 __method_precondition_place-block-abstract-1_split[l-4-2-3,l-1-0-0]
+3111 placeblock[l-2-0-0,stone]
+3192 __method_precondition_find-way-same-dir[l-2-1-3,l-2-0-3,s]
+3639 __method_precondition_place-block-abstract-1_split[l-4-2-3,l-1-0-0]
+3640 placeblock[l-2-0-3,stone]
+3722 __method_precondition_find-way-same-dir[l-2-0-1,l-2-0-2,e]
+4287 __method_precondition_place-block-abstract-1_split[l-4-2-3,l-1-0-0]
+4288 placeblock[l-2-0-2,stone]
+4653 __method_precondition_find-way-same-dir[l-2-1-1,l-2-0-1,s]
+5194 __method_precondition_place-block-abstract-1_split[l-4-2-3,l-1-0-0]
+5195 placeblock[l-2-0-1,stone]
+5553 __method_precondition_find-way-same-dir[l-3-1-0,l-3-0-0,s]
+5774 __method_precondition_place-block-abstract-1_split[l-4-2-3,l-1-0-0]
+5775 placeblock[l-3-0-0,stone]
+5846 __method_precondition_find-way-same-dir[l-3-0-2,l-3-0-3,e]
+6435 __method_precondition_place-block-abstract-1_split[l-4-2-3,l-1-0-0]
+6436 placeblock[l-3-0-3,stone]
+6518 __method_precondition_find-way-same-dir[l-3-0-1,l-3-0-2,e]
+7210 __method_precondition_place-block-abstract-1_split[l-4-2-3,l-1-0-0]
+7211 placeblock[l-3-0-2,stone]
+7322 __method_precondition_find-way-same-dir[l-3-0-2,l-3-0-1,w]
+8102 __method_precondition_place-block-abstract-1_split[l-4-2-3,l-1-0-0]
+8103 placeblock[l-3-0-1,stone]
+8568 __method_precondition_place-block-abstract-2[l-1-0-3,stone]
+8633 __method_precondition_find-way-same-dir[l-1-1-3,l-1-2-3,n]
+9130 __method_precondition_place-block-abstract-1_split[l-4-2-3,l-1-0-0]
+9131 placeblock[l-1-2-3,stone]
+9224 __method_precondition_find-way-same-dir[l-1-1-2,l-1-1-3,e]
+9671 __method_precondition_place-block-abstract-1_split[l-4-2-3,l-1-0-0]
+9672 placeblock[l-1-1-3,stone]
+9932 __method_precondition_place-block-abstract-2[l-2-0-3,stone]
+9961 __method_precondition_find-way-same-dir[l-2-2-2,l-2-2-3,e]
+10261 __method_precondition_place-block-abstract-1_split[l-4-2-3,l-1-0-0]
+10262 placeblock[l-2-2-3,stone]
+10356 __method_precondition_find-way-same-dir[l-2-1-2,l-2-1-3,e]
+11012 __method_precondition_place-block-abstract-1_split[l-4-2-3,l-1-0-0]
+11013 placeblock[l-2-1-3,stone]
+11249 __method_precondition_place-block-abstract-2[l-3-0-3,stone]
+11291 __method_precondition_find-way-same-dir[l-3-1-2,l-3-1-3,e]
+11585 __method_precondition_place-block-abstract-1_split[l-4-2-3,l-1-0-0]
+11586 placeblock[l-3-1-3,stone]
+11818 __method_precondition_find-way-same-dir[l-3-3-3,l-3-2-3,s]
+12462 __method_precondition_place-block-abstract-1_split[l-4-2-3,l-1-0-0]
+12463 placeblock[l-3-2-3,stone]
+12582 __method_precondition_find-way-same-dir[l-1-1-0,l-1-2-0,n]
+12662 __method_precondition_place-block-abstract-1_split[l-4-2-3,l-1-0-0]
+12663 placeblock[l-1-2-0,stone]
+13009 __method_precondition_find-way-same-dir[l-1-1-1,l-1-2-1,n]
+13441 __method_precondition_place-block-abstract-1_split[l-4-2-3,l-1-0-0]
+13442 placeblock[l-1-2-1,stone]
+14169 __method_precondition_find-way-same-dir[l-1-1-2,l-1-2-2,n]
+14727 __method_precondition_place-block-abstract-1_split[l-4-2-3,l-1-0-0]
+14728 placeblock[l-1-2-2,stone]
+14951 __method_precondition_place-block-abstract-2[l-1-2-3,stone]
+15353 __method_precondition_find-way-same-dir[l-2-1-0,l-2-2-0,n]
+15554 __method_precondition_place-block-abstract-1_split[l-4-2-3,l-1-0-0]
+15555 placeblock[l-2-2-0,stone]
+15770 __method_precondition_find-way-same-dir[l-2-2-2,l-2-2-1,w]
+16335 __method_precondition_place-block-abstract-1_split[l-4-2-3,l-1-0-0]
+16336 placeblock[l-2-2-1,stone]
+16583 __method_precondition_find-way-same-dir[l-2-1-2,l-2-2-2,n]
+17625 __method_precondition_place-block-abstract-1_split[l-4-2-3,l-1-0-0]
+17626 placeblock[l-2-2-2,stone]
+17986 __method_precondition_place-block-abstract-2[l-2-2-3,stone]
+18376 __method_precondition_place-block-abstract-2[l-3-2-3,stone]
+18409 __method_precondition_find-way-same-dir[l-3-2-1,l-3-2-2,e]
+19099 __method_precondition_place-block-abstract-1_split[l-4-2-3,l-1-0-0]
+19100 placeblock[l-3-2-2,stone]
+19486 __method_precondition_find-way-same-dir[l-3-2-1,l-3-2-0,w]
+20157 __method_precondition_place-block-abstract-1_split[l-4-2-3,l-1-0-0]
+20158 placeblock[l-3-2-0,stone]
+20378 __method_precondition_find-way-same-dir[l-3-1-1,l-3-2-1,n]
+20801 __method_precondition_place-block-abstract-1_split[l-4-2-3,l-1-0-0]
+20802 placeblock[l-3-2-1,stone]
+21155 __method_precondition_place-block-abstract-2[l-1-2-0,stone]
+21323 __method_precondition_place-block-abstract-2[l-1-0-0,stone]
+21462 __method_precondition_find-way-same-dir[l-1-2-0,l-1-1-0,s]
+21721 __method_precondition_place-block-abstract-1_split[l-4-2-3,l-1-0-0]
+21722 placeblock[l-1-1-0,stone]
+22284 __method_precondition_place-block-abstract-2[l-2-2-0,stone]
+22372 __method_precondition_find-way-same-dir[l-2-2-0,l-2-1-0,s]
+22584 __method_precondition_place-block-abstract-1_split[l-4-2-3,l-1-0-0]
+22585 placeblock[l-2-1-0,stone]
+23328 __method_precondition_place-block-abstract-2[l-2-0-0,stone]
+23582 __method_precondition_place-block-abstract-2[l-3-2-0,stone]
+23673 __method_precondition_place-block-abstract-2[l-3-0-0,stone]
+23715 __method_precondition_find-way-same-dir[l-3-1-1,l-3-1-0,w]
+24265 __method_precondition_place-block-abstract-1_split[l-4-2-3,l-1-0-0]
+24266 placeblock[l-3-1-0,stone]
+24575 __method_precondition_place-block-abstract-2[l-1-1-0,stone]
+25059 __method_precondition_place-block-abstract-1_split[l-4-2-3,l-1-0-0]
+25060 removeblock[l-1-1-0,stone]
+25259 __method_precondition_place-block-abstract-2[l-2-1-0,stone]
+25595 __method_precondition_place-block-abstract-1_split[l-4-2-3,l-1-0-0]
+25596 removeblock[l-2-1-0,stone]
+25723 __method_precondition_find-way-same-dir[l-4-1-0,l-4-0-0,s]
+26006 __method_precondition_place-block-abstract-1_split[l-4-2-3,l-1-0-0]
+26007 placeblock[l-4-0-0,stone]
+26222 __method_precondition_find-way-same-dir[l-4-1-1,l-4-0-1,s]
+26617 __method_precondition_place-block-abstract-1_split[l-4-2-3,l-1-0-0]
+26618 placeblock[l-4-0-1,stone]
+27048 __method_precondition_find-way-same-dir[l-4-1-3,l-4-0-3,s]
+27634 __method_precondition_place-block-abstract-1_split[l-4-2-3,l-1-0-0]
+27635 placeblock[l-4-0-3,stone]
+27962 __method_precondition_find-way-same-dir[l-4-0-1,l-4-0-2,e]
+28087 __method_precondition_place-block-abstract-1_split[l-4-2-3,l-1-0-0]
+28088 placeblock[l-4-0-2,stone]
+28497 __method_precondition_find-way-same-dir[l-4-2-0,l-4-1-0,s]
+28883 __method_precondition_place-block-abstract-1_split[l-4-2-3,l-1-0-0]
+28884 placeblock[l-4-1-0,stone]
+29095 __method_precondition_find-way-same-dir[l-4-2-1,l-4-1-1,s]
+29356 __method_precondition_place-block-abstract-1_split[l-4-2-3,l-1-0-0]
+29357 placeblock[l-4-1-1,stone]
+30100 __method_precondition_find-way-same-dir[l-4-1-1,l-4-1-2,e]
+30656 __method_precondition_place-block-abstract-1_split[l-4-2-3,l-1-0-0]
+30657 placeblock[l-4-1-2,stone]
+30998 __method_precondition_find-way-same-dir[l-4-1-2,l-4-1-3,e]
+31306 __method_precondition_place-block-abstract-1_split[l-4-2-3,l-1-0-0]
+31307 placeblock[l-4-1-3,stone]
+31530 __method_precondition_place-block-abstract-1_base[l-4-2-0]
+31845 __method_precondition_place-block-abstract-1_split[l-4-2-3,l-1-0-0]
+31846 placeblock[l-4-2-0,stone]
+32083 __method_precondition_place-block-abstract-1_base[l-4-2-3]
+32787 __method_precondition_place-block-abstract-1_split[l-4-2-3,l-1-0-0]
+32788 placeblock[l-4-2-3,stone]
+33031 __method_precondition_place-block-abstract-1_base[l-4-2-2]
+33718 __method_precondition_place-block-abstract-1_split[l-4-2-3,l-1-0-0]
+33719 placeblock[l-4-2-2,stone]
+33947 __method_precondition_place-block-abstract-1_base[l-4-2-1]
+33989 __method_precondition_place-block-abstract-1_split[l-4-2-3,l-1-0-0]
+33990 placeblock[l-4-2-1,stone]
+root 0
+33988 place-block-abstract-1_splitted_7[l-4-2-1] -> _splitting_method_place-block-abstract-1_splitted_7 33989
+33946 placeblockabstract[l-4-2-1,stone] -> place-block-abstract-1 33947 33988 33990
+33717 place-block-abstract-1_splitted_7[l-4-2-2] -> _splitting_method_place-block-abstract-1_splitted_7 33718
+33030 placeblockabstract[l-4-2-2,stone] -> place-block-abstract-1 33031 33717 33719
+32786 place-block-abstract-1_splitted_7[l-4-2-3] -> _splitting_method_place-block-abstract-1_splitted_7 32787
+32082 placeblockabstract[l-4-2-3,stone] -> place-block-abstract-1 32083 32786 32788
+32080 buildrow[l-4-2-2,n2,e,stone] -> <build-row-3;build-row-3_splitted_4[e,stone,l-4-2-2,n2];<_splitting_method_build-row-3_splitted_4;buildrow[l-4-2-3,n1,e,stone];build-row-1;0;-1>;0;-1,1> 32082 33030
+32068 buildrow[l-4-2-1,n3,e,stone] -> <build-row-3;build-row-3_splitted_4[e,stone,l-4-2-1,n3];_splitting_method_build-row-3_splitted_4;0;-1,1> 32080 33946
+31844 place-block-abstract-1_splitted_7[l-4-2-0] -> _splitting_method_place-block-abstract-1_splitted_7 31845
+31529 placeblockabstract[l-4-2-0,stone] -> place-block-abstract-1 31530 31844 31846
+31518 buildrow[l-4-2-0,n4,e,stone] -> <build-row-2;build-row-2_splitted_3[e,stone,l-4-2-0,n4];_splitting_method_build-row-2_splitted_3;1;0,-1> 31529 32068
+31305 place-block-abstract-1_splitted_7[l-4-1-3] -> _splitting_method_place-block-abstract-1_splitted_7 31306
+30997 placeblockabstract[l-4-1-3,stone] -> place-block-abstract-1 30998 31305 31307
+30655 place-block-abstract-1_splitted_7[l-4-1-2] -> _splitting_method_place-block-abstract-1_splitted_7 30656
+30099 placeblockabstract[l-4-1-2,stone] -> place-block-abstract-1 30100 30655 30657
+30091 buildrow[l-4-1-2,n2,e,stone] -> <<build-row-2;build-row-2_splitted_3[e,stone,l-4-1-2,n2];_splitting_method_build-row-2_splitted_3;1;0,-1>;buildrow[l-4-1-3,n1,e,stone];build-row-1;1;0,-1> 30099 30997
+29355 place-block-abstract-1_splitted_7[l-4-1-1] -> _splitting_method_place-block-abstract-1_splitted_7 29356
+29094 placeblockabstract[l-4-1-1,stone] -> place-block-abstract-1 29095 29355 29357
+29091 buildrow[l-4-1-1,n3,e,stone] -> <build-row-2;build-row-2_splitted_3[e,stone,l-4-1-1,n3];_splitting_method_build-row-2_splitted_3;1;0,-1> 29094 30091
+28882 place-block-abstract-1_splitted_7[l-4-1-0] -> _splitting_method_place-block-abstract-1_splitted_7 28883
+28496 placeblockabstract[l-4-1-0,stone] -> place-block-abstract-1 28497 28882 28884
+28493 buildrow[l-4-1-0,n4,e,stone] -> <build-row-2;build-row-2_splitted_3[e,stone,l-4-1-0,n4];_splitting_method_build-row-2_splitted_3;1;0,-1> 28496 29091
+28086 place-block-abstract-1_splitted_7[l-4-0-2] -> _splitting_method_place-block-abstract-1_splitted_7 28087
+27961 placeblockabstract[l-4-0-2,stone] -> place-block-abstract-1 27962 28086 28088
+27633 place-block-abstract-1_splitted_7[l-4-0-3] -> _splitting_method_place-block-abstract-1_splitted_7 27634
+27047 placeblockabstract[l-4-0-3,stone] -> place-block-abstract-1 27048 27633 27635
+27045 buildrow[l-4-0-2,n2,e,stone] -> <build-row-3;build-row-3_splitted_4[e,stone,l-4-0-2,n2];<_splitting_method_build-row-3_splitted_4;buildrow[l-4-0-3,n1,e,stone];build-row-1;0;-1>;0;-1,1> 27047 27961
+26616 place-block-abstract-1_splitted_7[l-4-0-1] -> _splitting_method_place-block-abstract-1_splitted_7 26617
+26221 placeblockabstract[l-4-0-1,stone] -> place-block-abstract-1 26222 26616 26618
+26194 buildrow[l-4-0-1,n3,e,stone] -> <build-row-2;build-row-2_splitted_3[e,stone,l-4-0-1,n3];_splitting_method_build-row-2_splitted_3;1;0,-1> 26221 27045
+26005 place-block-abstract-1_splitted_7[l-4-0-0] -> _splitting_method_place-block-abstract-1_splitted_7 26006
+25722 placeblockabstract[l-4-0-0,stone] -> place-block-abstract-1 25723 26005 26007
+25705 buildrow[l-4-0-0,n4,e,stone] -> <build-row-2;build-row-2_splitted_3[e,stone,l-4-0-0,n4];_splitting_method_build-row-2_splitted_3;1;0,-1> 25722 26194
+25594 remove-block-abstract-2_splitted_10[l-2-1-0] -> _splitting_method_remove-block-abstract-2_splitted_10 25595
+25258 removeblockabstract[l-2-1-0] -> remove-block-abstract-2 25259 25594 25596
+25058 remove-block-abstract-2_splitted_10[l-1-1-0] -> _splitting_method_remove-block-abstract-2_splitted_10 25059
+24574 removeblockabstract[l-1-1-0] -> remove-block-abstract-2 24575 25058 25060
+24264 place-block-abstract-1_splitted_7[l-3-1-0] -> _splitting_method_place-block-abstract-1_splitted_7 24265
+23714 placeblockabstract[l-3-1-0,stone] -> place-block-abstract-1 23715 24264 24266
+23672 placeblockabstract[l-3-0-0,stone] -> place-block-abstract-2 23673
+23671 buildrow[l-3-1-0,n2,s,stone] -> <build-row-3;build-row-3_splitted_4[s,stone,l-3-1-0,n2];<_splitting_method_build-row-3_splitted_4;buildrow[l-3-0-0,n1,s,stone];build-row-1;0;-1>;0;-1,1> 23672 23714
+23581 placeblockabstract[l-3-2-0,stone] -> place-block-abstract-2 23582
+23579 buildrow[l-3-2-0,n3,s,stone] -> <build-row-2;build-row-2_splitted_3[s,stone,l-3-2-0,n3];_splitting_method_build-row-2_splitted_3;1;0,-1> 23581 23671
+23327 placeblockabstract[l-2-0-0,stone] -> place-block-abstract-2 23328
+22583 place-block-abstract-1_splitted_7[l-2-1-0] -> _splitting_method_place-block-abstract-1_splitted_7 22584
+22371 placeblockabstract[l-2-1-0,stone] -> place-block-abstract-1 22372 22583 22585
+22362 buildrow[l-2-1-0,n2,s,stone] -> <<build-row-2;build-row-2_splitted_3[s,stone,l-2-1-0,n2];_splitting_method_build-row-2_splitted_3;1;0,-1>;buildrow[l-2-0-0,n1,s,stone];build-row-1;1;0,-1> 22371 23327
+22283 placeblockabstract[l-2-2-0,stone] -> place-block-abstract-2 22284
+22281 buildrow[l-2-2-0,n3,s,stone] -> <build-row-2;build-row-2_splitted_3[s,stone,l-2-2-0,n3];_splitting_method_build-row-2_splitted_3;1;0,-1> 22283 22362
+21720 place-block-abstract-1_splitted_7[l-1-1-0] -> _splitting_method_place-block-abstract-1_splitted_7 21721
+21461 placeblockabstract[l-1-1-0,stone] -> place-block-abstract-1 21462 21720 21722
+21322 placeblockabstract[l-1-0-0,stone] -> place-block-abstract-2 21323
+21306 buildrow[l-1-1-0,n2,s,stone] -> <build-row-3;build-row-3_splitted_4[s,stone,l-1-1-0,n2];<_splitting_method_build-row-3_splitted_4;buildrow[l-1-0-0,n1,s,stone];build-row-1;0;-1>;0;-1,1> 21322 21461
+21154 placeblockabstract[l-1-2-0,stone] -> place-block-abstract-2 21155
+21152 buildrow[l-1-2-0,n3,s,stone] -> <build-row-2;build-row-2_splitted_3[s,stone,l-1-2-0,n3];_splitting_method_build-row-2_splitted_3;1;0,-1> 21154 21306
+20800 place-block-abstract-1_splitted_7[l-3-2-1] -> _splitting_method_place-block-abstract-1_splitted_7 20801
+20377 placeblockabstract[l-3-2-1,stone] -> place-block-abstract-1 20378 20800 20802
+20156 place-block-abstract-1_splitted_7[l-3-2-0] -> _splitting_method_place-block-abstract-1_splitted_7 20157
+19485 placeblockabstract[l-3-2-0,stone] -> place-block-abstract-1 19486 20156 20158
+19479 buildrow[l-3-2-1,n2,w,stone] -> <build-row-3;build-row-3_splitted_4[w,stone,l-3-2-1,n2];<_splitting_method_build-row-3_splitted_4;buildrow[l-3-2-0,n1,w,stone];build-row-1;0;-1>;0;-1,1> 19485 20377
+19098 place-block-abstract-1_splitted_7[l-3-2-2] -> _splitting_method_place-block-abstract-1_splitted_7 19099
+18408 placeblockabstract[l-3-2-2,stone] -> place-block-abstract-1 18409 19098 19100
+18405 buildrow[l-3-2-2,n3,w,stone] -> <build-row-2;build-row-2_splitted_3[w,stone,l-3-2-2,n3];_splitting_method_build-row-2_splitted_3;1;0,-1> 18408 19479
+18375 placeblockabstract[l-3-2-3,stone] -> place-block-abstract-2 18376
+18244 buildrow[l-3-2-3,n4,w,stone] -> <build-row-2;build-row-2_splitted_3[w,stone,l-3-2-3,n4];_splitting_method_build-row-2_splitted_3;1;0,-1> 18375 18405
+17985 placeblockabstract[l-2-2-3,stone] -> place-block-abstract-2 17986
+17624 place-block-abstract-1_splitted_7[l-2-2-2] -> _splitting_method_place-block-abstract-1_splitted_7 17625
+16582 placeblockabstract[l-2-2-2,stone] -> place-block-abstract-1 16583 17624 17626
+16334 place-block-abstract-1_splitted_7[l-2-2-1] -> _splitting_method_place-block-abstract-1_splitted_7 16335
+15769 placeblockabstract[l-2-2-1,stone] -> place-block-abstract-1 15770 16334 16336
+15553 place-block-abstract-1_splitted_7[l-2-2-0] -> _splitting_method_place-block-abstract-1_splitted_7 15554
+15352 placeblockabstract[l-2-2-0,stone] -> place-block-abstract-1 15353 15553 15555
+15341 buildrow[l-2-2-1,n2,w,stone] -> <build-row-3;build-row-3_splitted_4[w,stone,l-2-2-1,n2];<_splitting_method_build-row-3_splitted_4;buildrow[l-2-2-0,n1,w,stone];build-row-1;0;-1>;0;-1,1> 15352 15769
+15339 buildrow[l-2-2-2,n3,w,stone] -> <build-row-3;build-row-3_splitted_4[w,stone,l-2-2-2,n3];_splitting_method_build-row-3_splitted_4;0;-1,1> 15341 16582
+15337 buildrow[l-2-2-3,n4,w,stone] -> <build-row-3;build-row-3_splitted_4[w,stone,l-2-2-3,n4];_splitting_method_build-row-3_splitted_4;0;-1,1> 15339 17985
+14950 placeblockabstract[l-1-2-3,stone] -> place-block-abstract-2 14951
+14726 place-block-abstract-1_splitted_7[l-1-2-2] -> _splitting_method_place-block-abstract-1_splitted_7 14727
+14168 placeblockabstract[l-1-2-2,stone] -> place-block-abstract-1 14169 14726 14728
+13440 place-block-abstract-1_splitted_7[l-1-2-1] -> _splitting_method_place-block-abstract-1_splitted_7 13441
+13008 placeblockabstract[l-1-2-1,stone] -> place-block-abstract-1 13009 13440 13442
+12661 place-block-abstract-1_splitted_7[l-1-2-0] -> _splitting_method_place-block-abstract-1_splitted_7 12662
+12581 placeblockabstract[l-1-2-0,stone] -> place-block-abstract-1 12582 12661 12663
+12579 buildrow[l-1-2-1,n2,w,stone] -> <build-row-3;build-row-3_splitted_4[w,stone,l-1-2-1,n2];<_splitting_method_build-row-3_splitted_4;buildrow[l-1-2-0,n1,w,stone];build-row-1;0;-1>;0;-1,1> 12581 13008
+12558 buildrow[l-1-2-2,n3,w,stone] -> <build-row-3;build-row-3_splitted_4[w,stone,l-1-2-2,n3];_splitting_method_build-row-3_splitted_4;0;-1,1> 12579 14168
+12556 buildrow[l-1-2-3,n4,w,stone] -> <build-row-3;build-row-3_splitted_4[w,stone,l-1-2-3,n4];_splitting_method_build-row-3_splitted_4;0;-1,1> 12558 14950
+12461 place-block-abstract-1_splitted_7[l-3-2-3] -> _splitting_method_place-block-abstract-1_splitted_7 12462
+11817 placeblockabstract[l-3-2-3,stone] -> place-block-abstract-1 11818 12461 12463
+11584 place-block-abstract-1_splitted_7[l-3-1-3] -> _splitting_method_place-block-abstract-1_splitted_7 11585
+11290 placeblockabstract[l-3-1-3,stone] -> place-block-abstract-1 11291 11584 11586
+11283 buildrow[l-3-1-3,n2,n,stone] -> <<build-row-2;build-row-2_splitted_3[n,stone,l-3-1-3,n2];_splitting_method_build-row-2_splitted_3;1;0,-1>;buildrow[l-3-2-3,n1,n,stone];build-row-1;1;0,-1> 11290 11817
+11248 placeblockabstract[l-3-0-3,stone] -> place-block-abstract-2 11249
+11117 buildrow[l-3-0-3,n3,n,stone] -> <build-row-2;build-row-2_splitted_3[n,stone,l-3-0-3,n3];_splitting_method_build-row-2_splitted_3;1;0,-1> 11248 11283
+11011 place-block-abstract-1_splitted_7[l-2-1-3] -> _splitting_method_place-block-abstract-1_splitted_7 11012
+10355 placeblockabstract[l-2-1-3,stone] -> place-block-abstract-1 10356 11011 11013
+10260 place-block-abstract-1_splitted_7[l-2-2-3] -> _splitting_method_place-block-abstract-1_splitted_7 10261
+9960 placeblockabstract[l-2-2-3,stone] -> place-block-abstract-1 9961 10260 10262
+9958 buildrow[l-2-1-3,n2,n,stone] -> <build-row-3;build-row-3_splitted_4[n,stone,l-2-1-3,n2];<_splitting_method_build-row-3_splitted_4;buildrow[l-2-2-3,n1,n,stone];build-row-1;0;-1>;0;-1,1> 9960 10355
+9931 placeblockabstract[l-2-0-3,stone] -> place-block-abstract-2 9932
+9791 buildrow[l-2-0-3,n3,n,stone] -> <build-row-2;build-row-2_splitted_3[n,stone,l-2-0-3,n3];_splitting_method_build-row-2_splitted_3;1;0,-1> 9931 9958
+9670 place-block-abstract-1_splitted_7[l-1-1-3] -> _splitting_method_place-block-abstract-1_splitted_7 9671
+9223 placeblockabstract[l-1-1-3,stone] -> place-block-abstract-1 9224 9670 9672
+9129 place-block-abstract-1_splitted_7[l-1-2-3] -> _splitting_method_place-block-abstract-1_splitted_7 9130
+8632 placeblockabstract[l-1-2-3,stone] -> place-block-abstract-1 8633 9129 9131
+8625 buildrow[l-1-1-3,n2,n,stone] -> <build-row-3;build-row-3_splitted_4[n,stone,l-1-1-3,n2];<_splitting_method_build-row-3_splitted_4;buildrow[l-1-2-3,n1,n,stone];build-row-1;0;-1>;0;-1,1> 8632 9223
+8567 placeblockabstract[l-1-0-3,stone] -> place-block-abstract-2 8568
+8468 buildrow[l-1-0-3,n3,n,stone] -> <build-row-2;build-row-2_splitted_3[n,stone,l-1-0-3,n3];_splitting_method_build-row-2_splitted_3;1;0,-1> 8567 8625
+8101 place-block-abstract-1_splitted_7[l-3-0-1] -> _splitting_method_place-block-abstract-1_splitted_7 8102
+7321 placeblockabstract[l-3-0-1,stone] -> place-block-abstract-1 7322 8101 8103
+7209 place-block-abstract-1_splitted_7[l-3-0-2] -> _splitting_method_place-block-abstract-1_splitted_7 7210
+6517 placeblockabstract[l-3-0-2,stone] -> place-block-abstract-1 6518 7209 7211
+6434 place-block-abstract-1_splitted_7[l-3-0-3] -> _splitting_method_place-block-abstract-1_splitted_7 6435
+5845 placeblockabstract[l-3-0-3,stone] -> place-block-abstract-1 5846 6434 6436
+5843 buildrow[l-3-0-2,n2,e,stone] -> <build-row-3;build-row-3_splitted_4[e,stone,l-3-0-2,n2];<_splitting_method_build-row-3_splitted_4;buildrow[l-3-0-3,n1,e,stone];build-row-1;0;-1>;0;-1,1> 5845 6517
+5841 buildrow[l-3-0-1,n3,e,stone] -> <build-row-3;build-row-3_splitted_4[e,stone,l-3-0-1,n3];_splitting_method_build-row-3_splitted_4;0;-1,1> 5843 7321
+5773 place-block-abstract-1_splitted_7[l-3-0-0] -> _splitting_method_place-block-abstract-1_splitted_7 5774
+5552 placeblockabstract[l-3-0-0,stone] -> place-block-abstract-1 5553 5773 5775
+5443 buildrow[l-3-0-0,n4,e,stone] -> <build-row-2;build-row-2_splitted_3[e,stone,l-3-0-0,n4];_splitting_method_build-row-2_splitted_3;1;0,-1> 5552 5841
+5193 place-block-abstract-1_splitted_7[l-2-0-1] -> _splitting_method_place-block-abstract-1_splitted_7 5194
+4652 placeblockabstract[l-2-0-1,stone] -> place-block-abstract-1 4653 5193 5195
+4286 place-block-abstract-1_splitted_7[l-2-0-2] -> _splitting_method_place-block-abstract-1_splitted_7 4287
+3721 placeblockabstract[l-2-0-2,stone] -> place-block-abstract-1 3722 4286 4288
+3638 place-block-abstract-1_splitted_7[l-2-0-3] -> _splitting_method_place-block-abstract-1_splitted_7 3639
+3191 placeblockabstract[l-2-0-3,stone] -> place-block-abstract-1 3192 3638 3640
+3179 buildrow[l-2-0-2,n2,e,stone] -> <build-row-3;build-row-3_splitted_4[e,stone,l-2-0-2,n2];<_splitting_method_build-row-3_splitted_4;buildrow[l-2-0-3,n1,e,stone];build-row-1;0;-1>;0;-1,1> 3191 3721
+3177 buildrow[l-2-0-1,n3,e,stone] -> <build-row-3;build-row-3_splitted_4[e,stone,l-2-0-1,n3];_splitting_method_build-row-3_splitted_4;0;-1,1> 3179 4652
+3109 place-block-abstract-1_splitted_7[l-2-0-0] -> _splitting_method_place-block-abstract-1_splitted_7 3110
+2637 placeblockabstract[l-2-0-0,stone] -> place-block-abstract-1 2638 3109 3111
+2510 buildrow[l-2-0-0,n4,e,stone] -> <build-row-2;build-row-2_splitted_3[e,stone,l-2-0-0,n4];_splitting_method_build-row-2_splitted_3;1;0,-1> 2637 3177
+2285 place-block-abstract-1_splitted_7[l-1-0-1] -> _splitting_method_place-block-abstract-1_splitted_7 2286
+2090 placeblockabstract[l-1-0-1,stone] -> place-block-abstract-1 2091 2285 2287
+1373 place-block-abstract-1_splitted_7[l-1-0-2] -> _splitting_method_place-block-abstract-1_splitted_7 1374
+848 placeblockabstract[l-1-0-2,stone] -> place-block-abstract-1 849 1373 1375
+533 place-block-abstract-1_splitted_7[l-1-0-3] -> _splitting_method_place-block-abstract-1_splitted_7 534
+480 placeblockabstract[l-1-0-3,stone] -> place-block-abstract-1 481 533 535
+478 buildrow[l-1-0-2,n2,e,stone] -> <build-row-3;build-row-3_splitted_4[e,stone,l-1-0-2,n2];<_splitting_method_build-row-3_splitted_4;buildrow[l-1-0-3,n1,e,stone];build-row-1;0;-1>;0;-1,1> 480 848
+471 buildrow[l-1-0-1,n3,e,stone] -> <build-row-3;build-row-3_splitted_4[e,stone,l-1-0-1,n3];_splitting_method_build-row-3_splitted_4;0;-1,1> 478 2090
+403 place-block-abstract-1_splitted_7[l-1-0-0] -> _splitting_method_place-block-abstract-1_splitted_7 404
+4 placeblockabstract[l-1-0-0,stone] -> place-block-abstract-1 5 403 405
+1 buildrow[l-1-0-0,n4,e,stone] -> <build-row-2;build-row-2_splitted_3[e,stone,l-1-0-0,n4];_splitting_method_build-row-2_splitted_3;1;0,-1> 4 471
+0 __top[] -> <<<<<<<<<<<<<<<<<<<<<<<<<<<<__top_method;buildhouse[l-1-0-0,l-1-0-3,l-1-2-3,l-1-2-0,l-1-1-0,l-4-0-0,n4,n3,n3,stone];build-house-1;0;-1,-2,-3,-4,-5,-6>;buildroof[l-4-0-0,n4,n3,e,n,stone];build-roof-2;5;0,1,2,3,4,-1,-2>;build-roof-2_splitted_2[n4,e,n,stone,l-4-0-0,n3];_splitting_method_build-roof-2_splitted_2;6;0,1,2,3,4,5,-1>;buildroof[l-4-1-0,n4,n2,e,n,stone];build-roof-2;6;0,1,2,3,4,5,-1,-2>;build-roof-2_splitted_2[n4,e,n,stone,l-4-1-0,n2];_splitting_method_build-roof-2_splitted_2;7;0,1,2,3,4,5,6,-1>;buildroof[l-4-2-0,n4,n1,e,n,stone];build-roof-1;7;0,1,2,3,4,5,6,-1>;buildwall[l-1-2-0,n3,n3,s,stone];build-wall-2;3;0,1,2,-1,-2,4,5,6,7>;build-wall-2_splitted_5[n3,s,stone,l-1-2-0,n3];_splitting_method_build-wall-2_splitted_5;4;0,1,2,3,-1,5,6,7,8>;buildwall[l-2-2-0,n3,n2,s,stone];build-wall-2;4;0,1,2,3,-1,-2,5,6,7,8>;build-wall-2_splitted_5[n3,s,stone,l-2-2-0,n2];_splitting_method_build-wall-2_splitted_5;5;0,1,2,3,4,-1,6,7,8,9>;buildwall[l-3-2-0,n3,n1,s,stone];build-wall-1;5;0,1,2,3,4,-1,6,7,8,9>;buildwall[l-1-2-3,n4,n3,w,stone];build-wall-2;2;0,1,-1,-2,3,4,5,6,7,8,9>;build-wall-2_splitted_5[n4,w,stone,l-1-2-3,n3];_splitting_method_build-wall-2_splitted_5;3;0,1,2,-1,4,5,6,7,8,9,10>;buildwall[l-2-2-3,n4,n2,w,stone];build-wall-2;3;0,1,2,-1,-2,4,5,6,7,8,9,10>;build-wall-2_splitted_5[n4,w,stone,l-2-2-3,n2];_splitting_method_build-wall-2_splitted_5;4;0,1,2,3,-1,5,6,7,8,9,10,11>;buildwall[l-3-2-3,n4,n1,w,stone];build-wall-1;4;0,1,2,3,-1,5,6,7,8,9,10,11>;buildwall[l-1-0-3,n3,n3,n,stone];build-wall-2;1;0,-1,-2,2,3,4,5,6,7,8,9,10,11>;build-wall-2_splitted_5[n3,n,stone,l-1-0-3,n3];_splitting_method_build-wall-2_splitted_5;2;0,1,-1,3,4,5,6,7,8,9,10,11,12>;buildwall[l-2-0-3,n3,n2,n,stone];build-wall-2;2;0,1,-1,-2,3,4,5,6,7,8,9,10,11,12>;build-wall-2_splitted_5[n3,n,stone,l-2-0-3,n2];_splitting_method_build-wall-2_splitted_5;3;0,1,2,-1,4,5,6,7,8,9,10,11,12,13>;buildwall[l-3-0-3,n3,n1,n,stone];build-wall-1;3;0,1,2,-1,4,5,6,7,8,9,10,11,12,13>;buildwall[l-1-0-0,n4,n3,e,stone];build-wall-2;0;-1,-2,1,2,3,4,5,6,7,8,9,10,11,12,13>;build-wall-2_splitted_5[n4,e,stone,l-1-0-0,n3];_splitting_method_build-wall-2_splitted_5;1;0,-1,2,3,4,5,6,7,8,9,10,11,12,13,14>;buildwall[l-2-0-0,n4,n2,e,stone];build-wall-2;1;0,-1,-2,2,3,4,5,6,7,8,9,10,11,12,13,14>;build-wall-2_splitted_5[n4,e,stone,l-2-0-0,n2];_splitting_method_build-wall-2_splitted_5;2;0,1,-1,3,4,5,6,7,8,9,10,11,12,13,14,15>;buildwall[l-3-0-0,n4,n1,e,stone];build-wall-1;2;0,1,-1,3,4,5,6,7,8,9,10,11,12,13,14,15>;builddoor[l-1-1-0];build-door-1;12;0,1,2,3,4,5,6,7,8,9,10,11,-1,-2,13,14,15>;build-door-1_splitted_1[l-1-1-0];_splitting_method_build-door-1_splitted_1;13;0,1,2,3,4,5,6,7,8,9,10,11,12,-1,14,15,16> 1 2510 5443 8468 9791 11117 12556 15337 18244 21152 22281 23579 24574 25258 25705 28493 31518
+<==
+
+RUNWATCH_RESULT EXIT RETVAL 0 TIME_SECS 280.322 MEMPEAK_KBS 3804

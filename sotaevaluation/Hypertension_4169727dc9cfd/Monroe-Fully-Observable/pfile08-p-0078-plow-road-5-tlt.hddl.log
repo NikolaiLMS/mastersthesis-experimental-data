@@ -1,0 +1,42 @@
+----------------------Tasks-----------------------
+0 tlt
+1 invisible_goal
+---------------------Planning---------------------
+Time: 497.6457750797272s
+-----------------------Plan-----------------------
+==>
+2 shop_methodm_plow_road_precondition brighton_dump pittsford_plaza plow2 mendon_pond
+8 shop_methodm_get_to_as_cargo_precondition pdriver1 mendon_pond rochester_general amb1
+13 shop_methodm_get_to_vehicle_gets_driven_precondition amb1 rochester_general twelve_corners emt1
+15 shop_methodm_drive_to_precondition amb1 twelve_corners emt1
+17 p_1navegate_vehicle
+18 shop_methodm_get_in_ambulatory_person_precondition pdriver1 rochester_general amb1
+20 p_2climb_in
+21 shop_methodm_get_to_vehicle_gets_driven_precondition amb1 mendon_pond rochester_general emt1
+23 shop_methodm_drive_to_precondition amb1 rochester_general emt1
+25 p_3navegate_vehicle
+27 p_4climb_out
+28 p_5navegate_snowplow
+5 engage_plow pdriver1 plow2
+29 navegate_snowplow pdriver1 plow2 pittsford_plaza
+7 disengage_plow pdriver1 plow2
+root 0
+0 tlt  -> m_tlt_plow_road 1
+1 plow_road brighton_dump pittsford_plaza -> m_plow_road 2 3 4 5 6 7
+3 get_to pdriver1 mendon_pond -> m_get_to_as_cargo 8 9 10 11 12
+9 get_to amb1 rochester_general -> m_get_to_vehicle_gets_driven 13 14
+14 drive_to emt1 amb1 rochester_general -> m_drive_to 15 16
+16 cnavegate_vehicle emt1 amb1 rochester_general twelve_corners -> prefix_1 17
+10 get_in pdriver1 amb1 -> m_get_in_ambulatory_person 18 19
+19 cclimb_in pdriver1 amb1 rochester_general -> prefix_2 20
+11 get_to amb1 mendon_pond -> m_get_to_vehicle_gets_driven 21 22
+22 drive_to emt1 amb1 mendon_pond -> m_drive_to 23 24
+24 cnavegate_vehicle emt1 amb1 mendon_pond rochester_general -> prefix_3 25
+12 get_out pdriver1 amb1 -> m_get_out_ambulatory_person 26
+26 cclimb_out pdriver1 amb1 mendon_pond -> prefix_4 27
+4 cnavegate_snowplow pdriver1 plow2 brighton_dump -> prefix_5 28
+6 cnavegate_snowplow pdriver1 plow2 pittsford_plaza -> regular_3 29
+<==
+Total time: 497.68149495124817s
+
+RUNWATCH_RESULT EXIT RETVAL 0 TIME_SECS 497.832 MEMPEAK_KBS 24716

@@ -1,0 +1,372 @@
+pandaPIparser is configured as follows
+  Colors in output: true
+  Mode: parsing mode
+  Parameter splitting: true
+  Conditional effects: exponential encoding
+  Disjunctive preconditions as HTN: false
+  Replace goal with action: false
+  Output: pandaPI format
+General Options
+  Print timings: false
+  Quiet mode: false
+Inference Options
+  H2 mutexes: false
+  FAM groups: false
+Transformation Options
+  Add zero-cost no-op to empty methods: true
+  Remove duplicate actions: true
+  Remove useless literals: true
+  Expand abstract tasks with one method: true
+  Remove empty method preconditions: true
+  Two regularisation: false
+  Compile negative SAS variables: false
+Runtime Optimisations
+  Hierarchy Typing: true
+  Future Caching: false
+  Static Precondition Checking: false
+Output Options
+  Panda planner format: true
+  HDDL: false
+  SAS for Fast Downward (without hierarchy): false
+Output Formatting Options
+  Output only SAS+ variables: false
+  SAS+ delete mode: as input
+Reading input from /home/schnell/lilotane/sotaevaluation//PandaGBFS_runwatchtime_timeout1800_2021-11-16_21:14:14/runwatch_log/869/869.parsed.
+Writing output to /home/schnell/lilotane/sotaevaluation//PandaGBFS_runwatchtime_timeout1800_2021-11-16_21:14:14/runwatch_log/869/869.sas.
+Writing output to standard output.
+Parsing done.
+Conditional Effects expanded
+done.
+Starting Hierarchy Typing
+Total 0.492ms
+Contains 0.063ms
+Restrict 0.087ms
+MPrep 0.064ms
+Finished Hierarchy Typing
+Running PG.
+Process actions without preconditions
+Done.
+Returning from runGpg().
+PG done. Postprocessing
+PG postprocessing done.
+Calculated [1625] grounded tasks and [93] reachable facts.
+Running TDG.
+Process actions without preconditions
+Done.
+Returning from runGpg().
+TDG done.
+Calculated [1669] grounded tasks and [1663] grounded decomposition methods.
+Performing DFS.
+DFS done.
+After DFS: 1668 tasks, 1657 methods.
+Grounded PG:
+Input was [1625, 1668], output was [1625, 93].
+Simplifying instance.
+Removing useless facts/literals
+Removing method precondition actions whose precondition is empty
+Expanding abstract tasks with only one method
+Starting duplicate elimination.
+Data structure build.
+0 duplicates found.
+Duplicates replaced in methods.
+Further Mutex Groups: 0 strict 0 non strict
+Writing instance to output.
+Final Statistics: F 60 S 0 SC 0 SM 0 NSM 0 I 0 P 1194 S 429 A 35 M 1649
+Exiting.
+Random seed: 42
+Time limit: 1800 seconds
+Reading input from /home/schnell/lilotane/sotaevaluation//PandaGBFS_runwatchtime_timeout1800_2021-11-16_21:14:14/runwatch_log/869/869.sas.
+- State has 60 bits divided into 60 mutex groups.
+- Domain contains 1623 actions.
+- Domain contains 1658 tasks.
+- Domain contains 1649 methods.
+- The initial state contains 9 set bits.
+- The initial task is "__top[]".
+- State-based goal contains 6 bits.
+- Instance is totally-ordered: yes
+- Instance has unique paths: yes
+- Instance is parallel sequences: yes
+Calculate SCCs...
+- Number of SCCs: 1654
+- The problem is cyclic
+- Number of cyclic SCCs: 2
+- Number of cyclic SCCs of size 1: 0
+Selected Planning Algorithm: progression searchParsing heuristics ...
+Number of specified heuristics: 1
+- the option "store cuts" of the RC heuristic can only be used with the inner heuristic LM-Cut. It will be disabled.
+- Calculating minimal implied costs and distances (2 ms)
+Heuristic #0 = hhRC2(add;distance;correct count)
+Search config:
+ - type: path cost
+ - weight: 1
+ - suboptimal: false
+Visited List configured
+- mode: total order
+- hashs to use: state task task-sequence
+- memory information: topological ordering
+- Visited list allows deletion of search nodes: true
+Search Configuration
+- Using JAIR 2020 progression algorithm
+- Search is stopped after first solution is found.
+- A* Search
+- Distance G is "modification depth"
+Search Results
+- Search time 0.259 seconds
+- Visited list time 0.000948 seconds
+- Visited list inserts 163
+- Visited list pruned 0
+- Visited list contains 163
+- Visited list hash collisions 0
+- Visited list used hash buckets 163
+- Generated 14743 search nodes
+  Calculated heuristic for 14641 nodes
+  One modifications 63
+  Effectless actions 39
+- including 63 one modification actions
+- including 0 one modification methods
+- and       39 progressions of effectless actions
+- Generated 56528 nodes per second
+- Final fringe contains 4 nodes
+- Status: Solved
+- Found solution of length 235
+- Total costs of actions: 63
+==>
+3 __method_precondition_m-shiftTower[r1,t1]
+10 __method_precondition_m-selectDirection[r1,r2]
+20 __method_precondition_m-selectDirection[r2,r3]
+24 __method_precondition_m-selectDirection[r3,r4]
+29 __method_precondition_m-selectDirection[r4,r5]
+32 __method_precondition_m-selectDirection[r5,r6]
+33 __method_precondition_selectedDirection[r6,t1]
+177 move[r1,r2,t1,t2,t2]
+242 __method_precondition_exchangeLR_split[r2,t3,t1,t3]
+418 move[r2,r3,t1,t3,t3]
+654 move[r1,t2,t2,r2,t3]
+722 __method_precondition_exchangeRL_split[t2,r3,t2,t1]
+885 move[r3,r4,t1,t2,t2]
+1127 move[r1,r2,t3,r4,t1]
+1201 __method_precondition_exchangeLR_split[r2,r3,t3,t2]
+1341 move[r2,t3,t3,r3,t2]
+1577 move[r1,r4,t1,r2,t2]
+1633 __method_precondition_exchangeLR_split[r4,t3,t1,t3]
+1812 move[r4,r5,t1,t3,t3]
+2094 move[r1,r2,t2,r4,t3]
+2134 __method_precondition_exchangeLR_split[r2,r5,t2,t1]
+2268 move[r2,r3,t2,r5,t1]
+2570 move[r1,r4,t3,r2,t1]
+2614 __method_precondition_exchangeRL_split[r4,r3,t3,t2]
+2798 move[r3,t2,t2,r4,t3]
+2964 move[r1,r2,t1,t2,t2]
+3084 __method_precondition_exchangeLR_split[r2,r3,t1,t3]
+3119 move[r2,r5,t1,r3,t3]
+3441 move[r1,t2,t2,r2,t3]
+3506 __method_precondition_exchangeRL_split[t2,r5,t2,t1]
+3694 move[r5,r6,t1,t2,t2]
+3963 move[r1,r2,t3,r6,t1]
+4012 __method_precondition_exchangeLR_split[r2,r5,t3,t2]
+4217 move[r2,r3,t3,r5,t2]
+4367 move[r1,r6,t1,r2,t2]
+4500 __method_precondition_exchangeRL_split[r6,r3,t1,t3]
+4675 move[r3,r4,t3,r6,t1]
+4914 move[r1,r2,t2,r4,t3]
+4945 __method_precondition_exchangeLR_split[r2,r3,t2,t1]
+5013 move[r2,r5,t2,r3,t1]
+5357 move[r1,r4,t3,r2,t1]
+5378 __method_precondition_exchangeLR_split[r4,r5,t3,t2]
+5489 move[r4,t3,t3,r5,t2]
+5820 move[r1,r2,t1,r4,t2]
+5882 __method_precondition_exchangeLR_split[r2,t3,t1,t3]
+6058 move[r2,r3,t1,t3,t3]
+6333 move[r1,r4,t2,r2,t3]
+6355 __method_precondition_exchangeRL_split[r4,r3,t2,t1]
+6491 move[r3,r6,t1,r4,t2]
+6750 move[r1,r2,t3,r6,t1]
+6841 __method_precondition_exchangeLR_split[r2,r3,t3,t2]
+6981 move[r2,t3,t3,r3,t2]
+7154 move[r1,r6,t1,r2,t2]
+7311 __method_precondition_exchangeLR_split[r6,t3,t1,t3]
+7493 move[r6,t1,t1,t3,t3]
+7605 move[r1,r2,t2,r6,t3]
+7768 __method_precondition_exchangeLR_split[r2,t1,t2,t1]
+7817 move[r2,r3,t2,t1,t1]
+8114 move[r1,r6,t3,r2,t1]
+8248 __method_precondition_exchangeRL_split[r6,r3,t3,t2]
+8355 move[r3,r4,t2,r6,t3]
+8673 move[r1,r2,t1,r4,t2]
+8724 __method_precondition_exchangeLR_split[r2,r3,t1,t3]
+8776 move[r2,t1,t1,r3,t3]
+9120 move[r1,r4,t2,r2,t3]
+9169 __method_precondition_exchangeLR_split[r4,t1,t2,t1]
+9202 move[r4,r5,t2,t1,t1]
+9554 move[r1,r2,t3,r4,t1]
+9652 __method_precondition_exchangeLR_split[r2,r5,t3,t2]
+9857 move[r2,r3,t3,r5,t2]
+10070 move[r1,r4,t1,r2,t2]
+10115 __method_precondition_exchangeRL_split[r4,r3,t1,t3]
+10244 move[r3,r6,t3,r4,t1]
+10425 move[r1,r2,t2,r6,t3]
+10585 __method_precondition_exchangeLR_split[r2,r3,t2,t1]
+10653 move[r2,r5,t2,r3,t1]
+10901 move[r1,r6,t3,r2,t1]
+11033 __method_precondition_exchangeRL_split[r6,r5,t3,t2]
+11134 move[r5,t2,t2,r6,t3]
+11391 move[r1,r2,t1,t2,t2]
+11534 __method_precondition_exchangeLR_split[r2,r5,t1,t3]
+11560 move[r2,r3,t1,r5,t3]
+11934 move[r1,t2,t2,r2,t3]
+12002 __method_precondition_exchangeRL_split[t2,r3,t2,t1]
+12165 move[r3,r4,t1,t2,t2]
+12407 move[r1,r2,t3,r4,t1]
+12481 __method_precondition_exchangeLR_split[r2,r3,t3,t2]
+12560 move[r2,r5,t3,r3,t2]
+12857 move[r1,r4,t1,r2,t2]
+12909 __method_precondition_exchangeLR_split[r4,r5,t1,t3]
+12987 move[r4,t1,t1,r5,t3]
+13308 move[r1,r2,t2,r4,t3]
+13408 __method_precondition_exchangeLR_split[r2,t1,t2,t1]
+13457 move[r2,r3,t2,t1,t1]
+13850 move[r1,r4,t3,r2,t1]
+13894 __method_precondition_exchangeRL_split[r4,r3,t3,t2]
+14078 move[r3,t2,t2,r4,t3]
+14244 move[r1,r2,t1,t2,t2]
+14331 __method_precondition_exchangeLR_split[r2,r3,t1,t3]
+14383 move[r2,t1,t1,r3,t3]
+14688 move[r1,t2,t2,r2,t3]
+14739 __method_precondition_exchangeClear[t2,t1]
+root 0
+14738 exchange[t2,t3,t1] -> exchangeClear 14739
+14687 move_abstract[t2,t3] -> newMethod21 14688
+14382 move_abstract[t1,t3] -> newMethod21 14383
+14330 exchangeLR_splitted_1[t1,t3] -> _splitting_method_exchangeLR_splitted_1 14331
+14302 exchange[t1,t2,t3] -> <exchangeLR;rotateTower[t2,t3,t1];m-rotateTower;2;0,1,-1,-2> 14330 14382 14687 14738
+14243 move_abstract[t1,t2] -> newMethod21 14244
+14077 move_abstract[t2,t3] -> newMethod21 14078
+13893 exchangeRL_splitted_2[t3,t2] -> _splitting_method_exchangeRL_splitted_2 13894
+13866 exchange[t3,t1,t2] -> <exchangeRL;rotateTower[t1,t2,t3];m-rotateTower;2;0,1,-1,-2> 13893 14077 14243 14302
+13849 move_abstract[t3,t1] -> newMethod21 13850
+13456 move_abstract[t2,t1] -> newMethod21 13457
+13407 exchangeLR_splitted_1[t2,t1] -> _splitting_method_exchangeLR_splitted_1 13408
+13329 exchange[t2,t3,t1] -> <exchangeLR;rotateTower[t3,t1,t2];m-rotateTower;2;0,1,-1,-2> 13407 13456 13849 13866
+13307 move_abstract[t2,t3] -> newMethod21 13308
+12986 move_abstract[t1,t3] -> newMethod21 12987
+12908 exchangeLR_splitted_1[t1,t3] -> _splitting_method_exchangeLR_splitted_1 12909
+12892 exchange[t1,t2,t3] -> <exchangeLR;rotateTower[t2,t3,t1];m-rotateTower;2;0,1,-1,-2> 12908 12986 13307 13329
+12856 move_abstract[t1,t2] -> newMethod21 12857
+12559 move_abstract[t3,t2] -> newMethod21 12560
+12480 exchangeLR_splitted_1[t3,t2] -> _splitting_method_exchangeLR_splitted_1 12481
+12455 exchange[t3,t1,t2] -> <exchangeLR;rotateTower[t1,t2,t3];m-rotateTower;2;0,1,-1,-2> 12480 12559 12856 12892
+12406 move_abstract[t3,t1] -> newMethod21 12407
+12164 move_abstract[t1,t2] -> newMethod21 12165
+12001 exchangeRL_splitted_2[t2,t1] -> _splitting_method_exchangeRL_splitted_2 12002
+11986 exchange[t2,t3,t1] -> <exchangeRL;rotateTower[t3,t1,t2];m-rotateTower;2;0,1,-1,-2> 12001 12164 12406 12455
+11933 move_abstract[t2,t3] -> newMethod21 11934
+11559 move_abstract[t1,t3] -> newMethod21 11560
+11533 exchangeLR_splitted_1[t1,t3] -> _splitting_method_exchangeLR_splitted_1 11534
+11449 exchange[t1,t2,t3] -> <exchangeLR;rotateTower[t2,t3,t1];m-rotateTower;2;0,1,-1,-2> 11533 11559 11933 11986
+11390 move_abstract[t1,t2] -> newMethod21 11391
+11133 move_abstract[t2,t3] -> newMethod21 11134
+11032 exchangeRL_splitted_2[t3,t2] -> _splitting_method_exchangeRL_splitted_2 11033
+11013 exchange[t3,t1,t2] -> <exchangeRL;rotateTower[t1,t2,t3];m-rotateTower;2;0,1,-1,-2> 11032 11133 11390 11449
+10900 move_abstract[t3,t1] -> newMethod21 10901
+10652 move_abstract[t2,t1] -> newMethod21 10653
+10584 exchangeLR_splitted_1[t2,t1] -> _splitting_method_exchangeLR_splitted_1 10585
+10542 exchange[t2,t3,t1] -> <exchangeLR;rotateTower[t3,t1,t2];m-rotateTower;2;0,1,-1,-2> 10584 10652 10900 11013
+10424 move_abstract[t2,t3] -> newMethod21 10425
+10243 move_abstract[t3,t1] -> newMethod21 10244
+10114 exchangeRL_splitted_2[t1,t3] -> _splitting_method_exchangeRL_splitted_2 10115
+10106 exchange[t1,t2,t3] -> <exchangeRL;rotateTower[t2,t3,t1];m-rotateTower;2;0,1,-1,-2> 10114 10243 10424 10542
+10069 move_abstract[t1,t2] -> newMethod21 10070
+9856 move_abstract[t3,t2] -> newMethod21 9857
+9651 exchangeLR_splitted_1[t3,t2] -> _splitting_method_exchangeLR_splitted_1 9652
+9635 exchange[t3,t1,t2] -> <exchangeLR;rotateTower[t1,t2,t3];m-rotateTower;2;0,1,-1,-2> 9651 9856 10069 10106
+9553 move_abstract[t3,t1] -> newMethod21 9554
+9201 move_abstract[t2,t1] -> newMethod21 9202
+9168 exchangeLR_splitted_1[t2,t1] -> _splitting_method_exchangeLR_splitted_1 9169
+9132 exchange[t2,t3,t1] -> <exchangeLR;rotateTower[t3,t1,t2];m-rotateTower;2;0,1,-1,-2> 9168 9201 9553 9635
+9119 move_abstract[t2,t3] -> newMethod21 9120
+8775 move_abstract[t1,t3] -> newMethod21 8776
+8723 exchangeLR_splitted_1[t1,t3] -> _splitting_method_exchangeLR_splitted_1 8724
+8695 exchange[t1,t2,t3] -> <exchangeLR;rotateTower[t2,t3,t1];m-rotateTower;2;0,1,-1,-2> 8723 8775 9119 9132
+8672 move_abstract[t1,t2] -> newMethod21 8673
+8354 move_abstract[t2,t3] -> newMethod21 8355
+8247 exchangeRL_splitted_2[t3,t2] -> _splitting_method_exchangeRL_splitted_2 8248
+8226 exchange[t3,t1,t2] -> <exchangeRL;rotateTower[t1,t2,t3];m-rotateTower;2;0,1,-1,-2> 8247 8354 8672 8695
+8113 move_abstract[t3,t1] -> newMethod21 8114
+7816 move_abstract[t2,t1] -> newMethod21 7817
+7767 exchangeLR_splitted_1[t2,t1] -> _splitting_method_exchangeLR_splitted_1 7768
+7722 exchange[t2,t3,t1] -> <exchangeLR;rotateTower[t3,t1,t2];m-rotateTower;2;0,1,-1,-2> 7767 7816 8113 8226
+7604 move_abstract[t2,t3] -> newMethod21 7605
+7492 move_abstract[t1,t3] -> newMethod21 7493
+7310 exchangeLR_splitted_1[t1,t3] -> _splitting_method_exchangeLR_splitted_1 7311
+7252 exchange[t1,t2,t3] -> <exchangeLR;rotateTower[t2,t3,t1];m-rotateTower;2;0,1,-1,-2> 7310 7492 7604 7722
+7153 move_abstract[t1,t2] -> newMethod21 7154
+6980 move_abstract[t3,t2] -> newMethod21 6981
+6840 exchangeLR_splitted_1[t3,t2] -> _splitting_method_exchangeLR_splitted_1 6841
+6815 exchange[t3,t1,t2] -> <exchangeLR;rotateTower[t1,t2,t3];m-rotateTower;2;0,1,-1,-2> 6840 6980 7153 7252
+6749 move_abstract[t3,t1] -> newMethod21 6750
+6490 move_abstract[t1,t2] -> newMethod21 6491
+6354 exchangeRL_splitted_2[t2,t1] -> _splitting_method_exchangeRL_splitted_2 6355
+6346 exchange[t2,t3,t1] -> <exchangeRL;rotateTower[t3,t1,t2];m-rotateTower;2;0,1,-1,-2> 6354 6490 6749 6815
+6332 move_abstract[t2,t3] -> newMethod21 6333
+6057 move_abstract[t1,t3] -> newMethod21 6058
+5881 exchangeLR_splitted_1[t1,t3] -> _splitting_method_exchangeLR_splitted_1 5882
+5842 exchange[t1,t2,t3] -> <exchangeLR;rotateTower[t2,t3,t1];m-rotateTower;2;0,1,-1,-2> 5881 6057 6332 6346
+5819 move_abstract[t1,t2] -> newMethod21 5820
+5488 move_abstract[t3,t2] -> newMethod21 5489
+5377 exchangeLR_splitted_1[t3,t2] -> _splitting_method_exchangeLR_splitted_1 5378
+5372 exchange[t3,t1,t2] -> <exchangeLR;rotateTower[t1,t2,t3];m-rotateTower;2;0,1,-1,-2> 5377 5488 5819 5842
+5356 move_abstract[t3,t1] -> newMethod21 5357
+5012 move_abstract[t2,t1] -> newMethod21 5013
+4944 exchangeLR_splitted_1[t2,t1] -> _splitting_method_exchangeLR_splitted_1 4945
+4935 exchange[t2,t3,t1] -> <exchangeLR;rotateTower[t3,t1,t2];m-rotateTower;2;0,1,-1,-2> 4944 5012 5356 5372
+4913 move_abstract[t2,t3] -> newMethod21 4914
+4674 move_abstract[t3,t1] -> newMethod21 4675
+4499 exchangeRL_splitted_2[t1,t3] -> _splitting_method_exchangeRL_splitted_2 4500
+4466 exchange[t1,t2,t3] -> <exchangeRL;rotateTower[t2,t3,t1];m-rotateTower;2;0,1,-1,-2> 4499 4674 4913 4935
+4366 move_abstract[t1,t2] -> newMethod21 4367
+4216 move_abstract[t3,t2] -> newMethod21 4217
+4011 exchangeLR_splitted_1[t3,t2] -> _splitting_method_exchangeLR_splitted_1 4012
+3995 exchange[t3,t1,t2] -> <exchangeLR;rotateTower[t1,t2,t3];m-rotateTower;2;0,1,-1,-2> 4011 4216 4366 4466
+3962 move_abstract[t3,t1] -> newMethod21 3963
+3693 move_abstract[t1,t2] -> newMethod21 3694
+3505 exchangeRL_splitted_2[t2,t1] -> _splitting_method_exchangeRL_splitted_2 3506
+3493 exchange[t2,t3,t1] -> <exchangeRL;rotateTower[t3,t1,t2];m-rotateTower;2;0,1,-1,-2> 3505 3693 3962 3995
+3440 move_abstract[t2,t3] -> newMethod21 3441
+3118 move_abstract[t1,t3] -> newMethod21 3119
+3083 exchangeLR_splitted_1[t1,t3] -> _splitting_method_exchangeLR_splitted_1 3084
+3055 exchange[t1,t2,t3] -> <exchangeLR;rotateTower[t2,t3,t1];m-rotateTower;2;0,1,-1,-2> 3083 3118 3440 3493
+2963 move_abstract[t1,t2] -> newMethod21 2964
+2797 move_abstract[t2,t3] -> newMethod21 2798
+2613 exchangeRL_splitted_2[t3,t2] -> _splitting_method_exchangeRL_splitted_2 2614
+2586 exchange[t3,t1,t2] -> <exchangeRL;rotateTower[t1,t2,t3];m-rotateTower;2;0,1,-1,-2> 2613 2797 2963 3055
+2569 move_abstract[t3,t1] -> newMethod21 2570
+2267 move_abstract[t2,t1] -> newMethod21 2268
+2133 exchangeLR_splitted_1[t2,t1] -> _splitting_method_exchangeLR_splitted_1 2134
+2115 exchange[t2,t3,t1] -> <exchangeLR;rotateTower[t3,t1,t2];m-rotateTower;2;0,1,-1,-2> 2133 2267 2569 2586
+2093 move_abstract[t2,t3] -> newMethod21 2094
+1811 move_abstract[t1,t3] -> newMethod21 1812
+1632 exchangeLR_splitted_1[t1,t3] -> _splitting_method_exchangeLR_splitted_1 1633
+1612 exchange[t1,t2,t3] -> <exchangeLR;rotateTower[t2,t3,t1];m-rotateTower;2;0,1,-1,-2> 1632 1811 2093 2115
+1576 move_abstract[t1,t2] -> newMethod21 1577
+1340 move_abstract[t3,t2] -> newMethod21 1341
+1200 exchangeLR_splitted_1[t3,t2] -> _splitting_method_exchangeLR_splitted_1 1201
+1175 exchange[t3,t1,t2] -> <exchangeLR;rotateTower[t1,t2,t3];m-rotateTower;2;0,1,-1,-2> 1200 1340 1576 1612
+1126 move_abstract[t3,t1] -> newMethod21 1127
+884 move_abstract[t1,t2] -> newMethod21 885
+721 exchangeRL_splitted_2[t2,t1] -> _splitting_method_exchangeRL_splitted_2 722
+706 exchange[t2,t3,t1] -> <exchangeRL;rotateTower[t3,t1,t2];m-rotateTower;2;0,1,-1,-2> 721 884 1126 1175
+653 move_abstract[t2,t3] -> newMethod21 654
+417 move_abstract[t1,t3] -> newMethod21 418
+241 exchangeLR_splitted_1[t1,t3] -> _splitting_method_exchangeLR_splitted_1 242
+235 exchange[t1,t2,t3] -> <exchangeLR;rotateTower[t2,t3,t1];m-rotateTower;2;0,1,-1,-2> 241 417 653 706
+176 move_abstract[t1,t2] -> newMethod21 177
+31 selectDirection[r5,t1,t2,t3] -> <<m-selectDirection;selectDirection[r6,t1,t3,t2];selectedDirection;1;0,-1,-2>;rotateTower[t1,t2,t3];m-rotateTower;2;0,1,-1,-2> 32 33 176 235
+28 selectDirection[r4,t1,t3,t2] -> m-selectDirection 29 31
+23 selectDirection[r3,t1,t2,t3] -> m-selectDirection 24 28
+19 selectDirection[r2,t1,t3,t2] -> m-selectDirection 20 23
+9 selectDirection[r1,t1,t2,t3] -> m-selectDirection 10 19
+2 shiftTower[t1,t2,t3] -> m-shiftTower 3 9
+0 __top[] -> __top_method 2
+<==
+
+RUNWATCH_RESULT EXIT RETVAL 0 TIME_SECS 0.479999 MEMPEAK_KBS 3140

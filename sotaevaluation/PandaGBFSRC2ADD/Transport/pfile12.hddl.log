@@ -1,0 +1,182 @@
+pandaPIparser is configured as follows
+  Colors in output: true
+  Mode: parsing mode
+  Parameter splitting: true
+  Conditional effects: exponential encoding
+  Disjunctive preconditions as HTN: false
+  Replace goal with action: false
+  Output: pandaPI format
+General Options
+  Print timings: false
+  Quiet mode: false
+Inference Options
+  H2 mutexes: false
+  FAM groups: false
+Transformation Options
+  Add zero-cost no-op to empty methods: true
+  Remove duplicate actions: true
+  Remove useless literals: true
+  Expand abstract tasks with one method: true
+  Remove empty method preconditions: true
+  Two regularisation: false
+  Compile negative SAS variables: false
+Runtime Optimisations
+  Hierarchy Typing: true
+  Future Caching: false
+  Static Precondition Checking: false
+Output Options
+  Panda planner format: true
+  HDDL: false
+  SAS for Fast Downward (without hierarchy): false
+Output Formatting Options
+  Output only SAS+ variables: false
+  SAS+ delete mode: as input
+Reading input from /home/schnell/lilotane/sotaevaluation//PandaGBFS_runwatchtime_timeout1800_2021-11-16_21:14:14/runwatch_log/242/242.parsed.
+Writing output to /home/schnell/lilotane/sotaevaluation//PandaGBFS_runwatchtime_timeout1800_2021-11-16_21:14:14/runwatch_log/242/242.sas.
+Writing output to standard output.
+Parsing done.
+Conditional Effects expanded
+done.
+Starting Hierarchy Typing
+Total 0.246ms
+Contains 0.026ms
+Restrict 0.04ms
+MPrep 0.032ms
+Finished Hierarchy Typing
+Running PG.
+Process actions without preconditions
+Done.
+Returning from runGpg().
+PG done. Postprocessing
+PG postprocessing done.
+Calculated [82] grounded tasks and [46] reachable facts.
+Running TDG.
+Process actions without preconditions
+Done.
+Returning from runGpg().
+TDG done.
+Calculated [129] grounded tasks and [131] grounded decomposition methods.
+Performing DFS.
+DFS done.
+After DFS: 129 tasks, 131 methods.
+Grounded PG:
+Input was [82, 129], output was [82, 46].
+Simplifying instance.
+Removing useless facts/literals
+Removing method precondition actions whose precondition is empty
+Expanding abstract tasks with only one method
+Starting duplicate elimination.
+Data structure build.
+0 duplicates found.
+Duplicates replaced in methods.
+Further Mutex Groups: 0 strict 0 non strict
+Writing instance to output.
+Final Statistics: F 32 S 0 SC 0 SM 0 NSM 0 I 0 P 82 S 0 A 47 M 131
+Exiting.
+Random seed: 42
+Time limit: 1800 seconds
+Reading input from /home/schnell/lilotane/sotaevaluation//PandaGBFS_runwatchtime_timeout1800_2021-11-16_21:14:14/runwatch_log/242/242.sas.
+- State has 32 bits divided into 32 mutex groups.
+- Domain contains 82 actions.
+- Domain contains 129 tasks.
+- Domain contains 131 methods.
+- The initial state contains 8 set bits.
+- The initial task is "__top[]".
+- State-based goal contains 0 bits.
+- Instance is totally-ordered: yes
+- Instance has unique paths: yes
+- Instance is parallel sequences: yes
+Calculate SCCs...
+- Number of SCCs: 121
+- The problem is cyclic
+- Number of cyclic SCCs: 2
+- Number of cyclic SCCs of size 1: 0
+Selected Planning Algorithm: progression searchParsing heuristics ...
+Number of specified heuristics: 1
+- the option "store cuts" of the RC heuristic can only be used with the inner heuristic LM-Cut. It will be disabled.
+- Calculating minimal implied costs and distances (0 ms)
+Heuristic #0 = hhRC2(add;distance;correct count)
+Search config:
+ - type: path cost
+ - weight: 1
+ - suboptimal: false
+Visited List configured
+- mode: total order
+- hashs to use: state task task-sequence
+- memory information: topological ordering
+- Visited list allows deletion of search nodes: true
+Search Configuration
+- Using JAIR 2020 progression algorithm
+- Search is stopped after first solution is found.
+- A* Search
+- Distance G is "modification depth"
+Search Results
+- Search time 0.002 seconds
+- Visited list time 0.000217 seconds
+- Visited list inserts 61
+- Visited list pruned 10
+- Visited list contains 51
+- Visited list hash collisions 10
+- Visited list used hash buckets 51
+- Generated 317 search nodes
+  Calculated heuristic for 232 nodes
+  One modifications 75
+  Effectless actions 10
+- including 75 one modification actions
+- including 0 one modification methods
+- and       10 progressions of effectless actions
+- Generated 116000 nodes per second
+- Final fringe contains 81 nodes
+- Status: Solved
+- Found solution of length 45
+- Total costs of actions: 18
+==>
+9 drive[truck_0,city_loc_1,city_loc_3]
+15 pick_up[truck_0,city_loc_3,package_2,capacity_1,capacity_2]
+17 drive[truck_0,city_loc_3,city_loc_2]
+24 drop[truck_0,city_loc_2,package_2,capacity_1,capacity_2]
+176 drive[truck_0,city_loc_2,city_loc_1]
+184 pick_up[truck_0,city_loc_1,package_1,capacity_1,capacity_2]
+188 drive[truck_0,city_loc_1,city_loc_2]
+194 drop[truck_0,city_loc_2,package_1,capacity_1,capacity_2]
+201 drive[truck_1,city_loc_1,city_loc_3]
+206 pick_up[truck_1,city_loc_3,package_0,capacity_1,capacity_2]
+278 drive[truck_1,city_loc_3,city_loc_1]
+279 drive[truck_1,city_loc_1,city_loc_4]
+280 drive[truck_1,city_loc_4,city_loc_0]
+289 drop[truck_1,city_loc_0,package_0,capacity_1,capacity_2]
+297 drive[truck_0,city_loc_2,city_loc_1]
+305 pick_up[truck_0,city_loc_1,package_3,capacity_1,capacity_2]
+309 drive[truck_0,city_loc_1,city_loc_3]
+315 drop[truck_0,city_loc_3,package_3,capacity_1,capacity_2]
+root 0
+314 unload[truck_0,city_loc_3,package_3] -> m_unload_ordering_0 315
+308 get_to[truck_0,city_loc_3] -> m_drive_to_ordering_0 309
+304 load[truck_0,city_loc_1,package_3] -> m_load_ordering_0 305
+296 get_to[truck_0,city_loc_1] -> m_drive_to_ordering_0 297
+293 m_deliver_ordering_0_splitted_1[truck_0,package_3] -> _splitting_method_m_deliver_ordering_0_splitted_1 296 304
+290 deliver[package_3,city_loc_3] -> m_deliver_ordering_0 293 308 314
+288 unload[truck_1,city_loc_0,package_0] -> m_unload_ordering_0 289
+277 get_to[truck_1,city_loc_1] -> m_drive_to_ordering_0 278
+216 get_to[truck_1,city_loc_4] -> m_drive_to_via_ordering_0 277 279
+212 get_to[truck_1,city_loc_0] -> m_drive_to_via_ordering_0 216 280
+205 load[truck_1,city_loc_3,package_0] -> m_load_ordering_0 206
+200 get_to[truck_1,city_loc_3] -> m_drive_to_ordering_0 201
+198 m_deliver_ordering_0_splitted_1[truck_1,package_0] -> _splitting_method_m_deliver_ordering_0_splitted_1 200 205
+196 deliver[package_0,city_loc_0] -> m_deliver_ordering_0 198 212 288
+193 unload[truck_0,city_loc_2,package_1] -> m_unload_ordering_0 194
+187 get_to[truck_0,city_loc_2] -> m_drive_to_ordering_0 188
+183 load[truck_0,city_loc_1,package_1] -> m_load_ordering_0 184
+175 get_to[truck_0,city_loc_1] -> m_drive_to_ordering_0 176
+165 m_deliver_ordering_0_splitted_1[truck_0,package_1] -> _splitting_method_m_deliver_ordering_0_splitted_1 175 183
+26 deliver[package_1,city_loc_2] -> m_deliver_ordering_0 165 187 193
+23 unload[truck_0,city_loc_2,package_2] -> m_unload_ordering_0 24
+16 get_to[truck_0,city_loc_2] -> m_drive_to_ordering_0 17
+14 load[truck_0,city_loc_3,package_2] -> m_load_ordering_0 15
+8 get_to[truck_0,city_loc_3] -> m_drive_to_ordering_0 9
+6 m_deliver_ordering_0_splitted_1[truck_0,package_2] -> _splitting_method_m_deliver_ordering_0_splitted_1 8 14
+2 deliver[package_2,city_loc_2] -> m_deliver_ordering_0 6 16 23
+0 __top[] -> __top_method 2 26 196 290
+<==
+
+RUNWATCH_RESULT EXIT RETVAL 0 TIME_SECS 0.34375 MEMPEAK_KBS 932

@@ -1,0 +1,127 @@
+    _           _         _
+   \ |         \ |       | |                       
+   | |     __  | |      _| |______                
+   | |     \/  | |     /_   ______\                
+   | |      _  | |   __  | |  ___   ___   ___       
+   | |___  | | | |  / .\ | | / , | |   \ / ·_\    
+   \_____\ |_| |__\ \__/ |_| \___) |_|_| \___\  
+[39mL i l o t a n e  version rls-glucose4
+by Dominik Schreiber <dominik.schreiber@kit.edu> 2020-2021
+using SAT solver glucose4
+
+0.018 Parser finished.
+0.018 Structures extracted.
+0.019 88 operators and 85 methods created.
+0.238 Mined 83 new reduction preconditions (+8300.0%).
+0.238 Iteration 0.
+0.238 Creating initial layer of size 2
+0.486 Attempting to solve formula with 5 clauses (6 literals) and 1 assumptions
+0.487 Unsolvable at layer 0 -- expanding.
+0.487 Iteration 1.
+0.487 New layer size: 2
+0.487 Instantiating ...
+1.622 Collected 1 relevant facts at this layer
+1.622 Encoding ...
+1.623 Attempting to solve formula with 502 clauses (1075 literals) and 1 assumptions
+1.623 Unsolvable at layer 1 -- expanding.
+1.623 Iteration 2.
+1.624 New layer size: 2
+1.624 Instantiating ...
+2.875 Collected 1 relevant facts at this layer
+2.875 Encoding ...
+2.876 Attempting to solve formula with 628 clauses (1397 literals) and 1 assumptions
+2.876 Unsolvable at layer 2 -- expanding.
+2.876 Iteration 3.
+2.877 New layer size: 7
+2.877 Instantiating ...
+3.122 Collected 75 relevant facts at this layer
+3.122 Encoding ...
+3.127 Attempting to solve formula with 2487 clauses (6209 literals) and 4 assumptions
+3.127 Unsolvable at layer 3 -- expanding.
+3.127 Iteration 4.
+3.127 New layer size: 27
+3.127 Instantiating ...
+3.588 Collected 303 relevant facts at this layer
+3.588 Encoding ...
+3.615 Attempting to solve formula with 24532 clauses (70571 literals) and 22 assumptions
+3.616 Unsolvable at layer 4 -- expanding.
+3.616 Iteration 5.
+3.616 New layer size: 75
+3.616 Instantiating ...
+4.090 Collected 457 relevant facts at this layer
+4.090 Encoding ...
+4.158 Attempting to solve formula with 92729 clauses (269962 literals) and 40 assumptions
+4.159 Unsolvable at layer 5 -- expanding.
+4.159 Iteration 6.
+4.160 New layer size: 202
+4.160 Instantiating ...
+4.967 Collected 556 relevant facts at this layer
+4.967 Encoding ...
+5.179 Attempting to solve formula with 275025 clauses (814268 literals) and 113 assumptions
+c last restart ## conflicts  :  0 4606 
+5.190 Found a solution at layer 6.
+==>
+24522 SHOP_methodm_plow_road_precondition brighton_dump henrietta_dump plow1 airport
+33993 SHOP_methodm_get_to_as_cargo_precondition pdriver2 airport brighton_high pvan2
+38584 SHOP_methodm_get_to_already_there_precondition pvan2 brighton_high
+42176 SHOP_methodm_get_in_ambulatory_person_precondition pdriver2 brighton_high pvan2
+42816 p_1Climb_in
+45027 SHOP_methodm_get_to_vehicle_gets_driven_precondition pvan2 airport brighton_high pu2
+45031 SHOP_methodm_drive_to_precondition pvan2 brighton_high pu2
+45055 p_2Navegate_vehicle
+47233 p_3Climb_out
+53892 p_4Navegate_snowplow
+64672 p_5Engage_plow
+74103 navegate_snowplow pdriver2 plow1 henrietta_dump
+74107 disengage_plow pdriver2 plow1
+root 9
+9 tlt -> m_tlt_plow_road 57
+57 plow_road brighton_dump henrietta_dump -> m_plow_road 24522 198 53891 64671 74102 74107
+198 get_to pdriver2 airport -> m_get_to_as_cargo 33993 38583 2582 2904 3238
+2582 get_in pdriver2 pvan2 -> m_get_in_ambulatory_person 42176 42815
+2904 get_to pvan2 airport -> m_get_to_vehicle_gets_driven 45027 15400
+3238 get_out pdriver2 pvan2 -> m_get_out_ambulatory_person 47232
+15400 drive_to pu2 pvan2 airport -> m_drive_to 45031 45054
+38583 get_to pvan2 brighton_high -> m_get_to_already_there 38584
+42815 cclimb_in pdriver2 pvan2 brighton_high -> prefix_1 42816
+45054 cnavegate_vehicle pu2 pvan2 airport brighton_high -> prefix_2 45055
+47232 cclimb_out pdriver2 pvan2 airport -> prefix_3 47233
+53891 cnavegate_snowplow pdriver2 plow1 brighton_dump -> prefix_4 53892
+64671 cengage_plow pdriver2 plow1 -> prefix_5 64672
+74102 cnavegate_snowplow pdriver2 plow1 henrietta_dump -> regular_4 74103
+<==
+5.195 End of solution plan. (counted length of 13)
+5.195 Total amount of clauses encoded: 275025
+5.195 - directframeaxioms : 180132 cls
+5.195 - qfactsemantics : 43242 cls
+5.195 - reductionconstraints : 24024 cls
+5.195 - indirectframeaxioms : 12338 cls
+5.195 - actionconstraints : 5566 cls
+5.195 - atmostoneelement : 3324 cls
+5.195 - expansions : 1996 cls
+5.195 - predecessors : 1400 cls
+5.195 - substitutionconstraints : 1277 cls
+5.195 - truefacts : 556 cls
+5.195 - qconstequality : 538 cls
+5.195 - qtypeconstraints : 380 cls
+5.195 - actioneffects : 250 cls
+5.195 - axiomaticops : 2 cls
+5.195 # instantiated positions: 316
+5.195 # instantiated actions: 961
+5.195 # instantiated reductions: 440
+5.195 # introduced pseudo-constants: 340
+5.195 # retroactive prunings: 4
+5.195 # retroactively pruned operations: 4
+5.195 # dominated operations: 40
+5.195 # total invalid rigid preconditions found in getPFC: 5044
+5.195 # invalid rigid preconditions found in getPFC: 7
+5.195 # invalid rigid preconditions found in getPFC in varrestrictions: 5037
+5.195 # total invalid fluent preconditions found in getPFC: 66
+5.195 # invalid fluent preconditions found in getPFC: 66
+5.195 # invalid fluent preconditions found in getPFC in varrestrictions: 0
+5.195 # invalid fluent preconditions found in getPFC via postconditions: 0
+5.195 # invalid subtasks found in getPFC: 4
+5.195 # number effects in operation fact_frames: 919
+5.195 Exiting happily.
+
+RUNWATCH_RESULT EXIT RETVAL 0 TIME_SECS 5.21973 MEMPEAK_KBS 233196

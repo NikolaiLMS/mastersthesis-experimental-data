@@ -1,0 +1,128 @@
+    _           _         _
+   \ |         \ |       | |                       
+   | |     __  | |      _| |______                
+   | |     \/  | |     /_   ______\                
+   | |      _  | |   __  | |  ___   ___   ___       
+   | |___  | | | |  / .\ | | / , | |   \ / ·_\    
+   \_____\ |_| |__\ \__/ |_| \___) |_|_| \___\  
+[39mL i l o t a n e  version rls-glucose4
+by Dominik Schreiber <dominik.schreiber@kit.edu> 2020-2021
+using SAT solver glucose4
+
+0.005 Parser finished.
+0.005 Structures extracted.
+0.006 9 operators and 7 methods created.
+0.019 Mined 12 new reduction preconditions (+inf%).
+0.019 Iteration 0.
+0.019 Creating initial layer of size 2
+0.032 Attempting to solve formula with 3 clauses (3 literals) and 1 assumptions
+0.032 Unsolvable at layer 0 -- expanding.
+0.032 Iteration 1.
+0.032 New layer size: 5
+0.032 Instantiating ...
+0.070 Collected 0 relevant facts at this layer
+0.070 Encoding ...
+0.071 Attempting to solve formula with 69 clauses (151 literals) and 4 assumptions
+0.071 Unsolvable at layer 1 -- expanding.
+0.071 Iteration 2.
+0.071 New layer size: 17
+0.071 Instantiating ...
+0.135 Collected 32 relevant facts at this layer
+0.135 Encoding ...
+0.137 Attempting to solve formula with 1737 clauses (5890 literals) and 8 assumptions
+0.137 Unsolvable at layer 2 -- expanding.
+0.137 Iteration 3.
+0.137 New layer size: 25
+0.137 Instantiating ...
+0.201 Collected 32 relevant facts at this layer
+0.201 Encoding ...
+0.204 Attempting to solve formula with 3638 clauses (12784 literals) and 8 assumptions
+0.206 Unsolvable at layer 3 -- expanding.
+0.206 Iteration 4.
+0.206 New layer size: 33
+0.206 Instantiating ...
+0.271 Collected 32 relevant facts at this layer
+0.271 Encoding ...
+0.275 Attempting to solve formula with 6228 clauses (22287 literals) and 8 assumptions
+c last restart ## conflicts  :  0 229 
+0.276 Found a solution at layer 4.
+==>
+706 drive truck_0 city_loc_1 city_loc_3
+737 pick_up truck_0 city_loc_3 package_2 capacity_1 capacity_2
+744 drive truck_0 city_loc_3 city_loc_2
+775 drop truck_0 city_loc_2 package_2 capacity_1 capacity_2
+781 noop truck_0 city_loc_2
+808 drive truck_0 city_loc_2 city_loc_1
+810 pick_up truck_0 city_loc_1 package_1 capacity_1 capacity_2
+816 drive truck_0 city_loc_1 city_loc_3
+844 drive truck_0 city_loc_3 city_loc_2
+848 drop truck_0 city_loc_2 package_1 capacity_1 capacity_2
+851 drive truck_0 city_loc_2 city_loc_3
+883 pick_up truck_0 city_loc_3 package_0 capacity_1 capacity_2
+888 drive truck_0 city_loc_3 city_loc_1
+899 drive truck_0 city_loc_1 city_loc_4
+916 drive truck_0 city_loc_4 city_loc_0
+920 drop truck_0 city_loc_0 package_0 capacity_1 capacity_2
+922 drive truck_1 city_loc_1 city_loc_1
+955 pick_up truck_1 city_loc_1 package_3 capacity_1 capacity_2
+960 drive truck_1 city_loc_1 city_loc_3
+993 drop truck_1 city_loc_3 package_3 capacity_1 capacity_2
+root 5 14 23 32
+5 deliver package_2 city_loc_2 -> m_deliver_ordering_0 705 736 743 774
+14 deliver package_1 city_loc_2 -> m_deliver_ordering_0 152 809 197 847
+23 deliver package_0 city_loc_0 -> m_deliver_ordering_0 850 882 289 919
+32 deliver package_3 city_loc_3 -> m_deliver_ordering_0 921 954 959 992
+152 get_to truck_0 city_loc_1 -> m_drive_to_via_ordering_0 780 808
+197 get_to truck_0 city_loc_2 -> m_drive_to_via_ordering_0 815 844
+289 get_to truck_0 city_loc_0 -> m_drive_to_via_ordering_0 606 916
+606 get_to truck_0 city_loc_4 -> m_drive_to_via_ordering_0 887 899
+705 get_to truck_0 city_loc_3 -> m_drive_to_ordering_0 706
+736 load truck_0 city_loc_3 package_2 -> m_load_ordering_0 737
+743 get_to truck_0 city_loc_2 -> m_drive_to_ordering_0 744
+774 unload truck_0 city_loc_2 package_2 -> m_unload_ordering_0 775
+780 get_to truck_0 city_loc_2 -> m_i_am_there_ordering_0 781
+809 load truck_0 city_loc_1 package_1 -> m_load_ordering_0 810
+815 get_to truck_0 city_loc_3 -> m_drive_to_ordering_0 816
+847 unload truck_0 city_loc_2 package_1 -> m_unload_ordering_0 848
+850 get_to truck_0 city_loc_3 -> m_drive_to_ordering_0 851
+882 load truck_0 city_loc_3 package_0 -> m_load_ordering_0 883
+887 get_to truck_0 city_loc_1 -> m_drive_to_ordering_0 888
+919 unload truck_0 city_loc_0 package_0 -> m_unload_ordering_0 920
+921 get_to truck_1 city_loc_1 -> m_drive_to_ordering_0 922
+954 load truck_1 city_loc_1 package_3 -> m_load_ordering_0 955
+959 get_to truck_1 city_loc_3 -> m_drive_to_ordering_0 960
+992 unload truck_1 city_loc_3 package_3 -> m_unload_ordering_0 993
+<==
+0.276 End of solution plan. (counted length of 20)
+0.276 Total amount of clauses encoded: 6228
+0.276 - indirectframeaxioms : 2108 cls
+0.276 - directframeaxioms : 944 cls
+0.276 - qfactsemantics : 884 cls
+0.276 - actionconstraints : 482 cls
+0.276 - qconstequality : 351 cls
+0.276 - substitutionconstraints : 349 cls
+0.276 - reductionconstraints : 290 cls
+0.276 - predecessors : 199 cls
+0.276 - expansions : 185 cls
+0.276 - actioneffects : 112 cls
+0.276 - truefacts : 32 cls
+0.276 - axiomaticops : 2 cls
+0.276 # instantiated positions: 81
+0.276 # instantiated actions: 171
+0.276 # instantiated reductions: 29
+0.276 # introduced pseudo-constants: 56
+0.276 # retroactive prunings: 0
+0.276 # retroactively pruned operations: 0
+0.276 # dominated operations: 1
+0.276 # total invalid rigid preconditions found in getPFC: 0
+0.276 # invalid rigid preconditions found in getPFC: 0
+0.276 # invalid rigid preconditions found in getPFC in varrestrictions: 0
+0.276 # total invalid fluent preconditions found in getPFC: 0
+0.276 # invalid fluent preconditions found in getPFC: 0
+0.276 # invalid fluent preconditions found in getPFC in varrestrictions: 0
+0.276 # invalid fluent preconditions found in getPFC via postconditions: 0
+0.276 # invalid subtasks found in getPFC: 0
+0.276 # number effects in operation fact_frames: 84
+0.276 Exiting happily.
+
+RUNWATCH_RESULT EXIT RETVAL 0 TIME_SECS 0.286411 MEMPEAK_KBS 7692

@@ -1,0 +1,225 @@
+pandaPIparser is configured as follows
+  Colors in output: true
+  Mode: parsing mode
+  Parameter splitting: true
+  Conditional effects: exponential encoding
+  Disjunctive preconditions as HTN: false
+  Replace goal with action: false
+  Output: pandaPI format
+TUUP sort_for_px0y0
+TUUP sort_for_px0y1
+TUUP sort_for_px0y2
+TUUP sort_for_px0y3
+TUUP sort_for_px1y0
+TUUP sort_for_px1y1
+TUUP sort_for_px1y2
+TUUP sort_for_px1y3
+TUUP sort_for_px2y0
+TUUP sort_for_px2y1
+TUUP sort_for_px2y2
+TUUP sort_for_px2y3
+TUUP sort_for_px3y0
+TUUP sort_for_px3y1
+TUUP sort_for_px3y2
+TUUP sort_for_px3y3
+General Options
+  Print timings: false
+  Quiet mode: false
+Inference Options
+  H2 mutexes: false
+  FAM groups: false
+Transformation Options
+  Add zero-cost no-op to empty methods: true
+  Remove duplicate actions: true
+  Remove useless literals: true
+  Expand abstract tasks with one method: true
+  Remove empty method preconditions: true
+  Two regularisation: false
+  Compile negative SAS variables: false
+Runtime Optimisations
+  Hierarchy Typing: true
+  Future Caching: false
+  Static Precondition Checking: false
+Output Options
+  Panda planner format: true
+  HDDL: false
+  SAS for Fast Downward (without hierarchy): false
+Output Formatting Options
+  Output only SAS+ variables: false
+  SAS+ delete mode: as input
+Reading input from /home/schnell/lilotane/sotaevaluation//PandaGBFS_runwatchtime_timeout1800_2021-11-16_21:14:14/runwatch_log/399/399.parsed.
+Writing output to /home/schnell/lilotane/sotaevaluation//PandaGBFS_runwatchtime_timeout1800_2021-11-16_21:14:14/runwatch_log/399/399.sas.
+Writing output to standard output.
+Parsing done.
+Conditional Effects expanded
+done.
+Starting Hierarchy Typing
+Total 0.188ms
+Contains 0.012ms
+Restrict 0.032ms
+MPrep 0.026ms
+Finished Hierarchy Typing
+Running PG.
+Process actions without preconditions
+Done.
+ ---> Disabling potentially consistent extension checking for action:           8 (__method_precondition_hunt_all_split)
+ ---> Disabling potentially consistent extension checking for action:           5 (__method_precondition_move-long-snake)
+Returning from runGpg().
+PG done. Postprocessing
+PG postprocessing done.
+Calculated [4502] grounded tasks and [181] reachable facts.
+Running TDG.
+Process actions without preconditions
+Done.
+ ---> Disabling potentially consistent extension checking for action:           8 (move-short-snake)
+ ---> Disabling potentially consistent extension checking for action:           7 (move-long-snake)
+ ---> Disabling potentially consistent extension checking for action:           1 (_splitting_method__splitting_method_hunt_all_splitted_1_splitted_3)
+Returning from runGpg().
+TDG done.
+Calculated [4821] grounded tasks and [3655] grounded decomposition methods.
+Performing DFS.
+DFS done.
+After DFS: 4317 tasks, 3073 methods.
+Grounded PG:
+Input was [4094, 4317], output was [4094, 181].
+Simplifying instance.
+Removing useless facts/literals
+Removing method precondition actions whose precondition is empty
+Expanding abstract tasks with only one method
+Starting duplicate elimination.
+Data structure build.
+1336 duplicates found.
+Duplicates replaced in methods.
+Further Mutex Groups: 0 strict 0 non strict
+Writing instance to output.
+Final Statistics: F 106 S 0 SC 0 SM 0 NSM 0 I 0 P 1956 S 802 A 223 M 3073
+Exiting.
+Random seed: 42
+Time limit: 1800 seconds
+Reading input from /home/schnell/lilotane/sotaevaluation//PandaGBFS_runwatchtime_timeout1800_2021-11-16_21:14:14/runwatch_log/399/399.sas.
+- State has 106 bits divided into 106 mutex groups.
+- Domain contains 2758 actions.
+- Domain contains 2981 tasks.
+- Domain contains 3073 methods.
+- The initial state contains 17 set bits.
+- The initial task is "__top[]".
+- State-based goal contains 0 bits.
+- Instance is totally-ordered: yes
+- Instance has unique paths: yes
+- Instance is parallel sequences: yes
+Calculate SCCs...
+- Number of SCCs: 2831
+- The problem is cyclic
+- Number of cyclic SCCs: 11
+- Number of cyclic SCCs of size 1: 1
+Selected Planning Algorithm: progression searchParsing heuristics ...
+Number of specified heuristics: 1
+- the option "store cuts" of the RC heuristic can only be used with the inner heuristic LM-Cut. It will be disabled.
+- Calculating minimal implied costs and distances (2 ms)
+Heuristic #0 = hhRC2(add;distance;correct count)
+Search config:
+ - type: path cost
+ - weight: 1
+ - suboptimal: false
+Visited List configured
+- mode: total order
+- hashs to use: state task task-sequence
+- memory information: topological ordering
+- Visited list allows deletion of search nodes: true
+Search Configuration
+- Using JAIR 2020 progression algorithm
+- Search is stopped after first solution is found.
+- A* Search
+- Distance G is "modification depth"
+   1s visitime    0.00s generated nodes     10021 nodes/sec    8442 cur h   33 mod.depth   30 inserts       525 dups         1 size       524 hash fail      1 hash buckets    524
+Search Results
+- Search time 1.52 seconds
+- Visited list time 0.00 seconds
+- Visited list inserts 683
+- Visited list pruned 6
+- Visited list contains 677
+- Visited list hash collisions 6
+- Visited list used hash buckets 677
+- Generated 13069 search nodes
+  Calculated heuristic for 12453 nodes
+  One modifications 188
+  Effectless actions 428
+- including 188 one modification actions
+- including 0 one modification methods
+- and       428 progressions of effectless actions
+- Generated 8171 nodes per second
+- Final fringe contains 599 nodes
+- Status: Solved
+- Found solution of length 66
+- Total costs of actions: 12
+==>
+202 __method_precondition_hunt_all_split[viper,px3y0,px1y0,px2y0]
+387 __method_precondition_move-long-snake[viper,px1y0,px2y0,px1y2,px1y3]
+388 move-long[viper,px2y0,px1y0,px1y2,px1y3]
+639 __method_precondition_move-long-snake[viper,px3y1,px2y1,px1y1,px1y2]
+640 move-long[viper,px2y1,px2y0,px1y1,px1y2]
+742 __method_precondition_move-long-snake[viper,px1y2,px2y2,px1y0,px1y1]
+743 move-long[viper,px2y2,px2y1,px1y0,px1y1]
+789 __method_precondition_move-long-snake[viper,px2y2,px3y2,px2y0,px1y0]
+790 move-long[viper,px3y2,px2y2,px2y0,px1y0]
+1001 __method_precondition_move-long-snake[viper,px3y0,px3y1,px2y1,px2y0]
+1002 move-long[viper,px3y1,px3y2,px2y1,px2y0]
+1043 __noop
+1044 strike[viper,px3y1,px3y0]
+1809 __method_precondition_hunt_all_split[viper,px0y0,px3y0,px0y1]
+7081 __method_precondition_move-long-snake[viper,px1y0,px2y0,px2y2,px2y1]
+7082 move-long[viper,px2y0,px3y0,px2y2,px2y1]
+7146 __method_precondition_move-long-snake[viper,px0y0,px1y0,px3y2,px2y2]
+7147 move-long[viper,px1y0,px2y0,px3y2,px2y2]
+7152 __noop
+7153 strike[viper,px1y0,px0y0]
+7175 __method_precondition_hunt_all_split[viper,px0y1,px0y0,px0y0]
+7192 __noop
+7193 strike[viper,px0y0,px0y1]
+7247 __method_precondition_hunt_all_split[viper,px0y2,px0y1,px0y1]
+7298 __noop
+7299 strike[viper,px0y1,px0y2]
+10778 __method_precondition_hunt_all_split[viper,px0y3,px0y2,px0y2]
+10846 __noop
+10847 strike[viper,px0y2,px0y3]
+10855 __method_precondition_hunt_done[]
+root 0
+10854 hunt[] -> hunt_done 10855
+10845 move[viper,px0y2,px0y2] -> move-base 10846
+10777 _splitting_method_hunt_all_splitted_1_splitted_3[viper,px0y2,px0y3] -> _splitting_method__splitting_method_hunt_all_splitted_1_splitted_3 10778 10845
+10769 hunt_all_splitted_1[viper] -> _splitting_method_hunt_all_splitted_1 10777 10847
+7307 hunt[] -> hunt_all 10769 10854
+7297 move[viper,px0y1,px0y1] -> move-base 7298
+7246 _splitting_method_hunt_all_splitted_1_splitted_3[viper,px0y1,px0y2] -> _splitting_method__splitting_method_hunt_all_splitted_1_splitted_3 7247 7297
+7219 hunt_all_splitted_1[viper] -> _splitting_method_hunt_all_splitted_1 7246 7299
+7199 hunt[] -> hunt_all 7219 7307
+7191 move[viper,px0y0,px0y0] -> move-base 7192
+7174 _splitting_method_hunt_all_splitted_1_splitted_3[viper,px0y0,px0y1] -> _splitting_method__splitting_method_hunt_all_splitted_1_splitted_3 7175 7191
+7162 hunt_all_splitted_1[viper] -> _splitting_method_hunt_all_splitted_1 7174 7193
+7161 hunt[] -> hunt_all 7162 7199
+7151 move[viper,px1y0,px1y0] -> move-base 7152
+7145 move-long-snake_splitted_2[viper,px1y0,px2y0] -> _splitting_method_move-long-snake_splitted_2 7146 7147
+7104 move[viper,px2y0,px1y0] -> move-long-snake 7145 7151
+7080 move-long-snake_splitted_2[viper,px2y0,px3y0] -> _splitting_method_move-long-snake_splitted_2 7081 7082
+7056 move[viper,px3y0,px1y0] -> move-long-snake 7080 7104
+1808 _splitting_method_hunt_all_splitted_1_splitted_3[viper,px1y0,px0y0] -> _splitting_method__splitting_method_hunt_all_splitted_1_splitted_3 1809 7056
+1221 hunt_all_splitted_1[viper] -> _splitting_method_hunt_all_splitted_1 1808 7153
+1052 hunt[] -> hunt_all 1221 7161
+1042 move[viper,px3y1,px3y1] -> move-base 1043
+1000 move-long-snake_splitted_2[viper,px3y1,px3y2] -> _splitting_method_move-long-snake_splitted_2 1001 1002
+995 move[viper,px3y2,px3y1] -> move-long-snake 1000 1042
+788 move-long-snake_splitted_2[viper,px3y2,px2y2] -> _splitting_method_move-long-snake_splitted_2 789 790
+768 move[viper,px2y2,px3y1] -> move-long-snake 788 995
+741 move-long-snake_splitted_2[viper,px2y2,px2y1] -> _splitting_method_move-long-snake_splitted_2 742 743
+673 move[viper,px2y1,px3y1] -> move-long-snake 741 768
+638 move-long-snake_splitted_2[viper,px2y1,px2y0] -> _splitting_method_move-long-snake_splitted_2 639 640
+627 move[viper,px2y0,px3y1] -> move-long-snake 638 673
+386 move-long-snake_splitted_2[viper,px2y0,px1y0] -> _splitting_method_move-long-snake_splitted_2 387 388
+320 move[viper,px1y0,px3y1] -> move-long-snake 386 627
+201 _splitting_method_hunt_all_splitted_1_splitted_3[viper,px3y1,px3y0] -> _splitting_method__splitting_method_hunt_all_splitted_1_splitted_3 202 320
+14 hunt_all_splitted_1[viper] -> _splitting_method_hunt_all_splitted_1 201 1044
+2 hunt[] -> hunt_all 14 1052
+0 __top[] -> __top_method 2
+<==
+
+RUNWATCH_RESULT EXIT RETVAL 0 TIME_SECS 1.85742 MEMPEAK_KBS 3736

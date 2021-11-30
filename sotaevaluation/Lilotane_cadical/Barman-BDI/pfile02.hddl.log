@@ -1,0 +1,205 @@
+    _           _         _
+   \ |         \ |       | |                       
+   | |     __  | |      _| |______                
+   | |     \/  | |     /_   ______\                
+   | |      _  | |   __  | |  ___   ___   ___       
+   | |___  | | | |  / .\ | | / , | |   \ / ·_\    
+   \_____\ |_| |__\ \__/ |_| \___) |_|_| \___\  
+[39mL i l o t a n e  version rls-cadical
+by Dominik Schreiber <dominik.schreiber@kit.edu> 2020-2021
+using SAT solver cadical
+
+0.007 Parser finished.
+0.007 Structures extracted.
+0.008 37 operators and 24 methods created.
+0.009 Mined 2 new reduction preconditions (+4.3%).
+0.009 Iteration 0.
+0.009 Creating initial layer of size 2
+0.010 Attempting to solve formula with 3 clauses (3 literals) and 1 assumptions
+0.010 Unsolvable at layer 0 -- expanding.
+0.010 Iteration 1.
+0.010 New layer size: 3
+0.010 Instantiating ...
+0.011 Collected 1 relevant facts at this layer
+0.011 Encoding ...
+0.011 Attempting to solve formula with 19 clauses (36 literals) and 2 assumptions
+0.011 Unsolvable at layer 1 -- expanding.
+0.011 Iteration 2.
+0.011 New layer size: 9
+0.011 Instantiating ...
+0.013 Collected 26 relevant facts at this layer
+0.013 Encoding ...
+0.014 Attempting to solve formula with 371 clauses (900 literals) and 6 assumptions
+0.014 Unsolvable at layer 2 -- expanding.
+0.014 Iteration 3.
+0.014 New layer size: 25
+0.014 Instantiating ...
+0.019 Collected 44 relevant facts at this layer
+0.019 Encoding ...
+0.021 Attempting to solve formula with 1892 clauses (5036 literals) and 11 assumptions
+0.021 Unsolvable at layer 3 -- expanding.
+0.021 Iteration 4.
+0.021 New layer size: 48
+0.021 Instantiating ...
+0.027 Collected 49 relevant facts at this layer
+0.027 Encoding ...
+0.031 Attempting to solve formula with 4345 clauses (11796 literals) and 9 assumptions
+0.031 Unsolvable at layer 4 -- expanding.
+0.031 Iteration 5.
+0.032 New layer size: 70
+0.032 Instantiating ...
+0.039 Collected 54 relevant facts at this layer
+0.039 Encoding ...
+0.045 Attempting to solve formula with 7006 clauses (19321 literals) and 7 assumptions
+0.045 Unsolvable at layer 5 -- expanding.
+0.045 Iteration 6.
+0.045 New layer size: 87
+0.045 Instantiating ...
+0.052 Collected 54 relevant facts at this layer
+0.052 Encoding ...
+0.058 Attempting to solve formula with 9621 clauses (26980 literals) and 3 assumptions
+0.068 Found a solution at layer 6.
+==>
+2236 grasp right shot3
+2244 fill-shot shot3 ingredient2 right left dispenser2
+2250 drop right shot3
+2255 grasp left shot3
+2257 pour-shot-to-clean-shaker shot3 ingredient2 shaker1 left level1 level1
+2351 drop left shot3
+2386 grasp left shot1
+2410 fill-shot shot1 ingredient1 left right dispenser1
+2424 pour-shot-to-used-shaker shot1 ingredient1 shaker1 left level1 level1
+2431 grasp right shaker1
+2433 drop left shot1
+2436 shake cocktail1 ingredient2 ingredient1 shaker1 right left
+2439 drop right shaker1
+2445 grasp right shot1
+2451 clean-shot shot1 ingredient1 right left
+2459 drop right shot1
+2465 grasp right shaker1
+2467 pour-shaker-to-shot cocktail1 shot1 right shaker1 level1 level1
+2474 drop right shaker1
+2477 grasp left shaker1
+2482 empty-shaker left shaker1 cocktail1 level1 level1
+2489 clean-shaker shaker1 left right
+2643 grasp right shot2
+2662 drop left shaker1
+2668 fill-shot shot2 ingredient3 right left dispenser3
+2675 drop right shot2
+2679 grasp left shot2
+2683 pour-shot-to-clean-shaker shot2 ingredient3 shaker1 left level1 level1
+2721 clean-shot shot2 ingredient3 left right
+2870 fill-shot shot2 ingredient2 left right dispenser2
+2876 drop left shot2
+2881 grasp right shot2
+2883 pour-shot-to-used-shaker shot2 ingredient2 shaker1 right level1 level1
+2894 grasp left shaker1
+2896 drop right shot2
+2900 shake cocktail2 ingredient3 ingredient2 shaker1 left right
+2908 grasp right shot3
+2913 drop left shaker1
+2917 clean-shot shot3 ingredient2 right left
+2922 drop right shot3
+2928 grasp right shaker1
+2932 pour-shaker-to-shot cocktail2 shot3 right shaker1 level1 level1
+root 5 9
+5 AchieveContainsShotCocktail shot1 cocktail1 -> MakeAndPourCocktail 15 48 438 2466
+9 AchieveContainsShotCocktail shot3 cocktail2 -> MakeAndPourCocktail 103 119 745 2931
+15 AchieveContainsShakerCocktail shaker1 cocktail1 -> MakeCocktail 195 215 226 264 2432 2436
+48 AchieveCleanShot shot1 -> CleanEmptyShot 342 351 2451
+103 AchieveContainsShakerCocktail shaker1 cocktail2 -> MakeCocktail 460 470 507 557 2895 2900
+119 AchieveCleanShot shot3 -> CleanEmptyShot 646 2912 2917
+195 AchieveCleanShaker shaker1 -> CleanShakerNull
+215 AchieveContainsShakerIngredient shaker1 ingredient2 -> AddIngredientToEmptyShaker 774 780 2257
+226 AchieveContainsShakerIngredient shaker1 ingredient1 -> AddIngredientToUsedShaker 820 833 2424
+264 AchieveHolding right shaker1 -> PickUp 881 897 2431
+342 AchieveHolding right shot1 -> PickUp 2438 937 2445
+351 AchieveHandEmpty left -> HandEmptyNull
+438 AchieveHolding right shaker1 -> PickUp 2458 998 2465
+460 AchieveCleanShaker shaker1 -> CleanFullShaker 1038 2482 1073 2489
+470 AchieveContainsShakerIngredient shaker1 ingredient3 -> AddIngredientToEmptyShaker 1131 1138 2683
+507 AchieveContainsShakerIngredient shaker1 ingredient2 -> AddIngredientToUsedShaker 1201 1217 2883
+557 AchieveHolding left shaker1 -> PickUp 1280 1299 2894
+646 AchieveHolding right shot3 -> PickUp 1344 1356 2908
+745 AchieveHolding right shaker1 -> PickUp 2921 1418 2928
+774 AchieveContainsShotIngredient shot3 ingredient2 -> AddIngredientToShot 1465 1467 1470 2244
+780 AchieveHolding left shot3 -> PickUp 1509 2249 2255
+820 AchieveContainsShotIngredient shot1 ingredient1 -> AddIngredientToShot 1568 1580 1608 2410
+833 AchieveHolding left shot1 -> HoldingNull
+881 AchieveHandEmpty right -> HandEmptyNull
+897 AchieveOnTable shaker1 -> OnTableNull
+937 AchieveOnTable shot1 -> OnTableNull
+998 AchieveOnTable shaker1 -> OnTableNull
+1038 AchieveHolding left shaker1 -> PickUp 1759 2473 2477
+1073 AchieveHandEmpty right -> HandEmptyNull
+1131 AchieveContainsShotIngredient shot2 ingredient3 -> AddIngredientToShot 1820 1835 2661 2668
+1138 AchieveHolding left shot2 -> PickUp 1925 2674 2679
+1201 AchieveContainsShotIngredient shot2 ingredient2 -> AddIngredientToShot 1995 2010 2056 2870
+1217 AchieveHolding right shot2 -> PickUp 2106 2875 2881
+1280 AchieveHandEmpty left -> HandEmptyNull
+1299 AchieveOnTable shaker1 -> OnTableNull
+1344 AchieveHandEmpty right -> HandEmptyNull
+1356 AchieveOnTable shot3 -> OnTableNull
+1418 AchieveOnTable shaker1 -> OnTableNull
+1465 AchieveCleanShot shot3 -> CleanShotNull
+1467 AchieveHolding right shot3 -> PickUp 2230 2234 2236
+1470 AchieveHandEmpty left -> HandEmptyNull
+1509 AchieveHandEmpty left -> HandEmptyNull
+1568 AchieveCleanShot shot1 -> CleanShotNull
+1580 AchieveHolding left shot1 -> PickUp 2350 2366 2386
+1608 AchieveHandEmpty right -> HandEmptyNull
+1759 AchieveHandEmpty left -> HandEmptyNull
+1820 AchieveCleanShot shot2 -> CleanShotNull
+1835 AchieveHolding right shot2 -> PickUp 2606 2620 2643
+1925 AchieveHandEmpty left -> HandEmptyNull
+1995 AchieveCleanShot shot2 -> CleanEmptyShot 2688 2695 2721
+2010 AchieveHolding left shot2 -> HoldingNull
+2056 AchieveHandEmpty right -> HandEmptyNull
+2106 AchieveHandEmpty right -> HandEmptyNull
+2230 AchieveHandEmpty right -> HandEmptyNull
+2234 AchieveOnTable shot3 -> OnTableNull
+2249 AchieveOnTable shot3 -> PutDown 2250
+2350 AchieveHandEmpty left -> EmptyHand 2351
+2366 AchieveOnTable shot1 -> OnTableNull
+2432 AchieveHandEmpty left -> EmptyHand 2433
+2438 AchieveHandEmpty right -> EmptyHand 2439
+2458 AchieveHandEmpty right -> EmptyHand 2459
+2466 DoPourShakerToShot shaker1 shot1 cocktail1 -> pour_shaker_to_shot_action 2467
+2473 AchieveOnTable shaker1 -> PutDown 2474
+2606 AchieveHandEmpty right -> HandEmptyNull
+2620 AchieveOnTable shot2 -> OnTableNull
+2661 AchieveHandEmpty left -> EmptyHand 2662
+2674 AchieveOnTable shot2 -> PutDown 2675
+2688 AchieveHolding left shot2 -> HoldingNull
+2695 AchieveHandEmpty right -> HandEmptyNull
+2875 AchieveOnTable shot2 -> PutDown 2876
+2895 AchieveHandEmpty right -> EmptyHand 2896
+2912 AchieveHandEmpty left -> EmptyHand 2913
+2921 AchieveHandEmpty right -> EmptyHand 2922
+2931 DoPourShakerToShot shaker1 shot3 cocktail2 -> pour_shaker_to_shot_action 2932
+<==
+0.071 End of solution plan. (counted length of 42)
+0.071 Total amount of clauses encoded: 9621
+0.071 - directframeaxioms : 3568 cls
+0.071 - qfactsemantics : 1688 cls
+0.071 - indirectframeaxioms : 1251 cls
+0.071 - expansions : 593 cls
+0.071 - predecessors : 581 cls
+0.071 - atmostoneelement : 526 cls
+0.071 - actionconstraints : 495 cls
+0.071 - reductionconstraints : 430 cls
+0.071 - actioneffects : 303 cls
+0.071 - substitutionconstraints : 92 cls
+0.071 - truefacts : 54 cls
+0.071 - qconstequality : 38 cls
+0.071 - axiomaticops : 2 cls
+0.071 # instantiated positions: 243
+0.071 # instantiated actions: 462
+0.071 # instantiated reductions: 123
+0.071 # introduced pseudo-constants: 131
+0.071 # retroactive prunings: 0
+0.071 # retroactively pruned operations: 0
+0.071 # dominated operations: 0
+0.071 Exiting happily (no cleaning up).
+
+RUNWATCH_RESULT EXIT RETVAL 0 TIME_SECS 0.0773926 MEMPEAK_KBS 672

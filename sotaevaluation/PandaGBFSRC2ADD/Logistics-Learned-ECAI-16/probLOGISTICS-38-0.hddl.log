@@ -1,0 +1,614 @@
+pandaPIparser is configured as follows
+  Colors in output: true
+  Mode: parsing mode
+  Parameter splitting: true
+  Conditional effects: exponential encoding
+  Disjunctive preconditions as HTN: false
+  Replace goal with action: false
+  Output: pandaPI format
+General Options
+  Print timings: false
+  Quiet mode: false
+Inference Options
+  H2 mutexes: false
+  FAM groups: false
+Transformation Options
+  Add zero-cost no-op to empty methods: true
+  Remove duplicate actions: true
+  Remove useless literals: true
+  Expand abstract tasks with one method: true
+  Remove empty method preconditions: true
+  Two regularisation: false
+  Compile negative SAS variables: false
+Runtime Optimisations
+  Hierarchy Typing: true
+  Future Caching: false
+  Static Precondition Checking: false
+Output Options
+  Panda planner format: true
+  HDDL: false
+  SAS for Fast Downward (without hierarchy): false
+Output Formatting Options
+  Output only SAS+ variables: false
+  SAS+ delete mode: as input
+Reading input from /home/schnell/lilotane/sotaevaluation//PandaGBFS_runwatchtime_timeout1800_2021-11-16_21:14:14/runwatch_log/159/159.parsed.
+Writing output to /home/schnell/lilotane/sotaevaluation//PandaGBFS_runwatchtime_timeout1800_2021-11-16_21:14:14/runwatch_log/159/159.sas.
+Writing output to standard output.
+Parsing done.
+Conditional Effects expanded
+done.
+Starting Hierarchy Typing
+Total 10.787ms
+Contains 1.347ms
+Restrict 1.449ms
+MPrep 1.505ms
+Finished Hierarchy Typing
+Running PG.
+Process actions without preconditions
+Done.
+ ---> Disabling potentially consistent extension checking for action:           0 (LOAD-TRUCK)
+ ---> Disabling potentially consistent extension checking for action:           22 (__method_precondition_M34-ACHIEVE-AT)
+ ---> Disabling potentially consistent extension checking for action:           1 (LOAD-AIRPLANE)
+ ---> Disabling potentially consistent extension checking for action:           3 (UNLOAD-AIRPLANE)
+ ---> Disabling potentially consistent extension checking for action:           2 (UNLOAD-TRUCK)
+Returning from runGpg().
+PG done. Postprocessing
+PG postprocessing done.
+Calculated [15976] grounded tasks and [8847] reachable facts.
+Running TDG.
+Process actions without preconditions
+Done.
+ ---> Disabling potentially consistent extension checking for action:           27 (_splitting_method_M41-ACHIEVE-AT2_splitted_6)
+ ---> Disabling potentially consistent extension checking for action:           5 (M39-ACHIEVE-AT)
+ ---> Disabling potentially consistent extension checking for action:           62 (M4-DO-AT-LOAD-TRUCK0)
+ ---> Disabling potentially consistent extension checking for action:           64 (M6-DO-IN-UNLOAD-TRUCK0)
+ ---> Disabling potentially consistent extension checking for action:           61 (M5-DO-AT-LOAD-AIRPLANE0)
+ ---> Disabling potentially consistent extension checking for action:           63 (M7-DO-IN-UNLOAD-AIRPLANE0)
+ ---> Disabling potentially consistent extension checking for action:           11 (_splitting_method_M12-ACHIEVE-AT0_splitted_1)
+ ---> Disabling potentially consistent extension checking for action:           17 (_splitting_method_M14-ACHIEVE-AT0_splitted_17)
+ ---> Disabling potentially consistent extension checking for action:           14 (_splitting_method_M13-ACHIEVE-AT0_splitted_2)
+ ---> Disabling potentially consistent extension checking for action:           20 (_splitting_method_M15-ACHIEVE-AT0_splitted_18)
+Returning from runGpg().
+TDG done.
+Calculated [25236] grounded tasks and [17175] grounded decomposition methods.
+Performing DFS.
+DFS done.
+After DFS: 21310 tasks, 16239 methods.
+Grounded PG:
+Input was [12674, 21310], output was [12674, 8223].
+Simplifying instance.
+Removing useless facts/literals
+Removing method precondition actions whose precondition is empty
+Expanding abstract tasks with only one method
+Starting duplicate elimination.
+Data structure build.
+1078 duplicates found.
+Duplicates replaced in methods.
+Further Mutex Groups: 0 strict 0 non strict
+Writing instance to output.
+Final Statistics: F 2216 S 0 SC 0 SM 0 NSM 0 I 0 P 7044 S 4552 A 1720 M 9323
+Exiting.
+Random seed: 42
+Time limit: 1800 seconds
+Reading input from /home/schnell/lilotane/sotaevaluation//PandaGBFS_runwatchtime_timeout1800_2021-11-16_21:14:14/runwatch_log/159/159.sas.
+- State has 2216 bits divided into 2216 mutex groups.
+- Domain contains 11596 actions.
+- Domain contains 13316 tasks.
+- Domain contains 9323 methods.
+- The initial state contains 345 set bits.
+- The initial task is "__top[]".
+- State-based goal contains 0 bits.
+- Instance is totally-ordered: yes
+- Instance has unique paths: yes
+- Instance is parallel sequences: yes
+Calculate SCCs...
+- Number of SCCs: 13316
+- The problem is cyclic
+- Number of cyclic SCCs: 116
+- Number of cyclic SCCs of size 1: 116
+Selected Planning Algorithm: progression searchParsing heuristics ...
+Number of specified heuristics: 1
+- the option "store cuts" of the RC heuristic can only be used with the inner heuristic LM-Cut. It will be disabled.
+- Calculating minimal implied costs and distances (6 ms)
+Heuristic #0 = hhRC2(add;distance;correct count)
+Search config:
+ - type: path cost
+ - weight: 1
+ - suboptimal: false
+Visited List configured
+- mode: total order
+- hashs to use: state task task-sequence
+- memory information: topological ordering
+- Visited list allows deletion of search nodes: true
+Search Configuration
+- Using JAIR 2020 progression algorithm
+- Search is stopped after first solution is found.
+- A* Search
+- Distance G is "modification depth"
+   3s visitime    0.03s generated nodes      5002 nodes/sec    1581 cur h  125 mod.depth   58 inserts      1046 dups       462 size       584 hash fail    462 hash buckets    584
+   6s visitime    0.09s generated nodes     10022 nodes/sec    1524 cur h  124 mod.depth   62 inserts      3051 dups      2167 size       884 hash fail   2167 hash buckets    884
+   9s visitime    0.11s generated nodes     15031 nodes/sec    1573 cur h  125 mod.depth   65 inserts      3787 dups      2217 size      1570 hash fail   2217 hash buckets   1570
+  11s visitime    0.13s generated nodes     20053 nodes/sec    1717 cur h  124 mod.depth   67 inserts      4255 dups      2348 size      1907 hash fail   2348 hash buckets   1907
+  15s visitime    0.19s generated nodes     25058 nodes/sec    1604 cur h  124 mod.depth   67 inserts      6337 dups      4220 size      2117 hash fail   4220 hash buckets   2117
+  19s visitime    0.29s generated nodes     30063 nodes/sec    1540 cur h  123 mod.depth   72 inserts      9793 dups      7354 size      2439 hash fail   7354 hash buckets   2439
+  23s visitime    0.31s generated nodes     35063 nodes/sec    1506 cur h  123 mod.depth   76 inserts     10556 dups      7377 size      3179 hash fail   7377 hash buckets   3179
+  26s visitime    0.35s generated nodes     40065 nodes/sec    1508 cur h  122 mod.depth   81 inserts     11731 dups      7837 size      3894 hash fail   7837 hash buckets   3894
+  28s visitime    0.37s generated nodes     45078 nodes/sec    1580 cur h  126 mod.depth   77 inserts     12243 dups      7848 size      4395 hash fail   7848 hash buckets   4395
+  32s visitime    0.39s generated nodes     50096 nodes/sec    1562 cur h  125 mod.depth   79 inserts     12974 dups      8211 size      4763 hash fail   8211 hash buckets   4763
+  36s visitime    0.47s generated nodes     55102 nodes/sec    1494 cur h  125 mod.depth   79 inserts     15495 dups     10493 size      5002 hash fail  10493 hash buckets   5002
+  40s visitime    0.55s generated nodes     60106 nodes/sec    1473 cur h  115 mod.depth   90 inserts     18545 dups     13180 size      5365 hash fail  13181 hash buckets   5364
+  46s visitime    0.59s generated nodes     65107 nodes/sec    1412 cur h  123 mod.depth   83 inserts     19749 dups     13258 size      6491 hash fail  13260 hash buckets   6489
+  49s visitime    0.62s generated nodes     70114 nodes/sec    1403 cur h  122 mod.depth   86 inserts     20338 dups     13287 size      7051 hash fail  13289 hash buckets   7049
+  52s visitime    0.66s generated nodes     75120 nodes/sec    1429 cur h  125 mod.depth   84 inserts     21979 dups     14571 size      7408 hash fail  14573 hash buckets   7406
+  54s visitime    0.68s generated nodes     80143 nodes/sec    1471 cur h  124 mod.depth   86 inserts     22459 dups     14578 size      7881 hash fail  14580 hash buckets   7879
+  56s visitime    0.70s generated nodes     85147 nodes/sec    1500 cur h  126 mod.depth   84 inserts     23029 dups     14596 size      8433 hash fail  14599 hash buckets   8430
+  59s visitime    0.72s generated nodes     90148 nodes/sec    1524 cur h  122 mod.depth   88 inserts     23675 dups     14635 size      9040 hash fail  14638 hash buckets   9037
+  61s visitime    0.75s generated nodes     95157 nodes/sec    1545 cur h  126 mod.depth   84 inserts     24385 dups     14708 size      9677 hash fail  14711 hash buckets   9674
+  64s visitime    0.78s generated nodes    100158 nodes/sec    1561 cur h  122 mod.depth   88 inserts     25210 dups     14806 size     10404 hash fail  14809 hash buckets  10401
+  68s visitime    0.80s generated nodes    105158 nodes/sec    1542 cur h  125 mod.depth   86 inserts     25901 dups     15058 size     10843 hash fail  15062 hash buckets  10839
+  73s visitime    0.84s generated nodes    110173 nodes/sec    1506 cur h  125 mod.depth   86 inserts     27174 dups     16117 size     11057 hash fail  16121 hash buckets  11053
+  78s visitime    0.90s generated nodes    115189 nodes/sec    1473 cur h  125 mod.depth   86 inserts     29252 dups     17981 size     11271 hash fail  17985 hash buckets  11267
+  83s visitime    0.98s generated nodes    120194 nodes/sec    1444 cur h  125 mod.depth   86 inserts     32168 dups     20680 size     11488 hash fail  20684 hash buckets  11484
+  88s visitime    1.10s generated nodes    125211 nodes/sec    1418 cur h  125 mod.depth   86 inserts     36122 dups     24420 size     11702 hash fail  24425 hash buckets  11697
+  93s visitime    1.22s generated nodes    130212 nodes/sec    1395 cur h  122 mod.depth   90 inserts     40545 dups     28363 size     12182 hash fail  28369 hash buckets  12176
+  95s visitime    1.25s generated nodes    135218 nodes/sec    1413 cur h  125 mod.depth   89 inserts     41384 dups     28554 size     12830 hash fail  28561 hash buckets  12823
+  98s visitime    1.27s generated nodes    140226 nodes/sec    1430 cur h  125 mod.depth   89 inserts     41733 dups     28585 size     13148 hash fail  28593 hash buckets  13140
+ 100s visitime    1.28s generated nodes    145239 nodes/sec    1446 cur h  125 mod.depth   89 inserts     42098 dups     28636 size     13462 hash fail  28644 hash buckets  13454
+ 103s visitime    1.30s generated nodes    150248 nodes/sec    1453 cur h  124 mod.depth   91 inserts     42738 dups     28991 size     13747 hash fail  29001 hash buckets  13737
+ 107s visitime    1.34s generated nodes    155252 nodes/sec    1448 cur h  124 mod.depth   91 inserts     44260 dups     30283 size     13977 hash fail  30293 hash buckets  13967
+ 111s visitime    1.41s generated nodes    160271 nodes/sec    1443 cur h  124 mod.depth   91 inserts     46701 dups     32492 size     14209 hash fail  32502 hash buckets  14199
+ 114s visitime    1.51s generated nodes    165295 nodes/sec    1438 cur h  124 mod.depth   91 inserts     49953 dups     35512 size     14441 hash fail  35522 hash buckets  14431
+ 118s visitime    1.61s generated nodes    170318 nodes/sec    1438 cur h  123 mod.depth   93 inserts     53558 dups     38842 size     14716 hash fail  38852 hash buckets  14706
+ 120s visitime    1.62s generated nodes    175318 nodes/sec    1456 cur h  125 mod.depth   91 inserts     53942 dups     38848 size     15094 hash fail  38859 hash buckets  15083
+ 122s visitime    1.64s generated nodes    180320 nodes/sec    1474 cur h  125 mod.depth   91 inserts     54359 dups     38878 size     15481 hash fail  38889 hash buckets  15470
+ 125s visitime    1.66s generated nodes    185330 nodes/sec    1472 cur h  124 mod.depth   93 inserts     55097 dups     38911 size     16186 hash fail  38922 hash buckets  16175
+ 129s visitime    1.70s generated nodes    190330 nodes/sec    1467 cur h  122 mod.depth   95 inserts     56118 dups     38996 size     17122 hash fail  39007 hash buckets  17111
+ 133s visitime    1.74s generated nodes    195330 nodes/sec    1461 cur h  122 mod.depth   95 inserts     57268 dups     39091 size     18177 hash fail  39104 hash buckets  18164
+ 137s visitime    1.78s generated nodes    200350 nodes/sec    1456 cur h  124 mod.depth   93 inserts     58567 dups     39238 size     19329 hash fail  39252 hash buckets  19315
+ 141s visitime    1.83s generated nodes    205360 nodes/sec    1452 cur h  122 mod.depth   95 inserts     59979 dups     39402 size     20577 hash fail  39417 hash buckets  20562
+ 145s visitime    1.88s generated nodes    210360 nodes/sec    1446 cur h  113 mod.depth  102 inserts     61383 dups     39533 size     21850 hash fail  39549 hash buckets  21834
+ 149s visitime    1.93s generated nodes    215361 nodes/sec    1441 cur h  122 mod.depth   95 inserts     62898 dups     39694 size     23204 hash fail  39711 hash buckets  23187
+ 154s visitime    1.98s generated nodes    220364 nodes/sec    1430 cur h  116 mod.depth  102 inserts     64391 dups     39856 size     24535 hash fail  39876 hash buckets  24515
+ 160s visitime    2.03s generated nodes    225373 nodes/sec    1404 cur h  123 mod.depth   96 inserts     65638 dups     39924 size     25714 hash fail  39945 hash buckets  25693
+ 162s visitime    2.06s generated nodes    230377 nodes/sec    1413 cur h  124 mod.depth   96 inserts     66480 dups     39926 size     26554 hash fail  39948 hash buckets  26532
+ 164s visitime    2.07s generated nodes    235386 nodes/sec    1427 cur h  124 mod.depth   96 inserts     66859 dups     39932 size     26927 hash fail  39954 hash buckets  26905
+ 166s visitime    2.08s generated nodes    240391 nodes/sec    1442 cur h  124 mod.depth   96 inserts     67243 dups     39935 size     27308 hash fail  39957 hash buckets  27286
+ 168s visitime    2.10s generated nodes    245392 nodes/sec    1455 cur h  125 mod.depth   96 inserts     67621 dups     39941 size     27680 hash fail  39963 hash buckets  27658
+ 170s visitime    2.11s generated nodes    250400 nodes/sec    1468 cur h  125 mod.depth   96 inserts     67989 dups     39962 size     28027 hash fail  39985 hash buckets  28004
+ 172s visitime    2.13s generated nodes    255422 nodes/sec    1480 cur h  123 mod.depth   98 inserts     68357 dups     39993 size     28364 hash fail  40018 hash buckets  28339
+ 174s visitime    2.14s generated nodes    260439 nodes/sec    1492 cur h  123 mod.depth   98 inserts     68734 dups     40033 size     28701 hash fail  40058 hash buckets  28676
+ 176s visitime    2.15s generated nodes    265440 nodes/sec    1504 cur h  125 mod.depth   96 inserts     69116 dups     40071 size     29045 hash fail  40097 hash buckets  29019
+ 178s visitime    2.17s generated nodes    270450 nodes/sec    1516 cur h  125 mod.depth   96 inserts     69495 dups     40101 size     29394 hash fail  40130 hash buckets  29365
+ 180s visitime    2.18s generated nodes    275454 nodes/sec    1527 cur h  125 mod.depth   96 inserts     69887 dups     40152 size     29735 hash fail  40181 hash buckets  29706
+ 182s visitime    2.20s generated nodes    280468 nodes/sec    1537 cur h  123 mod.depth   98 inserts     70278 dups     40205 size     30073 hash fail  40234 hash buckets  30044
+ 184s visitime    2.21s generated nodes    285492 nodes/sec    1548 cur h  123 mod.depth   98 inserts     70673 dups     40261 size     30412 hash fail  40291 hash buckets  30382
+ 186s visitime    2.22s generated nodes    290498 nodes/sec    1558 cur h  125 mod.depth   96 inserts     71062 dups     40312 size     30750 hash fail  40342 hash buckets  30720
+ 188s visitime    2.24s generated nodes    295503 nodes/sec    1569 cur h  125 mod.depth   96 inserts     71457 dups     40361 size     31096 hash fail  40392 hash buckets  31065
+ 190s visitime    2.25s generated nodes    300515 nodes/sec    1580 cur h  125 mod.depth   96 inserts     71854 dups     40412 size     31442 hash fail  40443 hash buckets  31411
+ 192s visitime    2.27s generated nodes    305527 nodes/sec    1590 cur h  125 mod.depth   96 inserts     72264 dups     40479 size     31785 hash fail  40510 hash buckets  31754
+ 194s visitime    2.28s generated nodes    310532 nodes/sec    1600 cur h  125 mod.depth   96 inserts     72663 dups     40535 size     32128 hash fail  40566 hash buckets  32097
+ 195s visitime    2.30s generated nodes    315536 nodes/sec    1610 cur h  125 mod.depth   96 inserts     73065 dups     40591 size     32474 hash fail  40622 hash buckets  32443
+ 197s visitime    2.31s generated nodes    320554 nodes/sec    1620 cur h  123 mod.depth   98 inserts     73470 dups     40650 size     32820 hash fail  40682 hash buckets  32788
+ 199s visitime    2.33s generated nodes    325556 nodes/sec    1629 cur h  123 mod.depth   98 inserts     73894 dups     40733 size     33161 hash fail  40765 hash buckets  33129
+ 201s visitime    2.34s generated nodes    330556 nodes/sec    1638 cur h  125 mod.depth   96 inserts     74317 dups     40812 size     33505 hash fail  40845 hash buckets  33472
+ 204s visitime    2.36s generated nodes    335573 nodes/sec    1644 cur h  124 mod.depth   98 inserts     74798 dups     40979 size     33819 hash fail  41012 hash buckets  33786
+ 208s visitime    2.38s generated nodes    340588 nodes/sec    1636 cur h  124 mod.depth   98 inserts     75570 dups     41552 size     34018 hash fail  41587 hash buckets  33983
+ 212s visitime    2.42s generated nodes    345607 nodes/sec    1630 cur h  124 mod.depth   98 inserts     76611 dups     42382 size     34229 hash fail  42417 hash buckets  34194
+ 216s visitime    2.45s generated nodes    350627 nodes/sec    1623 cur h  124 mod.depth   98 inserts     77801 dups     43366 size     34435 hash fail  43403 hash buckets  34398
+ 220s visitime    2.49s generated nodes    355644 nodes/sec    1616 cur h  124 mod.depth   98 inserts     79111 dups     44473 size     34638 hash fail  44510 hash buckets  34601
+ 223s visitime    2.54s generated nodes    360648 nodes/sec    1610 cur h  124 mod.depth   98 inserts     80529 dups     45686 size     34843 hash fail  45724 hash buckets  34805
+ 227s visitime    2.58s generated nodes    365673 nodes/sec    1603 cur h  124 mod.depth   98 inserts     82106 dups     47057 size     35049 hash fail  47095 hash buckets  35011
+ 232s visitime    2.64s generated nodes    370679 nodes/sec    1597 cur h  124 mod.depth   98 inserts     83843 dups     48595 size     35248 hash fail  48633 hash buckets  35210
+ 236s visitime    2.69s generated nodes    375690 nodes/sec    1591 cur h  124 mod.depth   98 inserts     85687 dups     50229 size     35458 hash fail  50268 hash buckets  35419
+ 239s visitime    2.75s generated nodes    380690 nodes/sec    1586 cur h  124 mod.depth   98 inserts     87756 dups     52091 size     35665 hash fail  52130 hash buckets  35626
+ 244s visitime    2.81s generated nodes    385694 nodes/sec    1580 cur h  124 mod.depth   98 inserts     89774 dups     53906 size     35868 hash fail  53945 hash buckets  35829
+ 247s visitime    2.88s generated nodes    390705 nodes/sec    1575 cur h  124 mod.depth   98 inserts     91946 dups     55863 size     36083 hash fail  55902 hash buckets  36044
+ 251s visitime    2.94s generated nodes    395714 nodes/sec    1570 cur h  124 mod.depth   98 inserts     94251 dups     57958 size     36293 hash fail  57997 hash buckets  36254
+ 256s visitime    3.02s generated nodes    400724 nodes/sec    1565 cur h  124 mod.depth   98 inserts     96922 dups     60419 size     36503 hash fail  60458 hash buckets  36464
+ 260s visitime    3.10s generated nodes    405733 nodes/sec    1560 cur h  124 mod.depth   98 inserts     99514 dups     62803 size     36711 hash fail  62842 hash buckets  36672
+ 264s visitime    3.18s generated nodes    410736 nodes/sec    1555 cur h  124 mod.depth   98 inserts    102388 dups     65470 size     36918 hash fail  65509 hash buckets  36879
+ 268s visitime    3.27s generated nodes    415757 nodes/sec    1550 cur h  124 mod.depth   98 inserts    105358 dups     68236 size     37122 hash fail  68275 hash buckets  37083
+ 272s visitime    3.36s generated nodes    420766 nodes/sec    1545 cur h  124 mod.depth   98 inserts    108547 dups     71219 size     37328 hash fail  71258 hash buckets  37289
+ 276s visitime    3.45s generated nodes    425766 nodes/sec    1541 cur h  124 mod.depth   98 inserts    111716 dups     74185 size     37531 hash fail  74225 hash buckets  37491
+ 280s visitime    3.55s generated nodes    430780 nodes/sec    1536 cur h  124 mod.depth   98 inserts    114964 dups     77231 size     37733 hash fail  77271 hash buckets  37693
+ 284s visitime    3.66s generated nodes    435797 nodes/sec    1532 cur h  124 mod.depth   98 inserts    118793 dups     80856 size     37937 hash fail  80897 hash buckets  37896
+ 288s visitime    3.77s generated nodes    440821 nodes/sec    1528 cur h  124 mod.depth   98 inserts    122578 dups     84436 size     38142 hash fail  84477 hash buckets  38101
+ 292s visitime    3.89s generated nodes    445831 nodes/sec    1523 cur h  124 mod.depth   98 inserts    126724 dups     88374 size     38350 hash fail  88416 hash buckets  38308
+ 296s visitime    4.00s generated nodes    450836 nodes/sec    1519 cur h  124 mod.depth   98 inserts    130691 dups     92138 size     38553 hash fail  92181 hash buckets  38510
+ 300s visitime    4.11s generated nodes    455844 nodes/sec    1515 cur h  124 mod.depth   98 inserts    134662 dups     95906 size     38756 hash fail  95949 hash buckets  38713
+ 304s visitime    4.23s generated nodes    460848 nodes/sec    1511 cur h  124 mod.depth   98 inserts    138821 dups     99862 size     38959 hash fail  99906 hash buckets  38915
+ 309s visitime    4.35s generated nodes    465855 nodes/sec    1507 cur h  124 mod.depth   98 inserts    143029 dups    103860 size     39169 hash fail 103904 hash buckets  39125
+ 313s visitime    4.48s generated nodes    470871 nodes/sec    1503 cur h  124 mod.depth   98 inserts    147440 dups    108065 size     39375 hash fail 108109 hash buckets  39331
+ 317s visitime    4.62s generated nodes    475886 nodes/sec    1499 cur h  124 mod.depth   98 inserts    152133 dups    112558 size     39575 hash fail 112603 hash buckets  39530
+ 321s visitime    4.75s generated nodes    480896 nodes/sec    1495 cur h  124 mod.depth   98 inserts    156817 dups    117034 size     39783 hash fail 117079 hash buckets  39738
+ 323s visitime    4.78s generated nodes    485902 nodes/sec    1500 cur h  125 mod.depth   98 inserts    157434 dups    117241 size     40193 hash fail 117288 hash buckets  40146
+ 325s visitime    4.80s generated nodes    490907 nodes/sec    1505 cur h  125 mod.depth   98 inserts    157870 dups    117262 size     40608 hash fail 117309 hash buckets  40561
+ 328s visitime    4.82s generated nodes    495910 nodes/sec    1510 cur h  115 mod.depth  107 inserts    158321 dups    117296 size     41025 hash fail 117343 hash buckets  40978
+ 330s visitime    4.84s generated nodes    500935 nodes/sec    1514 cur h  124 mod.depth  100 inserts    158795 dups    117339 size     41456 hash fail 117387 hash buckets  41408
+ 334s visitime    4.86s generated nodes    505951 nodes/sec    1510 cur h  124 mod.depth  100 inserts    159507 dups    117349 size     42158 hash fail 117398 hash buckets  42109
+ 338s visitime    4.90s generated nodes    510961 nodes/sec    1507 cur h  124 mod.depth  100 inserts    160452 dups    117396 size     43056 hash fail 117449 hash buckets  43003
+ 343s visitime    4.94s generated nodes    515979 nodes/sec    1503 cur h  122 mod.depth  102 inserts    161540 dups    117453 size     44087 hash fail 117507 hash buckets  44033
+ 347s visitime    4.98s generated nodes    520980 nodes/sec    1500 cur h  122 mod.depth  102 inserts    162776 dups    117515 size     45261 hash fail 117573 hash buckets  45203
+ 351s visitime    5.03s generated nodes    526004 nodes/sec    1496 cur h  121 mod.depth  103 inserts    164060 dups    117588 size     46472 hash fail 117647 hash buckets  46413
+ 355s visitime    5.07s generated nodes    531005 nodes/sec    1493 cur h  122 mod.depth  102 inserts    165346 dups    117656 size     47690 hash fail 117718 hash buckets  47628
+ 359s visitime    5.12s generated nodes    536006 nodes/sec    1490 cur h  124 mod.depth  100 inserts    166729 dups    117743 size     48986 hash fail 117808 hash buckets  48921
+ 363s visitime    5.18s generated nodes    541006 nodes/sec    1486 cur h  120 mod.depth  102 inserts    168210 dups    117840 size     50370 hash fail 117908 hash buckets  50302
+ 368s visitime    5.23s generated nodes    546009 nodes/sec    1482 cur h  119 mod.depth  105 inserts    169665 dups    117939 size     51726 hash fail 118013 hash buckets  51652
+ 372s visitime    5.28s generated nodes    551010 nodes/sec    1479 cur h  122 mod.depth  102 inserts    171137 dups    118038 size     53099 hash fail 118115 hash buckets  53022
+ 376s visitime    5.35s generated nodes    556011 nodes/sec    1476 cur h  122 mod.depth  102 inserts    172738 dups    118151 size     54587 hash fail 118230 hash buckets  54508
+ 380s visitime    5.41s generated nodes    561011 nodes/sec    1472 cur h  123 mod.depth  101 inserts    174353 dups    118263 size     56090 hash fail 118346 hash buckets  56007
+ 385s visitime    5.46s generated nodes    566012 nodes/sec    1467 cur h  116 mod.depth  109 inserts    175776 dups    118358 size     57418 hash fail 118448 hash buckets  57328
+ 393s visitime    5.49s generated nodes    571013 nodes/sec    1451 cur h  116 mod.depth  109 inserts    176694 dups    118418 size     58276 hash fail 118511 hash buckets  58183
+ 397s visitime    5.52s generated nodes    576020 nodes/sec    1447 cur h  123 mod.depth  103 inserts    177365 dups    118448 size     58917 hash fail 118543 hash buckets  58822
+ 399s visitime    5.53s generated nodes    581023 nodes/sec    1453 cur h  123 mod.depth  103 inserts    177818 dups    118457 size     59361 hash fail 118556 hash buckets  59262
+ 402s visitime    5.55s generated nodes    586025 nodes/sec    1457 cur h  120 mod.depth  107 inserts    178250 dups    118461 size     59789 hash fail 118561 hash buckets  59689
+ 404s visitime    5.57s generated nodes    591034 nodes/sec    1459 cur h  124 mod.depth  103 inserts    178616 dups    118463 size     60153 hash fail 118564 hash buckets  60052
+ 407s visitime    5.58s generated nodes    596047 nodes/sec    1461 cur h  124 mod.depth  103 inserts    178981 dups    118466 size     60515 hash fail 118570 hash buckets  60411
+ 410s visitime    5.60s generated nodes    601056 nodes/sec    1464 cur h  124 mod.depth  103 inserts    179358 dups    118469 size     60889 hash fail 118574 hash buckets  60784
+ 413s visitime    5.62s generated nodes    606068 nodes/sec    1466 cur h  124 mod.depth  103 inserts    179733 dups    118473 size     61260 hash fail 118579 hash buckets  61154
+ 416s visitime    5.64s generated nodes    611074 nodes/sec    1468 cur h  124 mod.depth  103 inserts    180098 dups    118485 size     61613 hash fail 118592 hash buckets  61506
+ 418s visitime    5.66s generated nodes    616086 nodes/sec    1471 cur h  124 mod.depth  103 inserts    180462 dups    118490 size     61972 hash fail 118598 hash buckets  61864
+ 420s visitime    5.67s generated nodes    621089 nodes/sec    1475 cur h  124 mod.depth  103 inserts    180866 dups    118499 size     62367 hash fail 118607 hash buckets  62259
+ 423s visitime    5.69s generated nodes    626112 nodes/sec    1479 cur h  124 mod.depth  103 inserts    181252 dups    118506 size     62746 hash fail 118616 hash buckets  62636
+ 425s visitime    5.70s generated nodes    631115 nodes/sec    1482 cur h  125 mod.depth  103 inserts    181673 dups    118520 size     63153 hash fail 118632 hash buckets  63041
+ 427s visitime    5.71s generated nodes    636121 nodes/sec    1487 cur h  125 mod.depth  103 inserts    182049 dups    118548 size     63501 hash fail 118661 hash buckets  63388
+ 429s visitime    5.73s generated nodes    641130 nodes/sec    1491 cur h  125 mod.depth  103 inserts    182427 dups    118573 size     63854 hash fail 118687 hash buckets  63740
+ 431s visitime    5.74s generated nodes    646135 nodes/sec    1496 cur h  125 mod.depth  103 inserts    182810 dups    118608 size     64202 hash fail 118723 hash buckets  64087
+ 433s visitime    5.76s generated nodes    651142 nodes/sec    1501 cur h  125 mod.depth  103 inserts    183193 dups    118632 size     64561 hash fail 118747 hash buckets  64446
+ 435s visitime    5.77s generated nodes    656146 nodes/sec    1506 cur h  125 mod.depth  103 inserts    183582 dups    118657 size     64925 hash fail 118772 hash buckets  64810
+ 437s visitime    5.79s generated nodes    661156 nodes/sec    1510 cur h  125 mod.depth  103 inserts    183970 dups    118683 size     65287 hash fail 118798 hash buckets  65172
+ 439s visitime    5.80s generated nodes    666159 nodes/sec    1515 cur h  125 mod.depth  103 inserts    184361 dups    118722 size     65639 hash fail 118838 hash buckets  65523
+ 441s visitime    5.82s generated nodes    671170 nodes/sec    1520 cur h  125 mod.depth  103 inserts    184751 dups    118758 size     65993 hash fail 118875 hash buckets  65876
+ 443s visitime    5.83s generated nodes    676186 nodes/sec    1525 cur h  123 mod.depth  105 inserts    185141 dups    118785 size     66356 hash fail 118902 hash buckets  66239
+ 445s visitime    5.85s generated nodes    681191 nodes/sec    1529 cur h  125 mod.depth  103 inserts    185545 dups    118831 size     66714 hash fail 118952 hash buckets  66593
+ 447s visitime    5.86s generated nodes    686198 nodes/sec    1533 cur h  125 mod.depth  103 inserts    185939 dups    118872 size     67067 hash fail 118996 hash buckets  66943
+ 449s visitime    5.87s generated nodes    691198 nodes/sec    1538 cur h  125 mod.depth  103 inserts    186337 dups    118916 size     67421 hash fail 119041 hash buckets  67296
+ 451s visitime    5.89s generated nodes    696201 nodes/sec    1542 cur h  125 mod.depth  103 inserts    186730 dups    118954 size     67776 hash fail 119079 hash buckets  67651
+ 453s visitime    5.90s generated nodes    701212 nodes/sec    1547 cur h  125 mod.depth  103 inserts    187124 dups    118997 size     68127 hash fail 119127 hash buckets  67997
+ 455s visitime    5.92s generated nodes    706222 nodes/sec    1551 cur h  125 mod.depth  103 inserts    187523 dups    119035 size     68488 hash fail 119167 hash buckets  68356
+ 457s visitime    5.93s generated nodes    711223 nodes/sec    1555 cur h  121 mod.depth  107 inserts    187920 dups    119068 size     68852 hash fail 119200 hash buckets  68720
+ 459s visitime    5.95s generated nodes    716236 nodes/sec    1559 cur h  125 mod.depth  103 inserts    188312 dups    119109 size     69203 hash fail 119241 hash buckets  69071
+ 461s visitime    5.96s generated nodes    721237 nodes/sec    1564 cur h  125 mod.depth  103 inserts    188720 dups    119155 size     69565 hash fail 119288 hash buckets  69432
+ 463s visitime    5.98s generated nodes    726241 nodes/sec    1568 cur h  125 mod.depth  103 inserts    189127 dups    119202 size     69925 hash fail 119336 hash buckets  69791
+ 464s visitime    5.99s generated nodes    731247 nodes/sec    1572 cur h  125 mod.depth  103 inserts    189525 dups    119241 size     70284 hash fail 119378 hash buckets  70147
+ 466s visitime    6.01s generated nodes    736258 nodes/sec    1576 cur h  125 mod.depth  103 inserts    189921 dups    119276 size     70645 hash fail 119413 hash buckets  70508
+ 468s visitime    6.02s generated nodes    741265 nodes/sec    1581 cur h  125 mod.depth  103 inserts    190326 dups    119328 size     70998 hash fail 119466 hash buckets  70860
+ 470s visitime    6.04s generated nodes    746267 nodes/sec    1585 cur h  125 mod.depth  103 inserts    190726 dups    119382 size     71344 hash fail 119520 hash buckets  71206
+ 472s visitime    6.05s generated nodes    751269 nodes/sec    1589 cur h  123 mod.depth  105 inserts    191133 dups    119434 size     71699 hash fail 119573 hash buckets  71560
+ 474s visitime    6.07s generated nodes    756278 nodes/sec    1593 cur h  125 mod.depth  103 inserts    191529 dups    119480 size     72049 hash fail 119621 hash buckets  71908
+ 476s visitime    6.08s generated nodes    761290 nodes/sec    1597 cur h  125 mod.depth  103 inserts    191957 dups    119554 size     72403 hash fail 119695 hash buckets  72262
+ 478s visitime    6.10s generated nodes    766303 nodes/sec    1600 cur h  125 mod.depth  103 inserts    192372 dups    119603 size     72769 hash fail 119744 hash buckets  72628
+ 480s visitime    6.12s generated nodes    771307 nodes/sec    1604 cur h  125 mod.depth  103 inserts    192792 dups    119665 size     73127 hash fail 119807 hash buckets  72985
+ 482s visitime    6.13s generated nodes    776313 nodes/sec    1608 cur h  125 mod.depth  103 inserts    193216 dups    119723 size     73493 hash fail 119866 hash buckets  73350
+ 484s visitime    6.15s generated nodes    781326 nodes/sec    1612 cur h  123 mod.depth  105 inserts    193626 dups    119776 size     73850 hash fail 119922 hash buckets  73704
+ 486s visitime    6.16s generated nodes    786337 nodes/sec    1615 cur h  125 mod.depth  103 inserts    194051 dups    119856 size     74195 hash fail 120004 hash buckets  74047
+ 488s visitime    6.18s generated nodes    791338 nodes/sec    1619 cur h  125 mod.depth  103 inserts    194479 dups    119934 size     74545 hash fail 120084 hash buckets  74395
+ 490s visitime    6.19s generated nodes    796351 nodes/sec    1622 cur h  125 mod.depth  103 inserts    194914 dups    120012 size     74902 hash fail 120163 hash buckets  74751
+ 492s visitime    6.21s generated nodes    801353 nodes/sec    1625 cur h  120 mod.depth  108 inserts    195351 dups    120100 size     75251 hash fail 120252 hash buckets  75099
+ 494s visitime    6.23s generated nodes    806358 nodes/sec    1629 cur h  125 mod.depth  103 inserts    195773 dups    120169 size     75604 hash fail 120324 hash buckets  75449
+ 496s visitime    6.24s generated nodes    811370 nodes/sec    1632 cur h  125 mod.depth  103 inserts    196195 dups    120230 size     75965 hash fail 120387 hash buckets  75808
+ 498s visitime    6.26s generated nodes    816372 nodes/sec    1636 cur h  125 mod.depth  103 inserts    196623 dups    120304 size     76319 hash fail 120461 hash buckets  76162
+ 501s visitime    6.28s generated nodes    821390 nodes/sec    1637 cur h  124 mod.depth  105 inserts    197140 dups    120506 size     76634 hash fail 120663 hash buckets  76477
+ 505s visitime    6.30s generated nodes    826408 nodes/sec    1634 cur h  124 mod.depth  105 inserts    197943 dups    121097 size     76846 hash fail 121255 hash buckets  76688
+ 509s visitime    6.33s generated nodes    831425 nodes/sec    1631 cur h  124 mod.depth  105 inserts    198815 dups    121755 size     77060 hash fail 121916 hash buckets  76899
+ 513s visitime    6.36s generated nodes    836431 nodes/sec    1628 cur h  124 mod.depth  105 inserts    199722 dups    122447 size     77275 hash fail 122608 hash buckets  77114
+ 517s visitime    6.40s generated nodes    841455 nodes/sec    1625 cur h  124 mod.depth  105 inserts    200779 dups    123291 size     77488 hash fail 123452 hash buckets  77327
+ 521s visitime    6.43s generated nodes    846472 nodes/sec    1623 cur h  124 mod.depth  105 inserts    201863 dups    124153 size     77710 hash fail 124318 hash buckets  77545
+ 525s visitime    6.47s generated nodes    851493 nodes/sec    1620 cur h  124 mod.depth  105 inserts    203056 dups    125125 size     77931 hash fail 125292 hash buckets  77764
+ 529s visitime    6.51s generated nodes    856499 nodes/sec    1617 cur h  124 mod.depth  105 inserts    204234 dups    126091 size     78143 hash fail 126258 hash buckets  77976
+ 533s visitime    6.55s generated nodes    861512 nodes/sec    1614 cur h  124 mod.depth  105 inserts    205502 dups    127142 size     78360 hash fail 127310 hash buckets  78192
+ 537s visitime    6.59s generated nodes    866528 nodes/sec    1612 cur h  124 mod.depth  105 inserts    206895 dups    128322 size     78573 hash fail 128497 hash buckets  78398
+ 541s visitime    6.63s generated nodes    871528 nodes/sec    1609 cur h  124 mod.depth  105 inserts    208335 dups    129541 size     78794 hash fail 129716 hash buckets  78619
+ 545s visitime    6.68s generated nodes    876542 nodes/sec    1606 cur h  124 mod.depth  105 inserts    209802 dups    130785 size     79017 hash fail 130960 hash buckets  78842
+ 549s visitime    6.73s generated nodes    881562 nodes/sec    1603 cur h  124 mod.depth  105 inserts    211359 dups    132123 size     79236 hash fail 132298 hash buckets  79061
+ 553s visitime    6.78s generated nodes    886567 nodes/sec    1600 cur h  124 mod.depth  105 inserts    212998 dups    133543 size     79455 hash fail 133718 hash buckets  79280
+ 557s visitime    6.83s generated nodes    891580 nodes/sec    1598 cur h  124 mod.depth  105 inserts    214726 dups    135052 size     79674 hash fail 135227 hash buckets  79499
+ 562s visitime    6.89s generated nodes    896597 nodes/sec    1595 cur h  124 mod.depth  105 inserts    216464 dups    136572 size     79892 hash fail 136748 hash buckets  79716
+ 566s visitime    6.95s generated nodes    901609 nodes/sec    1592 cur h  124 mod.depth  105 inserts    218374 dups    138260 size     80114 hash fail 138437 hash buckets  79937
+ 570s visitime    7.00s generated nodes    906613 nodes/sec    1589 cur h  124 mod.depth  105 inserts    220207 dups    139877 size     80330 hash fail 140054 hash buckets  80153
+ 574s visitime    7.06s generated nodes    911629 nodes/sec    1587 cur h  124 mod.depth  105 inserts    222143 dups    141592 size     80551 hash fail 141771 hash buckets  80372
+ 578s visitime    7.12s generated nodes    916648 nodes/sec    1584 cur h  124 mod.depth  105 inserts    224086 dups    143318 size     80768 hash fail 143499 hash buckets  80587
+ 582s visitime    7.18s generated nodes    921672 nodes/sec    1582 cur h  124 mod.depth  105 inserts    226178 dups    145186 size     80992 hash fail 145369 hash buckets  80809
+ 586s visitime    7.25s generated nodes    926696 nodes/sec    1580 cur h  124 mod.depth  105 inserts    228341 dups    147135 size     81206 hash fail 147319 hash buckets  81022
+ 590s visitime    7.32s generated nodes    931705 nodes/sec    1577 cur h  124 mod.depth  105 inserts    230566 dups    149134 size     81432 hash fail 149318 hash buckets  81248
+ 594s visitime    7.38s generated nodes    936723 nodes/sec    1575 cur h  124 mod.depth  105 inserts    232801 dups    151136 size     81665 hash fail 151321 hash buckets  81480
+ 598s visitime    7.46s generated nodes    941737 nodes/sec    1572 cur h  124 mod.depth  105 inserts    235160 dups    153263 size     81897 hash fail 153450 hash buckets  81710
+ 602s visitime    7.52s generated nodes    946744 nodes/sec    1570 cur h  124 mod.depth  105 inserts    237391 dups    155272 size     82119 hash fail 155459 hash buckets  81932
+ 607s visitime    7.60s generated nodes    951763 nodes/sec    1567 cur h  124 mod.depth  105 inserts    239937 dups    157595 size     82342 hash fail 157782 hash buckets  82155
+ 611s visitime    7.67s generated nodes    956775 nodes/sec    1565 cur h  124 mod.depth  105 inserts    242362 dups    159801 size     82561 hash fail 159989 hash buckets  82373
+ 615s visitime    7.75s generated nodes    961776 nodes/sec    1563 cur h  124 mod.depth  105 inserts    244925 dups    162157 size     82768 hash fail 162346 hash buckets  82579
+ 619s visitime    7.83s generated nodes    966785 nodes/sec    1560 cur h  124 mod.depth  105 inserts    247442 dups    164438 size     83004 hash fail 164629 hash buckets  82813
+ 623s visitime    7.91s generated nodes    971796 nodes/sec    1558 cur h  124 mod.depth  105 inserts    250073 dups    166853 size     83220 hash fail 167044 hash buckets  83029
+ 627s visitime    7.99s generated nodes    976820 nodes/sec    1556 cur h  124 mod.depth  105 inserts    252867 dups    169431 size     83436 hash fail 169622 hash buckets  83245
+ 631s visitime    8.08s generated nodes    981821 nodes/sec    1553 cur h  124 mod.depth  105 inserts    255767 dups    172110 size     83657 hash fail 172303 hash buckets  83464
+ 636s visitime    8.17s generated nodes    986835 nodes/sec    1551 cur h  124 mod.depth  105 inserts    258702 dups    174815 size     83887 hash fail 175010 hash buckets  83692
+ 640s visitime    8.26s generated nodes    991839 nodes/sec    1548 cur h  124 mod.depth  105 inserts    261827 dups    177716 size     84111 hash fail 177911 hash buckets  83916
+ 644s visitime    8.35s generated nodes    996849 nodes/sec    1546 cur h  124 mod.depth  105 inserts    264905 dups    180580 size     84325 hash fail 180775 hash buckets  84130
+ 649s visitime    8.45s generated nodes   1001871 nodes/sec    1543 cur h  124 mod.depth  105 inserts    268152 dups    183607 size     84545 hash fail 183802 hash buckets  84350
+ 653s visitime    8.55s generated nodes   1006895 nodes/sec    1541 cur h  124 mod.depth  105 inserts    271277 dups    186509 size     84768 hash fail 186706 hash buckets  84571
+ 657s visitime    8.65s generated nodes   1011913 nodes/sec    1538 cur h  124 mod.depth  105 inserts    274633 dups    189638 size     84995 hash fail 189835 hash buckets  84798
+ 661s visitime    8.76s generated nodes   1016918 nodes/sec    1536 cur h  124 mod.depth  105 inserts    277993 dups    192738 size     85255 hash fail 192937 hash buckets  85056
+ 666s visitime    8.86s generated nodes   1021922 nodes/sec    1533 cur h  124 mod.depth  105 inserts    281493 dups    196024 size     85469 hash fail 196224 hash buckets  85269
+ 670s visitime    8.97s generated nodes   1026935 nodes/sec    1531 cur h  124 mod.depth  105 inserts    285077 dups    199373 size     85704 hash fail 199574 hash buckets  85503
+ 674s visitime    9.07s generated nodes   1031938 nodes/sec    1529 cur h  124 mod.depth  105 inserts    288539 dups    202610 size     85929 hash fail 202811 hash buckets  85728
+ 679s visitime    9.18s generated nodes   1036943 nodes/sec    1526 cur h  124 mod.depth  105 inserts    292022 dups    205874 size     86148 hash fail 206076 hash buckets  85946
+ 683s visitime    9.29s generated nodes   1041952 nodes/sec    1524 cur h  124 mod.depth  105 inserts    295654 dups    209283 size     86371 hash fail 209485 hash buckets  86169
+ 687s visitime    9.40s generated nodes   1046974 nodes/sec    1522 cur h  124 mod.depth  105 inserts    299293 dups    212709 size     86584 hash fail 212913 hash buckets  86380
+ 692s visitime    9.52s generated nodes   1051981 nodes/sec    1519 cur h  124 mod.depth  105 inserts    303155 dups    216337 size     86818 hash fail 216541 hash buckets  86614
+ 696s visitime    9.64s generated nodes   1056995 nodes/sec    1517 cur h  124 mod.depth  105 inserts    307096 dups    220043 size     87053 hash fail 220248 hash buckets  86848
+ 700s visitime    9.75s generated nodes   1062005 nodes/sec    1515 cur h  124 mod.depth  105 inserts    310999 dups    223716 size     87283 hash fail 223923 hash buckets  87076
+ 705s visitime    9.87s generated nodes   1067017 nodes/sec    1512 cur h  124 mod.depth  105 inserts    314993 dups    227469 size     87524 hash fail 227677 hash buckets  87316
+ 709s visitime    9.99s generated nodes   1072023 nodes/sec    1510 cur h  124 mod.depth  105 inserts    318981 dups    231228 size     87753 hash fail 231436 hash buckets  87545
+ 713s visitime   10.12s generated nodes   1077045 nodes/sec    1508 cur h  124 mod.depth  105 inserts    323071 dups    235098 size     87973 hash fail 235307 hash buckets  87764
+ 718s visitime   10.24s generated nodes   1082061 nodes/sec    1506 cur h  124 mod.depth  105 inserts    327145 dups    238944 size     88201 hash fail 239155 hash buckets  87990
+ 722s visitime   10.36s generated nodes   1087063 nodes/sec    1504 cur h  124 mod.depth  105 inserts    331238 dups    242805 size     88433 hash fail 243019 hash buckets  88219
+ 727s visitime   10.50s generated nodes   1092072 nodes/sec    1501 cur h  124 mod.depth  105 inserts    335737 dups    247079 size     88658 hash fail 247293 hash buckets  88444
+ 731s visitime   10.63s generated nodes   1097074 nodes/sec    1499 cur h  125 mod.depth  104 inserts    340156 dups    251266 size     88890 hash fail 251483 hash buckets  88673
+ 735s visitime   10.76s generated nodes   1102077 nodes/sec    1497 cur h  124 mod.depth  105 inserts    344583 dups    255461 size     89122 hash fail 255678 hash buckets  88905
+ 740s visitime   10.93s generated nodes   1107078 nodes/sec    1495 cur h  126 mod.depth  103 inserts    349438 dups    260090 size     89348 hash fail 260311 hash buckets  89127
+ 744s visitime   11.07s generated nodes   1112078 nodes/sec    1493 cur h  124 mod.depth  105 inserts    354058 dups    264466 size     89592 hash fail 264687 hash buckets  89371
+ 749s visitime   11.22s generated nodes   1117082 nodes/sec    1491 cur h  124 mod.depth  105 inserts    358683 dups    268876 size     89807 hash fail 269098 hash buckets  89585
+ 753s visitime   11.37s generated nodes   1122104 nodes/sec    1488 cur h  124 mod.depth  105 inserts    363505 dups    273455 size     90050 hash fail 273678 hash buckets  89827
+ 758s visitime   11.51s generated nodes   1127105 nodes/sec    1486 cur h  124 mod.depth  105 inserts    368167 dups    277885 size     90282 hash fail 278108 hash buckets  90059
+ 763s visitime   11.56s generated nodes   1132109 nodes/sec    1482 cur h  115 mod.depth  114 inserts    369460 dups    278327 size     91133 hash fail 278553 hash buckets  90907
+ 769s visitime   11.61s generated nodes   1137124 nodes/sec    1478 cur h  120 mod.depth  110 inserts    370499 dups    278359 size     92140 hash fail 278592 hash buckets  91907
+ 774s visitime   11.65s generated nodes   1142127 nodes/sec    1474 cur h  120 mod.depth  110 inserts    371635 dups    278391 size     93244 hash fail 278630 hash buckets  93005
+ 780s visitime   11.71s generated nodes   1147148 nodes/sec    1470 cur h  125 mod.depth  105 inserts    372859 dups    278437 size     94422 hash fail 278682 hash buckets  94177
+ 785s visitime   11.76s generated nodes   1152151 nodes/sec    1466 cur h  117 mod.depth  113 inserts    374159 dups    278506 size     95653 hash fail 278758 hash buckets  95401
+ 789s visitime   11.79s generated nodes   1157161 nodes/sec    1466 cur h  123 mod.depth  108 inserts    374741 dups    278581 size     96160 hash fail 278835 hash buckets  95906
+ 792s visitime   11.82s generated nodes   1162171 nodes/sec    1466 cur h  123 mod.depth  108 inserts    375489 dups    278829 size     96660 hash fail 279087 hash buckets  96402
+ 795s visitime   11.85s generated nodes   1167171 nodes/sec    1466 cur h  125 mod.depth  107 inserts    376383 dups    279182 size     97201 hash fail 279442 hash buckets  96941
+ 798s visitime   11.90s generated nodes   1172182 nodes/sec    1468 cur h  122 mod.depth  110 inserts    377636 dups    279835 size     97801 hash fail 280098 hash buckets  97538
+ 801s visitime   11.95s generated nodes   1177187 nodes/sec    1469 cur h  129 mod.depth  103 inserts    379208 dups    280828 size     98380 hash fail 281095 hash buckets  98113
+ 803s visitime   12.01s generated nodes   1182197 nodes/sec    1470 cur h  123 mod.depth  110 inserts    380929 dups    282004 size     98925 hash fail 282277 hash buckets  98652
+ 806s visitime   12.03s generated nodes   1187198 nodes/sec    1472 cur h  122 mod.depth  111 inserts    381378 dups    282011 size     99367 hash fail 282286 hash buckets  99092
+ 808s visitime   12.05s generated nodes   1192201 nodes/sec    1475 cur h  121 mod.depth  112 inserts    381817 dups    282021 size     99796 hash fail 282297 hash buckets  99520
+ 810s visitime   12.07s generated nodes   1197203 nodes/sec    1477 cur h  123 mod.depth  110 inserts    382282 dups    282033 size    100249 hash fail 282313 hash buckets  99969
+ 812s visitime   12.09s generated nodes   1202208 nodes/sec    1480 cur h  123 mod.depth  110 inserts    382737 dups    282041 size    100696 hash fail 282324 hash buckets 100413
+ 814s visitime   12.12s generated nodes   1207208 nodes/sec    1482 cur h  123 mod.depth  110 inserts    383222 dups    282052 size    101170 hash fail 282337 hash buckets 100885
+ 817s visitime   12.13s generated nodes   1212227 nodes/sec    1483 cur h  124 mod.depth  110 inserts    383658 dups    282079 size    101579 hash fail 282365 hash buckets 101293
+ 820s visitime   12.15s generated nodes   1217227 nodes/sec    1483 cur h  122 mod.depth  112 inserts    384113 dups    282131 size    101982 hash fail 282420 hash buckets 101693
+ 823s visitime   12.17s generated nodes   1222237 nodes/sec    1483 cur h  124 mod.depth  110 inserts    384547 dups    282199 size    102348 hash fail 282490 hash buckets 102057
+ 826s visitime   12.19s generated nodes   1227238 nodes/sec    1484 cur h  122 mod.depth  112 inserts    385070 dups    282319 size    102751 hash fail 282615 hash buckets 102455
+ 830s visitime   12.21s generated nodes   1232239 nodes/sec    1484 cur h  126 mod.depth  108 inserts    385565 dups    282435 size    103130 hash fail 282738 hash buckets 102827
+ 833s visitime   12.23s generated nodes   1237263 nodes/sec    1484 cur h  124 mod.depth  110 inserts    386091 dups    282560 size    103531 hash fail 282865 hash buckets 103226
+ 836s visitime   12.27s generated nodes   1242270 nodes/sec    1484 cur h  125 mod.depth  109 inserts    386663 dups    282717 size    103946 hash fail 283025 hash buckets 103638
+ 839s visitime   12.30s generated nodes   1247277 nodes/sec    1485 cur h  125 mod.depth  109 inserts    387289 dups    282940 size    104349 hash fail 283250 hash buckets 104039
+ 843s visitime   12.32s generated nodes   1252288 nodes/sec    1485 cur h  125 mod.depth  109 inserts    387899 dups    283145 size    104754 hash fail 283457 hash buckets 104442
+ 846s visitime   12.35s generated nodes   1257291 nodes/sec    1485 cur h  124 mod.depth  110 inserts    388661 dups    283444 size    105217 hash fail 283760 hash buckets 104901
+ 849s visitime   12.37s generated nodes   1262312 nodes/sec    1485 cur h  124 mod.depth  110 inserts    389380 dups    283736 size    105644 hash fail 284052 hash buckets 105328
+ 853s visitime   12.40s generated nodes   1267335 nodes/sec    1485 cur h  125 mod.depth  109 inserts    390113 dups    284055 size    106058 hash fail 284373 hash buckets 105740
+ 856s visitime   12.43s generated nodes   1272335 nodes/sec    1485 cur h  120 mod.depth  114 inserts    390995 dups    284505 size    106490 hash fail 284826 hash buckets 106169
+ 859s visitime   12.46s generated nodes   1277350 nodes/sec    1485 cur h  124 mod.depth  110 inserts    391930 dups    284996 size    106934 hash fail 285319 hash buckets 106611
+ 863s visitime   12.50s generated nodes   1282358 nodes/sec    1485 cur h  124 mod.depth  110 inserts    392831 dups    285442 size    107389 hash fail 285768 hash buckets 107063
+ 866s visitime   12.53s generated nodes   1287358 nodes/sec    1485 cur h  120 mod.depth  114 inserts    393641 dups    285811 size    107830 hash fail 286144 hash buckets 107497
+ 869s visitime   12.56s generated nodes   1292368 nodes/sec    1485 cur h  126 mod.depth  108 inserts    394545 dups    286240 size    108305 hash fail 286575 hash buckets 107970
+ 873s visitime   12.59s generated nodes   1297388 nodes/sec    1484 cur h  125 mod.depth  110 inserts    395316 dups    286613 size    108703 hash fail 286950 hash buckets 108366
+ 878s visitime   12.61s generated nodes   1302408 nodes/sec    1482 cur h  125 mod.depth  110 inserts    396048 dups    286984 size    109064 hash fail 287322 hash buckets 108726
+ 883s visitime   12.65s generated nodes   1307416 nodes/sec    1480 cur h  128 mod.depth  107 inserts    397083 dups    287648 size    109435 hash fail 287988 hash buckets 109095
+ 888s visitime   12.69s generated nodes   1312419 nodes/sec    1477 cur h  125 mod.depth  110 inserts    398338 dups    288516 size    109822 hash fail 288860 hash buckets 109478
+ 892s visitime   12.74s generated nodes   1317422 nodes/sec    1475 cur h  121 mod.depth  114 inserts    399932 dups    289750 size    110182 hash fail 290095 hash buckets 109837
+ 897s visitime   12.80s generated nodes   1322443 nodes/sec    1473 cur h  125 mod.depth  110 inserts    401654 dups    291094 size    110560 hash fail 291442 hash buckets 110212
+ 902s visitime   12.86s generated nodes   1327460 nodes/sec    1470 cur h  125 mod.depth  110 inserts    403625 dups    292695 size    110930 hash fail 293045 hash buckets 110580
+ 907s visitime   12.93s generated nodes   1332463 nodes/sec    1468 cur h  125 mod.depth  110 inserts    405838 dups    294535 size    111303 hash fail 294886 hash buckets 110952
+ 911s visitime   13.01s generated nodes   1337465 nodes/sec    1466 cur h  125 mod.depth  110 inserts    408235 dups    296557 size    111678 hash fail 296912 hash buckets 111323
+ 916s visitime   13.09s generated nodes   1342475 nodes/sec    1464 cur h  125 mod.depth  110 inserts    410888 dups    298837 size    112051 hash fail 299195 hash buckets 111693
+ 921s visitime   13.19s generated nodes   1347493 nodes/sec    1462 cur h  125 mod.depth  110 inserts    413898 dups    301458 size    112440 hash fail 301819 hash buckets 112079
+ 926s visitime   13.29s generated nodes   1352516 nodes/sec    1459 cur h  125 mod.depth  110 inserts    417289 dups    304462 size    112827 hash fail 304825 hash buckets 112464
+ 931s visitime   13.40s generated nodes   1357534 nodes/sec    1457 cur h  125 mod.depth  110 inserts    420637 dups    307413 size    113224 hash fail 307781 hash buckets 112856
+ 936s visitime   13.51s generated nodes   1362537 nodes/sec    1455 cur h  125 mod.depth  110 inserts    424333 dups    310707 size    113626 hash fail 311076 hash buckets 113257
+ 940s visitime   13.60s generated nodes   1367544 nodes/sec    1454 cur h  125 mod.depth  111 inserts    427043 dups    312858 size    114185 hash fail 313230 hash buckets 113813
+ 942s visitime   13.64s generated nodes   1372557 nodes/sec    1456 cur h  126 mod.depth  110 inserts    428014 dups    313055 size    114959 hash fail 313431 hash buckets 114583
+ 945s visitime   13.68s generated nodes   1377557 nodes/sec    1456 cur h  122 mod.depth  114 inserts    429007 dups    313277 size    115730 hash fail 313658 hash buckets 115349
+ 948s visitime   13.73s generated nodes   1382559 nodes/sec    1456 cur h  126 mod.depth  110 inserts    430026 dups    313458 size    116568 hash fail 313846 hash buckets 116180
+ 952s visitime   13.77s generated nodes   1387577 nodes/sec    1456 cur h  120 mod.depth  116 inserts    431048 dups    313642 size    117406 hash fail 314037 hash buckets 117011
+ 956s visitime   13.82s generated nodes   1392583 nodes/sec    1456 cur h  126 mod.depth  110 inserts    432113 dups    313842 size    118271 hash fail 314244 hash buckets 117869
+ 960s visitime   13.86s generated nodes   1397584 nodes/sec    1455 cur h  123 mod.depth  113 inserts    433180 dups    314011 size    119169 hash fail 314426 hash buckets 118754
+ 964s visitime   13.91s generated nodes   1402588 nodes/sec    1453 cur h  120 mod.depth  117 inserts    434264 dups    314182 size    120082 hash fail 314603 hash buckets 119661
+ 970s visitime   13.96s generated nodes   1407590 nodes/sec    1450 cur h  123 mod.depth  114 inserts    435055 dups    314195 size    120860 hash fail 314627 hash buckets 120428
+ 975s visitime   14.01s generated nodes   1412601 nodes/sec    1447 cur h  125 mod.depth  112 inserts    435868 dups    314210 size    121658 hash fail 314644 hash buckets 121224
+ 981s visitime   14.04s generated nodes   1417621 nodes/sec    1444 cur h  125 mod.depth  112 inserts    436767 dups    314237 size    122530 hash fail 314680 hash buckets 122087
+ 987s visitime   14.08s generated nodes   1422623 nodes/sec    1441 cur h  120 mod.depth  117 inserts    437714 dups    314270 size    123444 hash fail 314718 hash buckets 122996
+ 993s visitime   14.12s generated nodes   1427623 nodes/sec    1437 cur h  123 mod.depth  114 inserts    438746 dups    314298 size    124448 hash fail 314748 hash buckets 123998
+ 998s visitime   14.16s generated nodes   1432625 nodes/sec    1434 cur h  123 mod.depth  114 inserts    439804 dups    314358 size    125446 hash fail 314815 hash buckets 124989
+1004s visitime   14.20s generated nodes   1437628 nodes/sec    1431 cur h  125 mod.depth  112 inserts    440896 dups    314401 size    126495 hash fail 314864 hash buckets 126032
+1009s visitime   14.24s generated nodes   1442628 nodes/sec    1428 cur h  123 mod.depth  114 inserts    442073 dups    314453 size    127620 hash fail 314926 hash buckets 127147
+1015s visitime   14.29s generated nodes   1447628 nodes/sec    1425 cur h  115 mod.depth  121 inserts    443268 dups    314514 size    128754 hash fail 314998 hash buckets 128270
+1021s visitime   14.33s generated nodes   1452629 nodes/sec    1422 cur h  115 mod.depth  121 inserts    444485 dups    314581 size    129904 hash fail 315077 hash buckets 129408
+1027s visitime   14.38s generated nodes   1457630 nodes/sec    1418 cur h  123 mod.depth  114 inserts    445766 dups    314659 size    131107 hash fail 315164 hash buckets 130602
+1032s visitime   14.43s generated nodes   1462641 nodes/sec    1416 cur h  125 mod.depth  112 inserts    447063 dups    314745 size    132318 hash fail 315260 hash buckets 131803
+1038s visitime   14.48s generated nodes   1467644 nodes/sec    1413 cur h  115 mod.depth  121 inserts    448387 dups    314823 size    133564 hash fail 315348 hash buckets 133039
+1044s visitime   14.53s generated nodes   1472647 nodes/sec    1409 cur h  115 mod.depth  121 inserts    449722 dups    314894 size    134828 hash fail 315426 hash buckets 134296
+1050s visitime   14.58s generated nodes   1477648 nodes/sec    1407 cur h  123 mod.depth  114 inserts    451131 dups    314991 size    136140 hash fail 315532 hash buckets 135599
+1055s visitime   14.64s generated nodes   1482661 nodes/sec    1404 cur h  125 mod.depth  112 inserts    452567 dups    315100 size    137467 hash fail 315647 hash buckets 136920
+1061s visitime   14.69s generated nodes   1487661 nodes/sec    1401 cur h  123 mod.depth  114 inserts    454020 dups    315199 size    138821 hash fail 315753 hash buckets 138267
+1067s visitime   14.75s generated nodes   1492664 nodes/sec    1398 cur h  122 mod.depth  115 inserts    455516 dups    315302 size    140214 hash fail 315867 hash buckets 139649
+1071s visitime   14.77s generated nodes   1497673 nodes/sec    1397 cur h  121 mod.depth  117 inserts    456177 dups    315339 size    140838 hash fail 315908 hash buckets 140269
+1075s visitime   14.79s generated nodes   1502683 nodes/sec    1397 cur h  123 mod.depth  115 inserts    456585 dups    315386 size    141199 hash fail 315958 hash buckets 140627
+1078s visitime   14.81s generated nodes   1507689 nodes/sec    1397 cur h  123 mod.depth  115 inserts    457068 dups    315466 size    141602 hash fail 316041 hash buckets 141027
+1082s visitime   14.83s generated nodes   1512696 nodes/sec    1397 cur h  123 mod.depth  115 inserts    457535 dups    315562 size    141973 hash fail 316143 hash buckets 141392
+1085s visitime   14.84s generated nodes   1517716 nodes/sec    1397 cur h  121 mod.depth  117 inserts    458021 dups    315679 size    142342 hash fail 316263 hash buckets 141758
+1089s visitime   14.86s generated nodes   1522718 nodes/sec    1397 cur h  124 mod.depth  114 inserts    458558 dups    315868 size    142690 hash fail 316453 hash buckets 142105
+1093s visitime   14.88s generated nodes   1527743 nodes/sec    1397 cur h  121 mod.depth  117 inserts    459097 dups    316062 size    143035 hash fail 316650 hash buckets 142447
+1096s visitime   14.90s generated nodes   1532754 nodes/sec    1397 cur h  123 mod.depth  115 inserts    459695 dups    316283 size    143412 hash fail 316874 hash buckets 142821
+1100s visitime   14.93s generated nodes   1537757 nodes/sec    1397 cur h  123 mod.depth  115 inserts    460359 dups    316581 size    143778 hash fail 317175 hash buckets 143184
+1103s visitime   14.95s generated nodes   1542772 nodes/sec    1398 cur h  122 mod.depth  117 inserts    461098 dups    316852 size    144246 hash fail 317447 hash buckets 143651
+1106s visitime   14.99s generated nodes   1547780 nodes/sec    1399 cur h  129 mod.depth  110 inserts    462031 dups    317273 size    144758 hash fail 317872 hash buckets 144159
+1109s visitime   15.03s generated nodes   1552781 nodes/sec    1400 cur h  120 mod.depth  119 inserts    463205 dups    317926 size    145279 hash fail 318529 hash buckets 144676
+1111s visitime   15.07s generated nodes   1557782 nodes/sec    1400 cur h  118 mod.depth  120 inserts    464522 dups    318729 size    145793 hash fail 319336 hash buckets 145186
+1114s visitime   15.12s generated nodes   1562793 nodes/sec    1401 cur h  125 mod.depth  114 inserts    466032 dups    319737 size    146295 hash fail 320348 hash buckets 145684
+1117s visitime   15.17s generated nodes   1567795 nodes/sec    1402 cur h  122 mod.depth  117 inserts    467697 dups    320919 size    146778 hash fail 321531 hash buckets 146166
+1120s visitime   15.24s generated nodes   1572795 nodes/sec    1403 cur h  123 mod.depth  116 inserts    469608 dups    322359 size    147249 hash fail 322981 hash buckets 146627
+1123s visitime   15.31s generated nodes   1577798 nodes/sec    1404 cur h  120 mod.depth  119 inserts    471817 dups    324043 size    147774 hash fail 324670 hash buckets 147147
+1126s visitime   15.38s generated nodes   1582800 nodes/sec    1405 cur h  125 mod.depth  114 inserts    474030 dups    325780 size    148250 hash fail 326411 hash buckets 147619
+1129s visitime   15.46s generated nodes   1587817 nodes/sec    1405 cur h  122 mod.depth  117 inserts    476516 dups    327757 size    148759 hash fail 328390 hash buckets 148126
+1132s visitime   15.55s generated nodes   1592818 nodes/sec    1406 cur h  122 mod.depth  117 inserts    479200 dups    329943 size    149257 hash fail 330581 hash buckets 148619
+1134s visitime   15.59s generated nodes   1597827 nodes/sec    1407 cur h  125 mod.depth  115 inserts    480333 dups    330578 size    149755 hash fail 331224 hash buckets 149109
+1137s visitime   15.61s generated nodes   1602837 nodes/sec    1409 cur h  125 mod.depth  115 inserts    480840 dups    330587 size    150253 hash fail 331238 hash buckets 149602
+1139s visitime   15.63s generated nodes   1607849 nodes/sec    1411 cur h  123 mod.depth  117 inserts    481396 dups    330606 size    150790 hash fail 331261 hash buckets 150135
+1141s visitime   15.65s generated nodes   1612862 nodes/sec    1412 cur h  126 mod.depth  114 inserts    481952 dups    330620 size    151332 hash fail 331279 hash buckets 150673
+1143s visitime   15.67s generated nodes   1617871 nodes/sec    1414 cur h  125 mod.depth  115 inserts    482485 dups    330627 size    151858 hash fail 331290 hash buckets 151195
+1145s visitime   15.70s generated nodes   1622890 nodes/sec    1416 cur h  126 mod.depth  114 inserts    483064 dups    330638 size    152426 hash fail 331304 hash buckets 151760
+1148s visitime   15.72s generated nodes   1627896 nodes/sec    1417 cur h  125 mod.depth  115 inserts    483689 dups    330668 size    153021 hash fail 331342 hash buckets 152347
+1150s visitime   15.75s generated nodes   1632905 nodes/sec    1419 cur h  126 mod.depth  114 inserts    484325 dups    330695 size    153630 hash fail 331374 hash buckets 152951
+1153s visitime   15.77s generated nodes   1637908 nodes/sec    1420 cur h  125 mod.depth  115 inserts    484947 dups    330712 size    154235 hash fail 331399 hash buckets 153548
+1155s visitime   15.80s generated nodes   1642919 nodes/sec    1421 cur h  125 mod.depth  115 inserts    485593 dups    330735 size    154858 hash fail 331429 hash buckets 154164
+1157s visitime   15.82s generated nodes   1647928 nodes/sec    1423 cur h  125 mod.depth  115 inserts    486230 dups    330757 size    155473 hash fail 331456 hash buckets 154774
+1160s visitime   15.85s generated nodes   1652939 nodes/sec    1424 cur h  126 mod.depth  114 inserts    486866 dups    330782 size    156084 hash fail 331489 hash buckets 155377
+1162s visitime   15.87s generated nodes   1657944 nodes/sec    1426 cur h  125 mod.depth  115 inserts    487583 dups    330814 size    156769 hash fail 331527 hash buckets 156056
+1165s visitime   15.90s generated nodes   1662955 nodes/sec    1427 cur h  126 mod.depth  115 inserts    488285 dups    330837 size    157448 hash fail 331559 hash buckets 156726
+1167s visitime   15.92s generated nodes   1667974 nodes/sec    1428 cur h  125 mod.depth  116 inserts    488815 dups    330867 size    157948 hash fail 331597 hash buckets 157218
+1170s visitime   15.94s generated nodes   1672975 nodes/sec    1429 cur h  126 mod.depth  115 inserts    489340 dups    330925 size    158415 hash fail 331662 hash buckets 157678
+1173s visitime   15.97s generated nodes   1677982 nodes/sec    1430 cur h  126 mod.depth  115 inserts    489863 dups    330971 size    158892 hash fail 331709 hash buckets 158154
+1175s visitime   15.99s generated nodes   1682993 nodes/sec    1431 cur h  126 mod.depth  115 inserts    490417 dups    331053 size    159364 hash fail 331796 hash buckets 158621
+1178s visitime   16.01s generated nodes   1688002 nodes/sec    1432 cur h  125 mod.depth  116 inserts    490982 dups    331128 size    159854 hash fail 331877 hash buckets 159105
+1181s visitime   16.03s generated nodes   1693017 nodes/sec    1432 cur h  125 mod.depth  116 inserts    491570 dups    331226 size    160344 hash fail 331977 hash buckets 159593
+1184s visitime   16.06s generated nodes   1698018 nodes/sec    1433 cur h  126 mod.depth  115 inserts    492160 dups    331324 size    160836 hash fail 332078 hash buckets 160082
+1186s visitime   16.08s generated nodes   1703025 nodes/sec    1434 cur h  125 mod.depth  116 inserts    492777 dups    331441 size    161336 hash fail 332199 hash buckets 160578
+1189s visitime   16.11s generated nodes   1708035 nodes/sec    1435 cur h  126 mod.depth  115 inserts    493403 dups    331561 size    161842 hash fail 332325 hash buckets 161078
+1192s visitime   16.13s generated nodes   1713037 nodes/sec    1436 cur h  122 mod.depth  119 inserts    494043 dups    331697 size    162346 hash fail 332466 hash buckets 161577
+1195s visitime   16.15s generated nodes   1718037 nodes/sec    1437 cur h  126 mod.depth  115 inserts    494666 dups    331841 size    162825 hash fail 332618 hash buckets 162048
+1197s visitime   16.18s generated nodes   1723037 nodes/sec    1438 cur h  126 mod.depth  115 inserts    495327 dups    331996 size    163331 hash fail 332775 hash buckets 162552
+1200s visitime   16.21s generated nodes   1728046 nodes/sec    1439 cur h  126 mod.depth  115 inserts    496008 dups    332158 size    163850 hash fail 332942 hash buckets 163066
+1203s visitime   16.23s generated nodes   1733048 nodes/sec    1440 cur h  122 mod.depth  119 inserts    496673 dups    332302 size    164371 hash fail 333087 hash buckets 163586
+1206s visitime   16.26s generated nodes   1738055 nodes/sec    1441 cur h  126 mod.depth  115 inserts    497405 dups    332530 size    164875 hash fail 333319 hash buckets 164086
+1208s visitime   16.28s generated nodes   1743062 nodes/sec    1442 cur h  126 mod.depth  115 inserts    498075 dups    332706 size    165369 hash fail 333498 hash buckets 164577
+1211s visitime   16.31s generated nodes   1748066 nodes/sec    1442 cur h  126 mod.depth  115 inserts    498815 dups    332928 size    165887 hash fail 333730 hash buckets 165085
+1214s visitime   16.34s generated nodes   1753067 nodes/sec    1443 cur h  122 mod.depth  119 inserts    499526 dups    333101 size    166425 hash fail 333906 hash buckets 165620
+1216s visitime   16.36s generated nodes   1758076 nodes/sec    1444 cur h  126 mod.depth  115 inserts    500229 dups    333278 size    166951 hash fail 334091 hash buckets 166138
+1219s visitime   16.39s generated nodes   1763090 nodes/sec    1445 cur h  122 mod.depth  119 inserts    500981 dups    333487 size    167494 hash fail 334309 hash buckets 166672
+1222s visitime   16.42s generated nodes   1768091 nodes/sec    1446 cur h  122 mod.depth  119 inserts    501724 dups    333722 size    168002 hash fail 334549 hash buckets 167175
+1225s visitime   16.45s generated nodes   1773094 nodes/sec    1447 cur h  126 mod.depth  115 inserts    502485 dups    333947 size    168538 hash fail 334782 hash buckets 167703
+1227s visitime   16.48s generated nodes   1778102 nodes/sec    1447 cur h  126 mod.depth  115 inserts    503332 dups    334281 size    169051 hash fail 335123 hash buckets 168209
+1230s visitime   16.51s generated nodes   1783109 nodes/sec    1448 cur h  126 mod.depth  115 inserts    504123 dups    334528 size    169595 hash fail 335372 hash buckets 168751
+1233s visitime   16.54s generated nodes   1788114 nodes/sec    1449 cur h  126 mod.depth  115 inserts    504924 dups    334799 size    170125 hash fail 335646 hash buckets 169278
+1236s visitime   16.57s generated nodes   1793116 nodes/sec    1450 cur h  122 mod.depth  119 inserts    505809 dups    335119 size    170690 hash fail 335975 hash buckets 169834
+1239s visitime   16.60s generated nodes   1798135 nodes/sec    1451 cur h  124 mod.depth  117 inserts    506657 dups    335470 size    171187 hash fail 336334 hash buckets 170323
+1241s visitime   16.63s generated nodes   1803138 nodes/sec    1451 cur h  126 mod.depth  115 inserts    507540 dups    335816 size    171724 hash fail 336686 hash buckets 170854
+1244s visitime   16.66s generated nodes   1808139 nodes/sec    1452 cur h  126 mod.depth  115 inserts    508475 dups    336199 size    172276 hash fail 337077 hash buckets 171398
+1247s visitime   16.70s generated nodes   1813143 nodes/sec    1453 cur h  126 mod.depth  115 inserts    509368 dups    336530 size    172838 hash fail 337413 hash buckets 171955
+1250s visitime   16.73s generated nodes   1818143 nodes/sec    1453 cur h  126 mod.depth  115 inserts    510224 dups    336813 size    173411 hash fail 337706 hash buckets 172518
+1253s visitime   16.76s generated nodes   1823145 nodes/sec    1454 cur h  122 mod.depth  119 inserts    511151 dups    337154 size    173997 hash fail 338050 hash buckets 173101
+1255s visitime   16.79s generated nodes   1828154 nodes/sec    1455 cur h  126 mod.depth  115 inserts    512032 dups    337475 size    174557 hash fail 338375 hash buckets 173657
+1258s visitime   16.83s generated nodes   1833155 nodes/sec    1456 cur h  127 mod.depth  114 inserts    512934 dups    337857 size    175077 hash fail 338762 hash buckets 174172
+1261s visitime   16.86s generated nodes   1838157 nodes/sec    1457 cur h  125 mod.depth  116 inserts    513858 dups    338182 size    175676 hash fail 339093 hash buckets 174765
+1264s visitime   16.89s generated nodes   1843163 nodes/sec    1457 cur h  126 mod.depth  115 inserts    514782 dups    338576 size    176206 hash fail 339493 hash buckets 175289
+1267s visitime   16.94s generated nodes   1848169 nodes/sec    1458 cur h  127 mod.depth  114 inserts    515729 dups    338967 size    176762 hash fail 339888 hash buckets 175841
+1269s visitime   16.98s generated nodes   1853172 nodes/sec    1459 cur h  122 mod.depth  119 inserts    516666 dups    339342 size    177324 hash fail 340266 hash buckets 176400
+1272s visitime   17.02s generated nodes   1858175 nodes/sec    1460 cur h  126 mod.depth  115 inserts    517714 dups    339778 size    177936 hash fail 340705 hash buckets 177009
+1275s visitime   17.05s generated nodes   1863187 nodes/sec    1460 cur h  126 mod.depth  115 inserts    518797 dups    340291 size    178506 hash fail 341220 hash buckets 177577
+1278s visitime   17.09s generated nodes   1868194 nodes/sec    1461 cur h  126 mod.depth  115 inserts    519828 dups    340733 size    179095 hash fail 341669 hash buckets 178159
+1281s visitime   17.13s generated nodes   1873207 nodes/sec    1461 cur h  126 mod.depth  115 inserts    520813 dups    341153 size    179660 hash fail 342099 hash buckets 178714
+1284s visitime   17.16s generated nodes   1878211 nodes/sec    1462 cur h  126 mod.depth  115 inserts    521779 dups    341519 size    180260 hash fail 342472 hash buckets 179307
+1286s visitime   17.20s generated nodes   1883226 nodes/sec    1463 cur h  124 mod.depth  117 inserts    522781 dups    341899 size    180882 hash fail 342853 hash buckets 179928
+1289s visitime   17.24s generated nodes   1888239 nodes/sec    1464 cur h  126 mod.depth  115 inserts    523912 dups    342435 size    181477 hash fail 343397 hash buckets 180515
+1292s visitime   17.28s generated nodes   1893247 nodes/sec    1464 cur h  126 mod.depth  115 inserts    524999 dups    342899 size    182100 hash fail 343866 hash buckets 181133
+1295s visitime   17.31s generated nodes   1898255 nodes/sec    1465 cur h  126 mod.depth  115 inserts    526044 dups    343364 size    182680 hash fail 344334 hash buckets 181710
+1298s visitime   17.35s generated nodes   1903255 nodes/sec    1466 cur h  126 mod.depth  115 inserts    527156 dups    343865 size    183291 hash fail 344839 hash buckets 182317
+1300s visitime   17.39s generated nodes   1908263 nodes/sec    1466 cur h  126 mod.depth  115 inserts    528184 dups    344346 size    183838 hash fail 345327 hash buckets 182857
+1303s visitime   17.43s generated nodes   1913267 nodes/sec    1467 cur h  126 mod.depth  115 inserts    529265 dups    344857 size    184408 hash fail 345849 hash buckets 183416
+1306s visitime   17.47s generated nodes   1918272 nodes/sec    1468 cur h  126 mod.depth  115 inserts    530341 dups    345284 size    185057 hash fail 346282 hash buckets 184059
+1309s visitime   17.51s generated nodes   1923294 nodes/sec    1468 cur h  125 mod.depth  116 inserts    531522 dups    345896 size    185626 hash fail 346899 hash buckets 184623
+1313s visitime   17.53s generated nodes   1928306 nodes/sec    1467 cur h  125 mod.depth  117 inserts    532186 dups    346237 size    185949 hash fail 347244 hash buckets 184942
+1319s visitime   17.55s generated nodes   1933325 nodes/sec    1465 cur h  125 mod.depth  117 inserts    532706 dups    346514 size    186192 hash fail 347527 hash buckets 185179
+1324s visitime   17.57s generated nodes   1938325 nodes/sec    1463 cur h  125 mod.depth  117 inserts    533267 dups    346826 size    186441 hash fail 347844 hash buckets 185423
+1329s visitime   17.59s generated nodes   1943346 nodes/sec    1462 cur h  125 mod.depth  117 inserts    533921 dups    347236 size    186685 hash fail 348257 hash buckets 185664
+1334s visitime   17.62s generated nodes   1948355 nodes/sec    1460 cur h  125 mod.depth  117 inserts    534637 dups    347717 size    186920 hash fail 348738 hash buckets 185899
+1339s visitime   17.65s generated nodes   1953373 nodes/sec    1458 cur h  125 mod.depth  117 inserts    535458 dups    348292 size    187166 hash fail 349314 hash buckets 186144
+1344s visitime   17.68s generated nodes   1958381 nodes/sec    1456 cur h  125 mod.depth  117 inserts    536356 dups    348945 size    187411 hash fail 349970 hash buckets 186386
+1349s visitime   17.71s generated nodes   1963405 nodes/sec    1454 cur h  125 mod.depth  117 inserts    537271 dups    349612 size    187659 hash fail 350639 hash buckets 186632
+1354s visitime   17.74s generated nodes   1968422 nodes/sec    1453 cur h  125 mod.depth  117 inserts    538297 dups    350392 size    187905 hash fail 351422 hash buckets 186875
+1359s visitime   17.78s generated nodes   1973439 nodes/sec    1451 cur h  125 mod.depth  117 inserts    539402 dups    351238 size    188164 hash fail 352274 hash buckets 187128
+1364s visitime   17.82s generated nodes   1978456 nodes/sec    1449 cur h  125 mod.depth  117 inserts    540567 dups    352139 size    188428 hash fail 353175 hash buckets 187392
+1370s visitime   17.86s generated nodes   1983461 nodes/sec    1447 cur h  125 mod.depth  117 inserts    541789 dups    353106 size    188683 hash fail 354144 hash buckets 187645
+1375s visitime   17.90s generated nodes   1988482 nodes/sec    1445 cur h  125 mod.depth  117 inserts    543163 dups    354237 size    188926 hash fail 355276 hash buckets 187887
+1380s visitime   17.95s generated nodes   1993505 nodes/sec    1444 cur h  125 mod.depth  117 inserts    544493 dups    355312 size    189181 hash fail 356356 hash buckets 188137
+1385s visitime   17.99s generated nodes   1998517 nodes/sec    1442 cur h  125 mod.depth  117 inserts    545971 dups    356540 size    189431 hash fail 357590 hash buckets 188381
+1390s visitime   18.04s generated nodes   2003517 nodes/sec    1440 cur h  125 mod.depth  117 inserts    547577 dups    357904 size    189673 hash fail 358956 hash buckets 188621
+1395s visitime   18.09s generated nodes   2008533 nodes/sec    1438 cur h  125 mod.depth  117 inserts    549149 dups    359244 size    189905 hash fail 360299 hash buckets 188850
+1400s visitime   18.15s generated nodes   2013554 nodes/sec    1437 cur h  125 mod.depth  117 inserts    550762 dups    360611 size    190151 hash fail 361667 hash buckets 189095
+1406s visitime   18.20s generated nodes   2018557 nodes/sec    1435 cur h  125 mod.depth  117 inserts    552482 dups    362094 size    190388 hash fail 363151 hash buckets 189331
+1411s visitime   18.25s generated nodes   2023558 nodes/sec    1433 cur h  125 mod.depth  117 inserts    554167 dups    363525 size    190642 hash fail 364583 hash buckets 189584
+1416s visitime   18.31s generated nodes   2028572 nodes/sec    1432 cur h  125 mod.depth  117 inserts    556107 dups    365204 size    190903 hash fail 366266 hash buckets 189841
+1421s visitime   18.37s generated nodes   2033593 nodes/sec    1430 cur h  125 mod.depth  117 inserts    558006 dups    366861 size    191145 hash fail 367925 hash buckets 190081
+1426s visitime   18.44s generated nodes   2038617 nodes/sec    1428 cur h  125 mod.depth  117 inserts    560027 dups    368630 size    191397 hash fail 369701 hash buckets 190326
+1431s visitime   18.50s generated nodes   2043633 nodes/sec    1427 cur h  125 mod.depth  117 inserts    562172 dups    370519 size    191653 hash fail 371592 hash buckets 190580
+1437s visitime   18.57s generated nodes   2048637 nodes/sec    1425 cur h  125 mod.depth  117 inserts    564370 dups    372450 size    191920 hash fail 373527 hash buckets 190843
+1442s visitime   18.64s generated nodes   2053647 nodes/sec    1423 cur h  125 mod.depth  117 inserts    566509 dups    374340 size    192169 hash fail 375420 hash buckets 191089
+1447s visitime   18.71s generated nodes   2058652 nodes/sec    1422 cur h  125 mod.depth  117 inserts    568792 dups    376357 size    192435 hash fail 377438 hash buckets 191354
+1452s visitime   18.78s generated nodes   2063653 nodes/sec    1420 cur h  121 mod.depth  120 inserts    571144 dups    378440 size    192704 hash fail 379521 hash buckets 191623
+1457s visitime   18.86s generated nodes   2068668 nodes/sec    1419 cur h  125 mod.depth  117 inserts    573519 dups    380542 size    192977 hash fail 381627 hash buckets 191892
+1462s visitime   18.93s generated nodes   2073684 nodes/sec    1417 cur h  125 mod.depth  117 inserts    576055 dups    382825 size    193230 hash fail 383914 hash buckets 192141
+1468s visitime   19.01s generated nodes   2078694 nodes/sec    1415 cur h  125 mod.depth  117 inserts    578546 dups    385071 size    193475 hash fail 386162 hash buckets 192384
+1473s visitime   19.09s generated nodes   2083710 nodes/sec    1414 cur h  125 mod.depth  117 inserts    581245 dups    387507 size    193738 hash fail 388599 hash buckets 192646
+1478s visitime   19.18s generated nodes   2088711 nodes/sec    1412 cur h  125 mod.depth  117 inserts    584005 dups    390018 size    193987 hash fail 391113 hash buckets 192892
+1483s visitime   19.27s generated nodes   2093729 nodes/sec    1411 cur h  125 mod.depth  117 inserts    586910 dups    392655 size    194255 hash fail 393756 hash buckets 193154
+1488s visitime   19.36s generated nodes   2098729 nodes/sec    1409 cur h  125 mod.depth  117 inserts    589884 dups    395349 size    194535 hash fail 396454 hash buckets 193430
+1494s visitime   19.45s generated nodes   2103731 nodes/sec    1407 cur h  125 mod.depth  117 inserts    592905 dups    398109 size    194796 hash fail 399219 hash buckets 193686
+1499s visitime   19.55s generated nodes   2108748 nodes/sec    1406 cur h  125 mod.depth  117 inserts    595995 dups    400940 size    195055 hash fail 402054 hash buckets 193941
+1504s visitime   19.64s generated nodes   2113767 nodes/sec    1404 cur h  125 mod.depth  117 inserts    599031 dups    403711 size    195320 hash fail 404828 hash buckets 194203
+1509s visitime   19.74s generated nodes   2118769 nodes/sec    1403 cur h  125 mod.depth  117 inserts    602191 dups    406624 size    195567 hash fail 407741 hash buckets 194450
+1515s visitime   19.83s generated nodes   2123790 nodes/sec    1401 cur h  125 mod.depth  117 inserts    605408 dups    409591 size    195817 hash fail 410714 hash buckets 194694
+1520s visitime   19.93s generated nodes   2128807 nodes/sec    1400 cur h  125 mod.depth  117 inserts    608581 dups    412507 size    196074 hash fail 413632 hash buckets 194949
+1525s visitime   20.04s generated nodes   2133815 nodes/sec    1398 cur h  125 mod.depth  117 inserts    612005 dups    415670 size    196335 hash fail 416799 hash buckets 195206
+1530s visitime   20.14s generated nodes   2138817 nodes/sec    1397 cur h  114 mod.depth  128 inserts    615319 dups    418722 size    196597 hash fail 419854 hash buckets 195465
+1535s visitime   20.24s generated nodes   2143835 nodes/sec    1395 cur h  125 mod.depth  117 inserts    618812 dups    421958 size    196854 hash fail 423092 hash buckets 195720
+1541s visitime   20.35s generated nodes   2148843 nodes/sec    1394 cur h  125 mod.depth  117 inserts    622409 dups    425291 size    197118 hash fail 426426 hash buckets 195983
+1546s visitime   20.46s generated nodes   2153863 nodes/sec    1392 cur h  125 mod.depth  117 inserts    625923 dups    428540 size    197383 hash fail 429676 hash buckets 196247
+1551s visitime   20.58s generated nodes   2158871 nodes/sec    1391 cur h  125 mod.depth  117 inserts    629738 dups    432105 size    197633 hash fail 433242 hash buckets 196496
+1556s visitime   20.69s generated nodes   2163883 nodes/sec    1389 cur h  125 mod.depth  117 inserts    633595 dups    435694 size    197901 hash fail 436834 hash buckets 196761
+1562s visitime   20.81s generated nodes   2168884 nodes/sec    1388 cur h  125 mod.depth  117 inserts    637421 dups    439264 size    198157 hash fail 440411 hash buckets 197010
+1567s visitime   20.93s generated nodes   2173895 nodes/sec    1386 cur h  125 mod.depth  117 inserts    641310 dups    442906 size    198404 hash fail 444055 hash buckets 197255
+1572s visitime   21.05s generated nodes   2178916 nodes/sec    1385 cur h  125 mod.depth  117 inserts    645261 dups    446586 size    198675 hash fail 447739 hash buckets 197522
+1577s visitime   21.17s generated nodes   2183924 nodes/sec    1384 cur h  125 mod.depth  117 inserts    649350 dups    450416 size    198934 hash fail 451571 hash buckets 197779
+1583s visitime   21.31s generated nodes   2188927 nodes/sec    1382 cur h  125 mod.depth  117 inserts    653785 dups    454595 size    199190 hash fail 455753 hash buckets 198032
+1588s visitime   21.43s generated nodes   2193945 nodes/sec    1381 cur h  125 mod.depth  117 inserts    657772 dups    458312 size    199460 hash fail 459472 hash buckets 198300
+1593s visitime   21.56s generated nodes   2198960 nodes/sec    1379 cur h  125 mod.depth  117 inserts    662192 dups    462458 size    199734 hash fail 463622 hash buckets 198570
+1599s visitime   21.71s generated nodes   2203982 nodes/sec    1378 cur h  125 mod.depth  117 inserts    666525 dups    466516 size    200009 hash fail 467682 hash buckets 198843
+1604s visitime   21.85s generated nodes   2208983 nodes/sec    1376 cur h  125 mod.depth  117 inserts    670983 dups    470708 size    200275 hash fail 471878 hash buckets 199105
+1609s visitime   21.98s generated nodes   2214004 nodes/sec    1375 cur h  125 mod.depth  117 inserts    675278 dups    474739 size    200539 hash fail 475911 hash buckets 199367
+1614s visitime   22.13s generated nodes   2219025 nodes/sec    1374 cur h  125 mod.depth  117 inserts    679854 dups    479035 size    200819 hash fail 480209 hash buckets 199645
+1620s visitime   22.27s generated nodes   2224030 nodes/sec    1372 cur h  125 mod.depth  117 inserts    684297 dups    483218 size    201079 hash fail 484395 hash buckets 199902
+1624s visitime   22.39s generated nodes   2229033 nodes/sec    1372 cur h  126 mod.depth  117 inserts    687843 dups    486314 size    201529 hash fail 487497 hash buckets 200346
+1627s visitime   22.45s generated nodes   2234034 nodes/sec    1372 cur h  126 mod.depth  117 inserts    689364 dups    487077 size    202287 hash fail 488268 hash buckets 201096
+1629s visitime   22.52s generated nodes   2239041 nodes/sec    1374 cur h  126 mod.depth  117 inserts    690915 dups    487878 size    203037 hash fail 489079 hash buckets 201836
+1632s visitime   22.58s generated nodes   2244051 nodes/sec    1375 cur h  128 mod.depth  115 inserts    692484 dups    488705 size    203779 hash fail 489916 hash buckets 202568
+1634s visitime   22.67s generated nodes   2249052 nodes/sec    1375 cur h  122 mod.depth  121 inserts    694002 dups    489460 size    204542 hash fail 490679 hash buckets 203323
+1636s visitime   22.73s generated nodes   2254052 nodes/sec    1376 cur h  122 mod.depth  121 inserts    695515 dups    490241 size    205274 hash fail 491469 hash buckets 204046
+1639s visitime   22.80s generated nodes   2259054 nodes/sec    1377 cur h  126 mod.depth  117 inserts    697051 dups    491001 size    206050 hash fail 492245 hash buckets 204806
+1641s visitime   22.87s generated nodes   2264054 nodes/sec    1378 cur h  122 mod.depth  121 inserts    698493 dups    491703 size    206790 hash fail 492960 hash buckets 205533
+1644s visitime   22.94s generated nodes   2269066 nodes/sec    1379 cur h  122 mod.depth  122 inserts    700007 dups    492455 size    207552 hash fail 493719 hash buckets 206288
+1649s visitime   22.96s generated nodes   2274069 nodes/sec    1378 cur h  124 mod.depth  120 inserts    700551 dups    492474 size    208077 hash fail 493743 hash buckets 206808
+1654s visitime   22.99s generated nodes   2279073 nodes/sec    1377 cur h  115 mod.depth  128 inserts    701134 dups    492497 size    208637 hash fail 493773 hash buckets 207361
+1658s visitime   23.02s generated nodes   2284075 nodes/sec    1376 cur h  115 mod.depth  128 inserts    701770 dups    492525 size    209245 hash fail 493811 hash buckets 207959
+1663s visitime   23.05s generated nodes   2289075 nodes/sec    1375 cur h  119 mod.depth  124 inserts    702440 dups    492561 size    209879 hash fail 493850 hash buckets 208590
+1668s visitime   23.09s generated nodes   2294076 nodes/sec    1374 cur h  122 mod.depth  122 inserts    703148 dups    492595 size    210553 hash fail 493893 hash buckets 209255
+1673s visitime   23.12s generated nodes   2299076 nodes/sec    1373 cur h  125 mod.depth  119 inserts    703887 dups    492623 size    211264 hash fail 493929 hash buckets 209958
+1677s visitime   23.15s generated nodes   2304077 nodes/sec    1373 cur h  115 mod.depth  128 inserts    704678 dups    492663 size    212015 hash fail 493980 hash buckets 210698
+1683s visitime   23.18s generated nodes   2309077 nodes/sec    1371 cur h  123 mod.depth  121 inserts    705493 dups    492705 size    212788 hash fail 494027 hash buckets 211466
+1687s visitime   23.22s generated nodes   2314077 nodes/sec    1370 cur h  123 mod.depth  121 inserts    706352 dups    492746 size    213606 hash fail 494082 hash buckets 212270
+1692s visitime   23.26s generated nodes   2319077 nodes/sec    1369 cur h  123 mod.depth  121 inserts    707248 dups    492795 size    214453 hash fail 494139 hash buckets 213109
+1697s visitime   23.29s generated nodes   2324078 nodes/sec    1368 cur h  122 mod.depth  122 inserts    708157 dups    492855 size    215302 hash fail 494210 hash buckets 213947
+1702s visitime   23.33s generated nodes   2329078 nodes/sec    1367 cur h  123 mod.depth  121 inserts    709106 dups    492909 size    216197 hash fail 494276 hash buckets 214830
+1707s visitime   23.37s generated nodes   2334081 nodes/sec    1366 cur h  119 mod.depth  124 inserts    710092 dups    492983 size    217109 hash fail 494362 hash buckets 215730
+1712s visitime   23.41s generated nodes   2339082 nodes/sec    1365 cur h  123 mod.depth  121 inserts    711081 dups    493045 size    218036 hash fail 494437 hash buckets 216644
+1717s visitime   23.46s generated nodes   2344102 nodes/sec    1364 cur h  125 mod.depth  119 inserts    712114 dups    493114 size    219000 hash fail 494517 hash buckets 217597
+1722s visitime   23.50s generated nodes   2349104 nodes/sec    1363 cur h  122 mod.depth  122 inserts    713175 dups    493176 size    219999 hash fail 494591 hash buckets 218584
+1727s visitime   23.54s generated nodes   2354104 nodes/sec    1362 cur h  119 mod.depth  124 inserts    714219 dups    493241 size    220978 hash fail 494674 hash buckets 219545
+1732s visitime   23.60s generated nodes   2359105 nodes/sec    1361 cur h  123 mod.depth  121 inserts    715297 dups    493322 size    221975 hash fail 494772 hash buckets 220525
+1737s visitime   23.64s generated nodes   2364128 nodes/sec    1360 cur h  125 mod.depth  119 inserts    716398 dups    493395 size    223003 hash fail 494856 hash buckets 221542
+1742s visitime   23.68s generated nodes   2369150 nodes/sec    1359 cur h  125 mod.depth  119 inserts    717504 dups    493484 size    224020 hash fail 494962 hash buckets 222542
+1747s visitime   23.73s generated nodes   2374150 nodes/sec    1358 cur h  123 mod.depth  121 inserts    718603 dups    493568 size    225035 hash fail 495058 hash buckets 223545
+1752s visitime   23.77s generated nodes   2379151 nodes/sec    1357 cur h  122 mod.depth  122 inserts    719769 dups    493644 size    226125 hash fail 495149 hash buckets 224620
+1756s visitime   23.81s generated nodes   2384151 nodes/sec    1356 cur h  122 mod.depth  122 inserts    720902 dups    493729 size    227173 hash fail 495248 hash buckets 225654
+1761s visitime   23.86s generated nodes   2389151 nodes/sec    1356 cur h  124 mod.depth  120 inserts    722057 dups    493805 size    228252 hash fail 495337 hash buckets 226720
+1766s visitime   23.90s generated nodes   2394153 nodes/sec    1354 cur h  125 mod.depth  119 inserts    723248 dups    493878 size    229370 hash fail 495422 hash buckets 227826
+1772s visitime   23.95s generated nodes   2399153 nodes/sec    1353 cur h  123 mod.depth  121 inserts    724454 dups    493971 size    230483 hash fail 495531 hash buckets 228923
+1777s visitime   24.00s generated nodes   2404170 nodes/sec    1352 cur h  125 mod.depth  119 inserts    725707 dups    494069 size    231638 hash fail 495648 hash buckets 230059
+1782s visitime   24.05s generated nodes   2409175 nodes/sec    1351 cur h  125 mod.depth  119 inserts    726969 dups    494147 size    232822 hash fail 495737 hash buckets 231232
+1787s visitime   24.09s generated nodes   2414175 nodes/sec    1350 cur h  119 mod.depth  124 inserts    728228 dups    494232 size    233996 hash fail 495841 hash buckets 232387
+1793s visitime   24.14s generated nodes   2419179 nodes/sec    1348 cur h  125 mod.depth  119 inserts    729481 dups    494313 size    235168 hash fail 495938 hash buckets 233543
+1798s visitime   24.19s generated nodes   2424180 nodes/sec    1347 cur h  123 mod.depth  121 inserts    730799 dups    494412 size    236387 hash fail 496063 hash buckets 234736
+Caught SIGTERM signal!
+
+RUNWATCH_RESULT TIMEOUT RETVAL 33280 TIME_SECS 1801 MEMPEAK_KBS 3836

@@ -1,0 +1,168 @@
+pandaPIparser is configured as follows
+  Colors in output: true
+  Mode: parsing mode
+  Parameter splitting: true
+  Conditional effects: exponential encoding
+  Disjunctive preconditions as HTN: false
+  Replace goal with action: false
+  Output: pandaPI format
+General Options
+  Print timings: false
+  Quiet mode: false
+Inference Options
+  H2 mutexes: false
+  FAM groups: false
+Transformation Options
+  Add zero-cost no-op to empty methods: true
+  Remove duplicate actions: true
+  Remove useless literals: true
+  Expand abstract tasks with one method: true
+  Remove empty method preconditions: true
+  Two regularisation: false
+  Compile negative SAS variables: false
+Runtime Optimisations
+  Hierarchy Typing: true
+  Future Caching: false
+  Static Precondition Checking: false
+Output Options
+  Panda planner format: true
+  HDDL: false
+  SAS for Fast Downward (without hierarchy): false
+Output Formatting Options
+  Output only SAS+ variables: false
+  SAS+ delete mode: as input
+Reading input from /home/schnell/lilotane/sotaevaluation//PandaGBFS_runwatchtime_timeout1800_2021-11-16_21:14:14/runwatch_log/294/294.parsed.
+Writing output to /home/schnell/lilotane/sotaevaluation//PandaGBFS_runwatchtime_timeout1800_2021-11-16_21:14:14/runwatch_log/294/294.sas.
+Writing output to standard output.
+Parsing done.
+Conditional Effects expanded
+done.
+Starting Hierarchy Typing
+Total 1.844ms
+Contains 0.178ms
+Restrict 0.308ms
+MPrep 0.326ms
+Finished Hierarchy Typing
+Running PG.
+Process actions without preconditions
+Done.
+ ---> Disabling potentially consistent extension checking for action:           7 (do_plane)
+ ---> Disabling potentially consistent extension checking for action:           8 (do_plane_untreated)
+Returning from runGpg().
+PG done. Postprocessing
+PG postprocessing done.
+Calculated [164] grounded tasks and [89] reachable facts.
+Running TDG.
+Process actions without preconditions
+Done.
+Returning from runGpg().
+TDG done.
+Calculated [367] grounded tasks and [484] grounded decomposition methods.
+Performing DFS.
+DFS done.
+After DFS: 352 tasks, 418 methods.
+Grounded PG:
+Input was [164, 352], output was [164, 89].
+Simplifying instance.
+Removing useless facts/literals
+Removing method precondition actions whose precondition is empty
+Expanding abstract tasks with only one method
+Starting duplicate elimination.
+Data structure build.
+0 duplicates found.
+Duplicates replaced in methods.
+Further Mutex Groups: 0 strict 0 non strict
+Writing instance to output.
+Final Statistics: F 55 S 0 SC 0 SM 0 NSM 0 I 0 P 164 S 0 A 90 M 320
+Exiting.
+Random seed: 42
+Time limit: 1800 seconds
+Reading input from /home/schnell/lilotane/sotaevaluation//PandaGBFS_runwatchtime_timeout1800_2021-11-16_21:14:14/runwatch_log/294/294.sas.
+- State has 55 bits divided into 55 mutex groups.
+- Domain contains 164 actions.
+- Domain contains 254 tasks.
+- Domain contains 320 methods.
+- The initial state contains 15 set bits.
+- The initial task is "__top[]".
+- State-based goal contains 17 bits.
+- Instance is totally-ordered: yes
+- Instance has unique paths: yes
+- Instance is parallel sequences: yes
+Calculate SCCs...
+- Number of SCCs: 254
+- The problem is acyclic
+Selected Planning Algorithm: progression searchParsing heuristics ...
+Number of specified heuristics: 1
+- the option "store cuts" of the RC heuristic can only be used with the inner heuristic LM-Cut. It will be disabled.
+- Calculating minimal implied costs and distances (0 ms)
+Heuristic #0 = hhRC2(add;distance;correct count)
+Search config:
+ - type: path cost
+ - weight: 1
+ - suboptimal: false
+Visited List configured
+- mode: total order
+- hashs to use: state task task-sequence
+- memory information: topological ordering
+- Visited list allows deletion of search nodes: true
+Search Configuration
+- Using JAIR 2020 progression algorithm
+- Search is stopped after first solution is found.
+- A* Search
+- Distance G is "modification depth"
+Search Results
+- Search time 0.001 seconds
+- Visited list time 0.0001 seconds
+- Visited list inserts 27
+- Visited list pruned 1
+- Visited list contains 26
+- Visited list hash collisions 1
+- Visited list used hash buckets 26
+- Generated 132 search nodes
+  Calculated heuristic for 107 nodes
+  One modifications 25
+  Effectless actions 0
+- including 25 one modification actions
+- including 0 one modification methods
+- and       0 progressions of effectless actions
+- Generated 107000 nodes per second
+- Final fringe contains 11 nodes
+- Status: Solved
+- Found solution of length 31
+- Total costs of actions: 12
+==>
+6 do_saw_medium[b0,p1,walnut,smooth,s6,s5,s4,medium,natural,untreated]
+7 do_glaze[p1,glazer0,blue,untreated,untreated,glazed,natural]
+12 do_plane[p4,verysmooth,black,varnished,smooth,untreated,natural]
+26 do_spray_varnish[p4,spray_varnisher0,mauve,smooth,untreated,untreated,varnished,natural]
+38 do_grind[p2,smooth,black,glazed,untreated,verysmooth,natural]
+39 do_glaze[p2,glazer0,blue,untreated,untreated,glazed,natural]
+65 do_plane[p5,rough,mauve,glazed,smooth,untreated,natural]
+71 do_immersion_varnish[p5,immersion_varnisher0,mauve,smooth,untreated,untreated,varnished,natural]
+107 do_saw_medium[b0,p3,walnut,smooth,s6,s5,s4,medium,natural,untreated]
+113 do_spray_varnish[p3,spray_varnisher0,mauve,smooth,untreated,untreated,varnished,natural]
+125 do_plane[p0,verysmooth,natural,glazed,smooth,untreated,natural]
+129 do_immersion_varnish[p0,immersion_varnisher0,black,smooth,untreated,untreated,varnished,natural]
+root 0
+128 do_colour[p0,black,immersion_varnisher0,untreated] -> method0 129
+126 method12_splitted_3[p0,black,untreated] -> _splitting_method_method12_splitted_3 128
+124 method12_splitted_8[p0,verysmooth,smooth,untreated] -> <_splitting_method_method12_splitted_8;grindNplane[p0,verysmooth,natural,glazed,smooth,natural,untreated];method7;0;-1> 125
+115 __top_method_splitted_14[p0,black,verysmooth] -> <_splitting_method___top_method_splitted_14;process[p0,black,verysmooth,smooth];method12;0;-1,-2> 124 126
+112 method11_splitted_2[p3,mauve,untreated] -> <_splitting_method_method11_splitted_2;do_colour[p3,mauve,spray_varnisher0,untreated];method1;0;-1> 113
+106 process[p3,mauve,smooth,smooth] -> <<<method11;method11_splitted_7[b0,p3,smooth];_splitting_method_method11_splitted_7;0;-1,1>;cut_and_saw[b0,p3,walnut,smooth];method10;0;-1,1>;do_saw[b0,p3,walnut,smooth];method8;0;-1,1> 107 112
+75 __top_method_splitted_6[p3,smooth] -> _splitting_method___top_method_splitted_6 106
+70 method12_splitted_3[p5,mauve,untreated] -> <_splitting_method_method12_splitted_3;do_colour[p5,mauve,immersion_varnisher0,untreated];method0;0;-1> 71
+64 method12_splitted_8[p5,rough,smooth,untreated] -> <_splitting_method_method12_splitted_8;grindNplane[p5,rough,mauve,glazed,smooth,natural,untreated];method7;0;-1> 65
+42 __top_method_splitted_11[p5,rough,smooth] -> <_splitting_method___top_method_splitted_11;process[p5,mauve,rough,smooth];method12;0;-1,-2> 64 70
+37 method12_splitted_8[p2,smooth,verysmooth,untreated] -> <_splitting_method_method12_splitted_8;grindNplane[p2,smooth,black,glazed,verysmooth,natural,untreated];method3;0;-1> 38
+30 process[p2,blue,smooth,verysmooth] -> <<method12;method12_splitted_3[p2,blue,untreated];_splitting_method_method12_splitted_3;1;0,-1>;do_colour[p2,blue,glazer0,untreated];method2;1;0,-1> 37 39
+29 __top_method_splitted_15[p2,blue,verysmooth] -> _splitting_method___top_method_splitted_15 30
+25 do_colour[p4,mauve,spray_varnisher0,untreated] -> method1 26
+24 method12_splitted_3[p4,mauve,untreated] -> _splitting_method_method12_splitted_3 25
+11 method12_splitted_8[p4,verysmooth,smooth,untreated] -> <_splitting_method_method12_splitted_8;grindNplane[p4,verysmooth,black,varnished,smooth,natural,untreated];method7;0;-1> 12
+5 process[p1,blue,smooth,smooth] -> <<<<method11;method11_splitted_7[b0,p1,smooth];_splitting_method_method11_splitted_7;0;-1,1>;cut_and_saw[b0,p1,walnut,smooth];method10;0;-1,1>;do_saw[b0,p1,walnut,smooth];method8;0;-1,1>;method11_splitted_2[p1,blue,untreated];<_splitting_method_method11_splitted_2;do_colour[p1,blue,glazer0,untreated];method2;0;-1>;1;0,-1> 6 7
+1 __top_method_splitted_1[p1,smooth] -> _splitting_method___top_method_splitted_1 5
+0 __top[] -> <__top_method;process[p4,mauve,verysmooth,smooth];method12;1;0,-1,-2,2,3,4,5> 1 11 24 29 42 75 115
+<==
+
+RUNWATCH_RESULT EXIT RETVAL 0 TIME_SECS 0.410156 MEMPEAK_KBS 932

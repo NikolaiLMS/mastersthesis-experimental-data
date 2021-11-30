@@ -1,0 +1,447 @@
+pandaPIparser is configured as follows
+  Colors in output: true
+  Mode: parsing mode
+  Parameter splitting: true
+  Conditional effects: exponential encoding
+  Disjunctive preconditions as HTN: false
+  Replace goal with action: false
+  Output: pandaPI format
+General Options
+  Print timings: false
+  Quiet mode: false
+Inference Options
+  H2 mutexes: false
+  FAM groups: false
+Transformation Options
+  Add zero-cost no-op to empty methods: true
+  Remove duplicate actions: true
+  Remove useless literals: true
+  Expand abstract tasks with one method: true
+  Remove empty method preconditions: true
+  Two regularisation: false
+  Compile negative SAS variables: false
+Runtime Optimisations
+  Hierarchy Typing: true
+  Future Caching: false
+  Static Precondition Checking: false
+Output Options
+  Panda planner format: true
+  HDDL: false
+  SAS for Fast Downward (without hierarchy): false
+Output Formatting Options
+  Output only SAS+ variables: false
+  SAS+ delete mode: as input
+Reading input from /home/schnell/lilotane/sotaevaluation//PandaGBFS_runwatchtime_timeout1800_2021-11-16_21:14:14/runwatch_log/619/619.parsed.
+Writing output to /home/schnell/lilotane/sotaevaluation//PandaGBFS_runwatchtime_timeout1800_2021-11-16_21:14:14/runwatch_log/619/619.sas.
+Writing output to standard output.
+Parsing done.
+Conditional Effects expanded
+done.
+Starting Hierarchy Typing
+Total 3.175ms
+Contains 0.359ms
+Restrict 0.388ms
+MPrep 0.378ms
+Finished Hierarchy Typing
+Running PG.
+Process actions without preconditions
+Done.
+ ---> Disabling potentially consistent extension checking for action:           2 (Drop)
+ ---> Disabling potentially consistent extension checking for action:           4 (Unload)
+ ---> Disabling potentially consistent extension checking for action:           16 (__method_precondition_m11_do_unload_truck)
+ ---> Disabling potentially consistent extension checking for action:           3 (Load)
+Returning from runGpg().
+PG done. Postprocessing
+PG postprocessing done.
+Calculated [1953] grounded tasks and [391] reachable facts.
+Running TDG.
+Process actions without preconditions
+Done.
+ ---> Disabling potentially consistent extension checking for action:           19 (m11_do_unload_truck)
+ ---> Disabling potentially consistent extension checking for action:           7 (m8_do_lift_crate)
+ ---> Disabling potentially consistent extension checking for action:           9 (m10_do_load_truck)
+ ---> Disabling potentially consistent extension checking for action:           2 (_splitting_method_m5_do_clear_splitted_1)
+ ---> Disabling potentially consistent extension checking for action:           14 (_splitting_method_m2_do_put_on_splitted_6)
+Returning from runGpg().
+TDG done.
+Calculated [3144] grounded tasks and [2772] grounded decomposition methods.
+Performing DFS.
+DFS done.
+After DFS: 1548 tasks, 1363 methods.
+Grounded PG:
+Input was [873, 1548], output was [852, 311].
+Grounded TDG:
+Input was [1363, 852], output was [1342, 852].
+Simplifying instance.
+Removing useless facts/literals
+Removing method precondition actions whose precondition is empty
+Expanding abstract tasks with only one method
+Starting duplicate elimination.
+Data structure build.
+95 duplicates found.
+Duplicates replaced in methods.
+Further Mutex Groups: 0 strict 0 non strict
+Writing instance to output.
+Final Statistics: F 243 S 0 SC 0 SM 0 NSM 0 I 0 P 444 S 313 A 244 M 911
+Exiting.
+Random seed: 42
+Time limit: 1800 seconds
+Reading input from /home/schnell/lilotane/sotaevaluation//PandaGBFS_runwatchtime_timeout1800_2021-11-16_21:14:14/runwatch_log/619/619.sas.
+- State has 243 bits divided into 243 mutex groups.
+- Domain contains 757 actions.
+- Domain contains 1001 tasks.
+- Domain contains 911 methods.
+- The initial state contains 89 set bits.
+- The initial task is "__top[]".
+- State-based goal contains 13 bits.
+- Instance is totally-ordered: yes
+- Instance has unique paths: yes
+- Instance is parallel sequences: yes
+Calculate SCCs...
+- Number of SCCs: 1001
+- The problem is acyclic
+Selected Planning Algorithm: progression searchParsing heuristics ...
+Number of specified heuristics: 1
+- the option "store cuts" of the RC heuristic can only be used with the inner heuristic LM-Cut. It will be disabled.
+- Calculating minimal implied costs and distances (1 ms)
+Heuristic #0 = hhRC2(add;distance;correct count)
+Search config:
+ - type: path cost
+ - weight: 1
+ - suboptimal: false
+Visited List configured
+- mode: total order
+- hashs to use: state task task-sequence
+- memory information: topological ordering
+- Visited list allows deletion of search nodes: true
+Search Configuration
+- Using JAIR 2020 progression algorithm
+- Search is stopped after first solution is found.
+- A* Search
+- Distance G is "modification depth"
+   1s visitime    0.02s generated nodes     10004 nodes/sec    8837 cur h  193 mod.depth   83 inserts      2141 dups        48 size      2093 hash fail     48 hash buckets   2093
+   2s visitime    0.07s generated nodes     30015 nodes/sec   13375 cur h  204 mod.depth   81 inserts      6271 dups        48 size      6223 hash fail     50 hash buckets   6221
+   3s visitime    0.11s generated nodes     50033 nodes/sec   14926 cur h  206 mod.depth   86 inserts     10454 dups        72 size     10382 hash fail     74 hash buckets  10380
+   4s visitime    0.15s generated nodes     70045 nodes/sec   15708 cur h  206 mod.depth   87 inserts     14646 dups       192 size     14454 hash fail    198 hash buckets  14448
+   5s visitime    0.20s generated nodes     90055 nodes/sec   16182 cur h  212 mod.depth   86 inserts     18842 dups       273 size     18569 hash fail    283 hash buckets  18559
+   6s visitime    0.24s generated nodes    110062 nodes/sec   16459 cur h  201 mod.depth   82 inserts     23027 dups       367 size     22660 hash fail    383 hash buckets  22644
+   7s visitime    0.28s generated nodes    130074 nodes/sec   16667 cur h  202 mod.depth   85 inserts     27238 dups       441 size     26797 hash fail    466 hash buckets  26772
+   8s visitime    0.33s generated nodes    150083 nodes/sec   16827 cur h  198 mod.depth   88 inserts     31443 dups       514 size     30929 hash fail    546 hash buckets  30897
+  10s visitime    0.37s generated nodes    170094 nodes/sec   16941 cur h  203 mod.depth   89 inserts     35679 dups       605 size     35074 hash fail    647 hash buckets  35032
+  11s visitime    0.42s generated nodes    190096 nodes/sec   17018 cur h  207 mod.depth   84 inserts     39916 dups       697 size     39219 hash fail    744 hash buckets  39172
+  12s visitime    0.46s generated nodes    210112 nodes/sec   17121 cur h  185 mod.depth   69 inserts     44137 dups       827 size     43310 hash fail    888 hash buckets  43249
+  13s visitime    0.50s generated nodes    230115 nodes/sec   17184 cur h  203 mod.depth   87 inserts     48363 dups       947 size     47416 hash fail   1023 hash buckets  47340
+  14s visitime    0.55s generated nodes    250126 nodes/sec   17253 cur h  196 mod.depth   76 inserts     52601 dups      1135 size     51466 hash fail   1225 hash buckets  51376
+  15s visitime    0.59s generated nodes    270136 nodes/sec   17311 cur h  203 mod.depth   91 inserts     56867 dups      1316 size     55551 hash fail   1420 hash buckets  55447
+  16s visitime    0.64s generated nodes    290153 nodes/sec   17347 cur h  214 mod.depth   81 inserts     61124 dups      1470 size     59654 hash fail   1593 hash buckets  59531
+  17s visitime    0.68s generated nodes    310175 nodes/sec   17399 cur h  182 mod.depth   82 inserts     65347 dups      1647 size     63700 hash fail   1786 hash buckets  63561
+  18s visitime    0.72s generated nodes    330192 nodes/sec   17438 cur h  206 mod.depth   87 inserts     69593 dups      1837 size     67756 hash fail   1994 hash buckets  67599
+  20s visitime    0.77s generated nodes    350202 nodes/sec   17475 cur h  206 mod.depth   86 inserts     73859 dups      2080 size     71779 hash fail   2250 hash buckets  71609
+  21s visitime    0.81s generated nodes    370215 nodes/sec   17517 cur h  227 mod.depth   58 inserts     78123 dups      2325 size     75798 hash fail   2514 hash buckets  75609
+  22s visitime    0.85s generated nodes    390218 nodes/sec   17540 cur h  207 mod.depth   84 inserts     82398 dups      2545 size     79853 hash fail   2750 hash buckets  79648
+  23s visitime    0.90s generated nodes    410231 nodes/sec   17561 cur h  200 mod.depth   76 inserts     86706 dups      2795 size     83911 hash fail   3024 hash buckets  83682
+  24s visitime    0.94s generated nodes    430239 nodes/sec   17575 cur h  200 mod.depth   85 inserts     90999 dups      3043 size     87956 hash fail   3292 hash buckets  87707
+  25s visitime    0.98s generated nodes    450248 nodes/sec   17593 cur h  182 mod.depth   82 inserts     95304 dups      3314 size     91990 hash fail   3588 hash buckets  91716
+  26s visitime    1.03s generated nodes    470261 nodes/sec   17606 cur h  188 mod.depth   82 inserts     99593 dups      3520 size     96073 hash fail   3814 hash buckets  95779
+  27s visitime    1.07s generated nodes    490272 nodes/sec   17628 cur h  188 mod.depth   80 inserts    103879 dups      3764 size    100115 hash fail   4078 hash buckets  99801
+  28s visitime    1.12s generated nodes    510280 nodes/sec   17645 cur h  210 mod.depth   86 inserts    108151 dups      3996 size    104155 hash fail   4326 hash buckets 103825
+  30s visitime    1.16s generated nodes    530292 nodes/sec   17666 cur h  182 mod.depth   79 inserts    112471 dups      4310 size    108161 hash fail   4668 hash buckets 107803
+  31s visitime    1.20s generated nodes    550300 nodes/sec   17680 cur h  203 mod.depth   89 inserts    116789 dups      4601 size    112188 hash fail   4986 hash buckets 111803
+  32s visitime    1.25s generated nodes    570308 nodes/sec   17694 cur h  203 mod.depth   89 inserts    121111 dups      4932 size    116179 hash fail   5336 hash buckets 115775
+  33s visitime    1.29s generated nodes    590313 nodes/sec   17704 cur h  178 mod.depth   81 inserts    125416 dups      5215 size    120201 hash fail   5658 hash buckets 119758
+  34s visitime    1.34s generated nodes    610327 nodes/sec   17718 cur h  201 mod.depth   76 inserts    129755 dups      5582 size    124173 hash fail   6050 hash buckets 123705
+  35s visitime    1.38s generated nodes    630333 nodes/sec   17726 cur h  227 mod.depth   58 inserts    134073 dups      5875 size    128198 hash fail   6382 hash buckets 127691
+  36s visitime    1.43s generated nodes    650339 nodes/sec   17735 cur h  203 mod.depth   90 inserts    138427 dups      6235 size    132192 hash fail   6777 hash buckets 131650
+  37s visitime    1.47s generated nodes    670349 nodes/sec   17739 cur h  203 mod.depth   89 inserts    142789 dups      6586 size    136203 hash fail   7163 hash buckets 135626
+  38s visitime    1.51s generated nodes    690357 nodes/sec   17751 cur h  206 mod.depth   87 inserts    147145 dups      6926 size    140219 hash fail   7542 hash buckets 139603
+  40s visitime    1.56s generated nodes    710370 nodes/sec   17753 cur h  208 mod.depth   82 inserts    151484 dups      7250 size    144234 hash fail   7900 hash buckets 143584
+  41s visitime    1.60s generated nodes    730382 nodes/sec   17763 cur h  203 mod.depth   90 inserts    155846 dups      7622 size    148224 hash fail   8314 hash buckets 147532
+  42s visitime    1.65s generated nodes    750387 nodes/sec   17773 cur h  201 mod.depth   82 inserts    160205 dups      8041 size    152164 hash fail   8771 hash buckets 151434
+  43s visitime    1.69s generated nodes    770396 nodes/sec   17781 cur h  228 mod.depth   61 inserts    164549 dups      8423 size    156126 hash fail   9186 hash buckets 155363
+  44s visitime    1.74s generated nodes    790406 nodes/sec   17793 cur h  225 mod.depth   60 inserts    168920 dups      8847 size    160073 hash fail   9654 hash buckets 159266
+  45s visitime    1.79s generated nodes    810417 nodes/sec   17804 cur h  212 mod.depth   87 inserts    173298 dups      9289 size    164009 hash fail  10145 hash buckets 163153
+  46s visitime    1.84s generated nodes    830426 nodes/sec   17813 cur h  182 mod.depth   81 inserts    177683 dups      9767 size    167916 hash fail  10671 hash buckets 167012
+  47s visitime    1.88s generated nodes    850431 nodes/sec   17819 cur h  201 mod.depth   74 inserts    182114 dups     10207 size    171907 hash fail  11149 hash buckets 170965
+  48s visitime    1.92s generated nodes    870442 nodes/sec   17828 cur h  203 mod.depth   90 inserts    186530 dups     10726 size    175804 hash fail  11708 hash buckets 174822
+  49s visitime    1.97s generated nodes    890448 nodes/sec   17835 cur h  208 mod.depth   82 inserts    190952 dups     11266 size    179686 hash fail  12285 hash buckets 178667
+Search Results
+- Search time 50.06 seconds
+- Visited list time 1.97 seconds
+- Visited list inserts 191503
+- Visited list pruned 11328
+- Visited list contains 180175
+- Visited list hash collisions 12351
+- Visited list used hash buckets 179152
+- Generated 893016 search nodes
+  Calculated heuristic for 597667 nodes
+  One modifications 104063
+  Effectless actions 191286
+- including 104063 one modification actions
+- including 0 one modification methods
+- and       191286 progressions of effectless actions
+- Generated 11939 nodes per second
+- Final fringe contains 29005 nodes
+- Status: Solved
+- Found solution of length 256
+- Total costs of actions: 97
+==>
+13 __method_precondition_m10_do_load_truck[crate1,pallet4,distributor0,hoist4]
+25 __method_precondition_m7_do_get_truck[truck3,distributor0]
+71 Drive[truck3,depot3,distributor0]
+74 __method_precondition_m5_do_clear[crate1,distributor0,crate10,hoist4]
+75 __method_precondition_m4_do_clear[crate10,distributor0]
+76 nop[]
+77 Lift[hoist4,crate10,crate1,distributor0]
+453 __method_precondition_m7_do_get_truck[truck1,distributor0]
+590 Drive[truck1,depot2,distributor0]
+591 Load[hoist4,crate10,truck1,distributor0]
+592 Lift[hoist4,crate1,pallet4,distributor0]
+593 Load[hoist4,crate1,truck3,distributor0]
+594 Drive[truck3,distributor0,depot0]
+595 __method_precondition_m11_do_unload_truck[crate1,pallet0,depot0,truck3,hoist0]
+599 __method_precondition_m5_do_clear[pallet0,depot0,crate12,hoist0]
+601 __method_precondition_m4_do_clear[crate12,depot0]
+602 nop[]
+603 Lift[hoist0,crate12,pallet0,depot0]
+610 __method_precondition_m6_do_get_truck[truck3,depot0]
+611 nop[]
+612 Load[hoist0,crate12,truck3,depot0]
+613 Unload[hoist0,crate1,truck3,depot0]
+614 Drop[hoist0,crate1,pallet0,depot0]
+1751 __method_precondition_m10_do_load_truck[crate2,pallet1,depot1,hoist1]
+2000 __method_precondition_m6_do_get_truck[truck0,depot1]
+2001 nop[]
+2025 __method_precondition_m5_do_clear[crate2,depot1,crate8,hoist1]
+2767 __method_precondition_m5_do_clear[crate8,depot1,crate11,hoist1]
+5643 __method_precondition_m4_do_clear[crate11,depot1]
+5644 nop[]
+5645 Lift[hoist1,crate11,crate8,depot1]
+67015 __method_precondition_m7_do_get_truck[truck3,depot1]
+85141 Drive[truck3,depot0,depot1]
+85142 Load[hoist1,crate11,truck3,depot1]
+85143 Lift[hoist1,crate8,crate2,depot1]
+85150 __method_precondition_m6_do_get_truck[truck0,depot1]
+85151 nop[]
+85152 Load[hoist1,crate8,truck0,depot1]
+85153 Lift[hoist1,crate2,pallet1,depot1]
+85154 Load[hoist1,crate2,truck0,depot1]
+85155 Drive[truck0,depot1,depot2]
+85156 __method_precondition_m11_do_unload_truck[crate2,pallet2,depot2,truck0,hoist2]
+85160 __method_precondition_m5_do_clear[pallet2,depot2,crate9,hoist2]
+85163 __method_precondition_m4_do_clear[crate9,depot2]
+85164 nop[]
+85165 Lift[hoist2,crate9,pallet2,depot2]
+85172 __method_precondition_m6_do_get_truck[truck0,depot2]
+85173 nop[]
+85174 Load[hoist2,crate9,truck0,depot2]
+85175 Unload[hoist2,crate2,truck0,depot2]
+85176 Drop[hoist2,crate2,pallet2,depot2]
+85184 __method_precondition_m1_do_put_on[crate4,depot1]
+85191 __method_precondition_m5_do_clear[crate4,depot1,crate6,hoist1]
+85278 __method_precondition_m4_do_clear[crate6,depot1]
+85279 nop[]
+85280 Lift[hoist1,crate6,crate4,depot1]
+892563 __method_precondition_m6_do_get_truck[truck3,depot1]
+892564 nop[]
+892565 Load[hoist1,crate6,truck3,depot1]
+892568 __method_precondition_m4_do_clear[pallet1,depot1]
+892569 nop[]
+892573 __method_precondition_m9_do_lift_crate[crate4,depot1,hoist1,pallet9]
+892574 Lift[hoist1,crate4,pallet9,depot1]
+892575 Drop[hoist1,crate4,pallet1,depot1]
+892585 __method_precondition_m2_do_put_on[crate9,truck0]
+892594 __method_precondition_m7_do_get_truck[truck0,distributor2]
+892602 Drive[truck0,depot2,distributor2]
+892606 __method_precondition_m5_do_clear[pallet6,distributor2,crate5,hoist6]
+892607 __method_precondition_m4_do_clear[crate5,distributor2]
+892608 nop[]
+892609 Lift[hoist6,crate5,pallet6,distributor2]
+892615 __method_precondition_m6_do_get_truck[truck0,distributor2]
+892616 nop[]
+892617 Load[hoist6,crate5,truck0,distributor2]
+892618 Unload[hoist6,crate9,truck0,distributor2]
+892619 Drop[hoist6,crate9,pallet6,distributor2]
+892626 __method_precondition_m2_do_put_on[crate10,truck1]
+892633 __method_precondition_m6_do_get_truck[truck1,distributor0]
+892634 nop[]
+892637 __method_precondition_m4_do_clear[pallet4,distributor0]
+892638 nop[]
+892639 Unload[hoist4,crate10,truck1,distributor0]
+892640 Drop[hoist4,crate10,pallet4,distributor0]
+892646 __method_precondition_m2_do_put_on[crate11,truck3]
+892656 __method_precondition_m7_do_get_truck[truck3,distributor1]
+892660 Drive[truck3,depot1,distributor1]
+892668 __method_precondition_m5_do_clear[pallet5,distributor1,crate7,hoist5]
+892669 __method_precondition_m4_do_clear[crate7,distributor1]
+892670 nop[]
+892671 Lift[hoist5,crate7,pallet5,distributor1]
+892678 __method_precondition_m6_do_get_truck[truck3,distributor1]
+892679 nop[]
+892680 Load[hoist5,crate7,truck3,distributor1]
+892681 Unload[hoist5,crate11,truck3,distributor1]
+892682 Drop[hoist5,crate11,pallet5,distributor1]
+892686 __method_precondition_m2_do_put_on[crate12,truck3]
+892697 __method_precondition_m7_do_get_truck[truck3,distributor0]
+892704 Drive[truck3,distributor1,distributor0]
+892710 __method_precondition_m5_do_clear[pallet8,distributor0,crate0,hoist4]
+892713 __method_precondition_m5_do_clear[crate0,distributor0,crate3,hoist4]
+892717 __method_precondition_m5_do_clear[crate3,distributor0,crate14,hoist4]
+892718 __method_precondition_m4_do_clear[crate14,distributor0]
+892719 nop[]
+892720 Lift[hoist4,crate14,crate3,distributor0]
+892729 __method_precondition_m6_do_get_truck[truck1,distributor0]
+892730 nop[]
+892731 Load[hoist4,crate14,truck1,distributor0]
+892732 Lift[hoist4,crate3,crate0,distributor0]
+892739 __method_precondition_m6_do_get_truck[truck1,distributor0]
+892740 nop[]
+892741 Load[hoist4,crate3,truck1,distributor0]
+892742 Lift[hoist4,crate0,pallet8,distributor0]
+892781 __method_precondition_m6_do_get_truck[truck3,distributor0]
+892782 nop[]
+892783 Load[hoist4,crate0,truck3,distributor0]
+892784 Unload[hoist4,crate12,truck3,distributor0]
+892785 Drop[hoist4,crate12,pallet8,distributor0]
+892799 __method_precondition_m10_do_load_truck[crate13,pallet7,distributor3,hoist7]
+892811 __method_precondition_m7_do_get_truck[truck3,distributor3]
+892822 Drive[truck3,distributor0,distributor3]
+892823 __method_precondition_m4_do_clear[crate13,distributor3]
+892824 nop[]
+892825 Lift[hoist7,crate13,pallet7,distributor3]
+892826 Load[hoist7,crate13,truck3,distributor3]
+892827 Drive[truck3,distributor3,depot1]
+892828 __method_precondition_m11_do_unload_truck[crate13,pallet9,depot1,truck3,hoist1]
+892837 __method_precondition_m4_do_clear[pallet9,depot1]
+892838 nop[]
+892839 Unload[hoist1,crate13,truck3,depot1]
+892840 Drop[hoist1,crate13,pallet9,depot1]
+892845 __method_precondition_m2_do_put_on[crate0,truck3]
+892863 __method_precondition_m7_do_get_truck[truck3,distributor0]
+892867 Drive[truck3,depot1,distributor0]
+892874 __method_precondition_m4_do_clear[crate12,distributor0]
+892875 nop[]
+892876 Unload[hoist4,crate0,truck3,distributor0]
+892877 Drop[hoist4,crate0,crate12,distributor0]
+892882 __method_precondition_m2_do_put_on[crate6,truck3]
+892899 __method_precondition_m7_do_get_truck[truck3,distributor1]
+892902 Drive[truck3,distributor0,distributor1]
+892910 __method_precondition_m4_do_clear[crate11,distributor1]
+892911 nop[]
+892912 Unload[hoist5,crate6,truck3,distributor1]
+892913 Drop[hoist5,crate6,crate11,distributor1]
+892917 __method_precondition_m2_do_put_on[crate7,truck3]
+892935 __method_precondition_m7_do_get_truck[truck3,distributor0]
+892942 Drive[truck3,distributor1,distributor0]
+892946 __method_precondition_m4_do_clear[crate0,distributor0]
+892947 nop[]
+892948 Unload[hoist4,crate7,truck3,distributor0]
+892949 Drop[hoist4,crate7,crate0,distributor0]
+892957 __method_precondition_m2_do_put_on[crate8,truck0]
+892971 __method_precondition_m6_do_get_truck[truck0,distributor2]
+892972 nop[]
+892975 __method_precondition_m4_do_clear[crate9,distributor2]
+892976 nop[]
+892977 Unload[hoist6,crate8,truck0,distributor2]
+892978 Drop[hoist6,crate8,crate9,distributor2]
+892984 __method_precondition_m2_do_put_on[crate5,truck0]
+893000 __method_precondition_m7_do_get_truck[truck0,distributor1]
+893003 Drive[truck0,distributor2,distributor1]
+893010 __method_precondition_m4_do_clear[crate6,distributor1]
+893011 nop[]
+893012 Unload[hoist5,crate5,truck0,distributor1]
+893013 Drop[hoist5,crate5,crate6,distributor1]
+root 0
+893009 do_clear[crate6,distributor1] -> m4_do_clear 893010 893011
+893002 m7_do_get_truck_splitted_2[truck0,distributor1] -> _splitting_method_m7_do_get_truck_splitted_2 893003
+892999 do_get_truck[truck0,distributor1] -> m7_do_get_truck 893000 893002
+892997 m2_do_put_on_splitted_6[truck0,crate6,crate5] -> <_splitting_method_m2_do_put_on_splitted_6;m2_do_put_on_splitted_4[crate5,truck0,distributor1,crate6];_splitting_method_m2_do_put_on_splitted_4;2;0,1,-1,-2> 892999 893009 893012 893013
+892983 do_put_on[crate5,crate6] -> m2_do_put_on 892984 892997
+892974 do_clear[crate9,distributor2] -> m4_do_clear 892975 892976
+892970 do_get_truck[truck0,distributor2] -> m6_do_get_truck 892971 892972
+892969 m2_do_put_on_splitted_6[truck0,crate9,crate8] -> <_splitting_method_m2_do_put_on_splitted_6;m2_do_put_on_splitted_4[crate8,truck0,distributor2,crate9];_splitting_method_m2_do_put_on_splitted_4;2;0,1,-1,-2> 892970 892974 892977 892978
+892956 do_put_on[crate8,crate9] -> m2_do_put_on 892957 892969
+892945 do_clear[crate0,distributor0] -> m4_do_clear 892946 892947
+892941 m7_do_get_truck_splitted_2[truck3,distributor0] -> _splitting_method_m7_do_get_truck_splitted_2 892942
+892934 do_get_truck[truck3,distributor0] -> m7_do_get_truck 892935 892941
+892932 m2_do_put_on_splitted_6[truck3,crate0,crate7] -> <_splitting_method_m2_do_put_on_splitted_6;m2_do_put_on_splitted_4[crate7,truck3,distributor0,crate0];_splitting_method_m2_do_put_on_splitted_4;2;0,1,-1,-2> 892934 892945 892948 892949
+892916 do_put_on[crate7,crate0] -> m2_do_put_on 892917 892932
+892909 do_clear[crate11,distributor1] -> m4_do_clear 892910 892911
+892901 m7_do_get_truck_splitted_2[truck3,distributor1] -> _splitting_method_m7_do_get_truck_splitted_2 892902
+892898 do_get_truck[truck3,distributor1] -> m7_do_get_truck 892899 892901
+892896 m2_do_put_on_splitted_6[truck3,crate11,crate6] -> <_splitting_method_m2_do_put_on_splitted_6;m2_do_put_on_splitted_4[crate6,truck3,distributor1,crate11];_splitting_method_m2_do_put_on_splitted_4;2;0,1,-1,-2> 892898 892909 892912 892913
+892881 do_put_on[crate6,crate11] -> m2_do_put_on 892882 892896
+892873 do_clear[crate12,distributor0] -> m4_do_clear 892874 892875
+892866 m7_do_get_truck_splitted_2[truck3,distributor0] -> _splitting_method_m7_do_get_truck_splitted_2 892867
+892862 do_get_truck[truck3,distributor0] -> m7_do_get_truck 892863 892866
+892860 m2_do_put_on_splitted_6[truck3,crate12,crate0] -> <_splitting_method_m2_do_put_on_splitted_6;m2_do_put_on_splitted_4[crate0,truck3,distributor0,crate12];_splitting_method_m2_do_put_on_splitted_4;2;0,1,-1,-2> 892862 892873 892876 892877
+892844 do_put_on[crate0,crate12] -> m2_do_put_on 892845 892860
+892836 do_clear[pallet9,depot1] -> m4_do_clear 892837 892838
+892821 m7_do_get_truck_splitted_2[truck3,distributor3] -> _splitting_method_m7_do_get_truck_splitted_2 892822
+892810 do_get_truck[truck3,distributor3] -> m7_do_get_truck 892811 892821
+892798 m3_do_put_on_splitted_7[truck3,depot1,crate13] -> <<_splitting_method_m3_do_put_on_splitted_7;m3_do_put_on_splitted_5[crate13,distributor3,truck3];_splitting_method_m3_do_put_on_splitted_5;0;-1,1>;do_load_truck[crate13,pallet7,distributor3,truck3];<m10_do_load_truck;do_clear[crate13,distributor3];m4_do_clear;2;0,1,-1,-2,3,4>;0;-1,-2,-3,-4,-5,-6,1> 892799 892810 892823 892824 892825 892826 892827
+892794 do_put_on[crate13,pallet9] -> <m3_do_put_on;do_unload_truck[crate13,pallet9,depot1,truck3];m11_do_unload_truck;1;0,-1,-2,-3,-4> 892798 892828 892836 892839 892840
+892780 do_get_truck[truck3,distributor0] -> m6_do_get_truck 892781 892782
+892776 m5_do_clear_splitted_1[distributor0,hoist4,crate0] -> _splitting_method_m5_do_clear_splitted_1 892780 892783
+892738 do_get_truck[truck1,distributor0] -> m6_do_get_truck 892739 892740
+892737 m5_do_clear_splitted_1[distributor0,hoist4,crate3] -> _splitting_method_m5_do_clear_splitted_1 892738 892741
+892728 do_get_truck[truck1,distributor0] -> m6_do_get_truck 892729 892730
+892727 m5_do_clear_splitted_1[distributor0,hoist4,crate14] -> _splitting_method_m5_do_clear_splitted_1 892728 892731
+892716 do_clear[crate3,distributor0] -> <m5_do_clear;do_clear[crate14,distributor0];m4_do_clear;1;0,-1,-2,2,3> 892717 892718 892719 892720 892727
+892712 do_clear[crate0,distributor0] -> m5_do_clear 892713 892716 892732 892737
+892709 do_clear[pallet8,distributor0] -> m5_do_clear 892710 892712 892742 892776
+892703 m7_do_get_truck_splitted_2[truck3,distributor0] -> _splitting_method_m7_do_get_truck_splitted_2 892704
+892696 do_get_truck[truck3,distributor0] -> m7_do_get_truck 892697 892703
+892685 do_put_on[crate12,pallet8] -> <<m2_do_put_on;m2_do_put_on_splitted_6[truck3,pallet8,crate12];_splitting_method_m2_do_put_on_splitted_6;1;0,-1,-2,-3>;m2_do_put_on_splitted_4[crate12,truck3,distributor0,pallet8];_splitting_method_m2_do_put_on_splitted_4;3;0,1,2,-1,-2> 892686 892696 892709 892784 892785
+892677 do_get_truck[truck3,distributor1] -> m6_do_get_truck 892678 892679
+892674 m5_do_clear_splitted_1[distributor1,hoist5,crate7] -> _splitting_method_m5_do_clear_splitted_1 892677 892680
+892667 do_clear[pallet5,distributor1] -> <m5_do_clear;do_clear[crate7,distributor1];m4_do_clear;1;0,-1,-2,2,3> 892668 892669 892670 892671 892674
+892659 m7_do_get_truck_splitted_2[truck3,distributor1] -> _splitting_method_m7_do_get_truck_splitted_2 892660
+892655 do_get_truck[truck3,distributor1] -> m7_do_get_truck 892656 892659
+892645 do_put_on[crate11,pallet5] -> <<m2_do_put_on;m2_do_put_on_splitted_6[truck3,pallet5,crate11];_splitting_method_m2_do_put_on_splitted_6;1;0,-1,-2,-3>;m2_do_put_on_splitted_4[crate11,truck3,distributor1,pallet5];_splitting_method_m2_do_put_on_splitted_4;3;0,1,2,-1,-2> 892646 892655 892667 892681 892682
+892636 do_clear[pallet4,distributor0] -> m4_do_clear 892637 892638
+892632 do_get_truck[truck1,distributor0] -> m6_do_get_truck 892633 892634
+892625 do_put_on[crate10,pallet4] -> <<m2_do_put_on;m2_do_put_on_splitted_6[truck1,pallet4,crate10];_splitting_method_m2_do_put_on_splitted_6;1;0,-1,-2,-3>;m2_do_put_on_splitted_4[crate10,truck1,distributor0,pallet4];_splitting_method_m2_do_put_on_splitted_4;3;0,1,2,-1,-2> 892626 892632 892636 892639 892640
+892614 do_get_truck[truck0,distributor2] -> m6_do_get_truck 892615 892616
+892612 m5_do_clear_splitted_1[distributor2,hoist6,crate5] -> _splitting_method_m5_do_clear_splitted_1 892614 892617
+892605 do_clear[pallet6,distributor2] -> <m5_do_clear;do_clear[crate5,distributor2];m4_do_clear;1;0,-1,-2,2,3> 892606 892607 892608 892609 892612
+892601 m7_do_get_truck_splitted_2[truck0,distributor2] -> _splitting_method_m7_do_get_truck_splitted_2 892602
+892593 do_get_truck[truck0,distributor2] -> m7_do_get_truck 892594 892601
+892584 do_put_on[crate9,pallet6] -> <<m2_do_put_on;m2_do_put_on_splitted_6[truck0,pallet6,crate9];_splitting_method_m2_do_put_on_splitted_6;1;0,-1,-2,-3>;m2_do_put_on_splitted_4[crate9,truck0,distributor2,pallet6];_splitting_method_m2_do_put_on_splitted_4;3;0,1,2,-1,-2> 892585 892593 892605 892618 892619
+892572 do_lift_crate[crate4,depot1,hoist1] -> m9_do_lift_crate 892573 892574
+892567 do_clear[pallet1,depot1] -> m4_do_clear 892568 892569
+892562 do_get_truck[truck3,depot1] -> m6_do_get_truck 892563 892564
+892554 m5_do_clear_splitted_1[depot1,hoist1,crate6] -> _splitting_method_m5_do_clear_splitted_1 892562 892565
+85277 do_clear[crate6,depot1] -> m4_do_clear 85278 85279
+85190 do_clear[crate4,depot1] -> m5_do_clear 85191 85277 85280 892554
+85183 do_put_on[crate4,pallet1] -> <m1_do_put_on;m1_do_put_on_splitted_3[crate4,depot1,pallet1];_splitting_method_m1_do_put_on_splitted_3;3;0,1,2,-1,-2> 85184 85190 892567 892572 892575
+85171 do_get_truck[truck0,depot2] -> m6_do_get_truck 85172 85173
+85169 m5_do_clear_splitted_1[depot2,hoist2,crate9] -> _splitting_method_m5_do_clear_splitted_1 85171 85174
+85162 do_clear[crate9,depot2] -> m4_do_clear 85163 85164
+85159 do_clear[pallet2,depot2] -> m5_do_clear 85160 85162 85165 85169
+85149 do_get_truck[truck0,depot1] -> m6_do_get_truck 85150 85151
+85146 m5_do_clear_splitted_1[depot1,hoist1,crate8] -> _splitting_method_m5_do_clear_splitted_1 85149 85152
+85140 m7_do_get_truck_splitted_2[truck3,depot1] -> _splitting_method_m7_do_get_truck_splitted_2 85141
+67014 do_get_truck[truck3,depot1] -> m7_do_get_truck 67015 85140
+7730 m5_do_clear_splitted_1[depot1,hoist1,crate11] -> _splitting_method_m5_do_clear_splitted_1 67014 85142
+5642 do_clear[crate11,depot1] -> m4_do_clear 5643 5644
+2766 do_clear[crate8,depot1] -> m5_do_clear 2767 5642 5645 7730
+2024 do_clear[crate2,depot1] -> m5_do_clear 2025 2766 85143 85146
+1999 do_get_truck[truck0,depot1] -> m6_do_get_truck 2000 2001
+1750 m3_do_put_on_splitted_7[truck0,depot2,crate2] -> <<_splitting_method_m3_do_put_on_splitted_7;m3_do_put_on_splitted_5[crate2,depot1,truck0];_splitting_method_m3_do_put_on_splitted_5;0;-1,1>;do_load_truck[crate2,pallet1,depot1,truck0];m10_do_load_truck;0;-1,-2,-3,-4,-5,1> 1751 1999 2024 85153 85154 85155
+624 do_put_on[crate2,pallet2] -> <m3_do_put_on;do_unload_truck[crate2,pallet2,depot2,truck0];m11_do_unload_truck;1;0,-1,-2,-3,-4> 1750 85156 85159 85175 85176
+609 do_get_truck[truck3,depot0] -> m6_do_get_truck 610 611
+605 m5_do_clear_splitted_1[depot0,hoist0,crate12] -> _splitting_method_m5_do_clear_splitted_1 609 612
+600 do_clear[crate12,depot0] -> m4_do_clear 601 602
+598 do_clear[pallet0,depot0] -> m5_do_clear 599 600 603 605
+589 m7_do_get_truck_splitted_2[truck1,distributor0] -> _splitting_method_m7_do_get_truck_splitted_2 590
+452 do_get_truck[truck1,distributor0] -> m7_do_get_truck 453 589
+95 m5_do_clear_splitted_1[distributor0,hoist4,crate10] -> _splitting_method_m5_do_clear_splitted_1 452 591
+73 do_clear[crate1,distributor0] -> <m5_do_clear;do_clear[crate10,distributor0];m4_do_clear;1;0,-1,-2,2,3> 74 75 76 77 95
+70 m7_do_get_truck_splitted_2[truck3,distributor0] -> _splitting_method_m7_do_get_truck_splitted_2 71
+24 do_get_truck[truck3,distributor0] -> m7_do_get_truck 25 70
+12 m3_do_put_on_splitted_7[truck3,depot0,crate1] -> <<_splitting_method_m3_do_put_on_splitted_7;m3_do_put_on_splitted_5[crate1,distributor0,truck3];_splitting_method_m3_do_put_on_splitted_5;0;-1,1>;do_load_truck[crate1,pallet4,distributor0,truck3];m10_do_load_truck;0;-1,-2,-3,-4,-5,1> 13 24 73 592 593 594
+7 do_put_on[crate1,pallet0] -> <m3_do_put_on;do_unload_truck[crate1,pallet0,depot0,truck3];m11_do_unload_truck;1;0,-1,-2,-3,-4> 12 595 598 613 614
+0 __top[] -> __top_method 7 624 85183 892584 892625 892645 892685 892794 892844 892881 892916 892956 892983
+<==
+
+RUNWATCH_RESULT EXIT RETVAL 0 TIME_SECS 50.5977 MEMPEAK_KBS 3808
