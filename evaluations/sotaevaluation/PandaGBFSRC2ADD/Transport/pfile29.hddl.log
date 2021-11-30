@@ -1,0 +1,525 @@
+pandaPIparser is configured as follows
+  Colors in output: true
+  Mode: parsing mode
+  Parameter splitting: true
+  Conditional effects: exponential encoding
+  Disjunctive preconditions as HTN: false
+  Replace goal with action: false
+  Output: pandaPI format
+General Options
+  Print timings: false
+  Quiet mode: false
+Inference Options
+  H2 mutexes: false
+  FAM groups: false
+Transformation Options
+  Add zero-cost no-op to empty methods: true
+  Remove duplicate actions: true
+  Remove useless literals: true
+  Expand abstract tasks with one method: true
+  Remove empty method preconditions: true
+  Two regularisation: false
+  Compile negative SAS variables: false
+Runtime Optimisations
+  Hierarchy Typing: true
+  Future Caching: false
+  Static Precondition Checking: false
+Output Options
+  Panda planner format: true
+  HDDL: false
+  SAS for Fast Downward (without hierarchy): false
+Output Formatting Options
+  Output only SAS+ variables: false
+  SAS+ delete mode: as input
+Reading input from /home/schnell/lilotane/sotaevaluation//PandaGBFS_runwatchtime_timeout1800_2021-11-16_21:14:14/runwatch_log/216/216.parsed.
+Writing output to /home/schnell/lilotane/sotaevaluation//PandaGBFS_runwatchtime_timeout1800_2021-11-16_21:14:14/runwatch_log/216/216.sas.
+Writing output to standard output.
+Parsing done.
+Conditional Effects expanded
+done.
+Starting Hierarchy Typing
+Total 1.687ms
+Contains 0.375ms
+Restrict 0.238ms
+MPrep 0.225ms
+Finished Hierarchy Typing
+Running PG.
+Process actions without preconditions
+Done.
+ ---> Disabling potentially consistent extension checking for action:           2 (pick_up)
+ ---> Disabling potentially consistent extension checking for action:           3 (drop)
+Returning from runGpg().
+PG done. Postprocessing
+PG postprocessing done.
+Calculated [1635] grounded tasks and [400] reachable facts.
+Running TDG.
+Process actions without preconditions
+Done.
+ ---> Disabling potentially consistent extension checking for action:           4 (m_drive_to_via_ordering_0)
+ ---> Disabling potentially consistent extension checking for action:           2 (m_deliver_ordering_0)
+Returning from runGpg().
+TDG done.
+Calculated [2286] grounded tasks and [2396] grounded decomposition methods.
+Performing DFS.
+DFS done.
+After DFS: 2286 tasks, 2396 methods.
+Grounded PG:
+Input was [1635, 2286], output was [1635, 400].
+Simplifying instance.
+Removing useless facts/literals
+Removing method precondition actions whose precondition is empty
+Expanding abstract tasks with only one method
+Starting duplicate elimination.
+Data structure build.
+0 duplicates found.
+Duplicates replaced in methods.
+Further Mutex Groups: 0 strict 0 non strict
+Writing instance to output.
+Final Statistics: F 320 S 0 SC 0 SM 0 NSM 0 I 0 P 1635 S 0 A 651 M 2396
+Exiting.
+Random seed: 42
+Time limit: 1800 seconds
+Reading input from /home/schnell/lilotane/sotaevaluation//PandaGBFS_runwatchtime_timeout1800_2021-11-16_21:14:14/runwatch_log/216/216.sas.
+- State has 320 bits divided into 320 mutex groups.
+- Domain contains 1635 actions.
+- Domain contains 2286 tasks.
+- Domain contains 2396 methods.
+- The initial state contains 35 set bits.
+- The initial task is "__top[]".
+- State-based goal contains 0 bits.
+- Instance is totally-ordered: yes
+- Instance has unique paths: yes
+- Instance is parallel sequences: yes
+Calculate SCCs...
+- Number of SCCs: 2166
+- The problem is cyclic
+- Number of cyclic SCCs: 5
+- Number of cyclic SCCs of size 1: 0
+Selected Planning Algorithm: progression searchParsing heuristics ...
+Number of specified heuristics: 1
+- the option "store cuts" of the RC heuristic can only be used with the inner heuristic LM-Cut. It will be disabled.
+- Calculating minimal implied costs and distances (0 ms)
+Heuristic #0 = hhRC2(add;distance;correct count)
+Search config:
+ - type: path cost
+ - weight: 1
+ - suboptimal: false
+Visited List configured
+- mode: total order
+- hashs to use: state task task-sequence
+- memory information: topological ordering
+- Visited list allows deletion of search nodes: true
+Search Configuration
+- Using JAIR 2020 progression algorithm
+- Search is stopped after first solution is found.
+- A* Search
+- Distance G is "modification depth"
+   1s visitime    0.02s generated nodes     10005 nodes/sec    6156 cur h  436 mod.depth   27 inserts      1280 dups       629 size       651 hash fail    630 hash buckets    650
+   3s visitime    0.03s generated nodes     20015 nodes/sec    6323 cur h  437 mod.depth   22 inserts      2422 dups      1178 size      1244 hash fail   1179 hash buckets   1243
+   4s visitime    0.05s generated nodes     30041 nodes/sec    6324 cur h  437 mod.depth   26 inserts      3042 dups      1183 size      1859 hash fail   1184 hash buckets   1858
+   6s visitime    0.06s generated nodes     40072 nodes/sec    6366 cur h  380 mod.depth   68 inserts      3788 dups      1293 size      2495 hash fail   1294 hash buckets   2494
+   7s visitime    0.07s generated nodes     50085 nodes/sec    6455 cur h  380 mod.depth   68 inserts      4583 dups      1445 size      3138 hash fail   1447 hash buckets   3136
+   9s visitime    0.08s generated nodes     60114 nodes/sec    6575 cur h  382 mod.depth   68 inserts      5304 dups      1575 size      3729 hash fail   1577 hash buckets   3727
+  10s visitime    0.10s generated nodes     70134 nodes/sec    6618 cur h  319 mod.depth  130 inserts      6212 dups      1803 size      4409 hash fail   1805 hash buckets   4407
+  11s visitime    0.11s generated nodes     80154 nodes/sec    6696 cur h  379 mod.depth   72 inserts      7045 dups      2012 size      5033 hash fail   2014 hash buckets   5031
+  13s visitime    0.12s generated nodes     90162 nodes/sec    6725 cur h  383 mod.depth   68 inserts      8041 dups      2371 size      5670 hash fail   2374 hash buckets   5667
+  14s visitime    0.14s generated nodes    100190 nodes/sec    6771 cur h  381 mod.depth   70 inserts      8905 dups      2612 size      6293 hash fail   2615 hash buckets   6290
+  16s visitime    0.15s generated nodes    110194 nodes/sec    6872 cur h   62 mod.depth  324 inserts      9953 dups      2908 size      7045 hash fail   2912 hash buckets   7041
+Search Results
+- Search time 16.43 seconds
+- Visited list time 0.16 seconds
+- Visited list inserts 11082
+- Visited list pruned 3266
+- Visited list contains 7816
+- Visited list hash collisions 3270
+- Visited list used hash buckets 7812
+- Generated 118074 search nodes
+  Calculated heuristic for 71834 nodes
+  One modifications 44356
+  Effectless actions 1884
+- including 44356 one modification actions
+- including 0 one modification methods
+- and       1884 progressions of effectless actions
+- Generated 4370 nodes per second
+- Final fringe contains 27736 nodes
+- Status: Solved
+- Found solution of length 373
+- Total costs of actions: 161
+==>
+20 drive[truck_1,city_loc_16,city_loc_20]
+32 pick_up[truck_1,city_loc_20,package_16,capacity_2,capacity_3]
+47 drive[truck_1,city_loc_20,city_loc_19]
+48 drive[truck_1,city_loc_19,city_loc_22]
+57 drop[truck_1,city_loc_22,package_16,capacity_2,capacity_3]
+154 drive[truck_1,city_loc_22,city_loc_14]
+155 drive[truck_1,city_loc_14,city_loc_12]
+165 pick_up[truck_1,city_loc_12,package_1,capacity_2,capacity_3]
+180 drive[truck_1,city_loc_12,city_loc_15]
+181 drive[truck_1,city_loc_15,city_loc_22]
+192 drop[truck_1,city_loc_22,package_1,capacity_2,capacity_3]
+36747 drive[truck_2,city_loc_6,city_loc_19]
+36748 drive[truck_2,city_loc_19,city_loc_13]
+36749 drive[truck_2,city_loc_13,city_loc_5]
+36760 pick_up[truck_2,city_loc_5,package_22,capacity_2,capacity_3]
+36782 drive[truck_2,city_loc_5,city_loc_13]
+36783 drive[truck_2,city_loc_13,city_loc_19]
+36784 drive[truck_2,city_loc_19,city_loc_20]
+36796 drop[truck_2,city_loc_20,package_22,capacity_2,capacity_3]
+36810 noop[truck_4,city_loc_1]
+36817 pick_up[truck_4,city_loc_1,package_18,capacity_2,capacity_3]
+36820 drive[truck_4,city_loc_1,city_loc_18]
+36826 drop[truck_4,city_loc_18,package_18,capacity_2,capacity_3]
+67291 drive[truck_4,city_loc_18,city_loc_9]
+67292 drive[truck_4,city_loc_9,city_loc_15]
+67293 drive[truck_4,city_loc_15,city_loc_12]
+67304 pick_up[truck_4,city_loc_12,package_5,capacity_2,capacity_3]
+67325 drive[truck_4,city_loc_12,city_loc_15]
+67326 drive[truck_4,city_loc_15,city_loc_9]
+67327 drive[truck_4,city_loc_9,city_loc_18]
+67338 drop[truck_4,city_loc_18,package_5,capacity_2,capacity_3]
+67355 drive[truck_1,city_loc_22,city_loc_14]
+67356 drive[truck_1,city_loc_14,city_loc_17]
+67418 pick_up[truck_1,city_loc_17,package_10,capacity_2,capacity_3]
+67884 drive[truck_1,city_loc_17,city_loc_14]
+67885 drive[truck_1,city_loc_14,city_loc_22]
+67886 drive[truck_1,city_loc_22,city_loc_19]
+67887 drive[truck_1,city_loc_19,city_loc_20]
+67897 drop[truck_1,city_loc_20,package_10,capacity_2,capacity_3]
+67910 noop[truck_4,city_loc_18]
+67915 pick_up[truck_4,city_loc_18,package_0,capacity_2,capacity_3]
+67956 drive[truck_4,city_loc_18,city_loc_9]
+67957 drive[truck_4,city_loc_9,city_loc_15]
+67958 drive[truck_4,city_loc_15,city_loc_12]
+67967 drop[truck_4,city_loc_12,package_0,capacity_2,capacity_3]
+68142 drive[truck_0,city_loc_21,city_loc_1]
+68143 drive[truck_0,city_loc_1,city_loc_18]
+68152 pick_up[truck_0,city_loc_18,package_17,capacity_2,capacity_3]
+68190 drive[truck_0,city_loc_18,city_loc_9]
+68191 drive[truck_0,city_loc_9,city_loc_15]
+68192 drive[truck_0,city_loc_15,city_loc_13]
+68242 drop[truck_0,city_loc_13,package_17,capacity_2,capacity_3]
+68961 drive[truck_0,city_loc_13,city_loc_19]
+68971 pick_up[truck_0,city_loc_19,package_4,capacity_2,capacity_3]
+68983 drive[truck_0,city_loc_19,city_loc_13]
+68984 drive[truck_0,city_loc_13,city_loc_7]
+69203 drop[truck_0,city_loc_7,package_4,capacity_2,capacity_3]
+106031 drive[truck_0,city_loc_7,city_loc_10]
+106032 drive[truck_0,city_loc_10,city_loc_2]
+106040 pick_up[truck_0,city_loc_2,package_13,capacity_2,capacity_3]
+106050 drive[truck_0,city_loc_2,city_loc_10]
+106051 drive[truck_0,city_loc_10,city_loc_4]
+106060 drop[truck_0,city_loc_4,package_13,capacity_2,capacity_3]
+106072 noop[truck_0,city_loc_4]
+106077 pick_up[truck_0,city_loc_4,package_8,capacity_2,capacity_3]
+106109 drive[truck_0,city_loc_4,city_loc_15]
+106110 drive[truck_0,city_loc_15,city_loc_9]
+106111 drive[truck_0,city_loc_9,city_loc_8]
+106122 drop[truck_0,city_loc_8,package_8,capacity_2,capacity_3]
+106144 drive[truck_1,city_loc_20,city_loc_4]
+106152 pick_up[truck_1,city_loc_4,package_14,capacity_2,capacity_3]
+106186 drive[truck_1,city_loc_4,city_loc_15]
+106187 drive[truck_1,city_loc_15,city_loc_9]
+106188 drive[truck_1,city_loc_9,city_loc_8]
+106198 drop[truck_1,city_loc_8,package_14,capacity_2,capacity_3]
+106213 drive[truck_2,city_loc_20,city_loc_19]
+106214 drive[truck_2,city_loc_19,city_loc_24]
+106225 pick_up[truck_2,city_loc_24,package_11,capacity_2,capacity_3]
+106234 drive[truck_2,city_loc_24,city_loc_1]
+106235 drive[truck_2,city_loc_1,city_loc_21]
+106241 drop[truck_2,city_loc_21,package_11,capacity_2,capacity_3]
+106253 noop[truck_2,city_loc_21]
+106257 pick_up[truck_2,city_loc_21,package_21,capacity_2,capacity_3]
+106300 drive[truck_2,city_loc_21,city_loc_1]
+106301 drive[truck_2,city_loc_1,city_loc_18]
+106302 drive[truck_2,city_loc_18,city_loc_9]
+106310 drop[truck_2,city_loc_9,package_21,capacity_2,capacity_3]
+106326 drive[truck_4,city_loc_12,city_loc_14]
+106327 drive[truck_4,city_loc_14,city_loc_2]
+106341 pick_up[truck_4,city_loc_2,package_20,capacity_2,capacity_3]
+106421 drive[truck_4,city_loc_2,city_loc_10]
+106422 drive[truck_4,city_loc_10,city_loc_4]
+106423 drive[truck_4,city_loc_4,city_loc_15]
+106431 drop[truck_4,city_loc_15,package_20,capacity_2,capacity_3]
+106446 drive[truck_3,city_loc_15,city_loc_13]
+106456 pick_up[truck_3,city_loc_13,package_3,capacity_2,capacity_3]
+106494 drive[truck_3,city_loc_13,city_loc_15]
+106495 drive[truck_3,city_loc_15,city_loc_12]
+106496 drive[truck_3,city_loc_12,city_loc_14]
+106497 drive[truck_3,city_loc_14,city_loc_17]
+106509 drop[truck_3,city_loc_17,package_3,capacity_2,capacity_3]
+106519 drive[truck_4,city_loc_15,city_loc_13]
+106530 pick_up[truck_4,city_loc_13,package_24,capacity_2,capacity_3]
+106537 drive[truck_4,city_loc_13,city_loc_15]
+106546 drop[truck_4,city_loc_15,package_24,capacity_2,capacity_3]
+106833 drive[truck_4,city_loc_15,city_loc_22]
+106842 pick_up[truck_4,city_loc_22,package_7,capacity_2,capacity_3]
+106858 drive[truck_4,city_loc_22,city_loc_19]
+106859 drive[truck_4,city_loc_19,city_loc_13]
+106868 drop[truck_4,city_loc_13,package_7,capacity_2,capacity_3]
+106997 drive[truck_4,city_loc_13,city_loc_19]
+106998 drive[truck_4,city_loc_19,city_loc_6]
+107007 pick_up[truck_4,city_loc_6,package_12,capacity_2,capacity_3]
+109582 drive[truck_4,city_loc_6,city_loc_19]
+109583 drive[truck_4,city_loc_19,city_loc_22]
+109584 drive[truck_4,city_loc_22,city_loc_3]
+109585 drive[truck_4,city_loc_3,city_loc_0]
+109596 drop[truck_4,city_loc_0,package_12,capacity_2,capacity_3]
+109637 noop[truck_1,city_loc_8]
+109644 pick_up[truck_1,city_loc_8,package_15,capacity_2,capacity_3]
+109989 drive[truck_1,city_loc_8,city_loc_0]
+109990 drive[truck_1,city_loc_0,city_loc_12]
+109991 drive[truck_1,city_loc_12,city_loc_14]
+109992 drive[truck_1,city_loc_14,city_loc_17]
+110001 drop[truck_1,city_loc_17,package_15,capacity_2,capacity_3]
+110012 drive[truck_2,city_loc_9,city_loc_18]
+110017 pick_up[truck_2,city_loc_18,package_6,capacity_2,capacity_3]
+110049 drive[truck_2,city_loc_18,city_loc_9]
+110050 drive[truck_2,city_loc_9,city_loc_15]
+110051 drive[truck_2,city_loc_15,city_loc_4]
+110064 drop[truck_2,city_loc_4,package_6,capacity_2,capacity_3]
+110085 drive[truck_2,city_loc_4,city_loc_20]
+110086 drive[truck_2,city_loc_20,city_loc_19]
+110097 pick_up[truck_2,city_loc_19,package_19,capacity_2,capacity_3]
+110125 drive[truck_2,city_loc_19,city_loc_20]
+110126 drive[truck_2,city_loc_20,city_loc_4]
+110127 drive[truck_2,city_loc_4,city_loc_10]
+110135 drop[truck_2,city_loc_10,package_19,capacity_2,capacity_3]
+110152 noop[truck_1,city_loc_17]
+110157 pick_up[truck_1,city_loc_17,package_2,capacity_2,capacity_3]
+113013 drive[truck_1,city_loc_17,city_loc_14]
+113014 drive[truck_1,city_loc_14,city_loc_12]
+113015 drive[truck_1,city_loc_12,city_loc_0]
+113016 drive[truck_1,city_loc_0,city_loc_8]
+113017 drive[truck_1,city_loc_8,city_loc_23]
+113027 drop[truck_1,city_loc_23,package_2,capacity_2,capacity_3]
+113364 drive[truck_2,city_loc_10,city_loc_4]
+113365 drive[truck_2,city_loc_4,city_loc_20]
+113372 pick_up[truck_2,city_loc_20,package_23,capacity_2,capacity_3]
+113411 drive[truck_2,city_loc_20,city_loc_4]
+113412 drive[truck_2,city_loc_4,city_loc_15]
+113413 drive[truck_2,city_loc_15,city_loc_9]
+113419 drop[truck_2,city_loc_9,package_23,capacity_2,capacity_3]
+113449 drive[truck_0,city_loc_8,city_loc_0]
+113455 pick_up[truck_0,city_loc_0,package_9,capacity_2,capacity_3]
+118058 drive[truck_0,city_loc_0,city_loc_8]
+118059 drive[truck_0,city_loc_8,city_loc_9]
+118060 drive[truck_0,city_loc_9,city_loc_18]
+118061 drive[truck_0,city_loc_18,city_loc_1]
+118062 drive[truck_0,city_loc_1,city_loc_21]
+118072 drop[truck_0,city_loc_21,package_9,capacity_2,capacity_3]
+root 0
+118071 unload[truck_0,city_loc_21,package_9] -> m_unload_ordering_0 118072
+118057 get_to[truck_0,city_loc_8] -> m_drive_to_ordering_0 118058
+115119 get_to[truck_0,city_loc_9] -> m_drive_to_via_ordering_0 118057 118059
+113723 get_to[truck_0,city_loc_18] -> m_drive_to_via_ordering_0 115119 118060
+113477 get_to[truck_0,city_loc_1] -> m_drive_to_via_ordering_0 113723 118061
+113460 get_to[truck_0,city_loc_21] -> m_drive_to_via_ordering_0 113477 118062
+113454 load[truck_0,city_loc_0,package_9] -> m_load_ordering_0 113455
+113448 get_to[truck_0,city_loc_0] -> m_drive_to_ordering_0 113449
+113445 m_deliver_ordering_0_splitted_1[truck_0,package_9] -> _splitting_method_m_deliver_ordering_0_splitted_1 113448 113454
+113424 deliver[package_9,city_loc_21] -> m_deliver_ordering_0 113445 113460 118071
+113418 unload[truck_2,city_loc_9,package_23] -> m_unload_ordering_0 113419
+113410 get_to[truck_2,city_loc_4] -> m_drive_to_ordering_0 113411
+113407 get_to[truck_2,city_loc_15] -> m_drive_to_via_ordering_0 113410 113412
+113384 get_to[truck_2,city_loc_9] -> m_drive_to_via_ordering_0 113407 113413
+113371 load[truck_2,city_loc_20,package_23] -> m_load_ordering_0 113372
+113363 get_to[truck_2,city_loc_4] -> m_drive_to_ordering_0 113364
+113065 get_to[truck_2,city_loc_20] -> m_drive_to_via_ordering_0 113363 113365
+113058 m_deliver_ordering_0_splitted_1[truck_2,package_23] -> _splitting_method_m_deliver_ordering_0_splitted_1 113065 113371
+113030 deliver[package_23,city_loc_9] -> m_deliver_ordering_0 113058 113384 113418
+113026 unload[truck_1,city_loc_23,package_2] -> m_unload_ordering_0 113027
+113012 get_to[truck_1,city_loc_14] -> m_drive_to_ordering_0 113013
+111167 get_to[truck_1,city_loc_12] -> m_drive_to_via_ordering_0 113012 113014
+110439 get_to[truck_1,city_loc_0] -> m_drive_to_via_ordering_0 111167 113015
+110210 get_to[truck_1,city_loc_8] -> m_drive_to_via_ordering_0 110439 113016
+110160 get_to[truck_1,city_loc_23] -> m_drive_to_via_ordering_0 110210 113017
+110156 load[truck_1,city_loc_17,package_2] -> m_load_ordering_0 110157
+110151 get_to[truck_1,city_loc_17] -> m_i_am_there_ordering_0 110152
+110149 m_deliver_ordering_0_splitted_1[truck_1,package_2] -> _splitting_method_m_deliver_ordering_0_splitted_1 110151 110156
+110141 deliver[package_2,city_loc_23] -> m_deliver_ordering_0 110149 110160 113026
+110134 unload[truck_2,city_loc_10,package_19] -> m_unload_ordering_0 110135
+110124 get_to[truck_2,city_loc_20] -> m_drive_to_ordering_0 110125
+110118 get_to[truck_2,city_loc_4] -> m_drive_to_via_ordering_0 110124 110126
+110104 get_to[truck_2,city_loc_10] -> m_drive_to_via_ordering_0 110118 110127
+110096 load[truck_2,city_loc_19,package_19] -> m_load_ordering_0 110097
+110084 get_to[truck_2,city_loc_20] -> m_drive_to_ordering_0 110085
+110078 get_to[truck_2,city_loc_19] -> m_drive_to_via_ordering_0 110084 110086
+110071 m_deliver_ordering_0_splitted_1[truck_2,package_19] -> _splitting_method_m_deliver_ordering_0_splitted_1 110078 110096
+110067 deliver[package_19,city_loc_10] -> m_deliver_ordering_0 110071 110104 110134
+110063 unload[truck_2,city_loc_4,package_6] -> m_unload_ordering_0 110064
+110048 get_to[truck_2,city_loc_9] -> m_drive_to_ordering_0 110049
+110033 get_to[truck_2,city_loc_15] -> m_drive_to_via_ordering_0 110048 110050
+110026 get_to[truck_2,city_loc_4] -> m_drive_to_via_ordering_0 110033 110051
+110016 load[truck_2,city_loc_18,package_6] -> m_load_ordering_0 110017
+110011 get_to[truck_2,city_loc_18] -> m_drive_to_ordering_0 110012
+110008 m_deliver_ordering_0_splitted_1[truck_2,package_6] -> _splitting_method_m_deliver_ordering_0_splitted_1 110011 110016
+110003 deliver[package_6,city_loc_4] -> m_deliver_ordering_0 110008 110026 110063
+110000 unload[truck_1,city_loc_17,package_15] -> m_unload_ordering_0 110001
+109988 get_to[truck_1,city_loc_0] -> m_drive_to_ordering_0 109989
+109823 get_to[truck_1,city_loc_12] -> m_drive_to_via_ordering_0 109988 109990
+109674 get_to[truck_1,city_loc_14] -> m_drive_to_via_ordering_0 109823 109991
+109647 get_to[truck_1,city_loc_17] -> m_drive_to_via_ordering_0 109674 109992
+109643 load[truck_1,city_loc_8,package_15] -> m_load_ordering_0 109644
+109636 get_to[truck_1,city_loc_8] -> m_i_am_there_ordering_0 109637
+109632 m_deliver_ordering_0_splitted_1[truck_1,package_15] -> _splitting_method_m_deliver_ordering_0_splitted_1 109636 109643
+109603 deliver[package_15,city_loc_17] -> m_deliver_ordering_0 109632 109647 110000
+109595 unload[truck_4,city_loc_0,package_12] -> m_unload_ordering_0 109596
+109581 get_to[truck_4,city_loc_19] -> m_drive_to_ordering_0 109582
+107687 get_to[truck_4,city_loc_22] -> m_drive_to_via_ordering_0 109581 109583
+107074 get_to[truck_4,city_loc_3] -> m_drive_to_via_ordering_0 107687 109584
+107015 get_to[truck_4,city_loc_0] -> m_drive_to_via_ordering_0 107074 109585
+107006 load[truck_4,city_loc_6,package_12] -> m_load_ordering_0 107007
+106996 get_to[truck_4,city_loc_19] -> m_drive_to_ordering_0 106997
+106937 get_to[truck_4,city_loc_6] -> m_drive_to_via_ordering_0 106996 106998
+106934 m_deliver_ordering_0_splitted_1[truck_4,package_12] -> _splitting_method_m_deliver_ordering_0_splitted_1 106937 107006
+106929 deliver[package_12,city_loc_0] -> m_deliver_ordering_0 106934 107015 109595
+106867 unload[truck_4,city_loc_13,package_7] -> m_unload_ordering_0 106868
+106857 get_to[truck_4,city_loc_19] -> m_drive_to_ordering_0 106858
+106852 get_to[truck_4,city_loc_13] -> m_drive_to_via_ordering_0 106857 106859
+106841 load[truck_4,city_loc_22,package_7] -> m_load_ordering_0 106842
+106832 get_to[truck_4,city_loc_22] -> m_drive_to_ordering_0 106833
+106711 m_deliver_ordering_0_splitted_1[truck_4,package_7] -> _splitting_method_m_deliver_ordering_0_splitted_1 106832 106841
+106689 deliver[package_7,city_loc_13] -> m_deliver_ordering_0 106711 106852 106867
+106545 unload[truck_4,city_loc_15,package_24] -> m_unload_ordering_0 106546
+106536 get_to[truck_4,city_loc_15] -> m_drive_to_ordering_0 106537
+106529 load[truck_4,city_loc_13,package_24] -> m_load_ordering_0 106530
+106518 get_to[truck_4,city_loc_13] -> m_drive_to_ordering_0 106519
+106515 m_deliver_ordering_0_splitted_1[truck_4,package_24] -> _splitting_method_m_deliver_ordering_0_splitted_1 106518 106529
+106513 deliver[package_24,city_loc_15] -> m_deliver_ordering_0 106515 106536 106545
+106508 unload[truck_3,city_loc_17,package_3] -> m_unload_ordering_0 106509
+106493 get_to[truck_3,city_loc_15] -> m_drive_to_ordering_0 106494
+106480 get_to[truck_3,city_loc_12] -> m_drive_to_via_ordering_0 106493 106495
+106466 get_to[truck_3,city_loc_14] -> m_drive_to_via_ordering_0 106480 106496
+106459 get_to[truck_3,city_loc_17] -> m_drive_to_via_ordering_0 106466 106497
+106455 load[truck_3,city_loc_13,package_3] -> m_load_ordering_0 106456
+106445 get_to[truck_3,city_loc_13] -> m_drive_to_ordering_0 106446
+106440 m_deliver_ordering_0_splitted_1[truck_3,package_3] -> _splitting_method_m_deliver_ordering_0_splitted_1 106445 106455
+106432 deliver[package_3,city_loc_17] -> m_deliver_ordering_0 106440 106459 106508
+106430 unload[truck_4,city_loc_15,package_20] -> m_unload_ordering_0 106431
+106420 get_to[truck_4,city_loc_10] -> m_drive_to_ordering_0 106421
+106379 get_to[truck_4,city_loc_4] -> m_drive_to_via_ordering_0 106420 106422
+106350 get_to[truck_4,city_loc_15] -> m_drive_to_via_ordering_0 106379 106423
+106340 load[truck_4,city_loc_2,package_20] -> m_load_ordering_0 106341
+106325 get_to[truck_4,city_loc_14] -> m_drive_to_ordering_0 106326
+106323 get_to[truck_4,city_loc_2] -> m_drive_to_via_ordering_0 106325 106327
+106318 m_deliver_ordering_0_splitted_1[truck_4,package_20] -> _splitting_method_m_deliver_ordering_0_splitted_1 106323 106340
+106314 deliver[package_20,city_loc_15] -> m_deliver_ordering_0 106318 106350 106430
+106309 unload[truck_2,city_loc_9,package_21] -> m_unload_ordering_0 106310
+106299 get_to[truck_2,city_loc_1] -> m_drive_to_ordering_0 106300
+106276 get_to[truck_2,city_loc_18] -> m_drive_to_via_ordering_0 106299 106301
+106270 get_to[truck_2,city_loc_9] -> m_drive_to_via_ordering_0 106276 106302
+106256 load[truck_2,city_loc_21,package_21] -> m_load_ordering_0 106257
+106252 get_to[truck_2,city_loc_21] -> m_i_am_there_ordering_0 106253
+106249 m_deliver_ordering_0_splitted_1[truck_2,package_21] -> _splitting_method_m_deliver_ordering_0_splitted_1 106252 106256
+106244 deliver[package_21,city_loc_9] -> m_deliver_ordering_0 106249 106270 106309
+106240 unload[truck_2,city_loc_21,package_11] -> m_unload_ordering_0 106241
+106233 get_to[truck_2,city_loc_1] -> m_drive_to_ordering_0 106234
+106230 get_to[truck_2,city_loc_21] -> m_drive_to_via_ordering_0 106233 106235
+106224 load[truck_2,city_loc_24,package_11] -> m_load_ordering_0 106225
+106212 get_to[truck_2,city_loc_19] -> m_drive_to_ordering_0 106213
+106210 get_to[truck_2,city_loc_24] -> m_drive_to_via_ordering_0 106212 106214
+106205 m_deliver_ordering_0_splitted_1[truck_2,package_11] -> _splitting_method_m_deliver_ordering_0_splitted_1 106210 106224
+106199 deliver[package_11,city_loc_21] -> m_deliver_ordering_0 106205 106230 106240
+106197 unload[truck_1,city_loc_8,package_14] -> m_unload_ordering_0 106198
+106185 get_to[truck_1,city_loc_15] -> m_drive_to_ordering_0 106186
+106171 get_to[truck_1,city_loc_9] -> m_drive_to_via_ordering_0 106185 106187
+106159 get_to[truck_1,city_loc_8] -> m_drive_to_via_ordering_0 106171 106188
+106151 load[truck_1,city_loc_4,package_14] -> m_load_ordering_0 106152
+106143 get_to[truck_1,city_loc_4] -> m_drive_to_ordering_0 106144
+106141 m_deliver_ordering_0_splitted_1[truck_1,package_14] -> _splitting_method_m_deliver_ordering_0_splitted_1 106143 106151
+106129 deliver[package_14,city_loc_8] -> m_deliver_ordering_0 106141 106159 106197
+106121 unload[truck_0,city_loc_8,package_8] -> m_unload_ordering_0 106122
+106108 get_to[truck_0,city_loc_15] -> m_drive_to_ordering_0 106109
+106094 get_to[truck_0,city_loc_9] -> m_drive_to_via_ordering_0 106108 106110
+106085 get_to[truck_0,city_loc_8] -> m_drive_to_via_ordering_0 106094 106111
+106076 load[truck_0,city_loc_4,package_8] -> m_load_ordering_0 106077
+106071 get_to[truck_0,city_loc_4] -> m_i_am_there_ordering_0 106072
+106066 m_deliver_ordering_0_splitted_1[truck_0,package_8] -> _splitting_method_m_deliver_ordering_0_splitted_1 106071 106076
+106063 deliver[package_8,city_loc_8] -> m_deliver_ordering_0 106066 106085 106121
+106059 unload[truck_0,city_loc_4,package_13] -> m_unload_ordering_0 106060
+106049 get_to[truck_0,city_loc_10] -> m_drive_to_ordering_0 106050
+106047 get_to[truck_0,city_loc_4] -> m_drive_to_via_ordering_0 106049 106051
+106039 load[truck_0,city_loc_2,package_13] -> m_load_ordering_0 106040
+106030 get_to[truck_0,city_loc_10] -> m_drive_to_ordering_0 106031
+72543 get_to[truck_0,city_loc_2] -> m_drive_to_via_ordering_0 106030 106032
+72537 m_deliver_ordering_0_splitted_1[truck_0,package_13] -> _splitting_method_m_deliver_ordering_0_splitted_1 72543 106039
+72527 deliver[package_13,city_loc_4] -> m_deliver_ordering_0 72537 106047 106059
+69202 unload[truck_0,city_loc_7,package_4] -> m_unload_ordering_0 69203
+68982 get_to[truck_0,city_loc_13] -> m_drive_to_ordering_0 68983
+68978 get_to[truck_0,city_loc_7] -> m_drive_to_via_ordering_0 68982 68984
+68970 load[truck_0,city_loc_19,package_4] -> m_load_ordering_0 68971
+68960 get_to[truck_0,city_loc_19] -> m_drive_to_ordering_0 68961
+68914 m_deliver_ordering_0_splitted_1[truck_0,package_4] -> _splitting_method_m_deliver_ordering_0_splitted_1 68960 68970
+68910 deliver[package_4,city_loc_7] -> m_deliver_ordering_0 68914 68978 69202
+68241 unload[truck_0,city_loc_13,package_17] -> m_unload_ordering_0 68242
+68189 get_to[truck_0,city_loc_9] -> m_drive_to_ordering_0 68190
+68183 get_to[truck_0,city_loc_15] -> m_drive_to_via_ordering_0 68189 68191
+68160 get_to[truck_0,city_loc_13] -> m_drive_to_via_ordering_0 68183 68192
+68151 load[truck_0,city_loc_18,package_17] -> m_load_ordering_0 68152
+68141 get_to[truck_0,city_loc_1] -> m_drive_to_ordering_0 68142
+68031 get_to[truck_0,city_loc_18] -> m_drive_to_via_ordering_0 68141 68143
+68012 m_deliver_ordering_0_splitted_1[truck_0,package_17] -> _splitting_method_m_deliver_ordering_0_splitted_1 68031 68151
+67972 deliver[package_17,city_loc_13] -> m_deliver_ordering_0 68012 68160 68241
+67966 unload[truck_4,city_loc_12,package_0] -> m_unload_ordering_0 67967
+67955 get_to[truck_4,city_loc_9] -> m_drive_to_ordering_0 67956
+67935 get_to[truck_4,city_loc_15] -> m_drive_to_via_ordering_0 67955 67957
+67923 get_to[truck_4,city_loc_12] -> m_drive_to_via_ordering_0 67935 67958
+67914 load[truck_4,city_loc_18,package_0] -> m_load_ordering_0 67915
+67909 get_to[truck_4,city_loc_18] -> m_i_am_there_ordering_0 67910
+67906 m_deliver_ordering_0_splitted_1[truck_4,package_0] -> _splitting_method_m_deliver_ordering_0_splitted_1 67909 67914
+67902 deliver[package_0,city_loc_12] -> m_deliver_ordering_0 67906 67923 67966
+67896 unload[truck_1,city_loc_20,package_10] -> m_unload_ordering_0 67897
+67883 get_to[truck_1,city_loc_14] -> m_drive_to_ordering_0 67884
+67703 get_to[truck_1,city_loc_22] -> m_drive_to_via_ordering_0 67883 67885
+67436 get_to[truck_1,city_loc_19] -> m_drive_to_via_ordering_0 67703 67886
+67426 get_to[truck_1,city_loc_20] -> m_drive_to_via_ordering_0 67436 67887
+67417 load[truck_1,city_loc_17,package_10] -> m_load_ordering_0 67418
+67354 get_to[truck_1,city_loc_14] -> m_drive_to_ordering_0 67355
+67350 get_to[truck_1,city_loc_17] -> m_drive_to_via_ordering_0 67354 67356
+67347 m_deliver_ordering_0_splitted_1[truck_1,package_10] -> _splitting_method_m_deliver_ordering_0_splitted_1 67350 67417
+67345 deliver[package_10,city_loc_20] -> m_deliver_ordering_0 67347 67426 67896
+67337 unload[truck_4,city_loc_18,package_5] -> m_unload_ordering_0 67338
+67324 get_to[truck_4,city_loc_15] -> m_drive_to_ordering_0 67325
+67318 get_to[truck_4,city_loc_9] -> m_drive_to_via_ordering_0 67324 67326
+67308 get_to[truck_4,city_loc_18] -> m_drive_to_via_ordering_0 67318 67327
+67303 load[truck_4,city_loc_12,package_5] -> m_load_ordering_0 67304
+67290 get_to[truck_4,city_loc_9] -> m_drive_to_ordering_0 67291
+41755 get_to[truck_4,city_loc_15] -> m_drive_to_via_ordering_0 67290 67292
+37731 get_to[truck_4,city_loc_12] -> m_drive_to_via_ordering_0 41755 67293
+37723 m_deliver_ordering_0_splitted_1[truck_4,package_5] -> _splitting_method_m_deliver_ordering_0_splitted_1 37731 67303
+36830 deliver[package_5,city_loc_18] -> m_deliver_ordering_0 37723 67308 67337
+36825 unload[truck_4,city_loc_18,package_18] -> m_unload_ordering_0 36826
+36819 get_to[truck_4,city_loc_18] -> m_drive_to_ordering_0 36820
+36816 load[truck_4,city_loc_1,package_18] -> m_load_ordering_0 36817
+36809 get_to[truck_4,city_loc_1] -> m_i_am_there_ordering_0 36810
+36804 m_deliver_ordering_0_splitted_1[truck_4,package_18] -> _splitting_method_m_deliver_ordering_0_splitted_1 36809 36816
+36802 deliver[package_18,city_loc_18] -> m_deliver_ordering_0 36804 36819 36825
+36795 unload[truck_2,city_loc_20,package_22] -> m_unload_ordering_0 36796
+36781 get_to[truck_2,city_loc_13] -> m_drive_to_ordering_0 36782
+36779 get_to[truck_2,city_loc_19] -> m_drive_to_via_ordering_0 36781 36783
+36769 get_to[truck_2,city_loc_20] -> m_drive_to_via_ordering_0 36779 36784
+36759 load[truck_2,city_loc_5,package_22] -> m_load_ordering_0 36760
+36746 get_to[truck_2,city_loc_19] -> m_drive_to_ordering_0 36747
+7222 get_to[truck_2,city_loc_13] -> m_drive_to_via_ordering_0 36746 36748
+1805 get_to[truck_2,city_loc_5] -> m_drive_to_via_ordering_0 7222 36749
+1802 m_deliver_ordering_0_splitted_1[truck_2,package_22] -> _splitting_method_m_deliver_ordering_0_splitted_1 1805 36759
+820 deliver[package_22,city_loc_20] -> m_deliver_ordering_0 1802 36769 36795
+191 unload[truck_1,city_loc_22,package_1] -> m_unload_ordering_0 192
+179 get_to[truck_1,city_loc_15] -> m_drive_to_ordering_0 180
+173 get_to[truck_1,city_loc_22] -> m_drive_to_via_ordering_0 179 181
+164 load[truck_1,city_loc_12,package_1] -> m_load_ordering_0 165
+153 get_to[truck_1,city_loc_14] -> m_drive_to_ordering_0 154
+98 get_to[truck_1,city_loc_12] -> m_drive_to_via_ordering_0 153 155
+90 m_deliver_ordering_0_splitted_1[truck_1,package_1] -> _splitting_method_m_deliver_ordering_0_splitted_1 98 164
+63 deliver[package_1,city_loc_22] -> m_deliver_ordering_0 90 173 191
+56 unload[truck_1,city_loc_22,package_16] -> m_unload_ordering_0 57
+46 get_to[truck_1,city_loc_19] -> m_drive_to_ordering_0 47
+41 get_to[truck_1,city_loc_22] -> m_drive_to_via_ordering_0 46 48
+31 load[truck_1,city_loc_20,package_16] -> m_load_ordering_0 32
+19 get_to[truck_1,city_loc_20] -> m_drive_to_ordering_0 20
+17 m_deliver_ordering_0_splitted_1[truck_1,package_16] -> _splitting_method_m_deliver_ordering_0_splitted_1 19 31
+2 deliver[package_16,city_loc_22] -> m_deliver_ordering_0 17 41 56
+0 __top[] -> __top_method 2 63 820 36802 36830 67345 67902 67972 68910 72527 106063 106129 106199 106244 106314 106432 106513 106689 106929 109603 110003 110067 110141 113030 113424
+<==
+
+RUNWATCH_RESULT EXIT RETVAL 0 TIME_SECS 16.6875 MEMPEAK_KBS 3892

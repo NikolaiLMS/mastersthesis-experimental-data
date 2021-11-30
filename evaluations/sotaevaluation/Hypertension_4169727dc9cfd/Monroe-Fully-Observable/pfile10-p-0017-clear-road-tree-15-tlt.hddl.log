@@ -1,0 +1,114 @@
+----------------------Tasks-----------------------
+0 tlt
+1 invisible_goal
+---------------------Planning---------------------
+Time: 375.6211290359497s
+-----------------------Plan-----------------------
+==>
+2 shop_methodm_clear_road_tree_precondition texaco1 park_ridge tree_93545
+8 shop_methodm_get_to_person_drives_themself_precondition wcrew1 texaco1 wtruck1 henrietta_dump
+10 shop_methodm_drive_to_precondition wtruck1 henrietta_dump wcrew1
+12 p_1navegate_vehicle
+13 p_2place_cones
+14 shop_methodm_clear_tree_precondition tree_93545 texaco1
+18 shop_methodm_get_to_already_there_precondition tcrew1 texaco1
+19 p_3cut_tree
+21 shop_methodm_get_to_as_cargo_precondition tree_93545 henrietta_dump texaco1 dtruck1
+26 shop_methodm_get_to_vehicle_gets_driven_precondition dtruck1 texaco1 brighton_high tdriver1
+28 shop_methodm_drive_to_precondition dtruck1 brighton_high tdriver1
+30 p_4navegate_vehicle
+31 shop_methodm_get_in_load_in_precondition tree_93545 texaco1 dtruck1 ht2
+34 shop_methodm_get_to_as_cargo_precondition ht2 texaco1 mendon_pond amb1
+39 shop_methodm_get_to_vehicle_gets_driven_precondition amb1 mendon_pond airport emt1
+41 shop_methodm_drive_to_precondition amb1 airport emt1
+43 p_5navegate_vehicle
+44 shop_methodm_get_in_ambulatory_person_precondition ht2 mendon_pond amb1
+46 p_6climb_in
+47 shop_methodm_get_to_vehicle_gets_driven_precondition amb1 texaco1 mendon_pond emt1
+49 shop_methodm_drive_to_precondition amb1 mendon_pond emt1
+51 p_7navegate_vehicle
+53 p_8climb_out
+54 p_9load
+55 shop_methodm_get_to_vehicle_gets_driven_precondition dtruck1 henrietta_dump texaco1 tdriver1
+57 shop_methodm_drive_to_precondition dtruck1 texaco1 tdriver1
+59 p_10navegate_vehicle
+60 shop_methodm_get_out_unload_precondition dtruck1 henrietta_dump ht2 tree_93545
+63 shop_methodm_get_to_as_cargo_precondition ht2 henrietta_dump texaco1 ttruck1
+68 shop_methodm_get_to_already_there_precondition ttruck1 texaco1
+69 shop_methodm_get_in_ambulatory_person_precondition ht2 texaco1 ttruck1
+71 p_11climb_in
+72 shop_methodm_get_to_vehicle_gets_driven_precondition ttruck1 henrietta_dump texaco1 ttdriver1
+74 shop_methodm_drive_to_precondition ttruck1 texaco1 ttdriver1
+76 p_12navegate_vehicle
+78 p_13climb_out
+79 p_14unload
+82 shop_methodm_get_to_as_cargo_precondition ht2 texaco1 henrietta_dump pvan2
+87 shop_methodm_get_to_vehicle_gets_driven_precondition pvan2 henrietta_dump twelve_corners pu2
+89 shop_methodm_drive_to_precondition pvan2 twelve_corners pu2
+91 p_15navegate_vehicle
+92 shop_methodm_get_in_ambulatory_person_precondition ht2 henrietta_dump pvan2
+94 climb_in ht2 pvan2 henrietta_dump
+95 shop_methodm_get_to_vehicle_gets_driven_precondition pvan2 texaco1 henrietta_dump pu2
+97 shop_methodm_drive_to_precondition pvan2 henrietta_dump pu2
+99 navegate_vehicle pu2 pvan2 texaco1 henrietta_dump
+101 climb_out ht2 pvan2 texaco1
+81 pickup_cones ht2
+root 0
+0 tlt  -> m_tlt_clear_road_tree 1
+1 clear_road_tree texaco1 park_ridge -> m_clear_road_tree 2 3 4 5
+3 set_up_cones texaco1 park_ridge -> m_set_up_cones 6 7
+6 get_to wcrew1 texaco1 -> m_get_to_person_drives_themself 8 9
+9 drive_to wcrew1 wtruck1 texaco1 -> m_drive_to 10 11
+11 cnavegate_vehicle wcrew1 wtruck1 texaco1 henrietta_dump -> prefix_1 12
+7 cplace_cones wcrew1 -> prefix_2 13
+4 clear_tree tree_93545 -> m_clear_tree 14 15 16 17
+15 get_to tcrew1 texaco1 -> m_get_to_already_there 18
+16 ccut_tree tcrew1 tree_93545 -> prefix_3 19
+17 remove_blockage tree_93545 -> m_remove_blockage_carry_away 20
+20 get_to tree_93545 henrietta_dump -> m_get_to_as_cargo 21 22 23 24 25
+22 get_to dtruck1 texaco1 -> m_get_to_vehicle_gets_driven 26 27
+27 drive_to tdriver1 dtruck1 texaco1 -> m_drive_to 28 29
+29 cnavegate_vehicle tdriver1 dtruck1 texaco1 brighton_high -> prefix_4 30
+23 get_in tree_93545 dtruck1 -> m_get_in_load_in 31 32 33
+32 get_to ht2 texaco1 -> m_get_to_as_cargo 34 35 36 37 38
+35 get_to amb1 mendon_pond -> m_get_to_vehicle_gets_driven 39 40
+40 drive_to emt1 amb1 mendon_pond -> m_drive_to 41 42
+42 cnavegate_vehicle emt1 amb1 mendon_pond airport -> prefix_5 43
+36 get_in ht2 amb1 -> m_get_in_ambulatory_person 44 45
+45 cclimb_in ht2 amb1 mendon_pond -> prefix_6 46
+37 get_to amb1 texaco1 -> m_get_to_vehicle_gets_driven 47 48
+48 drive_to emt1 amb1 texaco1 -> m_drive_to 49 50
+50 cnavegate_vehicle emt1 amb1 texaco1 mendon_pond -> prefix_7 51
+38 get_out ht2 amb1 -> m_get_out_ambulatory_person 52
+52 cclimb_out ht2 amb1 texaco1 -> prefix_8 53
+33 cload ht2 tree_93545 dtruck1 texaco1 -> prefix_9 54
+24 get_to dtruck1 henrietta_dump -> m_get_to_vehicle_gets_driven 55 56
+56 drive_to tdriver1 dtruck1 henrietta_dump -> m_drive_to 57 58
+58 cnavegate_vehicle tdriver1 dtruck1 henrietta_dump texaco1 -> prefix_10 59
+25 get_out tree_93545 dtruck1 -> m_get_out_unload 60 61 62
+61 get_to ht2 henrietta_dump -> m_get_to_as_cargo 63 64 65 66 67
+64 get_to ttruck1 texaco1 -> m_get_to_already_there 68
+65 get_in ht2 ttruck1 -> m_get_in_ambulatory_person 69 70
+70 cclimb_in ht2 ttruck1 texaco1 -> prefix_11 71
+66 get_to ttruck1 henrietta_dump -> m_get_to_vehicle_gets_driven 72 73
+73 drive_to ttdriver1 ttruck1 henrietta_dump -> m_drive_to 74 75
+75 cnavegate_vehicle ttdriver1 ttruck1 henrietta_dump texaco1 -> prefix_12 76
+67 get_out ht2 ttruck1 -> m_get_out_ambulatory_person 77
+77 cclimb_out ht2 ttruck1 henrietta_dump -> prefix_13 78
+62 cunload ht2 tree_93545 dtruck1 henrietta_dump -> prefix_14 79
+5 take_down_cones texaco1 park_ridge -> m_take_down_cones 80 81
+80 get_to ht2 texaco1 -> m_get_to_as_cargo 82 83 84 85 86
+83 get_to pvan2 henrietta_dump -> m_get_to_vehicle_gets_driven 87 88
+88 drive_to pu2 pvan2 henrietta_dump -> m_drive_to 89 90
+90 cnavegate_vehicle pu2 pvan2 henrietta_dump twelve_corners -> prefix_15 91
+84 get_in ht2 pvan2 -> m_get_in_ambulatory_person 92 93
+93 cclimb_in ht2 pvan2 henrietta_dump -> regular_3 94
+85 get_to pvan2 texaco1 -> m_get_to_vehicle_gets_driven 95 96
+96 drive_to pu2 pvan2 texaco1 -> m_drive_to 97 98
+98 cnavegate_vehicle pu2 pvan2 texaco1 henrietta_dump -> regular_7 99
+86 get_out ht2 pvan2 -> m_get_out_ambulatory_person 100
+100 cclimb_out ht2 pvan2 texaco1 -> regular_6 101
+<==
+Total time: 375.66187262535095s
+
+RUNWATCH_RESULT EXIT RETVAL 0 TIME_SECS 375.822 MEMPEAK_KBS 25208

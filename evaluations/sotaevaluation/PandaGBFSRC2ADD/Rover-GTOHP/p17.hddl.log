@@ -1,0 +1,504 @@
+pandaPIparser is configured as follows
+  Colors in output: true
+  Mode: parsing mode
+  Parameter splitting: true
+  Conditional effects: exponential encoding
+  Disjunctive preconditions as HTN: false
+  Replace goal with action: false
+  Output: pandaPI format
+General Options
+  Print timings: false
+  Quiet mode: false
+Inference Options
+  H2 mutexes: false
+  FAM groups: false
+Transformation Options
+  Add zero-cost no-op to empty methods: true
+  Remove duplicate actions: true
+  Remove useless literals: true
+  Expand abstract tasks with one method: true
+  Remove empty method preconditions: true
+  Two regularisation: false
+  Compile negative SAS variables: false
+Runtime Optimisations
+  Hierarchy Typing: true
+  Future Caching: false
+  Static Precondition Checking: false
+Output Options
+  Panda planner format: true
+  HDDL: false
+  SAS for Fast Downward (without hierarchy): false
+Output Formatting Options
+  Output only SAS+ variables: false
+  SAS+ delete mode: as input
+Reading input from /home/schnell/lilotane/sotaevaluation//PandaGBFS_runwatchtime_timeout1800_2021-11-16_21:14:14/runwatch_log/897/897.parsed.
+Writing output to /home/schnell/lilotane/sotaevaluation//PandaGBFS_runwatchtime_timeout1800_2021-11-16_21:14:14/runwatch_log/897/897.sas.
+Writing output to standard output.
+Parsing done.
+Conditional Effects expanded
+done.
+Starting Hierarchy Typing
+Total 2.995ms
+Contains 0.205ms
+Restrict 0.425ms
+MPrep 0.353ms
+Finished Hierarchy Typing
+Running PG.
+Process actions without preconditions
+Done.
+ ---> Disabling potentially consistent extension checking for action:           0 (navigate)
+ ---> Disabling potentially consistent extension checking for action:           4 (calibrate)
+ ---> Disabling potentially consistent extension checking for action:           31 (__method_precondition_m15_do_calibrate_split)
+ ---> Disabling potentially consistent extension checking for action:           19 (__method_precondition_m4_do_navigate2)
+ ---> Disabling potentially consistent extension checking for action:           5 (take_image)
+Returning from runGpg().
+PG done. Postprocessing
+PG postprocessing done.
+Calculated [42942] grounded tasks and [21678] reachable facts.
+Running TDG.
+Process actions without preconditions
+Done.
+ ---> Disabling potentially consistent extension checking for action:           1 (_splitting_method_m15_do_calibrate_splitted_1)
+ ---> Disabling potentially consistent extension checking for action:           18 (_splitting_method_m14_send_image_data_splitted_5)
+ ---> Disabling potentially consistent extension checking for action:           21 (_splitting_method_m11_send_rock_data_splitted_6)
+ ---> Disabling potentially consistent extension checking for action:           25 (_splitting_method_m8_send_soil_data_splitted_7)
+ ---> Disabling potentially consistent extension checking for action:           11 (_splitting_method_m13_get_image_data_splitted_2)
+ ---> Disabling potentially consistent extension checking for action:           8 (m4_do_navigate2)
+ ---> Disabling potentially consistent extension checking for action:           5 (m1_do_navigate1)
+ ---> Disabling potentially consistent extension checking for action:           12 (_splitting_method_m13_get_image_data_splitted_9)
+Returning from runGpg().
+TDG done.
+Calculated [65062] grounded tasks and [81574] grounded decomposition methods.
+Performing DFS.
+DFS done.
+After DFS: 56391 tasks, 70620 methods.
+Grounded PG:
+Input was [37352, 56391], output was [37352, 21678].
+Simplifying instance.
+Removing useless facts/literals
+Removing method precondition actions whose precondition is empty
+Expanding abstract tasks with only one method
+Starting duplicate elimination.
+Data structure build.
+31537 duplicates found.
+Duplicates replaced in methods.
+Further Mutex Groups: 0 strict 0 non strict
+Writing instance to output.
+Final Statistics: F 697 S 0 SC 0 SM 0 NSM 0 I 0 P 3959 S 509 A 17750 M 69331
+Exiting.
+Random seed: 42
+Time limit: 1800 seconds
+Reading input from /home/schnell/lilotane/sotaevaluation//PandaGBFS_runwatchtime_timeout1800_2021-11-16_21:14:14/runwatch_log/897/897.sas.
+- State has 697 bits divided into 697 mutex groups.
+- Domain contains 4468 actions.
+- Domain contains 22218 tasks.
+- Domain contains 69331 methods.
+- The initial state contains 74 set bits.
+- The initial task is "__top[]".
+- State-based goal contains 16 bits.
+- Instance is totally-ordered: yes
+- Instance has unique paths: yes
+- Instance is parallel sequences: yes
+Calculate SCCs...
+- Number of SCCs: 8175
+- The problem is cyclic
+- Number of cyclic SCCs: 1036
+- Number of cyclic SCCs of size 1: 0
+Selected Planning Algorithm: progression searchParsing heuristics ...
+Number of specified heuristics: 1
+- the option "store cuts" of the RC heuristic can only be used with the inner heuristic LM-Cut. It will be disabled.
+- Calculating minimal implied costs and distances (74 ms)
+Heuristic #0 = hhRC2(add;distance;correct count)
+Search config:
+ - type: path cost
+ - weight: 1
+ - suboptimal: false
+Visited List configured
+- mode: total order
+- hashs to use: state task task-sequence
+- memory information: topological ordering
+- Visited list allows deletion of search nodes: true
+Search Configuration
+- Using JAIR 2020 progression algorithm
+- Search is stopped after first solution is found.
+- A* Search
+- Distance G is "modification depth"
+   5s visitime    0.00s generated nodes      5017 nodes/sec     960 cur h  226 mod.depth   72 inserts       183 dups         6 size       177 hash fail      6 hash buckets    177
+  10s visitime    0.01s generated nodes     10020 nodes/sec     957 cur h  212 mod.depth   91 inserts       346 dups        16 size       330 hash fail     16 hash buckets    330
+  14s visitime    0.01s generated nodes     15044 nodes/sec    1045 cur h  214 mod.depth   88 inserts       510 dups        17 size       493 hash fail     17 hash buckets    493
+  18s visitime    0.01s generated nodes     20070 nodes/sec    1112 cur h  192 mod.depth  112 inserts       666 dups        19 size       647 hash fail     19 hash buckets    647
+  22s visitime    0.02s generated nodes     25092 nodes/sec    1125 cur h  206 mod.depth   99 inserts       835 dups        23 size       812 hash fail     23 hash buckets    812
+  27s visitime    0.02s generated nodes     30098 nodes/sec    1094 cur h  200 mod.depth  106 inserts      1019 dups        23 size       996 hash fail     23 hash buckets    996
+  34s visitime    0.03s generated nodes     35114 nodes/sec    1019 cur h  187 mod.depth  117 inserts      1261 dups        40 size      1221 hash fail     40 hash buckets   1221
+  41s visitime    0.03s generated nodes     40117 nodes/sec     977 cur h  188 mod.depth  120 inserts      1466 dups        49 size      1417 hash fail     49 hash buckets   1417
+  46s visitime    0.03s generated nodes     45155 nodes/sec     966 cur h  188 mod.depth  117 inserts      1650 dups        54 size      1596 hash fail     54 hash buckets   1596
+  51s visitime    0.04s generated nodes     50161 nodes/sec     965 cur h  225 mod.depth   83 inserts      1819 dups        56 size      1763 hash fail     56 hash buckets   1763
+  56s visitime    0.04s generated nodes     55198 nodes/sec     974 cur h  191 mod.depth  117 inserts      1994 dups        59 size      1935 hash fail     59 hash buckets   1935
+  62s visitime    0.04s generated nodes     60223 nodes/sec     970 cur h  210 mod.depth   93 inserts      2198 dups        60 size      2138 hash fail     60 hash buckets   2138
+  66s visitime    0.05s generated nodes     65245 nodes/sec     982 cur h  204 mod.depth  104 inserts      2371 dups        60 size      2311 hash fail     60 hash buckets   2311
+  70s visitime    0.05s generated nodes     70264 nodes/sec     995 cur h  221 mod.depth   88 inserts      2548 dups        62 size      2486 hash fail     62 hash buckets   2486
+  75s visitime    0.05s generated nodes     75271 nodes/sec     999 cur h  225 mod.depth   84 inserts      2733 dups        64 size      2669 hash fail     64 hash buckets   2669
+  79s visitime    0.06s generated nodes     80293 nodes/sec    1006 cur h  204 mod.depth  104 inserts      2926 dups        68 size      2858 hash fail     68 hash buckets   2858
+  84s visitime    0.06s generated nodes     85339 nodes/sec    1013 cur h  204 mod.depth  104 inserts      3100 dups        70 size      3030 hash fail     70 hash buckets   3030
+  88s visitime    0.07s generated nodes     90376 nodes/sec    1024 cur h  180 mod.depth  128 inserts      3272 dups        70 size      3202 hash fail     71 hash buckets   3201
+  92s visitime    0.07s generated nodes     95393 nodes/sec    1025 cur h  187 mod.depth  123 inserts      3456 dups        78 size      3378 hash fail     79 hash buckets   3377
+  97s visitime    0.07s generated nodes    100408 nodes/sec    1024 cur h  202 mod.depth  102 inserts      3641 dups        81 size      3560 hash fail     82 hash buckets   3559
+ 103s visitime    0.08s generated nodes    105422 nodes/sec    1019 cur h  242 mod.depth   64 inserts      3825 dups        82 size      3743 hash fail     83 hash buckets   3742
+ 107s visitime    0.08s generated nodes    110457 nodes/sec    1023 cur h  205 mod.depth  105 inserts      4004 dups        85 size      3919 hash fail     86 hash buckets   3918
+ 112s visitime    0.08s generated nodes    115473 nodes/sec    1025 cur h  215 mod.depth   94 inserts      4179 dups        87 size      4092 hash fail     88 hash buckets   4091
+ 117s visitime    0.09s generated nodes    120515 nodes/sec    1024 cur h  187 mod.depth  123 inserts      4357 dups        87 size      4270 hash fail     88 hash buckets   4269
+ 123s visitime    0.09s generated nodes    125544 nodes/sec    1017 cur h  221 mod.depth   85 inserts      4540 dups        91 size      4449 hash fail     92 hash buckets   4448
+ 128s visitime    0.09s generated nodes    130553 nodes/sec    1013 cur h  224 mod.depth   85 inserts      4700 dups       102 size      4598 hash fail    104 hash buckets   4596
+ 133s visitime    0.10s generated nodes    135594 nodes/sec    1015 cur h  188 mod.depth  117 inserts      4868 dups       108 size      4760 hash fail    110 hash buckets   4758
+ 138s visitime    0.10s generated nodes    140642 nodes/sec    1014 cur h  252 mod.depth   54 inserts      5051 dups       110 size      4941 hash fail    112 hash buckets   4939
+ 143s visitime    0.11s generated nodes    145662 nodes/sec    1013 cur h  203 mod.depth  105 inserts      5226 dups       114 size      5112 hash fail    116 hash buckets   5110
+ 148s visitime    0.11s generated nodes    150667 nodes/sec    1016 cur h  192 mod.depth  118 inserts      5394 dups       116 size      5278 hash fail    119 hash buckets   5275
+ 153s visitime    0.11s generated nodes    155676 nodes/sec    1017 cur h  229 mod.depth   82 inserts      5575 dups       121 size      5454 hash fail    124 hash buckets   5451
+ 158s visitime    0.12s generated nodes    160680 nodes/sec    1014 cur h  238 mod.depth   73 inserts      5765 dups       123 size      5642 hash fail    126 hash buckets   5639
+ 163s visitime    0.12s generated nodes    165686 nodes/sec    1013 cur h  209 mod.depth  102 inserts      5962 dups       130 size      5832 hash fail    133 hash buckets   5829
+ 168s visitime    0.12s generated nodes    170692 nodes/sec    1010 cur h  207 mod.depth  104 inserts      6152 dups       137 size      6015 hash fail    140 hash buckets   6012
+ 175s visitime    0.13s generated nodes    175733 nodes/sec    1004 cur h  207 mod.depth  104 inserts      6350 dups       144 size      6206 hash fail    147 hash buckets   6203
+ 180s visitime    0.13s generated nodes    180766 nodes/sec     999 cur h  198 mod.depth  109 inserts      6536 dups       146 size      6390 hash fail    149 hash buckets   6387
+ 186s visitime    0.14s generated nodes    185803 nodes/sec     995 cur h  207 mod.depth  104 inserts      6715 dups       151 size      6564 hash fail    154 hash buckets   6561
+ 191s visitime    0.14s generated nodes    190816 nodes/sec     995 cur h  200 mod.depth  111 inserts      6893 dups       154 size      6739 hash fail    157 hash buckets   6736
+ 197s visitime    0.14s generated nodes    195824 nodes/sec     992 cur h  205 mod.depth  107 inserts      7091 dups       161 size      6930 hash fail    164 hash buckets   6927
+ 203s visitime    0.15s generated nodes    200859 nodes/sec     989 cur h  189 mod.depth  123 inserts      7318 dups       168 size      7150 hash fail    171 hash buckets   7147
+ 208s visitime    0.15s generated nodes    205905 nodes/sec     987 cur h  229 mod.depth   83 inserts      7518 dups       171 size      7347 hash fail    175 hash buckets   7343
+ 214s visitime    0.16s generated nodes    210931 nodes/sec     985 cur h  221 mod.depth   90 inserts      7713 dups       176 size      7537 hash fail    180 hash buckets   7533
+ 219s visitime    0.16s generated nodes    215933 nodes/sec     984 cur h  202 mod.depth  110 inserts      7914 dups       186 size      7728 hash fail    190 hash buckets   7724
+ 224s visitime    0.16s generated nodes    220964 nodes/sec     983 cur h  213 mod.depth   96 inserts      8109 dups       193 size      7916 hash fail    197 hash buckets   7912
+ 229s visitime    0.17s generated nodes    225999 nodes/sec     984 cur h  237 mod.depth   69 inserts      8314 dups       199 size      8115 hash fail    203 hash buckets   8111
+ 235s visitime    0.17s generated nodes    230999 nodes/sec     982 cur h  209 mod.depth  103 inserts      8494 dups       207 size      8287 hash fail    211 hash buckets   8283
+ 240s visitime    0.18s generated nodes    236021 nodes/sec     979 cur h  183 mod.depth  128 inserts      8693 dups       216 size      8477 hash fail    220 hash buckets   8473
+ 246s visitime    0.18s generated nodes    241023 nodes/sec     979 cur h  216 mod.depth   96 inserts      8890 dups       217 size      8673 hash fail    221 hash buckets   8669
+ 250s visitime    0.18s generated nodes    246059 nodes/sec     981 cur h  224 mod.depth   83 inserts      9072 dups       220 size      8852 hash fail    224 hash buckets   8848
+ 255s visitime    0.19s generated nodes    251073 nodes/sec     981 cur h  204 mod.depth  107 inserts      9246 dups       221 size      9025 hash fail    225 hash buckets   9021
+ 260s visitime    0.19s generated nodes    256077 nodes/sec     982 cur h  237 mod.depth   69 inserts      9429 dups       225 size      9204 hash fail    229 hash buckets   9200
+ 266s visitime    0.20s generated nodes    261120 nodes/sec     980 cur h  168 mod.depth  144 inserts      9602 dups       230 size      9372 hash fail    235 hash buckets   9367
+ 271s visitime    0.20s generated nodes    266144 nodes/sec     981 cur h  234 mod.depth   69 inserts      9791 dups       236 size      9555 hash fail    241 hash buckets   9550
+ 276s visitime    0.20s generated nodes    271167 nodes/sec     980 cur h  176 mod.depth  136 inserts      9968 dups       241 size      9727 hash fail    246 hash buckets   9722
+ 281s visitime    0.21s generated nodes    276213 nodes/sec     980 cur h  190 mod.depth  122 inserts     10170 dups       250 size      9920 hash fail    255 hash buckets   9915
+ 286s visitime    0.21s generated nodes    281218 nodes/sec     980 cur h  190 mod.depth  122 inserts     10364 dups       257 size     10107 hash fail    262 hash buckets  10102
+ 291s visitime    0.21s generated nodes    286251 nodes/sec     980 cur h  190 mod.depth  122 inserts     10551 dups       264 size     10287 hash fail    269 hash buckets  10282
+ 296s visitime    0.22s generated nodes    291290 nodes/sec     981 cur h  176 mod.depth  134 inserts     10739 dups       269 size     10470 hash fail    274 hash buckets  10465
+ 301s visitime    0.22s generated nodes    296293 nodes/sec     982 cur h  207 mod.depth  102 inserts     10917 dups       271 size     10646 hash fail    276 hash buckets  10641
+ 306s visitime    0.23s generated nodes    301300 nodes/sec     982 cur h  169 mod.depth  144 inserts     11099 dups       278 size     10821 hash fail    283 hash buckets  10816
+ 312s visitime    0.23s generated nodes    306331 nodes/sec     981 cur h  187 mod.depth  126 inserts     11304 dups       291 size     11013 hash fail    296 hash buckets  11008
+ 317s visitime    0.23s generated nodes    311335 nodes/sec     981 cur h  169 mod.depth  144 inserts     11501 dups       295 size     11206 hash fail    300 hash buckets  11201
+Search Results
+- Search time 322.38 seconds
+- Visited list time 0.24 seconds
+- Visited list inserts 11581
+- Visited list pruned 296
+- Visited list contains 11285
+- Visited list hash collisions 301
+- Visited list used hash buckets 11280
+- Generated 313599 search nodes
+  Calculated heuristic for 260980 nodes
+  One modifications 33704
+  Effectless actions 18915
+- including 33704 one modification actions
+- including 0 one modification methods
+- and       18915 progressions of effectless actions
+- Generated 809 nodes per second
+- Final fringe contains 17863 nodes
+- Status: Solved
+- Found solution of length 292
+- Total costs of actions: 127
+==>
+9 __method_precondition_m1_do_navigate1[rover1,waypoint9]
+10 nop[]
+59 __method_precondition_m5_empty_store[rover1store]
+60 nop[]
+61 sample_soil[rover1,rover1store,waypoint9]
+64 __method_precondition_m1_do_navigate1[rover1,waypoint9]
+65 communicate_soil_data2[rover1,general,waypoint9,waypoint3]
+212 __method_precondition_m1_do_navigate1[rover3,waypoint8]
+213 visit[waypoint8]
+315 navigate[rover3,waypoint8,waypoint14]
+316 unvisit[waypoint8]
+318 __method_precondition_m5_empty_store[rover3store]
+319 nop[]
+320 sample_soil[rover3,rover3store,waypoint14]
+333 __method_precondition_m1_do_navigate1[rover3,waypoint14]
+334 visit[waypoint14]
+725 __method_precondition_m4_do_navigate2[rover7,waypoint19,waypoint1,waypoint8]
+726 navigate[rover3,waypoint14,waypoint8]
+727 visit[waypoint8]
+1030 navigate[rover3,waypoint8,waypoint22]
+1031 unvisit[waypoint8]
+1032 unvisit[waypoint14]
+1033 communicate_soil_data1[rover3,general,waypoint14,waypoint22,waypoint3]
+1062 __method_precondition_m1_do_navigate1[rover3,waypoint22]
+1063 visit[waypoint22]
+1090 navigate[rover3,waypoint22,waypoint28]
+1091 unvisit[waypoint22]
+1094 __method_precondition_m6_empty_store[rover3store]
+1095 drop[rover3,rover3store]
+1096 sample_soil[rover3,rover3store,waypoint28]
+1098 __method_precondition_m1_do_navigate1[rover3,waypoint28]
+1099 communicate_soil_data2[rover3,general,waypoint28,waypoint3]
+1109 __method_precondition_m1_do_navigate1[rover2,waypoint2]
+1110 nop[]
+1158 __method_precondition_m5_empty_store[rover2store]
+1159 nop[]
+1160 sample_soil[rover2,rover2store,waypoint2]
+1174 __method_precondition_m1_do_navigate1[rover2,waypoint2]
+1175 visit[waypoint2]
+1313 navigate[rover2,waypoint2,waypoint33]
+1314 unvisit[waypoint2]
+1315 communicate_soil_data1[rover2,general,waypoint2,waypoint33,waypoint3]
+1324 __method_precondition_m0_do_navigate1[rover9,waypoint23]
+1325 nop[]
+1371 __method_precondition_m5_empty_store[rover9store]
+1372 nop[]
+1373 sample_soil[rover9,rover9store,waypoint23]
+1396 __method_precondition_m0_do_navigate1[rover9,waypoint23]
+1397 visit[waypoint23]
+1900 navigate[rover9,waypoint23,waypoint33]
+1901 unvisit[waypoint23]
+1902 communicate_soil_data1[rover9,general,waypoint23,waypoint33,waypoint3]
+1987 __method_precondition_m1_do_navigate1[rover9,waypoint33]
+1988 visit[waypoint33]
+3383 __method_precondition_m4_do_navigate2[rover7,waypoint19,waypoint1,waypoint23]
+3384 navigate[rover9,waypoint33,waypoint23]
+3385 visit[waypoint23]
+10664 navigate[rover9,waypoint23,waypoint26]
+10665 unvisit[waypoint23]
+10666 unvisit[waypoint33]
+11097 __method_precondition_m6_empty_store[rover9store]
+11098 drop[rover9,rover9store]
+11099 sample_soil[rover9,rover9store,waypoint26]
+11159 __method_precondition_m1_do_navigate1[rover9,waypoint26]
+11160 visit[waypoint26]
+20014 __method_precondition_m4_do_navigate2[rover7,waypoint19,waypoint1,waypoint23]
+20015 navigate[rover9,waypoint26,waypoint23]
+20016 visit[waypoint23]
+22610 navigate[rover9,waypoint23,waypoint31]
+22611 unvisit[waypoint23]
+22612 unvisit[waypoint26]
+22613 communicate_soil_data1[rover9,general,waypoint26,waypoint31,waypoint3]
+22626 __method_precondition_m1_do_navigate1[rover4,waypoint28]
+22627 visit[waypoint28]
+22764 navigate[rover4,waypoint28,waypoint23]
+22765 unvisit[waypoint28]
+22767 __method_precondition_m5_empty_store[rover4store]
+22768 nop[]
+22769 sample_rock[rover4,rover4store,waypoint23]
+22785 __method_precondition_m1_do_navigate1[rover4,waypoint23]
+22786 visit[waypoint23]
+27168 navigate[rover4,waypoint23,waypoint28]
+27169 unvisit[waypoint23]
+27170 communicate_rock_data1[rover4,general,waypoint23,waypoint28,waypoint3]
+27176 __method_precondition_m1_do_navigate1[rover5,waypoint18]
+27177 nop[]
+27226 __method_precondition_m5_empty_store[rover5store]
+27227 nop[]
+27228 sample_rock[rover5,rover5store,waypoint18]
+27242 __method_precondition_m1_do_navigate1[rover5,waypoint18]
+27243 visit[waypoint18]
+37947 navigate[rover5,waypoint18,waypoint43]
+37948 unvisit[waypoint18]
+37949 communicate_rock_data1[rover5,general,waypoint18,waypoint43,waypoint3]
+37973 __method_precondition_m1_do_navigate1[rover7,waypoint19]
+37974 visit[waypoint19]
+91966 navigate[rover7,waypoint19,waypoint11]
+91967 unvisit[waypoint19]
+91969 __method_precondition_m5_empty_store[rover7store]
+91970 nop[]
+91971 sample_rock[rover7,rover7store,waypoint11]
+91983 __method_precondition_m1_do_navigate1[rover7,waypoint11]
+91984 visit[waypoint11]
+92031 navigate[rover7,waypoint11,waypoint33]
+92032 unvisit[waypoint11]
+92033 communicate_rock_data1[rover7,general,waypoint11,waypoint33,waypoint3]
+92079 __method_precondition_m1_do_navigate1[rover5,waypoint43]
+92080 visit[waypoint43]
+92184 __method_precondition_m4_do_navigate2[rover7,waypoint19,waypoint1,waypoint18]
+92185 navigate[rover5,waypoint43,waypoint18]
+92186 visit[waypoint18]
+241995 navigate[rover5,waypoint18,waypoint36]
+241996 unvisit[waypoint18]
+241997 unvisit[waypoint43]
+242000 __method_precondition_m6_empty_store[rover5store]
+242001 drop[rover5,rover5store]
+242002 sample_rock[rover5,rover5store,waypoint36]
+242020 __method_precondition_m1_do_navigate1[rover5,waypoint36]
+242021 visit[waypoint36]
+242349 __method_precondition_m4_do_navigate2[rover7,waypoint19,waypoint1,waypoint18]
+242350 navigate[rover5,waypoint36,waypoint18]
+242351 visit[waypoint18]
+312184 navigate[rover5,waypoint18,waypoint43]
+312185 unvisit[waypoint18]
+312186 unvisit[waypoint36]
+312187 communicate_rock_data1[rover5,general,waypoint36,waypoint43,waypoint3]
+312240 __method_precondition_m1_do_navigate1[rover1,waypoint9]
+312241 nop[]
+312242 calibrate[rover1,camera3,objective3,waypoint9]
+312319 __method_precondition_m1_do_navigate1[rover1,waypoint9]
+312320 nop[]
+312321 take_image[rover1,waypoint9,objective5,camera3,high_res]
+312378 __method_precondition_m1_do_navigate1[rover1,waypoint9]
+312379 nop[]
+312380 communicate_image_data[rover1,general,objective5,high_res,waypoint9,waypoint3]
+312474 __method_precondition_m1_do_navigate1[rover4,waypoint28]
+312475 nop[]
+312476 calibrate[rover4,camera9,objective0,waypoint28]
+312568 __method_precondition_m1_do_navigate1[rover4,waypoint28]
+312569 nop[]
+312570 take_image[rover4,waypoint28,objective3,camera9,colour]
+312627 __method_precondition_m1_do_navigate1[rover4,waypoint28]
+312628 nop[]
+312629 communicate_image_data[rover4,general,objective3,colour,waypoint28,waypoint3]
+312710 __method_precondition_m1_do_navigate1[rover1,waypoint9]
+312711 nop[]
+312712 calibrate[rover1,camera1,objective5,waypoint9]
+312789 __method_precondition_m1_do_navigate1[rover1,waypoint9]
+312790 nop[]
+312791 take_image[rover1,waypoint9,objective5,camera1,low_res]
+312848 __method_precondition_m1_do_navigate1[rover1,waypoint9]
+312849 nop[]
+312850 communicate_image_data[rover1,general,objective5,low_res,waypoint9,waypoint3]
+312945 __method_precondition_m1_do_navigate1[rover9,waypoint31]
+312946 nop[]
+312947 calibrate[rover9,camera14,objective3,waypoint31]
+313033 __method_precondition_m1_do_navigate1[rover9,waypoint31]
+313034 nop[]
+313035 take_image[rover9,waypoint31,objective3,camera14,high_res]
+313088 __method_precondition_m1_do_navigate1[rover9,waypoint31]
+313089 nop[]
+313090 communicate_image_data[rover9,general,objective3,high_res,waypoint31,waypoint3]
+313182 __method_precondition_m1_do_navigate1[rover9,waypoint31]
+313183 nop[]
+313184 calibrate[rover9,camera14,objective3,waypoint31]
+313260 __method_precondition_m1_do_navigate1[rover9,waypoint31]
+313261 nop[]
+313262 take_image[rover9,waypoint31,objective1,camera14,high_res]
+313315 __method_precondition_m1_do_navigate1[rover9,waypoint31]
+313316 nop[]
+313317 communicate_image_data[rover9,general,objective1,high_res,waypoint31,waypoint3]
+313428 __method_precondition_m1_do_navigate1[rover1,waypoint9]
+313429 nop[]
+313430 calibrate[rover1,camera10,objective5,waypoint9]
+313489 __method_precondition_m1_do_navigate1[rover1,waypoint9]
+313490 nop[]
+313491 take_image[rover1,waypoint9,objective7,camera10,colour]
+313548 __method_precondition_m1_do_navigate1[rover1,waypoint9]
+313549 nop[]
+313550 communicate_image_data[rover1,general,objective7,colour,waypoint9,waypoint3]
+root 0
+313547 do_navigate1[rover1,waypoint9] -> m0_do_navigate1 313548 313549
+313539 m14_send_image_data_splitted_10[rover1,general,objective7,colour] -> <_splitting_method_m14_send_image_data_splitted_10;m14_send_image_data_splitted_5[rover1,general,objective7,colour,waypoint9];_splitting_method_m14_send_image_data_splitted_5;1;0,-1> 313547 313550
+313488 do_navigate1[rover1,waypoint9] -> m0_do_navigate1 313489 313490
+313481 m13_get_image_data_splitted_2[rover1,objective7,camera10,colour] -> _splitting_method_m13_get_image_data_splitted_2 313488 313491
+313427 do_navigate1[rover1,waypoint9] -> m0_do_navigate1 313428 313429
+313386 m15_do_calibrate_splitted_8[rover1,camera10] -> <_splitting_method_m15_do_calibrate_splitted_8;m15_do_calibrate_splitted_1[rover1,camera10,waypoint9];_splitting_method_m15_do_calibrate_splitted_1;1;0,-1> 313427 313430
+313370 m13_get_image_data_splitted_9[rover1,colour,objective7] -> <_splitting_method_m13_get_image_data_splitted_9;do_calibrate[rover1,camera10];m15_do_calibrate;0;-1,1> 313386 313481
+313367 get_image_data[objective7,colour] -> <m13_get_image_data;send_image_data[rover1,objective7,colour];m14_send_image_data;1;0,-1> 313370 313539
+313314 do_navigate1[rover9,waypoint31] -> m0_do_navigate1 313315 313316
+313312 m14_send_image_data_splitted_10[rover9,general,objective1,high_res] -> <_splitting_method_m14_send_image_data_splitted_10;m14_send_image_data_splitted_5[rover9,general,objective1,high_res,waypoint31];_splitting_method_m14_send_image_data_splitted_5;1;0,-1> 313314 313317
+313259 do_navigate1[rover9,waypoint31] -> m0_do_navigate1 313260 313261
+313258 m13_get_image_data_splitted_2[rover9,objective1,camera14,high_res] -> _splitting_method_m13_get_image_data_splitted_2 313259 313262
+313181 do_navigate1[rover9,waypoint31] -> m0_do_navigate1 313182 313183
+313167 m15_do_calibrate_splitted_8[rover9,camera14] -> <_splitting_method_m15_do_calibrate_splitted_8;m15_do_calibrate_splitted_1[rover9,camera14,waypoint31];_splitting_method_m15_do_calibrate_splitted_1;1;0,-1> 313181 313184
+313138 get_image_data[objective1,high_res] -> <<<m13_get_image_data;m13_get_image_data_splitted_9[rover9,high_res,objective1];_splitting_method_m13_get_image_data_splitted_9;0;-1,-2,1>;do_calibrate[rover9,camera14];m15_do_calibrate;0;-1,1,2>;send_image_data[rover9,objective1,high_res];m14_send_image_data;2;0,1,-1> 313167 313258 313312
+313087 do_navigate1[rover9,waypoint31] -> m0_do_navigate1 313088 313089
+313085 m14_send_image_data_splitted_10[rover9,general,objective3,high_res] -> <_splitting_method_m14_send_image_data_splitted_10;m14_send_image_data_splitted_5[rover9,general,objective3,high_res,waypoint31];_splitting_method_m14_send_image_data_splitted_5;1;0,-1> 313087 313090
+313032 do_navigate1[rover9,waypoint31] -> m0_do_navigate1 313033 313034
+313031 m13_get_image_data_splitted_2[rover9,objective3,camera14,high_res] -> _splitting_method_m13_get_image_data_splitted_2 313032 313035
+312944 do_navigate1[rover9,waypoint31] -> m0_do_navigate1 312945 312946
+312930 m15_do_calibrate_splitted_8[rover9,camera14] -> <_splitting_method_m15_do_calibrate_splitted_8;m15_do_calibrate_splitted_1[rover9,camera14,waypoint31];_splitting_method_m15_do_calibrate_splitted_1;1;0,-1> 312944 312947
+312901 get_image_data[objective3,high_res] -> <<m13_get_image_data;m13_get_image_data_splitted_9[rover9,high_res,objective3];<_splitting_method_m13_get_image_data_splitted_9;do_calibrate[rover9,camera14];m15_do_calibrate;0;-1,1>;0;-1,-2,1>;send_image_data[rover9,objective3,high_res];m14_send_image_data;2;0,1,-1> 312930 313031 313085
+312847 do_navigate1[rover1,waypoint9] -> m0_do_navigate1 312848 312849
+312839 m14_send_image_data_splitted_10[rover1,general,objective5,low_res] -> <_splitting_method_m14_send_image_data_splitted_10;m14_send_image_data_splitted_5[rover1,general,objective5,low_res,waypoint9];_splitting_method_m14_send_image_data_splitted_5;1;0,-1> 312847 312850
+312788 do_navigate1[rover1,waypoint9] -> m0_do_navigate1 312789 312790
+312772 m13_get_image_data_splitted_2[rover1,objective5,camera1,low_res] -> _splitting_method_m13_get_image_data_splitted_2 312788 312791
+312709 do_navigate1[rover1,waypoint9] -> m0_do_navigate1 312710 312711
+312704 m15_do_calibrate_splitted_8[rover1,camera1] -> <_splitting_method_m15_do_calibrate_splitted_8;m15_do_calibrate_splitted_1[rover1,camera1,waypoint9];_splitting_method_m15_do_calibrate_splitted_1;1;0,-1> 312709 312712
+312680 get_image_data[objective5,low_res] -> <<m13_get_image_data;m13_get_image_data_splitted_9[rover1,low_res,objective5];<_splitting_method_m13_get_image_data_splitted_9;do_calibrate[rover1,camera1];m15_do_calibrate;0;-1,1>;0;-1,-2,1>;send_image_data[rover1,objective5,low_res];m14_send_image_data;2;0,1,-1> 312704 312772 312839
+312626 do_navigate1[rover4,waypoint28] -> m0_do_navigate1 312627 312628
+312625 m14_send_image_data_splitted_10[rover4,general,objective3,colour] -> <_splitting_method_m14_send_image_data_splitted_10;m14_send_image_data_splitted_5[rover4,general,objective3,colour,waypoint28];_splitting_method_m14_send_image_data_splitted_5;1;0,-1> 312626 312629
+312567 do_navigate1[rover4,waypoint28] -> m0_do_navigate1 312568 312569
+312534 m13_get_image_data_splitted_2[rover4,objective3,camera9,colour] -> _splitting_method_m13_get_image_data_splitted_2 312567 312570
+312473 do_navigate1[rover4,waypoint28] -> m0_do_navigate1 312474 312475
+312446 m15_do_calibrate_splitted_8[rover4,camera9] -> <_splitting_method_m15_do_calibrate_splitted_8;m15_do_calibrate_splitted_1[rover4,camera9,waypoint28];_splitting_method_m15_do_calibrate_splitted_1;1;0,-1> 312473 312476
+312432 get_image_data[objective3,colour] -> <<m13_get_image_data;m13_get_image_data_splitted_9[rover4,colour,objective3];<_splitting_method_m13_get_image_data_splitted_9;do_calibrate[rover4,camera9];m15_do_calibrate;0;-1,1>;0;-1,-2,1>;send_image_data[rover4,objective3,colour];m14_send_image_data;2;0,1,-1> 312446 312534 312625
+312377 do_navigate1[rover1,waypoint9] -> m0_do_navigate1 312378 312379
+312369 m14_send_image_data_splitted_10[rover1,general,objective5,high_res] -> <_splitting_method_m14_send_image_data_splitted_10;m14_send_image_data_splitted_5[rover1,general,objective5,high_res,waypoint9];_splitting_method_m14_send_image_data_splitted_5;1;0,-1> 312377 312380
+312318 do_navigate1[rover1,waypoint9] -> m0_do_navigate1 312319 312320
+312302 m13_get_image_data_splitted_2[rover1,objective5,camera3,high_res] -> _splitting_method_m13_get_image_data_splitted_2 312318 312321
+312239 do_navigate1[rover1,waypoint9] -> m0_do_navigate1 312240 312241
+312210 m15_do_calibrate_splitted_8[rover1,camera3] -> <_splitting_method_m15_do_calibrate_splitted_8;m15_do_calibrate_splitted_1[rover1,camera3,waypoint9];_splitting_method_m15_do_calibrate_splitted_1;1;0,-1> 312239 312242
+312194 m13_get_image_data_splitted_9[rover1,high_res,objective5] -> <_splitting_method_m13_get_image_data_splitted_9;do_calibrate[rover1,camera3];m15_do_calibrate;0;-1,1> 312210 312302
+312193 get_image_data[objective5,high_res] -> <m13_get_image_data;send_image_data[rover1,objective5,high_res];m14_send_image_data;1;0,-1> 312194 312369
+312183 do_navigate2[rover5,waypoint18,waypoint43] -> m3_do_navigate2 312184
+242348 do_navigate2[rover5,waypoint36,waypoint43] -> m4_do_navigate2 242349 242350 242351 312183 312185
+242019 do_navigate1[rover5,waypoint43] -> m1_do_navigate1 242020 242021 242348 312186
+242006 m11_send_rock_data_splitted_11[rover5,general,waypoint36] -> <_splitting_method_m11_send_rock_data_splitted_11;m11_send_rock_data_splitted_6[rover5,general,waypoint36,waypoint43];_splitting_method_m11_send_rock_data_splitted_6;1;0,-1> 242019 312187
+241999 empty_store[rover5store,rover5] -> m6_empty_store 242000 242001
+241994 do_navigate2[rover5,waypoint18,waypoint36] -> m3_do_navigate2 241995
+92183 do_navigate2[rover5,waypoint43,waypoint36] -> m4_do_navigate2 92184 92185 92186 241994 241996
+92078 do_navigate1[rover5,waypoint36] -> m1_do_navigate1 92079 92080 92183 241997
+92037 get_rock_data[waypoint36] -> <<m10_get_rock_data;m10_get_rock_data_splitted_3[rover5,waypoint36];_splitting_method_m10_get_rock_data_splitted_3;1;0,-1,-2,2>;send_rock_data[rover5,waypoint36];m11_send_rock_data;3;0,1,2,-1> 92078 241999 242002 242006
+92030 do_navigate2[rover7,waypoint11,waypoint33] -> m3_do_navigate2 92031
+91982 do_navigate1[rover7,waypoint33] -> m1_do_navigate1 91983 91984 92030 92032
+91974 m11_send_rock_data_splitted_11[rover7,general,waypoint11] -> <_splitting_method_m11_send_rock_data_splitted_11;m11_send_rock_data_splitted_6[rover7,general,waypoint11,waypoint33];_splitting_method_m11_send_rock_data_splitted_6;1;0,-1> 91982 92033
+91968 empty_store[rover7store,rover7] -> m5_empty_store 91969 91970
+91965 do_navigate2[rover7,waypoint19,waypoint11] -> m3_do_navigate2 91966
+37972 do_navigate1[rover7,waypoint11] -> m1_do_navigate1 37973 37974 91965 91967
+37953 get_rock_data[waypoint11] -> <<m10_get_rock_data;m10_get_rock_data_splitted_3[rover7,waypoint11];_splitting_method_m10_get_rock_data_splitted_3;1;0,-1,-2,2>;send_rock_data[rover7,waypoint11];m11_send_rock_data;3;0,1,2,-1> 37972 91968 91971 91974
+37946 do_navigate2[rover5,waypoint18,waypoint43] -> m3_do_navigate2 37947
+27241 do_navigate1[rover5,waypoint43] -> m1_do_navigate1 27242 27243 37946 37948
+27233 m11_send_rock_data_splitted_11[rover5,general,waypoint18] -> <_splitting_method_m11_send_rock_data_splitted_11;m11_send_rock_data_splitted_6[rover5,general,waypoint18,waypoint43];_splitting_method_m11_send_rock_data_splitted_6;1;0,-1> 27241 37949
+27225 empty_store[rover5store,rover5] -> m5_empty_store 27226 27227
+27175 do_navigate1[rover5,waypoint18] -> m0_do_navigate1 27176 27177
+27174 get_rock_data[waypoint18] -> <<m10_get_rock_data;m10_get_rock_data_splitted_3[rover5,waypoint18];_splitting_method_m10_get_rock_data_splitted_3;1;0,-1,-2,2>;send_rock_data[rover5,waypoint18];m11_send_rock_data;3;0,1,2,-1> 27175 27225 27228 27233
+27167 do_navigate2[rover4,waypoint23,waypoint28] -> m3_do_navigate2 27168
+22784 do_navigate1[rover4,waypoint28] -> m1_do_navigate1 22785 22786 27167 27169
+22775 m11_send_rock_data_splitted_11[rover4,general,waypoint23] -> <_splitting_method_m11_send_rock_data_splitted_11;m11_send_rock_data_splitted_6[rover4,general,waypoint23,waypoint28];_splitting_method_m11_send_rock_data_splitted_6;1;0,-1> 22784 27170
+22766 empty_store[rover4store,rover4] -> m5_empty_store 22767 22768
+22763 do_navigate2[rover4,waypoint28,waypoint23] -> m3_do_navigate2 22764
+22625 do_navigate1[rover4,waypoint23] -> m1_do_navigate1 22626 22627 22763 22765
+22614 get_rock_data[waypoint23] -> <<m10_get_rock_data;m10_get_rock_data_splitted_3[rover4,waypoint23];_splitting_method_m10_get_rock_data_splitted_3;1;0,-1,-2,2>;send_rock_data[rover4,waypoint23];m11_send_rock_data;3;0,1,2,-1> 22625 22766 22769 22775
+22609 do_navigate2[rover9,waypoint23,waypoint31] -> m3_do_navigate2 22610
+20013 do_navigate2[rover9,waypoint26,waypoint31] -> m4_do_navigate2 20014 20015 20016 22609 22611
+11158 do_navigate1[rover9,waypoint31] -> m1_do_navigate1 11159 11160 20013 22612
+11105 m8_send_soil_data_splitted_12[rover9,general,waypoint26] -> <_splitting_method_m8_send_soil_data_splitted_12;m8_send_soil_data_splitted_7[rover9,general,waypoint26,waypoint31];_splitting_method_m8_send_soil_data_splitted_7;1;0,-1> 11158 22613
+11096 empty_store[rover9store,rover9] -> m6_empty_store 11097 11098
+10663 do_navigate2[rover9,waypoint23,waypoint26] -> m3_do_navigate2 10664
+3382 do_navigate2[rover9,waypoint33,waypoint26] -> m4_do_navigate2 3383 3384 3385 10663 10665
+1986 do_navigate1[rover9,waypoint26] -> m1_do_navigate1 1987 1988 3382 10666
+1906 get_soil_data[waypoint26] -> <<m7_get_soil_data;m7_get_soil_data_splitted_4[rover9,waypoint26];_splitting_method_m7_get_soil_data_splitted_4;1;0,-1,-2,2>;send_soil_data[rover9,waypoint26];m8_send_soil_data;3;0,1,2,-1> 1986 11096 11099 11105
+1899 do_navigate2[rover9,waypoint23,waypoint33] -> m3_do_navigate2 1900
+1395 do_navigate1[rover9,waypoint33] -> m1_do_navigate1 1396 1397 1899 1901
+1389 m8_send_soil_data_splitted_12[rover9,general,waypoint23] -> <_splitting_method_m8_send_soil_data_splitted_12;m8_send_soil_data_splitted_7[rover9,general,waypoint23,waypoint33];_splitting_method_m8_send_soil_data_splitted_7;1;0,-1> 1395 1902
+1370 empty_store[rover9store,rover9] -> m5_empty_store 1371 1372
+1323 do_navigate1[rover9,waypoint23] -> m0_do_navigate1 1324 1325
+1318 get_soil_data[waypoint23] -> <<m7_get_soil_data;m7_get_soil_data_splitted_4[rover9,waypoint23];_splitting_method_m7_get_soil_data_splitted_4;1;0,-1,-2,2>;send_soil_data[rover9,waypoint23];m8_send_soil_data;3;0,1,2,-1> 1323 1370 1373 1389
+1312 do_navigate2[rover2,waypoint2,waypoint33] -> m3_do_navigate2 1313
+1173 do_navigate1[rover2,waypoint33] -> m1_do_navigate1 1174 1175 1312 1314
+1169 m8_send_soil_data_splitted_12[rover2,general,waypoint2] -> <_splitting_method_m8_send_soil_data_splitted_12;m8_send_soil_data_splitted_7[rover2,general,waypoint2,waypoint33];_splitting_method_m8_send_soil_data_splitted_7;1;0,-1> 1173 1315
+1157 empty_store[rover2store,rover2] -> m5_empty_store 1158 1159
+1108 do_navigate1[rover2,waypoint2] -> m0_do_navigate1 1109 1110
+1104 get_soil_data[waypoint2] -> <<m7_get_soil_data;m7_get_soil_data_splitted_4[rover2,waypoint2];_splitting_method_m7_get_soil_data_splitted_4;1;0,-1,-2,2>;send_soil_data[rover2,waypoint2];m8_send_soil_data;3;0,1,2,-1> 1108 1157 1160 1169
+1097 send_soil_data[rover3,waypoint28] -> m9_send_soil_data 1098 1099
+1093 empty_store[rover3store,rover3] -> m6_empty_store 1094 1095
+1089 do_navigate2[rover3,waypoint22,waypoint28] -> m3_do_navigate2 1090
+1061 do_navigate1[rover3,waypoint28] -> m1_do_navigate1 1062 1063 1089 1091
+1034 get_soil_data[waypoint28] -> <m7_get_soil_data;m7_get_soil_data_splitted_4[rover3,waypoint28];_splitting_method_m7_get_soil_data_splitted_4;1;0,-1,-2,2> 1061 1093 1096 1097
+1029 do_navigate2[rover3,waypoint8,waypoint22] -> m3_do_navigate2 1030
+724 do_navigate2[rover3,waypoint14,waypoint22] -> m4_do_navigate2 725 726 727 1029 1031
+332 do_navigate1[rover3,waypoint22] -> m1_do_navigate1 333 334 724 1032
+323 m8_send_soil_data_splitted_12[rover3,general,waypoint14] -> <_splitting_method_m8_send_soil_data_splitted_12;m8_send_soil_data_splitted_7[rover3,general,waypoint14,waypoint22];_splitting_method_m8_send_soil_data_splitted_7;1;0,-1> 332 1033
+317 empty_store[rover3store,rover3] -> m5_empty_store 318 319
+314 do_navigate2[rover3,waypoint8,waypoint14] -> m3_do_navigate2 315
+211 do_navigate1[rover3,waypoint14] -> m1_do_navigate1 212 213 314 316
+73 get_soil_data[waypoint14] -> <<m7_get_soil_data;m7_get_soil_data_splitted_4[rover3,waypoint14];_splitting_method_m7_get_soil_data_splitted_4;1;0,-1,-2,2>;send_soil_data[rover3,waypoint14];m8_send_soil_data;3;0,1,2,-1> 211 317 320 323
+63 send_soil_data[rover1,waypoint9] -> m9_send_soil_data 64 65
+58 empty_store[rover1store,rover1] -> m5_empty_store 59 60
+8 do_navigate1[rover1,waypoint9] -> m0_do_navigate1 9 10
+5 get_soil_data[waypoint9] -> <m7_get_soil_data;m7_get_soil_data_splitted_4[rover1,waypoint9];_splitting_method_m7_get_soil_data_splitted_4;1;0,-1,-2,2> 8 58 61 63
+0 __top[] -> __top_method 5 73 1034 1104 1318 1906 22614 27174 37953 92037 312193 312432 312680 312901 313138 313367
+<==
+
+RUNWATCH_RESULT EXIT RETVAL 0 TIME_SECS 328.331 MEMPEAK_KBS 3872

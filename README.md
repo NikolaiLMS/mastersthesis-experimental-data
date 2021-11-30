@@ -17,6 +17,10 @@ Additionally we used the following software to help with test execution:
 
 ## Content
 
-* trainingset and testset contain our training and test data, which consists of the total-order instances of the IPC 2020 (https://github.com/panda-planner-dev/ipc2020-domains/tree/master/total-order)
+* `instances/` contains our training and test data, which consists of the total-order instances of the IPC 2020 (https://github.com/panda-planner-dev/ipc2020-domains/tree/master/total-order)
 
-* parameterevaluation, perdomainevaluation and sotaevaluation contain the experimental data for the Parameter Evaluation, the Per Domain Evaluation and State of The Art Evaluation, comprising of the logs for each instance, aswell as additional files that contain already computed metrics like IPC-Score, PAR2-Score, Coverage etc.
+* `evaluations/` contains the experimental data for the Parameter Evaluation, the Per Domain Evaluation and State of The Art Evaluation sections of the thesis, consisting of the logs for each instance, aswell as additional files that contain already computed metrics like IPC-Score, PAR2-Score, Coverage etc.
+
+* `figures/` contains our created plots using the evaluation data
+
+* `util/` contains multiple scripts we created to aid our experiments

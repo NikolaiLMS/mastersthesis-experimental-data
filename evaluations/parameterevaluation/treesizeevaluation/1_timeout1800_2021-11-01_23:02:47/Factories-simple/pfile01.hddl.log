@@ -1,0 +1,154 @@
+    _           _         _
+   \ |         \ |       | |                       
+   | |     __  | |      _| |______                
+   | |     \/  | |     /_   ______\                
+   | |      _  | |   __  | |  ___   ___   ___       
+   | |___  | | | |  / .\ | | / , | |   \ / ·_\    
+   \_____\ |_| |__\ \__/ |_| \___) |_|_| \___\  
+[39mL i l o t a n e  version rls-glucose4
+by Dominik Schreiber <dominik.schreiber@kit.edu> 2020-2021
+using SAT solver glucose4
+
+0.004 Parser finished.
+0.004 Structures extracted.
+0.004 19 operators and 12 methods created.
+0.007 Mined 0 new reduction preconditions (+0.0%).
+0.007 Iteration 0.
+0.007 Creating initial layer of size 2
+0.007 Attempting to solve formula with 3 clauses (3 literals) and 1 assumptions
+0.007 Unsolvable at layer 0 -- expanding.
+0.007 Iteration 1.
+0.007 New layer size: 2
+0.007 Instantiating ...
+0.007 Collected 0 relevant facts at this layer
+0.007 Encoding ...
+0.007 Attempting to solve formula with 8 clauses (12 literals) and 1 assumptions
+0.007 Unsolvable at layer 1 -- expanding.
+0.007 Iteration 2.
+0.007 New layer size: 3
+0.007 Instantiating ...
+0.008 Collected 4 relevant facts at this layer
+0.008 Encoding ...
+0.008 Attempting to solve formula with 33 clauses (61 literals) and 1 assumptions
+0.008 Unsolvable at layer 2 -- expanding.
+0.008 Iteration 3.
+0.008 New layer size: 5
+0.008 Instantiating ...
+0.008 Collected 13 relevant facts at this layer
+0.008 Encoding ...
+0.009 Attempting to solve formula with 136 clauses (319 literals) and 3 assumptions
+0.009 Unsolvable at layer 3 -- expanding.
+0.009 Iteration 4.
+0.009 New layer size: 9
+0.009 Instantiating ...
+0.010 Collected 20 relevant facts at this layer
+0.010 Encoding ...
+0.010 Attempting to solve formula with 403 clauses (1049 literals) and 4 assumptions
+0.010 Unsolvable at layer 4 -- expanding.
+0.010 Iteration 5.
+0.010 New layer size: 14
+0.010 Instantiating ...
+0.012 Collected 22 relevant facts at this layer
+0.012 Encoding ...
+0.012 Attempting to solve formula with 871 clauses (2319 literals) and 6 assumptions
+0.012 Unsolvable at layer 5 -- expanding.
+0.012 Iteration 6.
+0.012 New layer size: 22
+0.012 Instantiating ...
+0.015 Collected 23 relevant facts at this layer
+0.015 Encoding ...
+0.016 Attempting to solve formula with 1639 clauses (4486 literals) and 9 assumptions
+0.016 Unsolvable at layer 6 -- expanding.
+0.016 Iteration 7.
+0.016 New layer size: 33
+0.016 Instantiating ...
+0.020 Collected 23 relevant facts at this layer
+0.020 Encoding ...
+0.021 Attempting to solve formula with 2767 clauses (7510 literals) and 11 assumptions
+0.022 Unsolvable at layer 7 -- expanding.
+0.022 Iteration 8.
+0.022 New layer size: 47
+0.022 Instantiating ...
+0.027 Collected 23 relevant facts at this layer
+0.027 Encoding ...
+0.029 Attempting to solve formula with 4275 clauses (11671 literals) and 16 assumptions
+c last restart ## conflicts  :  4 337 
+0.029 Found a solution at layer 8.
+==>
+872 produce-without-demands resource_0 factory_0 location_0
+965 pickup resource_0 location_0
+968 move location_0 location_1
+988 drop resource_0 location_1
+990 construct factory_1 resource_0 location_1
+1067 produce-without-demands resource_0 factory_0 location_0
+1164 move location_1 location_0
+1189 pickup resource_0 location_0
+1192 move location_0 location_1
+1217 drop resource_0 location_1
+1220 produce resource_1 resource_0 factory_1 location_1
+1254 pickup resource_1 location_1
+1256 move location_1 location_0
+1259 move location_0 location_1
+1262 move location_1 last_location
+1286 drop resource_1 last_location
+1288 construct last_factory resource_1 last_location
+root 5
+5 construct_factory last_factory last_location -> m_construct_factory 9 1288
+9 get_resource resource_1 last_location -> m_get_resource 92 42 66
+42 produce_resource resource_1 -> m_get_and_produce_resource 103 1220
+66 deliver_resource resource_1 last_location -> m_deliver_resource 139 1254 161 1286
+92 construct_factory factory_1 location_1 -> m_construct_factory 185 990
+103 get_resource resource_0 location_1 -> m_get_resource 413 1066 261
+139 goto location_1 -> m_already_there
+161 goto last_location -> m_goto 1256 319
+185 get_resource resource_0 location_1 -> m_get_resource 566 871 380
+261 deliver_resource resource_0 location_1 -> m_deliver_resource 454 1189 475 1217
+319 goto last_location -> m_goto 1259 544
+380 deliver_resource resource_0 location_1 -> m_deliver_resource 599 965 619 988
+413 construct_factory factory_0 location_0 -> m_factory_already_constructed
+454 goto location_0 -> m_goto 1164 760
+475 goto location_1 -> m_goto 1192 784
+544 goto last_location -> m_goto 1262 848
+566 construct_factory factory_0 location_0 -> m_factory_already_constructed
+599 goto location_0 -> m_already_there
+619 goto location_1 -> m_goto 968 971
+760 goto location_0 -> m_already_there
+784 goto location_1 -> m_already_there
+848 goto last_location -> m_already_there
+871 produce_resource resource_0 -> m_produce_resource 872
+971 goto location_1 -> m_already_there
+1066 produce_resource resource_0 -> m_produce_resource 1067
+<==
+0.030 End of solution plan. (counted length of 17)
+0.030 Total amount of clauses encoded: 4275
+0.030 - directframeaxioms : 1560 cls
+0.030 - qfactsemantics : 525 cls
+0.030 - reductionconstraints : 410 cls
+0.030 - indirectframeaxioms : 356 cls
+0.030 - predecessors : 275 cls
+0.030 - substitutionconstraints : 262 cls
+0.030 - atmostoneelement : 199 cls
+0.030 - actionconstraints : 180 cls
+0.030 - qconstequality : 138 cls
+0.030 - actioneffects : 70 cls
+0.030 - truefacts : 23 cls
+0.030 - axiomaticops : 2 cls
+0.030 # instantiated positions: 136
+0.030 # instantiated actions: 196
+0.030 # instantiated reductions: 81
+0.030 # introduced pseudo-constants: 78
+0.030 # retroactive prunings: 0
+0.030 # retroactively pruned operations: 0
+0.030 # dominated operations: 0
+0.030 # total invalid rigid preconditions found in getPFC: 0
+0.030 # invalid rigid preconditions found in getPFC: 0
+0.030 # invalid rigid preconditions found in getPFC in varrestrictions: 0
+0.030 # total invalid fluent preconditions found in getPFC: 0
+0.030 # invalid fluent preconditions found in getPFC: 0
+0.030 # invalid fluent preconditions found in getPFC in varrestrictions: 0
+0.030 # invalid fluent preconditions found in getPFC via postconditions: 0
+0.030 # invalid subtasks found in getPFC: 0
+0.030 # number effects in operation fact_frames: 138
+0.030 Exiting happily.
+
+RUNWATCH_RESULT EXIT RETVAL 0 TIME_SECS 0.0373535 MEMPEAK_KBS 848

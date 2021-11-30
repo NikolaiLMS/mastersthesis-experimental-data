@@ -1,0 +1,88 @@
+    _           _         _
+   \ |         \ |       | |                       
+   | |     __  | |      _| |______                
+   | |     \/  | |     /_   ______\                
+   | |      _  | |   __  | |  ___   ___   ___       
+   | |___  | | | |  / .\ | | / , | |   \ / ·_\    
+   \_____\ |_| |__\ \__/ |_| \___) |_|_| \___\  
+[39mL i l o t a n e  version rls-cadical
+by Dominik Schreiber <dominik.schreiber@kit.edu> 2020-2021
+using SAT solver cadical
+
+0.012 Parser finished.
+0.012 Structures extracted.
+0.013 30 operators and 29 methods created.
+0.015 Mined 126 new reduction preconditions (+inf%).
+0.015 Iteration 0.
+0.015 Creating initial layer of size 2
+0.018 Attempting to solve formula with 15 clauses (21 literals) and 1 assumptions
+0.018 Unsolvable at layer 0 -- expanding.
+0.018 Iteration 1.
+0.018 New layer size: 3
+0.018 Instantiating ...
+0.019 Collected 7 relevant facts at this layer
+0.019 Encoding ...
+0.020 Attempting to solve formula with 30 clauses (50 literals) and 2 assumptions
+0.020 Unsolvable at layer 1 -- expanding.
+0.020 Iteration 2.
+0.020 New layer size: 4
+0.020 Instantiating ...
+0.021 Collected 7 relevant facts at this layer
+0.021 Encoding ...
+0.021 Attempting to solve formula with 54 clauses (99 literals) and 3 assumptions
+0.021 Unsolvable at layer 2 -- expanding.
+0.021 Iteration 3.
+0.021 New layer size: 6
+0.021 Instantiating ...
+0.022 Collected 10 relevant facts at this layer
+0.022 Encoding ...
+0.022 Attempting to solve formula with 133 clauses (266 literals) and 3 assumptions
+0.022 Unsolvable at layer 3 -- expanding.
+0.022 Iteration 4.
+0.022 New layer size: 8
+0.022 Instantiating ...
+0.023 Collected 18 relevant facts at this layer
+0.023 Encoding ...
+0.024 Attempting to solve formula with 350 clauses (776 literals) and 0 assumptions
+0.024 Found a solution at layer 4.
+==>
+90 load_highspeed_saw b0 highspeed_saw0
+107 cut_board_medium b0 p1 highspeed_saw0 walnut smooth s6 s5 s4 medium natural untreated
+132 unload_highspeed_saw b0 highspeed_saw0
+145 do_plane p1 smooth natural untreated smooth untreated natural
+151 do_spray_varnish p1 spray_varnisher0 natural smooth untreated untreated varnished natural
+159 do_grind p0 verysmooth natural glazed untreated verysmooth natural
+162 do_spray_varnish p0 spray_varnisher0 natural verysmooth untreated untreated varnished natural
+root 35 23
+23 process p0 natural verysmooth verysmooth -> method12 158 161
+35 process p1 natural smooth smooth -> method14 51 144 150
+51 cut_and_saw b0 p1 walnut smooth -> method6 90 106 132
+106 cut_board b0 p1 highspeed_saw0 walnut smooth -> method4b 107
+144 grindNplane p1 smooth natural untreated smooth natural untreated -> method7 145
+150 do_colour p1 natural spray_varnisher0 untreated -> method1 151
+158 grindNplane p0 verysmooth natural glazed verysmooth natural untreated -> method3 159
+161 do_colour p0 natural spray_varnisher0 untreated -> method1 162
+<==
+0.024 End of solution plan. (counted length of 7)
+0.024 Total amount of clauses encoded: 350
+0.024 - directframeaxioms : 106 cls
+0.024 - actionconstraints : 47 cls
+0.024 - reductionconstraints : 40 cls
+0.024 - actioneffects : 34 cls
+0.024 - substitutionconstraints : 25 cls
+0.024 - expansions : 24 cls
+0.024 - truefacts : 18 cls
+0.024 - qfactsemantics : 14 cls
+0.024 - indirectframeaxioms : 9 cls
+0.024 - atmostoneelement : 4 cls
+0.024 - qtypeconstraints : 2 cls
+0.024 # instantiated positions: 22
+0.024 # instantiated actions: 16
+0.024 # instantiated reductions: 10
+0.024 # introduced pseudo-constants: 13
+0.024 # retroactive prunings: 0
+0.024 # retroactively pruned operations: 0
+0.024 # dominated operations: 0
+0.024 Exiting happily (no cleaning up).
+
+RUNWATCH_RESULT EXIT RETVAL 0 TIME_SECS 0.03125 MEMPEAK_KBS 672

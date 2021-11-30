@@ -1,0 +1,72 @@
+----------------------Tasks-----------------------
+0 tlt
+1 invisible_goal
+---------------------Planning---------------------
+Time: 1.5801975727081299s
+-----------------------Plan-----------------------
+==>
+5 shop_methodm_get_electricity_noop_precondition pittsford_plaza
+6 shop_methodm_get_to_already_there_precondition sleader1 pittsford_plaza
+7 shop_methodm_get_to_as_cargo_precondition food1 pittsford_plaza texaco1 bus1
+12 shop_methodm_get_to_already_there_precondition bus1 texaco1
+13 shop_methodm_get_in_load_in_precondition food1 texaco1 bus1 ht1
+16 shop_methodm_get_to_as_cargo_precondition ht1 texaco1 mendon_pond backhoe1
+21 shop_methodm_get_to_vehicle_gets_driven_precondition backhoe1 mendon_pond pittsford_plaza ccrew1
+23 shop_methodm_drive_to_precondition backhoe1 pittsford_plaza ccrew1
+25 p_1navegate_vehicle
+26 shop_methodm_get_in_ambulatory_person_precondition ht1 mendon_pond backhoe1
+27 climb_in ht1 backhoe1 mendon_pond
+28 shop_methodm_get_to_vehicle_gets_driven_precondition backhoe1 texaco1 mendon_pond ccrew1
+30 shop_methodm_drive_to_precondition backhoe1 mendon_pond ccrew1
+32 navegate_vehicle ccrew1 backhoe1 texaco1 mendon_pond
+33 climb_out ht1 backhoe1 texaco1
+15 load ht1 food1 bus1 texaco1
+34 shop_methodm_get_to_vehicle_gets_driven_precondition bus1 pittsford_plaza texaco1 bdriver1
+36 shop_methodm_drive_to_precondition bus1 texaco1 bdriver1
+38 navegate_vehicle bdriver1 bus1 pittsford_plaza texaco1
+39 shop_methodm_get_out_unload_precondition bus1 pittsford_plaza ccrew1 food1
+42 shop_methodm_get_to_as_cargo_precondition ccrew1 pittsford_plaza texaco1 bus1
+47 shop_methodm_get_to_vehicle_gets_driven_precondition bus1 texaco1 pittsford_plaza bdriver1
+49 shop_methodm_drive_to_precondition bus1 pittsford_plaza bdriver1
+51 navegate_vehicle bdriver1 bus1 texaco1 pittsford_plaza
+52 shop_methodm_get_in_ambulatory_person_precondition ccrew1 texaco1 bus1
+53 climb_in ccrew1 bus1 texaco1
+54 shop_methodm_get_to_vehicle_gets_driven_precondition bus1 pittsford_plaza texaco1 bdriver1
+56 shop_methodm_drive_to_precondition bus1 texaco1 bdriver1
+58 navegate_vehicle bdriver1 bus1 pittsford_plaza texaco1
+59 climb_out ccrew1 bus1 pittsford_plaza
+41 unload ccrew1 food1 bus1 pittsford_plaza
+root 0
+0 tlt  -> m_tlt_set_up_shelter 1
+1 set_up_shelter pittsford_plaza -> m_set_up_shelter 2 3 4
+2 get_electricity pittsford_plaza -> m_get_electricity_noop 5
+3 get_to sleader1 pittsford_plaza -> m_get_to_already_there 6
+4 get_to food1 pittsford_plaza -> m_get_to_as_cargo 7 8 9 10 11
+8 get_to bus1 texaco1 -> m_get_to_already_there 12
+9 get_in food1 bus1 -> m_get_in_load_in 13 14 15
+14 get_to ht1 texaco1 -> m_get_to_as_cargo 16 17 18 19 20
+17 get_to backhoe1 mendon_pond -> m_get_to_vehicle_gets_driven 21 22
+22 drive_to ccrew1 backhoe1 mendon_pond -> m_drive_to 23 24
+24 cnavegate_vehicle ccrew1 backhoe1 mendon_pond pittsford_plaza -> prefix_1 25
+18 get_in ht1 backhoe1 -> m_get_in_ambulatory_person 26 27
+19 get_to backhoe1 texaco1 -> m_get_to_vehicle_gets_driven 28 29
+29 drive_to ccrew1 backhoe1 texaco1 -> m_drive_to 30 31
+31 cnavegate_vehicle ccrew1 backhoe1 texaco1 mendon_pond -> regular_1 32
+20 get_out ht1 backhoe1 -> m_get_out_ambulatory_person 33
+10 get_to bus1 pittsford_plaza -> m_get_to_vehicle_gets_driven 34 35
+35 drive_to bdriver1 bus1 pittsford_plaza -> m_drive_to 36 37
+37 cnavegate_vehicle bdriver1 bus1 pittsford_plaza texaco1 -> regular_1 38
+11 get_out food1 bus1 -> m_get_out_unload 39 40 41
+40 get_to ccrew1 pittsford_plaza -> m_get_to_as_cargo 42 43 44 45 46
+43 get_to bus1 texaco1 -> m_get_to_vehicle_gets_driven 47 48
+48 drive_to bdriver1 bus1 texaco1 -> m_drive_to 49 50
+50 cnavegate_vehicle bdriver1 bus1 texaco1 pittsford_plaza -> regular_1 51
+44 get_in ccrew1 bus1 -> m_get_in_ambulatory_person 52 53
+45 get_to bus1 pittsford_plaza -> m_get_to_vehicle_gets_driven 54 55
+55 drive_to bdriver1 bus1 pittsford_plaza -> m_drive_to 56 57
+57 cnavegate_vehicle bdriver1 bus1 pittsford_plaza texaco1 -> regular_1 58
+46 get_out ccrew1 bus1 -> m_get_out_ambulatory_person 59
+<==
+Total time: 1.6158018112182617s
+
+RUNWATCH_RESULT EXIT RETVAL 0 TIME_SECS 1.78125 MEMPEAK_KBS 24340

@@ -1,0 +1,65 @@
+----------------------Tasks-----------------------
+0 tlt
+1 invisible_goal
+---------------------Planning---------------------
+Time: 24.58195734024048s
+-----------------------Plan-----------------------
+==>
+5 shop_methodm_shut_off_water_precondition airport gates roch_water
+7 p_1call
+14 shop_methodm_get_to_person_drives_themself_precondition wcrew1 airport wtruck1 marketplace
+16 shop_methodm_drive_to_precondition wtruck1 marketplace wcrew1
+18 p_2navegate_vehicle
+21 shop_methodm_get_to_as_cargo_precondition ht2 airport marketplace ttruck1
+26 shop_methodm_get_to_already_there_precondition ttruck1 marketplace
+27 shop_methodm_get_in_ambulatory_person_precondition ht2 marketplace ttruck1
+29 p_3climb_in
+30 shop_methodm_get_to_vehicle_gets_driven_precondition ttruck1 airport marketplace tdriver1
+32 shop_methodm_drive_to_precondition ttruck1 marketplace tdriver1
+34 p_4navegate_vehicle
+36 p_5climb_out
+20 place_cones ht2
+39 shop_methodm_get_to_vehicle_gets_driven_precondition backhoe1 airport texaco1 ccrew1
+41 shop_methodm_drive_to_precondition backhoe1 texaco1 ccrew1
+43 navegate_vehicle ccrew1 backhoe1 airport texaco1
+38 dig backhoe1 airport
+11 replace_pipe wcrew1 airport airport
+46 shop_methodm_get_to_already_there_precondition backhoe1 airport
+45 fill_in backhoe1 airport
+49 shop_methodm_get_to_already_there_precondition ht2 airport
+48 pickup_cones ht2
+50 shop_methodm_turn_on_water_precondition airport gates roch_water
+52 call roch_water
+root 0
+0 tlt  -> m_tlt_fix_water_main 1
+1 fix_water_main airport airport -> m_fix_water_main 2 3 4
+2 shut_off_water airport airport -> m_shut_off_water 5 6
+6 ccall roch_water -> prefix_1 7
+3 repair_pipe airport airport -> m_repair_pipe 8 9 10 11 12 13
+8 get_to wcrew1 airport -> m_get_to_person_drives_themself 14 15
+15 drive_to wcrew1 wtruck1 airport -> m_drive_to 16 17
+17 cnavegate_vehicle wcrew1 wtruck1 airport marketplace -> prefix_2 18
+9 set_up_cones airport airport -> m_set_up_cones 19 20
+19 get_to ht2 airport -> m_get_to_as_cargo 21 22 23 24 25
+22 get_to ttruck1 marketplace -> m_get_to_already_there 26
+23 get_in ht2 ttruck1 -> m_get_in_ambulatory_person 27 28
+28 cclimb_in ht2 ttruck1 marketplace -> prefix_3 29
+24 get_to ttruck1 airport -> m_get_to_vehicle_gets_driven 30 31
+31 drive_to tdriver1 ttruck1 airport -> m_drive_to 32 33
+33 cnavegate_vehicle tdriver1 ttruck1 airport marketplace -> prefix_4 34
+25 get_out ht2 ttruck1 -> m_get_out_ambulatory_person 35
+35 cclimb_out ht2 ttruck1 airport -> prefix_5 36
+10 open_hole airport airport -> m_open_hole 37 38
+37 get_to backhoe1 airport -> m_get_to_vehicle_gets_driven 39 40
+40 drive_to ccrew1 backhoe1 airport -> m_drive_to 41 42
+42 cnavegate_vehicle ccrew1 backhoe1 airport texaco1 -> regular_4 43
+12 close_hole airport airport -> m_close_hole 44 45
+44 get_to backhoe1 airport -> m_get_to_already_there 46
+13 take_down_cones airport airport -> m_take_down_cones 47 48
+47 get_to ht2 airport -> m_get_to_already_there 49
+4 turn_on_water airport airport -> m_turn_on_water 50 51
+51 ccall roch_water -> regular_3 52
+<==
+Total time: 24.619160890579224s
+
+RUNWATCH_RESULT EXIT RETVAL 0 TIME_SECS 24.7856 MEMPEAK_KBS 24804

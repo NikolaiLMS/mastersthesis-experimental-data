@@ -1,0 +1,145 @@
+    _           _         _
+   \ |         \ |       | |                       
+   | |     __  | |      _| |______                
+   | |     \/  | |     /_   ______\                
+   | |      _  | |   __  | |  ___   ___   ___       
+   | |___  | | | |  / .\ | | / , | |   \ / ·_\    
+   \_____\ |_| |__\ \__/ |_| \___) |_|_| \___\  
+[39mL i l o t a n e  version rls-glucose4
+by Dominik Schreiber <dominik.schreiber@kit.edu> 2020-2021
+using SAT solver glucose4
+
+0.004 Parser finished.
+0.004 Structures extracted.
+0.005 23 operators and 15 methods created.
+0.048 Mined 9 new reduction preconditions (+36.0%).
+0.048 Iteration 0.
+0.048 Creating initial layer of size 2
+0.059 Attempting to solve formula with 13 clauses (18 literals) and 1 assumptions
+0.059 Unsolvable at layer 0 -- expanding.
+0.059 Iteration 1.
+0.059 New layer size: 6
+0.059 Instantiating ...
+0.121 Collected 18 relevant facts at this layer
+0.121 Encoding ...
+0.121 Attempting to solve formula with 173 clauses (385 literals) and 5 assumptions
+0.121 Unsolvable at layer 1 -- expanding.
+0.121 Iteration 2.
+0.121 New layer size: 21
+0.121 Instantiating ...
+0.199 Collected 82 relevant facts at this layer
+0.199 Encoding ...
+0.202 Attempting to solve formula with 2714 clauses (7427 literals) and 11 assumptions
+0.202 Unsolvable at layer 2 -- expanding.
+0.202 Iteration 3.
+0.202 New layer size: 37
+0.202 Instantiating ...
+0.278 Collected 105 relevant facts at this layer
+0.278 Encoding ...
+0.283 Attempting to solve formula with 6083 clauses (17204 literals) and 12 assumptions
+0.283 Unsolvable at layer 3 -- expanding.
+0.283 Iteration 4.
+0.283 New layer size: 58
+0.283 Instantiating ...
+0.360 Collected 105 relevant facts at this layer
+0.360 Encoding ...
+0.368 Attempting to solve formula with 10163 clauses (29202 literals) and 11 assumptions
+c last restart ## conflicts  :  12 462 
+0.368 Found a solution at layer 4.
+==>
+1723 nop
+1726 nop
+1730 Lift hoist2 crate3 crate2 distributor1
+1732 Load hoist2 crate3 truck0 distributor1
+1743 Drive truck0 distributor1 distributor0
+1746 nop
+1748 Unload hoist1 crate3 truck0 distributor0
+1750 Drop hoist1 crate3 pallet1 distributor0
+1756 nop
+1982 Lift hoist1 crate4 crate0 distributor0
+1989 nop
+1995 Load hoist1 crate4 truck0 distributor0
+1999 nop
+2004 Lift hoist1 crate0 pallet4 distributor0
+2019 Drop hoist1 crate0 pallet3 distributor0
+2025 Drive truck0 distributor0 distributor1
+2065 nop
+2264 Lift hoist2 crate1 pallet5 distributor1
+2271 nop
+2278 Load hoist2 crate1 truck0 distributor1
+2283 Unload hoist2 crate4 truck0 distributor1
+2496 Drop hoist2 crate4 pallet5 distributor1
+2498 nop
+2542 nop
+2551 Unload hoist2 crate1 truck0 distributor1
+2567 Drop hoist2 crate1 crate4 distributor1
+2572 nop
+2577 nop
+2587 Lift hoist0 crate5 pallet0 depot0
+2593 Load hoist0 crate5 truck1 depot0
+2614 Drive truck1 depot0 distributor1
+2620 nop
+2630 Unload hoist2 crate5 truck1 distributor1
+2636 Drop hoist2 crate5 crate1 distributor1
+root 15 36 49 75 108
+15 do_put_on crate3 pallet1 -> m3_do_put_on 933 1743 219
+36 do_put_on crate0 pallet3 -> m1_do_put_on 243 1998 2003 2019
+49 do_put_on crate4 pallet5 -> m2_do_put_on 395 426 2283 2496
+75 do_put_on crate1 crate4 -> m2_do_put_on 2497 2541 2551 2567
+108 do_put_on crate5 crate1 -> m3_do_put_on 1643 2614 850
+219 do_unload_truck crate3 pallet1 distributor0 truck0 -> m11_do_unload_truck 1745 1748 1750
+243 do_clear crate0 distributor0 -> m5_do_clear 1755 1982 1988 1995
+395 do_get_truck truck0 distributor1 -> m7_do_get_truck 2025
+426 do_clear pallet5 distributor1 -> m5_do_clear 2064 2264 2270 2278
+850 do_unload_truck crate5 crate1 distributor1 truck1 -> m11_do_unload_truck 2619 2630 2636
+933 do_load_truck crate3 crate2 distributor1 truck0 -> m10_do_load_truck 1722 1725 1730 1732
+1643 do_load_truck crate5 pallet0 depot0 truck1 -> m10_do_load_truck 2571 2576 2587 2593
+1722 do_get_truck truck0 distributor1 -> m6_do_get_truck 1723
+1725 do_clear crate3 distributor1 -> m4_do_clear 1726
+1745 do_clear pallet1 distributor0 -> m4_do_clear 1746
+1755 do_clear crate4 distributor0 -> m4_do_clear 1756
+1988 do_get_truck truck0 distributor0 -> m6_do_get_truck 1989
+1998 do_clear pallet3 distributor0 -> m4_do_clear 1999
+2003 do_lift_crate crate0 distributor0 hoist1 -> m9_do_lift_crate 2004
+2064 do_clear crate1 distributor1 -> m4_do_clear 2065
+2270 do_get_truck truck0 distributor1 -> m6_do_get_truck 2271
+2497 do_get_truck truck0 distributor1 -> m6_do_get_truck 2498
+2541 do_clear crate4 distributor1 -> m4_do_clear 2542
+2571 do_get_truck truck1 depot0 -> m6_do_get_truck 2572
+2576 do_clear crate5 depot0 -> m4_do_clear 2577
+2619 do_clear crate1 distributor1 -> m4_do_clear 2620
+<==
+0.370 End of solution plan. (counted length of 34)
+0.370 Total amount of clauses encoded: 10163
+0.370 - directframeaxioms : 4290 cls
+0.370 - qfactsemantics : 1715 cls
+0.370 - indirectframeaxioms : 1233 cls
+0.370 - reductionconstraints : 684 cls
+0.370 - actionconstraints : 646 cls
+0.370 - expansions : 327 cls
+0.370 - atmostoneelement : 326 cls
+0.370 - predecessors : 305 cls
+0.370 - actioneffects : 232 cls
+0.370 - substitutionconstraints : 199 cls
+0.370 - truefacts : 105 cls
+0.370 - qconstequality : 99 cls
+0.370 - axiomaticops : 2 cls
+0.370 # instantiated positions: 123
+0.370 # instantiated actions: 249
+0.370 # instantiated reductions: 58
+0.370 # introduced pseudo-constants: 71
+0.370 # retroactive prunings: 1
+0.370 # retroactively pruned operations: 1
+0.370 # dominated operations: 3
+0.370 # total invalid rigid preconditions found in getPFC: 0
+0.370 # invalid rigid preconditions found in getPFC: 0
+0.370 # invalid rigid preconditions found in getPFC in varrestrictions: 0
+0.370 # total invalid fluent preconditions found in getPFC: 59
+0.370 # invalid fluent preconditions found in getPFC: 56
+0.370 # invalid fluent preconditions found in getPFC in varrestrictions: 3
+0.370 # invalid fluent preconditions found in getPFC via postconditions: 0
+0.370 # invalid subtasks found in getPFC: 1
+0.370 # number effects in operation fact_frames: 277
+0.370 Exiting happily.
+
+RUNWATCH_RESULT EXIT RETVAL 0 TIME_SECS 0.37783 MEMPEAK_KBS 9424

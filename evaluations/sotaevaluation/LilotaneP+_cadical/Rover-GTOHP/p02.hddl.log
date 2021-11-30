@@ -1,0 +1,144 @@
+    _           _         _
+   \ |         \ |       | |                       
+   | |     __  | |      _| |______                
+   | |     \/  | |     /_   ______\                
+   | |      _  | |   __  | |  ___   ___   ___       
+   | |___  | | | |  / .\ | | / , | |   \ / ·_\    
+   \_____\ |_| |__\ \__/ |_| \___) |_|_| \___\  
+[39mL i l o t a n e  version rls-cadical
+by Dominik Schreiber <dominik.schreiber@kit.edu> 2020-2021
+using SAT solver cadical
+
+0.007 Parser finished.
+0.007 Structures extracted.
+0.008 38 operators and 17 methods created.
+0.016 Mined 30 new reduction preconditions (+96.8%).
+0.016 Iteration 0.
+0.016 Creating initial layer of size 2
+0.023 Attempting to solve formula with 9 clauses (12 literals) and 1 assumptions
+0.023 Unsolvable at layer 0 -- expanding.
+0.023 Iteration 1.
+0.023 New layer size: 4
+0.023 Instantiating ...
+0.029 Collected 3 relevant facts at this layer
+0.029 Encoding ...
+0.029 Attempting to solve formula with 27 clauses (48 literals) and 3 assumptions
+0.029 Unsolvable at layer 1 -- expanding.
+0.029 Iteration 2.
+0.029 New layer size: 13
+0.029 Instantiating ...
+0.035 Collected 15 relevant facts at this layer
+0.035 Encoding ...
+0.035 Attempting to solve formula with 288 clauses (666 literals) and 7 assumptions
+0.035 Unsolvable at layer 2 -- expanding.
+0.035 Iteration 3.
+0.035 New layer size: 23
+0.035 Instantiating ...
+0.042 Collected 19 relevant facts at this layer
+0.042 Encoding ...
+0.043 Attempting to solve formula with 902 clauses (2276 literals) and 7 assumptions
+0.043 Unsolvable at layer 3 -- expanding.
+0.043 Iteration 4.
+0.043 New layer size: 40
+0.043 Instantiating ...
+0.052 Collected 19 relevant facts at this layer
+0.052 Encoding ...
+0.055 Attempting to solve formula with 2187 clauses (5907 literals) and 7 assumptions
+0.055 Found a solution at layer 4.
+==>
+356 visit waypoint3
+358 navigate rover0 waypoint3 waypoint1
+360 visit waypoint1
+366 navigate rover0 waypoint1 waypoint2
+380 unvisit waypoint1
+392 unvisit waypoint3
+395 nop
+397 sample_soil rover0 rover0store waypoint2
+399 visit waypoint2
+403 navigate rover0 waypoint2 waypoint1
+421 unvisit waypoint2
+437 communicate_soil_data1 rover0 general waypoint2 waypoint1 waypoint0
+440 visit waypoint1
+445 navigate rover0 waypoint1 waypoint3
+487 unvisit waypoint1
+490 drop rover0 rover0store
+492 sample_rock rover0 rover0store waypoint3
+495 visit waypoint3
+499 navigate rover0 waypoint3 waypoint1
+516 unvisit waypoint3
+532 communicate_rock_data1 rover0 general waypoint3 waypoint1 waypoint0
+536 visit waypoint1
+540 nop
+555 unvisit waypoint1
+570 calibrate rover0 camera0 objective1 waypoint1
+573 visit waypoint1
+579 nop
+623 unvisit waypoint1
+626 take_image rover0 waypoint1 objective1 camera0 high_res
+628 visit waypoint1
+632 nop
+648 unvisit waypoint1
+663 communicate_image_data rover0 general objective1 high_res waypoint1 waypoint0
+root 11 13 16
+11 get_soil_data waypoint2 -> m7_get_soil_data 25 394 397 48
+13 get_rock_data waypoint3 -> m10_get_rock_data 66 489 492 88
+16 get_image_data objective1 high_res -> m13_get_image_data 105 118 626 138
+25 do_navigate1 rover0 waypoint2 -> m1_do_navigate1 356 162 392
+48 send_soil_data rover0 waypoint2 -> m8_send_soil_data 187 437
+66 do_navigate1 rover0 waypoint3 -> m1_do_navigate1 440 444 487
+88 send_rock_data rover0 waypoint3 -> m11_send_rock_data 251 532
+105 do_calibrate rover0 camera0 -> m15_do_calibrate 273 570
+118 do_navigate1 rover0 waypoint1 -> m1_do_navigate1 573 578 623
+138 send_image_data rover0 objective1 high_res -> m14_send_image_data 335 663
+162 do_navigate2 rover0 waypoint3 waypoint2 -> m4_do_navigate2 358 360 365 380
+187 do_navigate1 rover0 waypoint1 -> m1_do_navigate1 399 402 421
+251 do_navigate1 rover0 waypoint1 -> m1_do_navigate1 495 498 516
+273 do_navigate1 rover0 waypoint1 -> m1_do_navigate1 536 539 555
+335 do_navigate1 rover0 waypoint1 -> m1_do_navigate1 628 631 648
+365 do_navigate2 rover0 waypoint1 waypoint2 -> m3_do_navigate2 366
+394 empty_store rover0store rover0 -> m5_empty_store 395
+402 do_navigate2 rover0 waypoint2 waypoint1 -> m3_do_navigate2 403
+444 do_navigate2 rover0 waypoint1 waypoint3 -> m3_do_navigate2 445
+489 empty_store rover0store rover0 -> m6_empty_store 490
+498 do_navigate2 rover0 waypoint3 waypoint1 -> m3_do_navigate2 499
+539 do_navigate2 rover0 waypoint1 waypoint1 -> m2_do_navigate2 540
+578 do_navigate2 rover0 waypoint1 waypoint1 -> m2_do_navigate2 579
+631 do_navigate2 rover0 waypoint1 waypoint1 -> m2_do_navigate2 632
+<==
+0.056 End of solution plan. (counted length of 33)
+0.056 Total amount of clauses encoded: 2187
+0.056 - directframeaxioms : 574 cls
+0.056 - qfactsemantics : 328 cls
+0.056 - substitutionconstraints : 239 cls
+0.056 - reductionconstraints : 225 cls
+0.056 - indirectframeaxioms : 152 cls
+0.056 - predecessors : 147 cls
+0.056 - expansions : 138 cls
+0.056 - actionconstraints : 104 cls
+0.056 - atmostoneelement : 101 cls
+0.056 - qconstequality : 96 cls
+0.056 - actioneffects : 62 cls
+0.056 - truefacts : 19 cls
+0.056 - axiomaticops : 2 cls
+0.056 # instantiated positions: 81
+0.056 # instantiated actions: 123
+0.056 # instantiated reductions: 25
+0.056 # introduced pseudo-constants: 27
+0.056 # retroactive prunings: 0
+0.056 # retroactively pruned operations: 0
+0.056 # dominated operations: 0
+0.056 # total invalid rigid preconditions found in getPFC: 3
+0.056 # invalid rigid preconditions found in getPFC: 3
+0.056 # invalid rigid preconditions found in getPFC in varrestrictions: 0
+0.056 # total invalid fluent preconditions found in getPFC: 9
+0.056 # invalid fluent preconditions found in getPFC: 7
+0.056 # invalid fluent preconditions found in getPFC in varrestrictions: 0
+0.056 # invalid fluent preconditions found in getPFC via postconditions: 2
+0.056 # invalid operations found in getPFC via subtasks: 0
+0.056 # invalid operations found in getPFC via postconditions: 0
+0.056 # number effects in operation fact_frames: 174
+0.056 # number of variables restricted: 126
+0.056 # number of nodes variables restricted: 104
+0.056 Exiting happily.
+
+RUNWATCH_RESULT EXIT RETVAL 0 TIME_SECS 0.064209 MEMPEAK_KBS 680

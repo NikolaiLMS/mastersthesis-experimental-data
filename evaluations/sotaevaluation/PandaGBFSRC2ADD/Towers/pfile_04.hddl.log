@@ -1,0 +1,200 @@
+pandaPIparser is configured as follows
+  Colors in output: true
+  Mode: parsing mode
+  Parameter splitting: true
+  Conditional effects: exponential encoding
+  Disjunctive preconditions as HTN: false
+  Replace goal with action: false
+  Output: pandaPI format
+General Options
+  Print timings: false
+  Quiet mode: false
+Inference Options
+  H2 mutexes: false
+  FAM groups: false
+Transformation Options
+  Add zero-cost no-op to empty methods: true
+  Remove duplicate actions: true
+  Remove useless literals: true
+  Expand abstract tasks with one method: true
+  Remove empty method preconditions: true
+  Two regularisation: false
+  Compile negative SAS variables: false
+Runtime Optimisations
+  Hierarchy Typing: true
+  Future Caching: false
+  Static Precondition Checking: false
+Output Options
+  Panda planner format: true
+  HDDL: false
+  SAS for Fast Downward (without hierarchy): false
+Output Formatting Options
+  Output only SAS+ variables: false
+  SAS+ delete mode: as input
+Reading input from /home/schnell/lilotane/sotaevaluation//PandaGBFS_runwatchtime_timeout1800_2021-11-16_21:14:14/runwatch_log/874/874.parsed.
+Writing output to /home/schnell/lilotane/sotaevaluation//PandaGBFS_runwatchtime_timeout1800_2021-11-16_21:14:14/runwatch_log/874/874.sas.
+Writing output to standard output.
+Parsing done.
+Conditional Effects expanded
+done.
+Starting Hierarchy Typing
+Total 0.441ms
+Contains 0.064ms
+Restrict 0.083ms
+MPrep 0.052ms
+Finished Hierarchy Typing
+Running PG.
+Process actions without preconditions
+Done.
+Returning from runGpg().
+PG done. Postprocessing
+PG postprocessing done.
+Calculated [754] grounded tasks and [57] reachable facts.
+Running TDG.
+Process actions without preconditions
+Done.
+Returning from runGpg().
+TDG done.
+Calculated [794] grounded tasks and [781] grounded decomposition methods.
+Performing DFS.
+DFS done.
+After DFS: 793 tasks, 777 methods.
+Grounded PG:
+Input was [754, 793], output was [754, 57].
+Simplifying instance.
+Removing useless facts/literals
+Removing method precondition actions whose precondition is empty
+Expanding abstract tasks with only one method
+Starting duplicate elimination.
+Data structure build.
+0 duplicates found.
+Duplicates replaced in methods.
+Further Mutex Groups: 0 strict 0 non strict
+Writing instance to output.
+Final Statistics: F 39 S 0 SC 0 SM 0 NSM 0 I 0 P 516 S 236 A 31 M 769
+Exiting.
+Random seed: 42
+Time limit: 1800 seconds
+Reading input from /home/schnell/lilotane/sotaevaluation//PandaGBFS_runwatchtime_timeout1800_2021-11-16_21:14:14/runwatch_log/874/874.sas.
+- State has 39 bits divided into 39 mutex groups.
+- Domain contains 752 actions.
+- Domain contains 783 tasks.
+- Domain contains 769 methods.
+- The initial state contains 7 set bits.
+- The initial task is "__top[]".
+- State-based goal contains 4 bits.
+- Instance is totally-ordered: yes
+- Instance has unique paths: yes
+- Instance is parallel sequences: yes
+Calculate SCCs...
+- Number of SCCs: 779
+- The problem is cyclic
+- Number of cyclic SCCs: 2
+- Number of cyclic SCCs of size 1: 0
+Selected Planning Algorithm: progression searchParsing heuristics ...
+Number of specified heuristics: 1
+- the option "store cuts" of the RC heuristic can only be used with the inner heuristic LM-Cut. It will be disabled.
+- Calculating minimal implied costs and distances (1 ms)
+Heuristic #0 = hhRC2(add;distance;correct count)
+Search config:
+ - type: path cost
+ - weight: 1
+ - suboptimal: false
+Visited List configured
+- mode: total order
+- hashs to use: state task task-sequence
+- memory information: topological ordering
+- Visited list allows deletion of search nodes: true
+Search Configuration
+- Using JAIR 2020 progression algorithm
+- Search is stopped after first solution is found.
+- A* Search
+- Distance G is "modification depth"
+Search Results
+- Search time 0.013 seconds
+- Visited list time 0.000157 seconds
+- Visited list inserts 42
+- Visited list pruned 0
+- Visited list contains 42
+- Visited list hash collisions 0
+- Visited list used hash buckets 42
+- Generated 1591 search nodes
+  Calculated heuristic for 1563 nodes
+  One modifications 15
+  Effectless actions 13
+- including 15 one modification actions
+- including 0 one modification methods
+- and       13 progressions of effectless actions
+- Generated 120230 nodes per second
+- Final fringe contains 3 nodes
+- Status: Solved
+- Found solution of length 63
+- Total costs of actions: 15
+==>
+4 __method_precondition_m-shiftTower[r1,t1]
+9 __method_precondition_m-selectDirection[r1,r2]
+14 __method_precondition_m-selectDirection[r2,r3]
+17 __method_precondition_m-selectDirection[r3,r4]
+18 __method_precondition_selectedDirection[r4,t1]
+87 move[r1,r2,t1,t2,t2]
+121 __method_precondition_exchangeLR_split[r2,t3,t1,t3]
+191 move[r2,r3,t1,t3,t3]
+282 move[r1,t2,t2,r2,t3]
+330 __method_precondition_exchangeRL_split[t2,r3,t2,t1]
+409 move[r3,r4,t1,t2,t2]
+520 move[r1,r2,t3,r4,t1]
+555 __method_precondition_exchangeLR_split[r2,r3,t3,t2]
+630 move[r2,t3,t3,r3,t2]
+688 move[r1,r4,t1,r2,t2]
+757 __method_precondition_exchangeLR_split[r4,t3,t1,t3]
+855 move[r4,t1,t1,t3,t3]
+860 move[r1,r2,t2,r4,t3]
+979 __method_precondition_exchangeLR_split[r2,t1,t2,t1]
+1006 move[r2,r3,t2,t1,t1]
+1117 move[r1,r4,t3,r2,t1]
+1193 __method_precondition_exchangeRL_split[r4,r3,t3,t2]
+1240 move[r3,t2,t2,r4,t3]
+1353 move[r1,r2,t1,t2,t2]
+1395 __method_precondition_exchangeLR_split[r2,r3,t1,t3]
+1433 move[r2,t1,t1,r3,t3]
+1548 move[r1,t2,t2,r2,t3]
+1587 __method_precondition_exchangeClear[t2,t1]
+root 0
+1586 exchange[t2,t3,t1] -> exchangeClear 1587
+1547 move_abstract[t2,t3] -> newMethod21 1548
+1432 move_abstract[t1,t3] -> newMethod21 1433
+1394 exchangeLR_splitted_1[t1,t3] -> _splitting_method_exchangeLR_splitted_1 1395
+1373 exchange[t1,t2,t3] -> <exchangeLR;rotateTower[t2,t3,t1];m-rotateTower;2;0,1,-1,-2> 1394 1432 1547 1586
+1352 move_abstract[t1,t2] -> newMethod21 1353
+1239 move_abstract[t2,t3] -> newMethod21 1240
+1192 exchangeRL_splitted_2[t3,t2] -> _splitting_method_exchangeRL_splitted_2 1193
+1160 exchange[t3,t1,t2] -> <exchangeRL;rotateTower[t1,t2,t3];m-rotateTower;2;0,1,-1,-2> 1192 1239 1352 1373
+1116 move_abstract[t3,t1] -> newMethod21 1117
+1005 move_abstract[t2,t1] -> newMethod21 1006
+978 exchangeLR_splitted_1[t2,t1] -> _splitting_method_exchangeLR_splitted_1 979
+945 exchange[t2,t3,t1] -> <exchangeLR;rotateTower[t3,t1,t2];m-rotateTower;2;0,1,-1,-2> 978 1005 1116 1160
+859 move_abstract[t2,t3] -> newMethod21 860
+854 move_abstract[t1,t3] -> newMethod21 855
+756 exchangeLR_splitted_1[t1,t3] -> _splitting_method_exchangeLR_splitted_1 757
+731 exchange[t1,t2,t3] -> <exchangeLR;rotateTower[t2,t3,t1];m-rotateTower;2;0,1,-1,-2> 756 854 859 945
+687 move_abstract[t1,t2] -> newMethod21 688
+629 move_abstract[t3,t2] -> newMethod21 630
+554 exchangeLR_splitted_1[t3,t2] -> _splitting_method_exchangeLR_splitted_1 555
+535 exchange[t3,t1,t2] -> <exchangeLR;rotateTower[t1,t2,t3];m-rotateTower;2;0,1,-1,-2> 554 629 687 731
+519 move_abstract[t3,t1] -> newMethod21 520
+408 move_abstract[t1,t2] -> newMethod21 409
+329 exchangeRL_splitted_2[t2,t1] -> _splitting_method_exchangeRL_splitted_2 330
+322 exchange[t2,t3,t1] -> <exchangeRL;rotateTower[t3,t1,t2];m-rotateTower;2;0,1,-1,-2> 329 408 519 535
+281 move_abstract[t2,t3] -> newMethod21 282
+190 move_abstract[t1,t3] -> newMethod21 191
+120 exchangeLR_splitted_1[t1,t3] -> _splitting_method_exchangeLR_splitted_1 121
+107 exchange[t1,t2,t3] -> <exchangeLR;rotateTower[t2,t3,t1];m-rotateTower;2;0,1,-1,-2> 120 190 281 322
+86 move_abstract[t1,t2] -> newMethod21 87
+16 selectDirection[r3,t1,t2,t3] -> <<m-selectDirection;selectDirection[r4,t1,t3,t2];selectedDirection;1;0,-1,-2>;rotateTower[t1,t2,t3];m-rotateTower;2;0,1,-1,-2> 17 18 86 107
+13 selectDirection[r2,t1,t3,t2] -> m-selectDirection 14 16
+8 selectDirection[r1,t1,t2,t3] -> m-selectDirection 9 13
+3 shiftTower[t1,t2,t3] -> m-shiftTower 4 8
+0 __top[] -> __top_method 3
+<==
+
+RUNWATCH_RESULT EXIT RETVAL 0 TIME_SECS 0.168457 MEMPEAK_KBS 932

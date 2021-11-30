@@ -1,0 +1,34 @@
+----------------------Tasks-----------------------
+0 tlt
+---------------------Planning---------------------
+Time: 0.005098104476928711s
+-----------------------Plan-----------------------
+==>
+5 shop_methodm_get_electricity_noop_precondition brighton_high
+6 shop_methodm_get_to_as_cargo_precondition sleader2 brighton_high rochester_general bus1
+11 shop_methodm_get_to_vehicle_gets_driven_precondition bus1 rochester_general strong bdriver1
+13 shop_methodm_drive_to_precondition bus1 strong bdriver1
+14 navegate_vehicle bdriver1 bus1 rochester_general strong
+15 shop_methodm_get_in_ambulatory_person_precondition sleader2 rochester_general bus1
+16 climb_in sleader2 bus1 rochester_general
+17 shop_methodm_get_to_vehicle_gets_driven_precondition bus1 brighton_high rochester_general bdriver1
+19 shop_methodm_drive_to_precondition bus1 rochester_general bdriver1
+20 navegate_vehicle bdriver1 bus1 brighton_high rochester_general
+21 climb_out sleader2 bus1 brighton_high
+22 shop_methodm_get_to_already_there_precondition food1 brighton_high
+root 0
+0 tlt  -> m_tlt_set_up_shelter 1
+1 set_up_shelter brighton_high -> m_set_up_shelter 2 3 4
+2 get_electricity brighton_high -> m_get_electricity_noop 5
+3 get_to sleader2 brighton_high -> m_get_to_as_cargo 6 7 8 9 10
+7 get_to bus1 rochester_general -> m_get_to_vehicle_gets_driven 11 12
+12 drive_to bdriver1 bus1 rochester_general -> m_drive_to 13 14
+8 get_in sleader2 bus1 -> m_get_in_ambulatory_person 15 16
+9 get_to bus1 brighton_high -> m_get_to_vehicle_gets_driven 17 18
+18 drive_to bdriver1 bus1 brighton_high -> m_drive_to 19 20
+10 get_out sleader2 bus1 -> m_get_out_ambulatory_person 21
+4 get_to food1 brighton_high -> m_get_to_already_there 22
+<==
+Total time: 0.042183876037597656s
+
+RUNWATCH_RESULT EXIT RETVAL 0 TIME_SECS 0.192383 MEMPEAK_KBS 784

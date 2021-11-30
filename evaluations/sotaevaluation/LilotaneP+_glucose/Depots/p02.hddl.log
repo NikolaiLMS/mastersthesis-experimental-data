@@ -1,0 +1,137 @@
+    _           _         _
+   \ |         \ |       | |                       
+   | |     __  | |      _| |______                
+   | |     \/  | |     /_   ______\                
+   | |      _  | |   __  | |  ___   ___   ___       
+   | |___  | | | |  / .\ | | / , | |   \ / ·_\    
+   \_____\ |_| |__\ \__/ |_| \___) |_|_| \___\  
+[39mL i l o t a n e  version rls-glucose4
+by Dominik Schreiber <dominik.schreiber@kit.edu> 2020-2021
+using SAT solver glucose4
+
+0.004 Parser finished.
+0.005 Structures extracted.
+0.005 23 operators and 15 methods created.
+0.016 Mined 9 new reduction preconditions (+36.0%).
+0.016 Iteration 0.
+0.016 Creating initial layer of size 2
+0.016 Attempting to solve formula with 11 clauses (15 literals) and 1 assumptions
+0.016 Unsolvable at layer 0 -- expanding.
+0.016 Iteration 1.
+0.016 New layer size: 5
+0.016 Instantiating ...
+0.031 Collected 19 relevant facts at this layer
+0.031 Encoding ...
+0.031 Attempting to solve formula with 213 clauses (496 literals) and 4 assumptions
+0.031 Unsolvable at layer 1 -- expanding.
+0.031 Iteration 2.
+0.031 New layer size: 17
+0.031 Instantiating ...
+0.043 Collected 71 relevant facts at this layer
+0.043 Encoding ...
+0.046 Attempting to solve formula with 2688 clauses (7617 literals) and 11 assumptions
+0.046 Unsolvable at layer 2 -- expanding.
+0.046 Iteration 3.
+0.046 New layer size: 37
+0.046 Instantiating ...
+0.060 Collected 73 relevant facts at this layer
+0.060 Encoding ...
+0.066 Attempting to solve formula with 7073 clauses (20498 literals) and 14 assumptions
+0.066 Unsolvable at layer 3 -- expanding.
+0.066 Iteration 4.
+0.066 New layer size: 64
+0.066 Instantiating ...
+0.084 Collected 73 relevant facts at this layer
+0.084 Encoding ...
+0.093 Attempting to solve formula with 12942 clauses (38463 literals) and 16 assumptions
+0.093 Unsolvable at layer 4 -- expanding.
+0.093 Iteration 5.
+0.093 New layer size: 85
+0.093 Instantiating ...
+0.114 Collected 73 relevant facts at this layer
+0.114 Encoding ...
+0.125 Attempting to solve formula with 19273 clauses (58003 literals) and 14 assumptions
+c last restart ## conflicts  :  16 863 
+0.127 Found a solution at layer 5.
+==>
+3163 nop
+3360 Drive truck0 depot0 distributor1
+3367 nop
+3374 Lift hoist2 crate2 crate1 distributor1
+3377 Load hoist2 crate2 truck0 distributor1
+3381 Drive truck0 distributor1 depot0
+3559 nop
+3713 Lift hoist0 crate0 pallet0 depot0
+3718 nop
+3727 Load hoist0 crate0 truck0 depot0
+3731 Unload hoist0 crate2 truck0 depot0
+3735 Drop hoist0 crate2 pallet0 depot0
+3741 Drive truck1 depot0 distributor1
+3902 nop
+4055 Lift hoist2 crate1 pallet2 distributor1
+4066 Load hoist2 crate1 truck1 distributor1
+4082 Drive truck1 distributor1 distributor0
+4087 nop
+4092 Unload hoist1 crate1 truck1 distributor0
+4094 Drop hoist1 crate1 crate3 distributor0
+4101 Drive truck0 depot0 distributor1
+4125 nop
+4306 Unload hoist2 crate0 truck0 distributor1
+4488 Drop hoist2 crate0 pallet2 distributor1
+root 3162 41 75 109
+41 do_put_on crate2 pallet0 -> m3_do_put_on 1091 3381 374
+75 do_put_on crate1 crate3 -> m3_do_put_on 1379 4082 628
+109 do_put_on crate0 pallet2 -> m2_do_put_on 696 4124 4306 4488
+374 do_unload_truck crate2 pallet0 depot0 truck0 -> m11_do_unload_truck 1247 3731 3735
+628 do_unload_truck crate1 crate3 distributor0 truck1 -> m11_do_unload_truck 4086 4092 4094
+696 do_get_truck truck0 distributor1 -> m7_do_get_truck 4101
+1091 do_load_truck crate2 crate1 distributor1 truck0 -> m10_do_load_truck 2106 3366 3374 3377
+1247 do_clear pallet0 depot0 -> m5_do_clear 3558 3713 3717 3727
+1379 do_load_truck crate1 pallet2 distributor1 truck1 -> m10_do_load_truck 2494 3901 4055 4066
+2106 do_get_truck truck0 distributor1 -> m7_do_get_truck 3360
+2494 do_get_truck truck1 distributor1 -> m7_do_get_truck 3741
+3162 do_put_on crate3 pallet1 -> m0_do_put_on 3163
+3366 do_clear crate2 distributor1 -> m4_do_clear 3367
+3558 do_clear crate0 depot0 -> m4_do_clear 3559
+3717 do_get_truck truck0 depot0 -> m6_do_get_truck 3718
+3901 do_clear crate1 distributor1 -> m4_do_clear 3902
+4086 do_clear crate3 distributor0 -> m4_do_clear 4087
+4124 do_clear pallet2 distributor1 -> m4_do_clear 4125
+<==
+0.129 End of solution plan. (counted length of 24)
+0.129 Total amount of clauses encoded: 19273
+0.129 - directframeaxioms : 8292 cls
+0.129 - qfactsemantics : 3508 cls
+0.129 - indirectframeaxioms : 2962 cls
+0.129 - reductionconstraints : 771 cls
+0.129 - atmostoneelement : 750 cls
+0.129 - expansions : 734 cls
+0.129 - actionconstraints : 712 cls
+0.129 - predecessors : 596 cls
+0.129 - actioneffects : 344 cls
+0.129 - qconstequality : 297 cls
+0.129 - substitutionconstraints : 232 cls
+0.129 - truefacts : 73 cls
+0.129 - axiomaticops : 2 cls
+0.129 # instantiated positions: 209
+0.129 # instantiated actions: 517
+0.129 # instantiated reductions: 80
+0.129 # introduced pseudo-constants: 123
+0.129 # retroactive prunings: 0
+0.129 # retroactively pruned operations: 0
+0.129 # dominated operations: 1
+0.129 # total invalid rigid preconditions found in getPFC: 0
+0.129 # invalid rigid preconditions found in getPFC: 0
+0.129 # invalid rigid preconditions found in getPFC in varrestrictions: 0
+0.129 # total invalid fluent preconditions found in getPFC: 21
+0.129 # invalid fluent preconditions found in getPFC: 21
+0.129 # invalid fluent preconditions found in getPFC in varrestrictions: 0
+0.129 # invalid fluent preconditions found in getPFC via postconditions: 0
+0.129 # invalid operations found in getPFC via subtasks: 0
+0.129 # invalid operations found in getPFC via postconditions: 0
+0.129 # number effects in operation fact_frames: 266
+0.129 # number of variables restricted: 287
+0.129 # number of nodes variables restricted: 189
+0.129 Exiting happily.
+
+RUNWATCH_RESULT EXIT RETVAL 0 TIME_SECS 0.13562 MEMPEAK_KBS 680

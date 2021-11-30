@@ -1,0 +1,135 @@
+    _           _         _
+   \ |         \ |       | |                       
+   | |     __  | |      _| |______                
+   | |     \/  | |     /_   ______\                
+   | |      _  | |   __  | |  ___   ___   ___       
+   | |___  | | | |  / .\ | | / , | |   \ / ·_\    
+   \_____\ |_| |__\ \__/ |_| \___) |_|_| \___\  
+[39mL i l o t a n e  version rls-glucose4
+by Dominik Schreiber <dominik.schreiber@kit.edu> 2020-2021
+using SAT solver glucose4
+
+0.005 Parser finished.
+0.005 Structures extracted.
+0.006 54 operators and 26 methods created.
+0.009 Mined 7 new reduction preconditions (+18.9%).
+0.009 Iteration 0.
+0.009 Creating initial layer of size 2
+0.010 Attempting to solve formula with 3 clauses (3 literals) and 1 assumptions
+0.010 Unsolvable at layer 0 -- expanding.
+0.010 Iteration 1.
+0.010 New layer size: 2
+0.010 Instantiating ...
+0.010 Collected 0 relevant facts at this layer
+0.010 Encoding ...
+0.010 Attempting to solve formula with 8 clauses (12 literals) and 1 assumptions
+0.010 Unsolvable at layer 1 -- expanding.
+0.010 Iteration 2.
+0.010 New layer size: 3
+0.010 Instantiating ...
+0.010 Collected 1 relevant facts at this layer
+0.010 Encoding ...
+0.010 Attempting to solve formula with 19 clauses (33 literals) and 1 assumptions
+0.010 Unsolvable at layer 2 -- expanding.
+0.010 Iteration 3.
+0.010 New layer size: 4
+0.010 Instantiating ...
+0.011 Collected 2 relevant facts at this layer
+0.011 Encoding ...
+0.011 Attempting to solve formula with 31 clauses (55 literals) and 1 assumptions
+0.011 Unsolvable at layer 3 -- expanding.
+0.011 Iteration 4.
+0.011 New layer size: 9
+0.011 Instantiating ...
+0.011 Collected 7 relevant facts at this layer
+0.011 Encoding ...
+0.011 Attempting to solve formula with 96 clauses (193 literals) and 2 assumptions
+0.011 Unsolvable at layer 4 -- expanding.
+0.011 Iteration 5.
+0.011 New layer size: 11
+0.011 Instantiating ...
+0.012 Collected 9 relevant facts at this layer
+0.012 Encoding ...
+0.012 Attempting to solve formula with 193 clauses (403 literals) and 2 assumptions
+0.012 Unsolvable at layer 5 -- expanding.
+0.012 Iteration 6.
+0.012 New layer size: 13
+0.012 Instantiating ...
+0.012 Retroactively prune action (__REPEATED___SURROGATE*M9-ACHIEVE-LIFT-AT*i-FLAG-LIFT-AT* F1)@(5,2): no children at offset 0
+0.013 Retroactively prune action (__REPEATED___SURROGATE*IFUNLOCK4-LIFT-AT*i-UNFLAG-LIFT-AT* F1)@(5,4): no children at offset 0
+0.013 Collected 9 relevant facts at this layer
+0.013 Encoding ...
+0.013 Attempting to solve formula with 314 clauses (671 literals) and 2 assumptions
+0.013 Unsolvable at layer 6 -- expanding.
+0.013 Iteration 7.
+0.013 New layer size: 17
+0.013 Instantiating ...
+0.013 Retroactively prune action (__REPEATED___SURROGATE*M10-ACHIEVE-LIFT-AT*i-LOCK-LIFT-AT* F1)@(6,3): no children at offset 0
+0.014 Retroactively prune action (__REPEATED_DOWN Q_5,2_FLOOR:0_6c54521cd91c9bb0 F0) due to impossible effect !(LIFT-AT Q_5,2_FLOOR:0_6c54521cd91c9bb0)
+0.014 Collected 9 relevant facts at this layer
+0.014 Encoding ...
+0.014 Attempting to solve formula with 438 clauses (942 literals) and 1 assumptions
+c last restart ## conflicts  :  0 61 
+0.014 Found a solution at layer 7.
+==>
+154 i-LOCK-LIFT-AT F0
+156 i-UNLOCK-LIFT-AT F0
+159 BOARD F0 P0
+166 i-LOCK-BOARDED P0
+168 UP F0 F1
+187 i-LOCK-LIFT-AT F1
+189 i-UNLOCK-LIFT-AT F1
+191 i-UNLOCK-BOARDED P0
+193 DEPART F1 P0
+199 i-LOCK-SERVED P0
+root 5
+5 ACHIEVE-SERVED P0 -> M22-ACHIEVE-SERVED 9 199
+9 ACHIEVE-SERVED2 P0 -> M24-ACHIEVE-SERVED2 17 20
+17 DO-SERVED-DEPART2 F1 P0 -> M8-DO-SERVED-DEPART2 27 36 188 190 193
+20 ACHIEVE-SERVED2 P0 -> M23-ACHIEVE-SERVED2
+27 ACHIEVE-BOARDED P0 -> M17-ACHIEVE-BOARDED 65 166
+36 ACHIEVE-LIFT-AT F1 -> M11-ACHIEVE-LIFT-AT 80 187
+65 ACHIEVE-BOARDED1 P0 -> M19-ACHIEVE-BOARDED1 109 111
+80 ACHIEVE-LIFT-AT0 F1 -> M13-ACHIEVE-LIFT-AT0 168 126
+109 DO-BOARDED-BOARD1 F0 P0 -> M7-DO-BOARDED-BOARD1 153 155 159
+111 ACHIEVE-BOARDED1 P0 -> M18-ACHIEVE-BOARDED1
+126 ACHIEVE-LIFT-AT0 F1 -> M12-ACHIEVE-LIFT-AT0
+153 ACHIEVE-LIFT-AT F0 -> M10-ACHIEVE-LIFT-AT 154
+155 IFUNLOCK-LIFT-AT F0 -> IFUNLOCK5-LIFT-AT 156
+188 IFUNLOCK-LIFT-AT F1 -> IFUNLOCK5-LIFT-AT 189
+190 IFUNLOCK-BOARDED P0 -> IFUNLOCK1-BOARDED 191
+<==
+0.015 End of solution plan. (counted length of 10)
+0.015 Total amount of clauses encoded: 438
+0.015 - directframeaxioms : 92 cls
+0.015 - predecessors : 78 cls
+0.015 - expansions : 75 cls
+0.015 - reductionconstraints : 54 cls
+0.015 - atmostoneelement : 42 cls
+0.015 - actionconstraints : 26 cls
+0.015 - actioneffects : 21 cls
+0.015 - qfactsemantics : 14 cls
+0.015 - forbiddenoperations : 11 cls
+0.015 - substitutionconstraints : 10 cls
+0.015 - truefacts : 9 cls
+0.015 - indirectframeaxioms : 4 cls
+0.015 - axiomaticops : 2 cls
+0.015 # instantiated positions: 60
+0.015 # instantiated actions: 65
+0.015 # instantiated reductions: 19
+0.015 # introduced pseudo-constants: 3
+0.015 # retroactive prunings: 6
+0.015 # retroactively pruned operations: 14
+0.015 # dominated operations: 0
+0.015 # total invalid rigid preconditions found in getPFC: 0
+0.015 # invalid rigid preconditions found in getPFC: 0
+0.015 # invalid rigid preconditions found in getPFC in varrestrictions: 0
+0.015 # total invalid fluent preconditions found in getPFC: 0
+0.015 # invalid fluent preconditions found in getPFC: 0
+0.015 # invalid fluent preconditions found in getPFC in varrestrictions: 0
+0.015 # invalid fluent preconditions found in getPFC via postconditions: 0
+0.015 # invalid subtasks found in getPFC: 0
+0.015 # number effects in operation fact_frames: 178
+0.015 Exiting happily.
+
+RUNWATCH_RESULT EXIT RETVAL 0 TIME_SECS 0.0229492 MEMPEAK_KBS 848

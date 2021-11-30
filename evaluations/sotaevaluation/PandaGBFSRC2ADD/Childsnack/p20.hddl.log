@@ -1,0 +1,386 @@
+pandaPIparser is configured as follows
+  Colors in output: true
+  Mode: parsing mode
+  Parameter splitting: true
+  Conditional effects: exponential encoding
+  Disjunctive preconditions as HTN: false
+  Replace goal with action: false
+  Output: pandaPI format
+General Options
+  Print timings: false
+  Quiet mode: false
+Inference Options
+  H2 mutexes: false
+  FAM groups: false
+Transformation Options
+  Add zero-cost no-op to empty methods: true
+  Remove duplicate actions: true
+  Remove useless literals: true
+  Expand abstract tasks with one method: true
+  Remove empty method preconditions: true
+  Two regularisation: false
+  Compile negative SAS variables: false
+Runtime Optimisations
+  Hierarchy Typing: true
+  Future Caching: false
+  Static Precondition Checking: false
+Output Options
+  Panda planner format: true
+  HDDL: false
+  SAS for Fast Downward (without hierarchy): false
+Output Formatting Options
+  Output only SAS+ variables: false
+  SAS+ delete mode: as input
+Reading input from /home/schnell/lilotane/sotaevaluation//PandaGBFS_runwatchtime_timeout1800_2021-11-16_21:14:14/runwatch_log/353/353.parsed.
+Writing output to /home/schnell/lilotane/sotaevaluation//PandaGBFS_runwatchtime_timeout1800_2021-11-16_21:14:14/runwatch_log/353/353.sas.
+Writing output to standard output.
+Parsing done.
+Conditional Effects expanded
+done.
+Starting Hierarchy Typing
+Total 4.346ms
+Contains 1.006ms
+Restrict 0.458ms
+MPrep 0.529ms
+Finished Hierarchy Typing
+Running PG.
+Process actions without preconditions
+Done.
+ ---> Disabling potentially consistent extension checking for action:           0 (make_sandwich_no_gluten)
+ ---> Disabling potentially consistent extension checking for action:           1 (make_sandwich)
+ ---> Disabling potentially consistent extension checking for action:           15 (__method_precondition_m1_serve_base_base)
+ ---> Disabling potentially consistent extension checking for action:           13 (__method_precondition_m0_serve_base_base)
+ ---> Disabling potentially consistent extension checking for action:           12 (__method_precondition_m1_serve_split)
+Returning from runGpg().
+PG done. Postprocessing
+PG postprocessing done.
+Calculated [25374] grounded tasks and [408] reachable facts.
+Running TDG.
+Process actions without preconditions
+Done.
+ ---> Disabling potentially consistent extension checking for action:           1 (_splitting_method_m0_serve_splitted_1)
+ ---> Disabling potentially consistent extension checking for action:           5 (_splitting_method_m1_serve_splitted_2)
+ ---> Disabling potentially consistent extension checking for action:           2 (_splitting_method_m0_serve_splitted_3)
+ ---> Disabling potentially consistent extension checking for action:           6 (_splitting_method_m1_serve_splitted_4)
+ ---> Disabling potentially consistent extension checking for action:           4 (m0_serve)
+ ---> Disabling potentially consistent extension checking for action:           8 (m1_serve)
+Returning from runGpg().
+TDG done.
+Calculated [29303] grounded tasks and [16705] grounded decomposition methods.
+Performing DFS.
+DFS done.
+After DFS: 18043 tasks, 16705 methods.
+Grounded PG:
+Input was [14114, 18043], output was [14114, 408].
+Simplifying instance.
+Removing useless facts/literals
+Removing method precondition actions whose precondition is empty
+Expanding abstract tasks with only one method
+Starting duplicate elimination.
+Data structure build.
+736 duplicates found.
+Duplicates replaced in methods.
+Further Mutex Groups: 0 strict 0 non strict
+Writing instance to output.
+Final Statistics: F 312 S 0 SC 0 SM 0 NSM 0 I 0 P 13016 S 32 A 857 M 13633
+Exiting.
+Random seed: 42
+Time limit: 1800 seconds
+Reading input from /home/schnell/lilotane/sotaevaluation//PandaGBFS_runwatchtime_timeout1800_2021-11-16_21:14:14/runwatch_log/353/353.sas.
+- State has 312 bits divided into 312 mutex groups.
+- Domain contains 13048 actions.
+- Domain contains 13905 tasks.
+- Domain contains 13633 methods.
+- The initial state contains 84 set bits.
+- The initial task is "__top[]".
+- State-based goal contains 24 bits.
+- Instance is totally-ordered: yes
+- Instance has unique paths: yes
+- Instance is parallel sequences: yes
+Calculate SCCs...
+- Number of SCCs: 13905
+- The problem is acyclic
+Selected Planning Algorithm: progression searchParsing heuristics ...
+Number of specified heuristics: 1
+- the option "store cuts" of the RC heuristic can only be used with the inner heuristic LM-Cut. It will be disabled.
+- Calculating minimal implied costs and distances (14 ms)
+Heuristic #0 = hhRC2(add;distance;correct count)
+Search config:
+ - type: path cost
+ - weight: 1
+ - suboptimal: false
+Visited List configured
+- mode: total order
+- hashs to use: state task task-sequence
+- memory information: topological ordering
+- Visited list allows deletion of search nodes: true
+Search Configuration
+- Using JAIR 2020 progression algorithm
+- Search is stopped after first solution is found.
+- A* Search
+- Distance G is "modification depth"
+   4s visitime    0.01s generated nodes      5016 nodes/sec    1143 cur h  406 mod.depth    5 inserts       228 dups         0 size       228 hash fail      0 hash buckets    228
+  13s visitime    0.01s generated nodes     10056 nodes/sec     739 cur h  409 mod.depth   10 inserts       330 dups        22 size       308 hash fail     22 hash buckets    308
+  22s visitime    0.01s generated nodes     15096 nodes/sec     659 cur h  409 mod.depth   10 inserts       469 dups        81 size       388 hash fail     81 hash buckets    388
+  31s visitime    0.02s generated nodes     20113 nodes/sec     644 cur h  371 mod.depth   14 inserts      1167 dups       675 size       492 hash fail    675 hash buckets    492
+  39s visitime    0.02s generated nodes     25127 nodes/sec     643 cur h  390 mod.depth   19 inserts      1317 dups       715 size       602 hash fail    715 hash buckets    602
+  43s visitime    0.03s generated nodes     30136 nodes/sec     689 cur h  371 mod.depth   23 inserts      1721 dups       918 size       803 hash fail    918 hash buckets    803
+  51s visitime    0.03s generated nodes     35155 nodes/sec     682 cur h  373 mod.depth   28 inserts      1829 dups       937 size       892 hash fail    937 hash buckets    892
+  59s visitime    0.04s generated nodes     40157 nodes/sec     676 cur h  373 mod.depth   28 inserts      2013 dups      1039 size       974 hash fail   1039 hash buckets    974
+  64s visitime    0.04s generated nodes     45166 nodes/sec     696 cur h  355 mod.depth   32 inserts      2640 dups      1506 size      1134 hash fail   1506 hash buckets   1134
+  71s visitime    0.05s generated nodes     50206 nodes/sec     703 cur h  356 mod.depth   37 inserts      2769 dups      1521 size      1248 hash fail   1521 hash buckets   1248
+  78s visitime    0.05s generated nodes     55246 nodes/sec     701 cur h  356 mod.depth   37 inserts      2993 dups      1661 size      1332 hash fail   1661 hash buckets   1332
+  84s visitime    0.06s generated nodes     60286 nodes/sec     714 cur h  337 mod.depth   46 inserts      3502 dups      2044 size      1458 hash fail   2044 hash buckets   1458
+  89s visitime    0.06s generated nodes     65301 nodes/sec     726 cur h  318 mod.depth   55 inserts      3849 dups      2274 size      1575 hash fail   2274 hash buckets   1575
+  93s visitime    0.07s generated nodes     70318 nodes/sec     750 cur h  301 mod.depth   64 inserts      4105 dups      2354 size      1751 hash fail   2354 hash buckets   1751
+  99s visitime    0.07s generated nodes     75334 nodes/sec     759 cur h  301 mod.depth   64 inserts      4264 dups      2425 size      1839 hash fail   2425 hash buckets   1839
+ 103s visitime    0.08s generated nodes     80385 nodes/sec     774 cur h  263 mod.depth   82 inserts      4858 dups      2892 size      1966 hash fail   2892 hash buckets   1966
+ 107s visitime    0.08s generated nodes     85388 nodes/sec     797 cur h  246 mod.depth   91 inserts      5096 dups      2967 size      2129 hash fail   2967 hash buckets   2129
+ 111s visitime    0.08s generated nodes     90410 nodes/sec     811 cur h  246 mod.depth   91 inserts      5267 dups      3045 size      2222 hash fail   3045 hash buckets   2222
+ 114s visitime    0.09s generated nodes     95424 nodes/sec     834 cur h  210 mod.depth  109 inserts      5763 dups      3380 size      2383 hash fail   3380 hash buckets   2383
+ 117s visitime    0.09s generated nodes    100426 nodes/sec     852 cur h  196 mod.depth  113 inserts      6164 dups      3678 size      2486 hash fail   3678 hash buckets   2486
+ 120s visitime    0.09s generated nodes    105440 nodes/sec     873 cur h  193 mod.depth  118 inserts      6384 dups      3762 size      2622 hash fail   3762 hash buckets   2622
+ 123s visitime    0.10s generated nodes    110463 nodes/sec     897 cur h  138 mod.depth  145 inserts      6739 dups      3975 size      2764 hash fail   3975 hash buckets   2764
+ 125s visitime    0.10s generated nodes    115653 nodes/sec     924 cur h  103 mod.depth  165 inserts      7191 dups      4302 size      2889 hash fail   4302 hash buckets   2889
+Search Results
+- Search time 125.33 seconds
+- Visited list time 0.10 seconds
+- Visited list inserts 7223
+- Visited list pruned 4317
+- Visited list contains 2906
+- Visited list hash collisions 4317
+- Visited list used hash buckets 2906
+- Generated 117000 search nodes
+  Calculated heuristic for 55946 nodes
+  One modifications 24565
+  Effectless actions 36489
+- including 24565 one modification actions
+- including 0 one modification methods
+- and       36489 progressions of effectless actions
+- Generated 446 nodes per second
+- Final fringe contains 36553 nodes
+- Status: Solved
+- Found solution of length 217
+- Total costs of actions: 120
+==>
+12 __method_precondition_m1_serve_base_base[child24,sandw16]
+270 make_sandwich[sandw16,bread8,content19]
+3356 put_on_tray[sandw16,tray4]
+3357 move_tray[tray4,kitchen,table2]
+3358 serve_sandwich[sandw16,child1,tray4,table2]
+3359 move_tray[tray4,table2,kitchen]
+12374 __method_precondition_m1_serve_base_base[child24,sandw25]
+19215 make_sandwich_no_gluten[sandw25,bread22,content21]
+19883 put_on_tray[sandw25,tray4]
+19884 move_tray[tray4,kitchen,table3]
+19885 serve_sandwich_no_gluten[sandw25,child2,tray4,table3]
+19886 move_tray[tray4,table3,kitchen]
+25071 __method_precondition_m1_serve_base_base[child24,sandw13]
+26412 make_sandwich[sandw13,bread16,content15]
+28911 put_on_tray[sandw13,tray1]
+28912 move_tray[tray1,kitchen,table2]
+28913 serve_sandwich[sandw13,child3,tray1,table2]
+28914 move_tray[tray1,table2,kitchen]
+31926 __method_precondition_m1_serve_base_base[child24,sandw15]
+42541 make_sandwich[sandw15,bread3,content9]
+44591 put_on_tray[sandw15,tray1]
+44592 move_tray[tray1,kitchen,table2]
+44593 serve_sandwich[sandw15,child4,tray1,table2]
+44594 move_tray[tray1,table2,kitchen]
+49370 __method_precondition_m1_serve_base_base[child24,sandw18]
+56308 make_sandwich_no_gluten[sandw18,bread10,content17]
+57156 put_on_tray[sandw18,tray2]
+57157 move_tray[tray2,kitchen,table2]
+57158 serve_sandwich_no_gluten[sandw18,child5,tray2,table2]
+57159 move_tray[tray2,table2,kitchen]
+61133 __method_precondition_m1_serve_base_base[child24,sandw4]
+61489 make_sandwich_no_gluten[sandw4,bread20,content5]
+61872 put_on_tray[sandw4,tray1]
+61873 move_tray[tray1,kitchen,table2]
+61874 serve_sandwich_no_gluten[sandw4,child6,tray1,table2]
+61875 move_tray[tray1,table2,kitchen]
+65190 __method_precondition_m1_serve_base_base[child24,sandw17]
+65467 make_sandwich[sandw17,bread21,content10]
+68568 put_on_tray[sandw17,tray1]
+68569 move_tray[tray1,kitchen,table3]
+68570 serve_sandwich[sandw17,child7,tray1,table3]
+68571 move_tray[tray1,table3,kitchen]
+68812 __method_precondition_m1_serve_base_base[child24,sandw19]
+76918 make_sandwich_no_gluten[sandw19,bread5,content2]
+77158 put_on_tray[sandw19,tray1]
+77159 move_tray[tray1,kitchen,table1]
+77160 serve_sandwich_no_gluten[sandw19,child8,tray1,table1]
+77161 move_tray[tray1,table1,kitchen]
+79537 __method_precondition_m1_serve_base_base[child24,sandw12]
+79689 make_sandwich_no_gluten[sandw12,bread4,content4]
+80265 put_on_tray[sandw12,tray3]
+80266 move_tray[tray3,kitchen,table2]
+80267 serve_sandwich_no_gluten[sandw12,child9,tray3,table2]
+80268 move_tray[tray3,table2,kitchen]
+80400 __method_precondition_m1_serve_base_base[child24,sandw31]
+81704 make_sandwich[sandw31,bread1,content12]
+83721 put_on_tray[sandw31,tray2]
+83722 move_tray[tray2,kitchen,table2]
+83723 serve_sandwich[sandw31,child10,tray2,table2]
+83724 move_tray[tray2,table2,kitchen]
+89137 __method_precondition_m1_serve_base_base[child24,sandw30]
+90981 make_sandwich_no_gluten[sandw30,bread13,content8]
+91102 put_on_tray[sandw30,tray4]
+91103 move_tray[tray4,kitchen,table2]
+91104 serve_sandwich_no_gluten[sandw30,child11,tray4,table2]
+91105 move_tray[tray4,table2,kitchen]
+92004 __method_precondition_m1_serve_base_base[child24,sandw14]
+92228 make_sandwich[sandw14,bread17,content11]
+93250 put_on_tray[sandw14,tray2]
+93251 move_tray[tray2,kitchen,table1]
+93252 serve_sandwich[sandw14,child12,tray2,table1]
+93253 move_tray[tray2,table1,kitchen]
+99248 __method_precondition_m1_serve_base_base[child24,sandw23]
+99959 make_sandwich[sandw23,bread15,content18]
+100621 put_on_tray[sandw23,tray2]
+100622 move_tray[tray2,kitchen,table3]
+100623 serve_sandwich[sandw23,child13,tray2,table3]
+100624 move_tray[tray2,table3,kitchen]
+105471 __method_precondition_m1_serve_base_base[child24,sandw10]
+105802 make_sandwich_no_gluten[sandw10,bread14,content14]
+105952 put_on_tray[sandw10,tray3]
+105953 move_tray[tray3,kitchen,table1]
+105954 serve_sandwich_no_gluten[sandw10,child14,tray3,table1]
+105955 move_tray[tray3,table1,kitchen]
+106127 __method_precondition_m1_serve_base_base[child24,sandw7]
+106592 make_sandwich_no_gluten[sandw7,bread23,content22]
+106637 put_on_tray[sandw7,tray4]
+106638 move_tray[tray4,kitchen,table2]
+106639 serve_sandwich_no_gluten[sandw7,child15,tray4,table2]
+106640 move_tray[tray4,table2,kitchen]
+106835 __method_precondition_m1_serve_base_base[child24,sandw28]
+106977 make_sandwich[sandw28,bread7,content23]
+108442 put_on_tray[sandw28,tray4]
+108443 move_tray[tray4,kitchen,table1]
+108444 serve_sandwich[sandw28,child16,tray4,table1]
+108445 move_tray[tray4,table1,kitchen]
+110115 __method_precondition_m1_serve_base_base[child24,sandw1]
+111775 make_sandwich[sandw1,bread9,content13]
+113540 put_on_tray[sandw1,tray2]
+113541 move_tray[tray2,kitchen,table1]
+113542 serve_sandwich[sandw1,child17,tray2,table1]
+113543 move_tray[tray2,table1,kitchen]
+113579 __method_precondition_m1_serve_base_base[child24,sandw24]
+115191 make_sandwich[sandw24,bread11,content20]
+115352 put_on_tray[sandw24,tray1]
+115353 move_tray[tray1,kitchen,table1]
+115354 serve_sandwich[sandw24,child18,tray1,table1]
+115355 move_tray[tray1,table1,kitchen]
+115366 __method_precondition_m1_serve_base_base[child24,sandw29]
+115442 make_sandwich[sandw29,bread2,content1]
+115653 put_on_tray[sandw29,tray1]
+115654 move_tray[tray1,kitchen,table1]
+115655 serve_sandwich[sandw29,child19,tray1,table1]
+115656 move_tray[tray1,table1,kitchen]
+115705 __method_precondition_m1_serve_base_base[child24,sandw2]
+115867 make_sandwich[sandw2,bread24,content24]
+115974 put_on_tray[sandw2,tray3]
+115975 move_tray[tray3,kitchen,table1]
+115976 serve_sandwich[sandw2,child20,tray3,table1]
+115977 move_tray[tray3,table1,kitchen]
+116014 __method_precondition_m1_serve_base_base[child24,sandw11]
+116197 make_sandwich[sandw11,bread19,content16]
+116262 put_on_tray[sandw11,tray2]
+116263 move_tray[tray2,kitchen,table3]
+116264 serve_sandwich[sandw11,child21,tray2,table3]
+116265 move_tray[tray2,table3,kitchen]
+116311 __method_precondition_m1_serve_base_base[child24,sandw8]
+116342 make_sandwich_no_gluten[sandw8,bread18,content7]
+116412 put_on_tray[sandw8,tray4]
+116413 move_tray[tray4,kitchen,table3]
+116414 serve_sandwich_no_gluten[sandw8,child22,tray4,table3]
+116415 move_tray[tray4,table3,kitchen]
+116429 __method_precondition_m1_serve_base_base[child24,sandw27]
+116581 make_sandwich[sandw27,bread12,content6]
+116693 put_on_tray[sandw27,tray4]
+116694 move_tray[tray4,kitchen,table2]
+116695 serve_sandwich[sandw27,child23,tray4,table2]
+116696 move_tray[tray4,table2,kitchen]
+116752 __method_precondition_m1_serve_base_base[child24,sandw9]
+116914 make_sandwich[sandw9,bread6,content3]
+116990 put_on_tray[sandw9,tray4]
+116991 move_tray[tray4,kitchen,table2]
+116992 serve_sandwich[sandw9,child24,tray4,table2]
+116993 move_tray[tray4,table2,kitchen]
+root 0
+116989 m1_serve_splitted_6[sandw9,kitchen,kitchen,child24,kitchen] -> <_splitting_method_m1_serve_splitted_6;m1_serve_splitted_4[tray4,kitchen,sandw9,child24,kitchen];_splitting_method_m1_serve_splitted_4;1;0,-1,-2,-3> 116990 116991 116992 116993
+116913 m1_serve_splitted_2[sandw9] -> _splitting_method_m1_serve_splitted_2 116914
+116751 serve[child24] -> m1_serve 116752 116913 116989
+116692 m1_serve_splitted_6[sandw27,kitchen,kitchen,child23,kitchen] -> <_splitting_method_m1_serve_splitted_6;m1_serve_splitted_4[tray4,kitchen,sandw27,child23,kitchen];_splitting_method_m1_serve_splitted_4;1;0,-1,-2,-3> 116693 116694 116695 116696
+116580 m1_serve_splitted_2[sandw27] -> _splitting_method_m1_serve_splitted_2 116581
+116428 serve[child23] -> m1_serve 116429 116580 116692
+116411 m0_serve_splitted_5[sandw8,kitchen,kitchen,child22,kitchen] -> <_splitting_method_m0_serve_splitted_5;m0_serve_splitted_3[tray4,kitchen,sandw8,child22,kitchen];_splitting_method_m0_serve_splitted_3;1;0,-1,-2,-3> 116412 116413 116414 116415
+116341 m0_serve_splitted_1[sandw8] -> _splitting_method_m0_serve_splitted_1 116342
+116310 serve[child22] -> m0_serve 116311 116341 116411
+116261 m1_serve_splitted_6[sandw11,kitchen,kitchen,child21,kitchen] -> <_splitting_method_m1_serve_splitted_6;m1_serve_splitted_4[tray2,kitchen,sandw11,child21,kitchen];_splitting_method_m1_serve_splitted_4;1;0,-1,-2,-3> 116262 116263 116264 116265
+116196 m1_serve_splitted_2[sandw11] -> _splitting_method_m1_serve_splitted_2 116197
+116013 serve[child21] -> m1_serve 116014 116196 116261
+115973 m1_serve_splitted_6[sandw2,kitchen,kitchen,child20,kitchen] -> <_splitting_method_m1_serve_splitted_6;m1_serve_splitted_4[tray3,kitchen,sandw2,child20,kitchen];_splitting_method_m1_serve_splitted_4;1;0,-1,-2,-3> 115974 115975 115976 115977
+115866 m1_serve_splitted_2[sandw2] -> _splitting_method_m1_serve_splitted_2 115867
+115704 serve[child20] -> m1_serve 115705 115866 115973
+115652 m1_serve_splitted_6[sandw29,kitchen,kitchen,child19,kitchen] -> <_splitting_method_m1_serve_splitted_6;m1_serve_splitted_4[tray1,kitchen,sandw29,child19,kitchen];_splitting_method_m1_serve_splitted_4;1;0,-1,-2,-3> 115653 115654 115655 115656
+115441 m1_serve_splitted_2[sandw29] -> _splitting_method_m1_serve_splitted_2 115442
+115365 serve[child19] -> m1_serve 115366 115441 115652
+115351 m1_serve_splitted_6[sandw24,kitchen,kitchen,child18,kitchen] -> <_splitting_method_m1_serve_splitted_6;m1_serve_splitted_4[tray1,kitchen,sandw24,child18,kitchen];_splitting_method_m1_serve_splitted_4;1;0,-1,-2,-3> 115352 115353 115354 115355
+115190 m1_serve_splitted_2[sandw24] -> _splitting_method_m1_serve_splitted_2 115191
+113578 serve[child18] -> m1_serve 113579 115190 115351
+113539 m1_serve_splitted_6[sandw1,kitchen,kitchen,child17,kitchen] -> <_splitting_method_m1_serve_splitted_6;m1_serve_splitted_4[tray2,kitchen,sandw1,child17,kitchen];_splitting_method_m1_serve_splitted_4;1;0,-1,-2,-3> 113540 113541 113542 113543
+111774 m1_serve_splitted_2[sandw1] -> _splitting_method_m1_serve_splitted_2 111775
+110114 serve[child17] -> m1_serve 110115 111774 113539
+108441 m1_serve_splitted_6[sandw28,kitchen,kitchen,child16,kitchen] -> <_splitting_method_m1_serve_splitted_6;m1_serve_splitted_4[tray4,kitchen,sandw28,child16,kitchen];_splitting_method_m1_serve_splitted_4;1;0,-1,-2,-3> 108442 108443 108444 108445
+106976 m1_serve_splitted_2[sandw28] -> _splitting_method_m1_serve_splitted_2 106977
+106834 serve[child16] -> m1_serve 106835 106976 108441
+106636 m0_serve_splitted_5[sandw7,kitchen,kitchen,child15,kitchen] -> <_splitting_method_m0_serve_splitted_5;m0_serve_splitted_3[tray4,kitchen,sandw7,child15,kitchen];_splitting_method_m0_serve_splitted_3;1;0,-1,-2,-3> 106637 106638 106639 106640
+106591 m0_serve_splitted_1[sandw7] -> _splitting_method_m0_serve_splitted_1 106592
+106126 serve[child15] -> m0_serve 106127 106591 106636
+105951 m0_serve_splitted_5[sandw10,kitchen,kitchen,child14,kitchen] -> <_splitting_method_m0_serve_splitted_5;m0_serve_splitted_3[tray3,kitchen,sandw10,child14,kitchen];_splitting_method_m0_serve_splitted_3;1;0,-1,-2,-3> 105952 105953 105954 105955
+105801 m0_serve_splitted_1[sandw10] -> _splitting_method_m0_serve_splitted_1 105802
+105470 serve[child14] -> m0_serve 105471 105801 105951
+100620 m1_serve_splitted_6[sandw23,kitchen,kitchen,child13,kitchen] -> <_splitting_method_m1_serve_splitted_6;m1_serve_splitted_4[tray2,kitchen,sandw23,child13,kitchen];_splitting_method_m1_serve_splitted_4;1;0,-1,-2,-3> 100621 100622 100623 100624
+99958 m1_serve_splitted_2[sandw23] -> _splitting_method_m1_serve_splitted_2 99959
+99247 serve[child13] -> m1_serve 99248 99958 100620
+93249 m1_serve_splitted_6[sandw14,kitchen,kitchen,child12,kitchen] -> <_splitting_method_m1_serve_splitted_6;m1_serve_splitted_4[tray2,kitchen,sandw14,child12,kitchen];_splitting_method_m1_serve_splitted_4;1;0,-1,-2,-3> 93250 93251 93252 93253
+92227 m1_serve_splitted_2[sandw14] -> _splitting_method_m1_serve_splitted_2 92228
+92003 serve[child12] -> m1_serve 92004 92227 93249
+91101 m0_serve_splitted_5[sandw30,kitchen,kitchen,child11,kitchen] -> <_splitting_method_m0_serve_splitted_5;m0_serve_splitted_3[tray4,kitchen,sandw30,child11,kitchen];_splitting_method_m0_serve_splitted_3;1;0,-1,-2,-3> 91102 91103 91104 91105
+90980 m0_serve_splitted_1[sandw30] -> _splitting_method_m0_serve_splitted_1 90981
+89136 serve[child11] -> m0_serve 89137 90980 91101
+83720 m1_serve_splitted_6[sandw31,kitchen,kitchen,child10,kitchen] -> <_splitting_method_m1_serve_splitted_6;m1_serve_splitted_4[tray2,kitchen,sandw31,child10,kitchen];_splitting_method_m1_serve_splitted_4;1;0,-1,-2,-3> 83721 83722 83723 83724
+81703 m1_serve_splitted_2[sandw31] -> _splitting_method_m1_serve_splitted_2 81704
+80399 serve[child10] -> m1_serve 80400 81703 83720
+80264 m0_serve_splitted_5[sandw12,kitchen,kitchen,child9,kitchen] -> <_splitting_method_m0_serve_splitted_5;m0_serve_splitted_3[tray3,kitchen,sandw12,child9,kitchen];_splitting_method_m0_serve_splitted_3;1;0,-1,-2,-3> 80265 80266 80267 80268
+79688 m0_serve_splitted_1[sandw12] -> _splitting_method_m0_serve_splitted_1 79689
+79536 serve[child9] -> m0_serve 79537 79688 80264
+77157 m0_serve_splitted_5[sandw19,kitchen,kitchen,child8,kitchen] -> <_splitting_method_m0_serve_splitted_5;m0_serve_splitted_3[tray1,kitchen,sandw19,child8,kitchen];_splitting_method_m0_serve_splitted_3;1;0,-1,-2,-3> 77158 77159 77160 77161
+76917 m0_serve_splitted_1[sandw19] -> _splitting_method_m0_serve_splitted_1 76918
+68811 serve[child8] -> m0_serve 68812 76917 77157
+68567 m1_serve_splitted_6[sandw17,kitchen,kitchen,child7,kitchen] -> <_splitting_method_m1_serve_splitted_6;m1_serve_splitted_4[tray1,kitchen,sandw17,child7,kitchen];_splitting_method_m1_serve_splitted_4;1;0,-1,-2,-3> 68568 68569 68570 68571
+65466 m1_serve_splitted_2[sandw17] -> _splitting_method_m1_serve_splitted_2 65467
+65189 serve[child7] -> m1_serve 65190 65466 68567
+61871 m0_serve_splitted_5[sandw4,kitchen,kitchen,child6,kitchen] -> <_splitting_method_m0_serve_splitted_5;m0_serve_splitted_3[tray1,kitchen,sandw4,child6,kitchen];_splitting_method_m0_serve_splitted_3;1;0,-1,-2,-3> 61872 61873 61874 61875
+61488 m0_serve_splitted_1[sandw4] -> _splitting_method_m0_serve_splitted_1 61489
+61132 serve[child6] -> m0_serve 61133 61488 61871
+57155 m0_serve_splitted_5[sandw18,kitchen,kitchen,child5,kitchen] -> <_splitting_method_m0_serve_splitted_5;m0_serve_splitted_3[tray2,kitchen,sandw18,child5,kitchen];_splitting_method_m0_serve_splitted_3;1;0,-1,-2,-3> 57156 57157 57158 57159
+56307 m0_serve_splitted_1[sandw18] -> _splitting_method_m0_serve_splitted_1 56308
+49369 serve[child5] -> m0_serve 49370 56307 57155
+44590 m1_serve_splitted_6[sandw15,kitchen,kitchen,child4,kitchen] -> <_splitting_method_m1_serve_splitted_6;m1_serve_splitted_4[tray1,kitchen,sandw15,child4,kitchen];_splitting_method_m1_serve_splitted_4;1;0,-1,-2,-3> 44591 44592 44593 44594
+42540 m1_serve_splitted_2[sandw15] -> _splitting_method_m1_serve_splitted_2 42541
+31925 serve[child4] -> m1_serve 31926 42540 44590
+28910 m1_serve_splitted_6[sandw13,kitchen,kitchen,child3,kitchen] -> <_splitting_method_m1_serve_splitted_6;m1_serve_splitted_4[tray1,kitchen,sandw13,child3,kitchen];_splitting_method_m1_serve_splitted_4;1;0,-1,-2,-3> 28911 28912 28913 28914
+26411 m1_serve_splitted_2[sandw13] -> _splitting_method_m1_serve_splitted_2 26412
+25070 serve[child3] -> m1_serve 25071 26411 28910
+19882 m0_serve_splitted_5[sandw25,kitchen,kitchen,child2,kitchen] -> <_splitting_method_m0_serve_splitted_5;m0_serve_splitted_3[tray4,kitchen,sandw25,child2,kitchen];_splitting_method_m0_serve_splitted_3;1;0,-1,-2,-3> 19883 19884 19885 19886
+19214 m0_serve_splitted_1[sandw25] -> _splitting_method_m0_serve_splitted_1 19215
+12373 serve[child2] -> m0_serve 12374 19214 19882
+3355 m1_serve_splitted_6[sandw16,kitchen,kitchen,child1,kitchen] -> <_splitting_method_m1_serve_splitted_6;m1_serve_splitted_4[tray4,kitchen,sandw16,child1,kitchen];_splitting_method_m1_serve_splitted_4;1;0,-1,-2,-3> 3356 3357 3358 3359
+269 m1_serve_splitted_2[sandw16] -> _splitting_method_m1_serve_splitted_2 270
+11 serve[child1] -> m1_serve 12 269 3355
+0 __top[] -> __top_method 11 12373 25070 31925 49369 61132 65189 68811 79536 80399 89136 92003 99247 105470 106126 106834 110114 113578 115365 115704 116013 116310 116428 116751
+<==
+
+RUNWATCH_RESULT EXIT RETVAL 0 TIME_SECS 126.76 MEMPEAK_KBS 3796

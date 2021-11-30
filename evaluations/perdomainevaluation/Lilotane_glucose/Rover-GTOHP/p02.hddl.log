@@ -1,0 +1,118 @@
+    _           _         _
+   \ |         \ |       | |                       
+   | |     __  | |      _| |______                
+   | |     \/  | |     /_   ______\                
+   | |      _  | |   __  | |  ___   ___   ___       
+   | |___  | | | |  / .\ | | / , | |   \ / ·_\    
+   \_____\ |_| |__\ \__/ |_| \___) |_|_| \___\  
+[39mL i l o t a n e  version rls-glucose4
+by Dominik Schreiber <dominik.schreiber@kit.edu> 2020-2021
+using SAT solver glucose4
+
+0.006 Parser finished.
+0.006 Structures extracted.
+0.007 38 operators and 17 methods created.
+0.008 Mined 30 new reduction preconditions (+96.8%).
+0.008 Iteration 0.
+0.008 Creating initial layer of size 2
+0.009 Attempting to solve formula with 9 clauses (12 literals) and 1 assumptions
+0.009 Unsolvable at layer 0 -- expanding.
+0.009 Iteration 1.
+0.009 New layer size: 4
+0.009 Instantiating ...
+0.010 Collected 3 relevant facts at this layer
+0.010 Encoding ...
+0.010 Attempting to solve formula with 27 clauses (48 literals) and 3 assumptions
+0.010 Unsolvable at layer 1 -- expanding.
+0.010 Iteration 2.
+0.010 New layer size: 13
+0.010 Instantiating ...
+0.012 Collected 15 relevant facts at this layer
+0.012 Encoding ...
+0.012 Attempting to solve formula with 291 clauses (674 literals) and 7 assumptions
+0.012 Unsolvable at layer 2 -- expanding.
+0.012 Iteration 3.
+0.012 New layer size: 23
+0.012 Instantiating ...
+0.014 Collected 19 relevant facts at this layer
+0.014 Encoding ...
+0.015 Attempting to solve formula with 908 clauses (2291 literals) and 7 assumptions
+0.015 Unsolvable at layer 3 -- expanding.
+0.015 Iteration 4.
+0.015 New layer size: 40
+0.015 Instantiating ...
+0.020 Collected 19 relevant facts at this layer
+0.020 Encoding ...
+0.022 Attempting to solve formula with 2200 clauses (5942 literals) and 7 assumptions
+c last restart ## conflicts  :  1 195 
+0.022 Found a solution at layer 4.
+==>
+358 visit waypoint3
+360 navigate rover0 waypoint3 waypoint1
+362 visit waypoint1
+368 navigate rover0 waypoint1 waypoint2
+382 unvisit waypoint1
+394 unvisit waypoint3
+397 nop
+399 sample_soil rover0 rover0store waypoint2
+402 communicate_soil_data2 rover0 general waypoint2 waypoint0
+443 visit waypoint2
+448 navigate rover0 waypoint2 waypoint1
+450 visit waypoint1
+460 navigate rover0 waypoint1 waypoint3
+475 unvisit waypoint1
+489 unvisit waypoint2
+493 drop rover0 rover0store
+495 sample_rock rover0 rover0store waypoint3
+499 communicate_rock_data2 rover0 general waypoint3 waypoint0
+538 nop
+573 calibrate rover0 camera0 objective1 waypoint3
+577 nop
+629 take_image rover0 waypoint3 objective1 camera0 high_res
+631 nop
+666 communicate_image_data rover0 general objective1 high_res waypoint3 waypoint0
+root 11 13 16
+11 get_soil_data waypoint2 -> m7_get_soil_data 25 396 399 401
+13 get_rock_data waypoint3 -> m10_get_rock_data 66 492 495 498
+16 get_image_data objective1 high_res -> m13_get_image_data 106 576 629 139
+25 do_navigate1 rover0 waypoint2 -> m1_do_navigate1 358 163 394
+66 do_navigate1 rover0 waypoint3 -> m1_do_navigate1 443 215 489
+106 do_calibrate rover0 camera0 -> m15_do_calibrate 537 573
+139 send_image_data rover0 objective1 high_res -> m14_send_image_data 630 666
+163 do_navigate2 rover0 waypoint3 waypoint2 -> m4_do_navigate2 360 362 367 382
+215 do_navigate2 rover0 waypoint2 waypoint3 -> m4_do_navigate2 448 450 459 475
+367 do_navigate2 rover0 waypoint1 waypoint2 -> m3_do_navigate2 368
+396 empty_store rover0store rover0 -> m5_empty_store 397
+401 send_soil_data rover0 waypoint2 -> m9_send_soil_data 402
+459 do_navigate2 rover0 waypoint1 waypoint3 -> m3_do_navigate2 460
+492 empty_store rover0store rover0 -> m6_empty_store 493
+498 send_rock_data rover0 waypoint3 -> m12_send_rock_data 499
+537 do_navigate1 rover0 waypoint3 -> m0_do_navigate1 538
+576 do_navigate1 rover0 waypoint3 -> m0_do_navigate1 577
+630 do_navigate1 rover0 waypoint3 -> m0_do_navigate1 631
+<==
+0.023 End of solution plan. (counted length of 24)
+0.023 Total amount of clauses encoded: 2200
+0.023 - directframeaxioms : 574 cls
+0.023 - qfactsemantics : 331 cls
+0.023 - substitutionconstraints : 239 cls
+0.023 - reductionconstraints : 225 cls
+0.023 - indirectframeaxioms : 153 cls
+0.023 - predecessors : 150 cls
+0.023 - expansions : 140 cls
+0.023 - actionconstraints : 105 cls
+0.023 - atmostoneelement : 104 cls
+0.023 - qconstequality : 96 cls
+0.023 - actioneffects : 62 cls
+0.023 - truefacts : 19 cls
+0.023 - axiomaticops : 2 cls
+0.023 # instantiated positions: 81
+0.023 # instantiated actions: 126
+0.023 # instantiated reductions: 25
+0.023 # introduced pseudo-constants: 27
+0.023 # retroactive prunings: 0
+0.023 # retroactively pruned operations: 0
+0.023 # dominated operations: 0
+0.023 Exiting happily (no cleaning up).
+
+RUNWATCH_RESULT EXIT RETVAL 0 TIME_SECS 0.0290527 MEMPEAK_KBS 672

@@ -1,0 +1,238 @@
+pandaPIparser is configured as follows
+  Colors in output: true
+  Mode: parsing mode
+  Parameter splitting: true
+  Conditional effects: exponential encoding
+  Disjunctive preconditions as HTN: false
+  Replace goal with action: false
+  Output: pandaPI format
+General Options
+  Print timings: false
+  Quiet mode: false
+Inference Options
+  H2 mutexes: false
+  FAM groups: false
+Transformation Options
+  Add zero-cost no-op to empty methods: true
+  Remove duplicate actions: true
+  Remove useless literals: true
+  Expand abstract tasks with one method: true
+  Remove empty method preconditions: true
+  Two regularisation: false
+  Compile negative SAS variables: false
+Runtime Optimisations
+  Hierarchy Typing: true
+  Future Caching: false
+  Static Precondition Checking: false
+Output Options
+  Panda planner format: true
+  HDDL: false
+  SAS for Fast Downward (without hierarchy): false
+Output Formatting Options
+  Output only SAS+ variables: false
+  SAS+ delete mode: as input
+Reading input from /home/schnell/lilotane/sotaevaluation//PandaGBFS_runwatchtime_timeout1800_2021-11-16_21:14:14/runwatch_log/5/5.parsed.
+Writing output to /home/schnell/lilotane/sotaevaluation//PandaGBFS_runwatchtime_timeout1800_2021-11-16_21:14:14/runwatch_log/5/5.sas.
+Writing output to standard output.
+Parsing done.
+Conditional Effects expanded
+done.
+Starting Hierarchy Typing
+Total 0.11ms
+Contains 0.015ms
+Restrict 0.022ms
+MPrep 0.014ms
+Finished Hierarchy Typing
+Running PG.
+Process actions without preconditions
+Done.
+Returning from runGpg().
+PG done. Postprocessing
+PG postprocessing done.
+Calculated [41] grounded tasks and [69] reachable facts.
+Running TDG.
+Process actions without preconditions
+Done.
+Returning from runGpg().
+TDG done.
+Calculated [59] grounded tasks and [52] grounded decomposition methods.
+Performing DFS.
+DFS done.
+After DFS: 59 tasks, 52 methods.
+Grounded PG:
+Input was [41, 59], output was [41, 69].
+Simplifying instance.
+Removing useless facts/literals
+Removing method precondition actions whose precondition is empty
+Expanding abstract tasks with only one method
+Starting duplicate elimination.
+Data structure build.
+0 duplicates found.
+Duplicates replaced in methods.
+Further Mutex Groups: 0 strict 0 non strict
+Writing instance to output.
+Final Statistics: F 26 S 0 SC 0 SM 0 NSM 0 I 0 P 29 S 11 A 13 M 47
+Exiting.
+Random seed: 42
+Time limit: 1800 seconds
+Reading input from /home/schnell/lilotane/sotaevaluation//PandaGBFS_runwatchtime_timeout1800_2021-11-16_21:14:14/runwatch_log/5/5.sas.
+- State has 26 bits divided into 26 mutex groups.
+- Domain contains 40 actions.
+- Domain contains 53 tasks.
+- Domain contains 47 methods.
+- The initial state contains 9 set bits.
+- The initial task is "__top[]".
+- State-based goal contains 5 bits.
+- Instance is totally-ordered: yes
+- Instance has unique paths: yes
+- Instance is parallel sequences: yes
+Calculate SCCs...
+- Number of SCCs: 52
+- The problem is cyclic
+- Number of cyclic SCCs: 1
+- Number of cyclic SCCs of size 1: 0
+Selected Planning Algorithm: progression searchParsing heuristics ...
+Number of specified heuristics: 1
+- the option "store cuts" of the RC heuristic can only be used with the inner heuristic LM-Cut. It will be disabled.
+- Calculating minimal implied costs and distances (0 ms)
+Heuristic #0 = hhRC2(add;distance;correct count)
+Search config:
+ - type: path cost
+ - weight: 1
+ - suboptimal: false
+Visited List configured
+- mode: total order
+- hashs to use: state task task-sequence
+- memory information: topological ordering
+- Visited list allows deletion of search nodes: true
+Search Configuration
+- Using JAIR 2020 progression algorithm
+- Search is stopped after first solution is found.
+- A* Search
+- Distance G is "modification depth"
+Search Results
+- Search time 0.038 seconds
+- Visited list time 0.00526 seconds
+- Visited list inserts 2344
+- Visited list pruned 476
+- Visited list contains 1868
+- Visited list hash collisions 476
+- Visited list used hash buckets 1868
+- Generated 12246 search nodes
+  Calculated heuristic for 10794 nodes
+  One modifications 1092
+  Effectless actions 360
+- including 1092 one modification actions
+- including 0 one modification methods
+- and       360 progressions of effectless actions
+- Generated 284052 nodes per second
+- Final fringe contains 129 nodes
+- Status: Solved
+- Found solution of length 101
+- Total costs of actions: 26
+==>
+21 open[c,r2,d02]
+35 open[c,r4,d04]
+62 move[c,r4,d04]
+303 __method_precondition_achieve-goals-pickup_split[r4,o3]
+332 pickup[o3,r4]
+443 move[r4,c,d04]
+460 move[c,r1,d01]
+476 __method_precondition_release-putdown_abstract_split[r1,o3]
+478 putdown[o3,r1]
+603 __method_precondition_achieve-goals-pickup_split[r1,o5]
+610 pickup[o5,r1]
+2877 move[r1,c,d01]
+2896 move[c,r2,d02]
+2910 move[r2,r5,d25]
+2924 __method_precondition_release-putdown_abstract_split[r5,o5]
+2933 putdown[o5,r5]
+3016 __method_precondition_achieve-goals-pickup_split[r5,o1]
+3027 pickup[o1,r5]
+5006 move[r5,r2,d25]
+5021 move[r2,c,d02]
+5044 move[c,r4,d04]
+5057 __method_precondition_release-putdown_abstract_split[r4,o1]
+5061 putdown[o1,r4]
+5408 __method_precondition_achieve-goals-pickup_split[r4,o2]
+5837 pickup[o2,r4]
+10419 move[r4,c,d04]
+10441 move[c,r2,d02]
+10453 move[r2,r3,d23]
+10471 __method_precondition_release-putdown_abstract_split[r3,o2]
+10479 putdown[o2,r3]
+10558 __method_precondition_achieve-goals-pickup_split[r3,o4]
+10648 pickup[o4,r3]
+12189 move[r3,r2,d23]
+12215 move[r2,r5,d25]
+12230 __method_precondition_release-putdown_abstract_split[r5,o4]
+12237 putdown[o4,r5]
+12241 __noop
+root 0
+12240 achieve-goals[] -> finished 12241
+12236 putdown_abstract[] -> newMethod23 12237
+12229 release-putdown_abstract_splitted_2[] -> _splitting_method_release-putdown_abstract_splitted_2 12230
+12225 release[] -> release-putdown_abstract 12229 12236 12240
+12214 move_abstract[] -> newMethod24 12215
+12197 release[] -> release-move 12214 12225
+12188 move_abstract[] -> newMethod24 12189
+10669 release[] -> release-move 12188 12197
+10647 pickup_abstract[o4] -> newMethod22 10648
+10557 achieve-goals-pickup_splitted_3[] -> <_splitting_method_achieve-goals-pickup_splitted_3;achieve-goals-pickup_splitted_1[o4];_splitting_method_achieve-goals-pickup_splitted_1;0;-1,1> 10558 10647
+10484 achieve-goals[] -> achieve-goals-pickup 10557 10669
+10478 putdown_abstract[] -> newMethod23 10479
+10470 release-putdown_abstract_splitted_2[] -> _splitting_method_release-putdown_abstract_splitted_2 10471
+10465 release[] -> release-putdown_abstract 10470 10478 10484
+10452 move_abstract[] -> newMethod24 10453
+10445 release[] -> release-move 10452 10465
+10440 move_abstract[] -> newMethod24 10441
+10424 release[] -> release-move 10440 10445
+10418 move_abstract[] -> newMethod24 10419
+8878 release[] -> release-move 10418 10424
+5836 pickup_abstract[o2] -> newMethod22 5837
+5407 achieve-goals-pickup_splitted_3[] -> <_splitting_method_achieve-goals-pickup_splitted_3;achieve-goals-pickup_splitted_1[o2];_splitting_method_achieve-goals-pickup_splitted_1;0;-1,1> 5408 5836
+5069 achieve-goals[] -> achieve-goals-pickup 5407 8878
+5060 putdown_abstract[] -> newMethod23 5061
+5056 release-putdown_abstract_splitted_2[] -> _splitting_method_release-putdown_abstract_splitted_2 5057
+5050 release[] -> release-putdown_abstract 5056 5060 5069
+5043 move_abstract[] -> newMethod24 5044
+5030 release[] -> release-move 5043 5050
+5020 move_abstract[] -> newMethod24 5021
+5009 release[] -> release-move 5020 5030
+5005 move_abstract[] -> newMethod24 5006
+3513 release[] -> release-move 5005 5009
+3026 pickup_abstract[o1] -> newMethod22 3027
+3015 achieve-goals-pickup_splitted_3[] -> <_splitting_method_achieve-goals-pickup_splitted_3;achieve-goals-pickup_splitted_1[o1];_splitting_method_achieve-goals-pickup_splitted_1;0;-1,1> 3016 3026
+2939 achieve-goals[] -> achieve-goals-pickup 3015 3513
+2932 putdown_abstract[] -> newMethod23 2933
+2923 release-putdown_abstract_splitted_2[] -> _splitting_method_release-putdown_abstract_splitted_2 2924
+2920 release[] -> release-putdown_abstract 2923 2932 2939
+2909 move_abstract[] -> newMethod24 2910
+2900 release[] -> release-move 2909 2920
+2895 move_abstract[] -> newMethod24 2896
+2879 release[] -> release-move 2895 2900
+2876 move_abstract[] -> newMethod24 2877
+2543 release[] -> release-move 2876 2879
+609 pickup_abstract[o5] -> newMethod22 610
+602 achieve-goals-pickup_splitted_3[] -> <_splitting_method_achieve-goals-pickup_splitted_3;achieve-goals-pickup_splitted_1[o5];_splitting_method_achieve-goals-pickup_splitted_1;0;-1,1> 603 609
+487 achieve-goals[] -> achieve-goals-pickup 602 2543
+477 putdown_abstract[] -> newMethod23 478
+475 release-putdown_abstract_splitted_2[] -> _splitting_method_release-putdown_abstract_splitted_2 476
+468 release[] -> release-putdown_abstract 475 477 487
+459 move_abstract[] -> newMethod24 460
+448 release[] -> release-move 459 468
+442 move_abstract[] -> newMethod24 443
+417 release[] -> release-move 442 448
+331 pickup_abstract[o3] -> newMethod22 332
+302 achieve-goals-pickup_splitted_3[] -> <_splitting_method_achieve-goals-pickup_splitted_3;achieve-goals-pickup_splitted_1[o3];_splitting_method_achieve-goals-pickup_splitted_1;0;-1,1> 303 331
+112 achieve-goals[] -> achieve-goals-pickup 302 417
+61 move_abstract[] -> newMethod24 62
+40 achieve-goals[] -> achieve-goals-move 61 112
+34 open_abstract[] -> newMethod25 35
+26 achieve-goals[] -> achieve-goals-open 34 40
+20 open_abstract[] -> newMethod25 21
+4 achieve-goals[] -> achieve-goals-open 20 26
+0 __top[] -> __top_method 4
+<==
+
+RUNWATCH_RESULT EXIT RETVAL 0 TIME_SECS 0.316895 MEMPEAK_KBS 932

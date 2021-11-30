@@ -1,0 +1,171 @@
+pandaPIparser is configured as follows
+  Colors in output: true
+  Mode: parsing mode
+  Parameter splitting: true
+  Conditional effects: exponential encoding
+  Disjunctive preconditions as HTN: false
+  Replace goal with action: false
+  Output: pandaPI format
+General Options
+  Print timings: false
+  Quiet mode: false
+Inference Options
+  H2 mutexes: false
+  FAM groups: false
+Transformation Options
+  Add zero-cost no-op to empty methods: true
+  Remove duplicate actions: true
+  Remove useless literals: true
+  Expand abstract tasks with one method: true
+  Remove empty method preconditions: true
+  Two regularisation: false
+  Compile negative SAS variables: false
+Runtime Optimisations
+  Hierarchy Typing: true
+  Future Caching: false
+  Static Precondition Checking: false
+Output Options
+  Panda planner format: true
+  HDDL: false
+  SAS for Fast Downward (without hierarchy): false
+Output Formatting Options
+  Output only SAS+ variables: false
+  SAS+ delete mode: as input
+Reading input from /home/schnell/lilotane/sotaevaluation//PandaSAT_runwatchtime_timeout1800_2021-11-16_15:47:18/runwatch_log/865/865.parsed.
+Writing output to /home/schnell/lilotane/sotaevaluation//PandaSAT_runwatchtime_timeout1800_2021-11-16_15:47:18/runwatch_log/865/865.sas.
+Writing output to standard output.
+Parsing done.
+Conditional Effects expanded
+done.
+Starting Hierarchy Typing
+Total 0.361ms
+Contains 0.051ms
+Restrict 0.073ms
+MPrep 0.05ms
+Finished Hierarchy Typing
+Running PG.
+Process actions without preconditions
+Done.
+Returning from runGpg().
+PG done. Postprocessing
+PG postprocessing done.
+Calculated [86] grounded tasks and [18] reachable facts.
+Running TDG.
+Process actions without preconditions
+Done.
+Returning from runGpg().
+TDG done.
+Calculated [114] grounded tasks and [100] grounded decomposition methods.
+Performing DFS.
+DFS done.
+After DFS: 104 tasks, 87 methods.
+Grounded PG:
+Input was [83, 104], output was [83, 18].
+Simplifying instance.
+Removing useless facts/literals
+Removing method precondition actions whose precondition is empty
+Expanding abstract tasks with only one method
+Starting duplicate elimination.
+Data structure build.
+13 duplicates found.
+Duplicates replaced in methods.
+Further Mutex Groups: 0 strict 0 non strict
+Writing instance to output.
+Final Statistics: F 15 S 0 SC 0 SM 0 NSM 0 I 0 P 54 S 16 A 16 M 82
+Exiting.
+Random seed: 42
+Time limit: 1800 seconds
+Reading input from /home/schnell/lilotane/sotaevaluation//PandaSAT_runwatchtime_timeout1800_2021-11-16_15:47:18/runwatch_log/865/865.sas.
+- State has 15 bits divided into 15 mutex groups.
+- Domain contains 70 actions.
+- Domain contains 86 tasks.
+- Domain contains 82 methods.
+- The initial state contains 4 set bits.
+- The initial task is "__top[]".
+- State-based goal contains 1 bits.
+- Instance is totally-ordered: yes
+- Instance has unique paths: yes
+- Instance is parallel sequences: yes
+Calculate SCCs...
+- Number of SCCs: 84
+- The problem is cyclic
+- Number of cyclic SCCs: 1
+- Number of cyclic SCCs of size 1: 0
+
+Extracting invariants from parsed model
+Extracted 0 invariants.
+Starting resolution.
+After resolution we have 0 invariants, taking 0.003ms.
+
+Computing invariants [Rintanen]
+Initial candidates build (315)
+Round 1: 315 invariants remaining
+Round 2: 198 invariants remaining
+Found 198 invariants in 0.08ms
+Calculate SCCs...
+- Number of SCCs: 84
+- The problem is cyclic
+- Number of cyclic SCCs: 1
+- Number of cyclic SCCs of size 1: 0
+Hallo
+
+
+Instance is totally ordered: yes
+[33mStarting SAT-based planner[m
+Using SAT solver: cryptominisat-5.8.0
+Encode Mutexes:    yes
+Block Compression: yes
+Pruning:           ff
+
+
+
+
+[33mGenerating formula for depth 1[m
+Computing PDT took: 0.021 ms
+Computed PDT. Extracting leafs ... 4 leafs
+Clear pruning tables ... done.
+[34mPruning round [m1 Phase: 1
+FF Pruning: removed 0 of 0
+Pruning: 5 of 5
+Leaf Primitive Pruning: 2 of 2
+Initial abstract task is pruned: [31mUNSAT[m
+
+
+[33mGenerating formula for depth 2[m
+Computing PDT took: 0.047 ms
+Computed PDT. Extracting leafs ... 8 leafs
+Clear pruning tables ... done.
+[34mPruning round [m1 Phase: 1
+FF Pruning: removed 8 of 12
+[34mPruning round [m2 Phase: 1
+FF Pruning: removed 0 of 4
+Pruning: 16 of 23
+Leaf Primitive Pruning: 10 of 14
+Pruning gave 0 new invariants
+Assigning variable IDs for PDT ... done. 21 new variables.
+Decomposition Clauses generated.
+Pruned clauses.
+Block compression leads to 2 timesteps.
+Decomp formula generated
+State atoms
+State formula
+Matching
+Invar time: 0.088ms SM: 0 M: 0 I: 0 SI: 198
+[34mFormula: [m35 decomposition 90 state 396 mutex
+Formula has 66 vars and 521 clauses.
+Formula time: 0.391ms
+Starting solver
+Solver time: 0.077ms
+Solver state: [32mSAT[m
+==>
+0 __method_precondition_exchangeRL_base[r1,t1]
+1 __method_precondition_selectedDirection[r1,t1]
+2 move[r1,t1,t1,t3,t3]
+3 __method_precondition_exchangeClear[t1,t2]
+root 4
+4 __top[] -> <<<__top_method;shiftTower[t1,t2,t3];m-shiftTower;0;-1,-2>;selectDirection[r1,t1,t2,t3];selectedDirection;1;0,-1,-2>;rotateTower[t1,t3,t2];m-rotateTower;2;0,1,-1,-2> 0 1 5 6
+5 move_abstract[t1,t3] -> newMethod21 2
+6 exchange[t1,t3,t2] -> exchangeClear 3
+<==
+
+RUNWATCH_RESULT EXIT RETVAL 0 TIME_SECS 0.108398 MEMPEAK_KBS 924

@@ -1,0 +1,116 @@
+    _           _         _
+   \ |         \ |       | |                       
+   | |     __  | |      _| |______                
+   | |     \/  | |     /_   ______\                
+   | |      _  | |   __  | |  ___   ___   ___       
+   | |___  | | | |  / .\ | | / , | |   \ / ·_\    
+   \_____\ |_| |__\ \__/ |_| \___) |_|_| \___\  
+[39mL i l o t a n e  version rls-glucose4
+by Dominik Schreiber <dominik.schreiber@kit.edu> 2020-2021
+using SAT solver glucose4
+
+0.003 Parser finished.
+0.003 Structures extracted.
+0.003 9 operators and 7 methods created.
+0.027 Mined 12 new reduction preconditions (+inf%).
+0.027 Iteration 0.
+0.027 Creating initial layer of size 2
+0.250 Attempting to solve formula with 3 clauses (3 literals) and 1 assumptions
+0.250 Unsolvable at layer 0 -- expanding.
+0.250 Iteration 1.
+0.250 New layer size: 4
+0.250 Instantiating ...
+0.813 Collected 0 relevant facts at this layer
+0.813 Encoding ...
+0.813 Attempting to solve formula with 26 clauses (52 literals) and 3 assumptions
+0.814 Unsolvable at layer 1 -- expanding.
+0.814 Iteration 2.
+0.814 New layer size: 13
+0.814 Instantiating ...
+1.463 Collected 15 relevant facts at this layer
+1.463 Encoding ...
+1.464 Attempting to solve formula with 587 clauses (1591 literals) and 6 assumptions
+1.464 Unsolvable at layer 2 -- expanding.
+1.464 Iteration 3.
+1.464 New layer size: 19
+1.464 Instantiating ...
+2.123 Collected 15 relevant facts at this layer
+2.123 Encoding ...
+2.124 Attempting to solve formula with 1150 clauses (3184 literals) and 6 assumptions
+c last restart ## conflicts  :  12 49 
+2.124 Found a solution at layer 3.
+==>
+219 drive truck_0 city_loc_0 city_loc_1
+228 drive truck_0 city_loc_1 city_loc_2
+237 pick_up truck_0 city_loc_2 package_1 capacity_1 capacity_2
+242 drive truck_0 city_loc_2 city_loc_1
+249 drive truck_0 city_loc_1 city_loc_1
+258 drop truck_0 city_loc_1 package_1 capacity_1 capacity_2
+261 drive truck_0 city_loc_1 city_loc_1
+279 pick_up truck_0 city_loc_1 package_0 capacity_1 capacity_2
+282 drive truck_0 city_loc_1 city_loc_0
+292 drive truck_0 city_loc_0 city_loc_0
+301 drop truck_0 city_loc_0 package_0 capacity_1 capacity_2
+305 drive truck_0 city_loc_0 city_loc_1
+314 drive truck_0 city_loc_1 city_loc_2
+323 pick_up truck_0 city_loc_2 package_2 capacity_1 capacity_2
+328 drive truck_0 city_loc_2 city_loc_1
+336 drive truck_0 city_loc_1 city_loc_0
+345 drop truck_0 city_loc_0 package_2 capacity_1 capacity_2
+root 5 10 15
+5 deliver package_1 city_loc_1 -> m_deliver_ordering_0 24 236 58 257
+10 deliver package_0 city_loc_0 -> m_deliver_ordering_0 260 278 118 300
+15 deliver package_2 city_loc_0 -> m_deliver_ordering_0 149 322 180 344
+24 get_to truck_0 city_loc_2 -> m_drive_to_via_ordering_0 218 228
+58 get_to truck_0 city_loc_1 -> m_drive_to_via_ordering_0 241 249
+118 get_to truck_0 city_loc_0 -> m_drive_to_via_ordering_0 281 292
+149 get_to truck_0 city_loc_2 -> m_drive_to_via_ordering_0 304 314
+180 get_to truck_0 city_loc_0 -> m_drive_to_via_ordering_0 327 336
+218 get_to truck_0 city_loc_1 -> m_drive_to_ordering_0 219
+236 load truck_0 city_loc_2 package_1 -> m_load_ordering_0 237
+241 get_to truck_0 city_loc_1 -> m_drive_to_ordering_0 242
+257 unload truck_0 city_loc_1 package_1 -> m_unload_ordering_0 258
+260 get_to truck_0 city_loc_1 -> m_drive_to_ordering_0 261
+278 load truck_0 city_loc_1 package_0 -> m_load_ordering_0 279
+281 get_to truck_0 city_loc_0 -> m_drive_to_ordering_0 282
+300 unload truck_0 city_loc_0 package_0 -> m_unload_ordering_0 301
+304 get_to truck_0 city_loc_1 -> m_drive_to_ordering_0 305
+322 load truck_0 city_loc_2 package_2 -> m_load_ordering_0 323
+327 get_to truck_0 city_loc_1 -> m_drive_to_ordering_0 328
+344 unload truck_0 city_loc_0 package_2 -> m_unload_ordering_0 345
+<==
+2.125 End of solution plan. (counted length of 17)
+2.125 Total amount of clauses encoded: 1150
+2.125 - directframeaxioms : 168 cls
+2.125 - actionconstraints : 158 cls
+2.125 - qfactsemantics : 142 cls
+2.125 - indirectframeaxioms : 129 cls
+2.125 - qconstequality : 117 cls
+2.125 - atmostoneelement : 84 cls
+2.125 - predecessors : 78 cls
+2.125 - reductionconstraints : 72 cls
+2.125 - substitutionconstraints : 65 cls
+2.125 - expansions : 60 cls
+2.125 - truefacts : 15 cls
+2.125 - axiomaticops : 2 cls
+2.125 # instantiated positions: 37
+2.125 # instantiated actions: 63
+2.125 # instantiated reductions: 16
+2.125 # introduced pseudo-constants: 29
+2.125 # retroactive prunings: 0
+2.125 # retroactively pruned operations: 0
+2.125 # dominated operations: 0
+2.125 # total invalid rigid preconditions found in getPFC: 0
+2.125 # invalid rigid preconditions found in getPFC: 0
+2.125 # invalid rigid preconditions found in getPFC in varrestrictions: 0
+2.125 # total invalid fluent preconditions found in getPFC: 0
+2.125 # invalid fluent preconditions found in getPFC: 0
+2.125 # invalid fluent preconditions found in getPFC in varrestrictions: 0
+2.125 # invalid fluent preconditions found in getPFC via postconditions: 0
+2.125 # invalid subtasks found in getPFC: 0
+2.125 # number effects in operation fact_frames: 80
+2.125 # number of variables restricted: 10939
+2.125 # number of nodes variables restricted: 10927
+2.125 Exiting happily.
+
+RUNWATCH_RESULT EXIT RETVAL 0 TIME_SECS 2.13281 MEMPEAK_KBS 29144

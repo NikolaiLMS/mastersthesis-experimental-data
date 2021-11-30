@@ -1,0 +1,164 @@
+    _           _         _
+   \ |         \ |       | |                       
+   | |     __  | |      _| |______                
+   | |     \/  | |     /_   ______\                
+   | |      _  | |   __  | |  ___   ___   ___       
+   | |___  | | | |  / .\ | | / , | |   \ / ·_\    
+   \_____\ |_| |__\ \__/ |_| \___) |_|_| \___\  
+[39mL i l o t a n e  version rls-glucose4
+by Dominik Schreiber <dominik.schreiber@kit.edu> 2020-2021
+using SAT solver glucose4
+
+0.023 Parser finished.
+0.023 Structures extracted.
+0.025 89 operators and 85 methods created.
+0.073 Mined 90 new reduction preconditions (+9000.0%).
+0.073 Iteration 0.
+0.073 Creating initial layer of size 2
+0.081 Attempting to solve formula with 5 clauses (6 literals) and 1 assumptions
+0.082 Unsolvable at layer 0 -- expanding.
+0.082 Iteration 1.
+0.082 New layer size: 2
+0.082 Instantiating ...
+0.189 Collected 1 relevant facts at this layer
+0.189 Encoding ...
+0.190 Attempting to solve formula with 636 clauses (1365 literals) and 1 assumptions
+0.190 Unsolvable at layer 1 -- expanding.
+0.190 Iteration 2.
+0.190 New layer size: 2
+0.190 Instantiating ...
+0.273 Collected 1 relevant facts at this layer
+0.273 Encoding ...
+0.275 Attempting to solve formula with 745 clauses (1646 literals) and 1 assumptions
+0.275 Unsolvable at layer 2 -- expanding.
+0.275 Iteration 3.
+0.275 New layer size: 7
+0.275 Instantiating ...
+0.370 Collected 49 relevant facts at this layer
+0.370 Encoding ...
+0.374 Attempting to solve formula with 2109 clauses (5203 literals) and 4 assumptions
+0.374 Unsolvable at layer 3 -- expanding.
+0.374 Iteration 4.
+0.375 New layer size: 27
+0.375 Instantiating ...
+0.595 Collected 327 relevant facts at this layer
+0.595 Encoding ...
+0.621 Attempting to solve formula with 23925 clauses (68782 literals) and 22 assumptions
+0.622 Unsolvable at layer 4 -- expanding.
+0.622 Iteration 5.
+0.622 New layer size: 76
+0.622 Instantiating ...
+1.073 Collected 448 relevant facts at this layer
+1.073 Encoding ...
+1.146 Attempting to solve formula with 92016 clauses (266585 literals) and 42 assumptions
+1.150 Unsolvable at layer 5 -- expanding.
+1.150 Iteration 6.
+1.150 New layer size: 194
+1.150 Instantiating ...
+1.881 Collected 591 relevant facts at this layer
+1.881 Encoding ...
+2.118 Attempting to solve formula with 277802 clauses (822900 literals) and 101 assumptions
+2.138 Unsolvable at layer 6 -- expanding.
+2.138 Iteration 7.
+2.138 New layer size: 364
+2.138 Instantiating ...
+3.121 Collected 602 relevant facts at this layer
+3.121 Encoding ...
+3.469 Attempting to solve formula with 589916 clauses (1730510 literals) and 152 assumptions
+3.553 Unsolvable at layer 7 -- expanding.
+3.553 Iteration 8.
+3.553 New layer size: 585
+3.553 Instantiating ...
+4.724 Collected 602 relevant facts at this layer
+4.724 Encoding ...
+5.229 Attempting to solve formula with 1024309 clauses (3017522 literals) and 155 assumptions
+c last restart ## conflicts  :  13 12719 
+5.403 Found a solution at layer 8.
+==>
+133581 SHOP_methodm_get_to_as_cargo_precondition ccrew1 park_ridge rochester_general pvan2
+133593 SHOP_methodm_get_to_vehicle_gets_driven_precondition pvan2 rochester_general henrietta_dump pu2
+133599 SHOP_methodm_drive_to_precondition pvan2 henrietta_dump pu2
+133604 p_1Navegate_vehicle
+133607 SHOP_methodm_get_in_ambulatory_person_precondition ccrew1 rochester_general pvan2
+135792 p_2Climb_in
+136581 SHOP_methodm_get_to_vehicle_gets_driven_precondition pvan2 park_ridge rochester_general pu2
+136587 SHOP_methodm_drive_to_precondition pvan2 rochester_general pu2
+136600 p_3Navegate_vehicle
+137643 p_4Climb_out
+139251 p_5Place_cones
+143129 SHOP_methodm_clear_wreck_precondition park_ridge airport vehicle_542304
+153400 SHOP_methodm_tow_to_precondition vehicle_542304 park_ridge
+153411 SHOP_methodm_get_to_vehicle_gets_driven_precondition ttruck1 park_ridge brighton_high ttdriver1
+153420 SHOP_methodm_drive_to_precondition ttruck1 brighton_high ttdriver1
+153428 p_6Navegate_vehicle
+153541 hook_to_tow_truck ttruck1 vehicle_542304
+156546 SHOP_methodm_get_to_vehicle_gets_driven_precondition ttruck1 brighton_dump park_ridge ttdriver1
+156556 SHOP_methodm_drive_to_precondition ttruck1 park_ridge ttdriver1
+156575 navegate_vehicle ttdriver1 ttruck1 brighton_dump park_ridge
+158851 unhook_from_tow_truck ttruck1 vehicle_542304
+180233 SHOP_methodm_get_to_already_there_precondition ccrew1 park_ridge
+191517 pickup_cones ccrew1
+root 10
+10 tlt -> m_tlt_clear_road_wreck 61
+61 clear_road_wreck park_ridge airport -> m_clear_road_wreck 92 169 228
+92 set_up_cones park_ridge airport -> m_set_up_cones 475 139250
+169 clear_wreck park_ridge airport -> m_clear_wreck 143129 14629
+228 take_down_cones park_ridge airport -> m_take_down_cones 180232 191517
+475 get_to ccrew1 park_ridge -> m_get_to_as_cargo 133581 7858 7877 8200 8678
+7858 get_to pvan2 rochester_general -> m_get_to_vehicle_gets_driven 133593 25098
+7877 get_in ccrew1 pvan2 -> m_get_in_ambulatory_person 133607 135791
+8200 get_to pvan2 park_ridge -> m_get_to_vehicle_gets_driven 136581 26435
+8678 get_out ccrew1 pvan2 -> m_get_out_ambulatory_person 137642
+14629 tow_to vehicle_542304 brighton_dump -> m_tow_to 153400 43542 153541 43903 158851
+25098 drive_to pu2 pvan2 rochester_general -> m_drive_to 133599 133603
+26435 drive_to pu2 pvan2 park_ridge -> m_drive_to 136587 136599
+43542 get_to ttruck1 park_ridge -> m_get_to_vehicle_gets_driven 153411 100365
+43903 get_to ttruck1 brighton_dump -> m_get_to_vehicle_gets_driven 156546 101690
+100365 drive_to ttdriver1 ttruck1 park_ridge -> m_drive_to 153420 153427
+101690 drive_to ttdriver1 ttruck1 brighton_dump -> m_drive_to 156556 156574
+133603 cnavegate_vehicle pu2 pvan2 rochester_general henrietta_dump -> prefix_1 133604
+135791 cclimb_in ccrew1 pvan2 rochester_general -> prefix_2 135792
+136599 cnavegate_vehicle pu2 pvan2 park_ridge rochester_general -> prefix_3 136600
+137642 cclimb_out ccrew1 pvan2 park_ridge -> prefix_4 137643
+139250 cplace_cones ccrew1 -> prefix_5 139251
+153427 cnavegate_vehicle ttdriver1 ttruck1 park_ridge brighton_high -> prefix_6 153428
+156574 cnavegate_vehicle ttdriver1 ttruck1 brighton_dump park_ridge -> regular_4 156575
+180232 get_to ccrew1 park_ridge -> m_get_to_already_there 180233
+<==
+5.421 End of solution plan. (counted length of 23)
+5.421 Total amount of clauses encoded: 1024309
+5.421 - directframeaxioms : 671890 cls
+5.421 - qfactsemantics : 158779 cls
+5.421 - indirectframeaxioms : 81423 cls
+5.421 - reductionconstraints : 58675 cls
+5.421 - actionconstraints : 17135 cls
+5.421 - atmostoneelement : 9906 cls
+5.421 - expansions : 6054 cls
+5.421 - qtypeconstraints : 5611 cls
+5.421 - predecessors : 4996 cls
+5.421 - qconstequality : 3769 cls
+5.421 - substitutionconstraints : 3726 cls
+5.421 - actioneffects : 1741 cls
+5.421 - truefacts : 602 cls
+5.421 - axiomaticops : 2 cls
+5.421 # instantiated positions: 1258
+5.421 # instantiated actions: 3967
+5.421 # instantiated reductions: 1030
+5.421 # introduced pseudo-constants: 860
+5.421 # retroactive prunings: 3
+5.421 # retroactively pruned operations: 3
+5.421 # dominated operations: 105
+5.421 # total invalid rigid preconditions found in getPFC: 2663
+5.421 # invalid rigid preconditions found in getPFC: 5
+5.421 # invalid rigid preconditions found in getPFC in varrestrictions: 2658
+5.421 # total invalid fluent preconditions found in getPFC: 95
+5.421 # invalid fluent preconditions found in getPFC: 95
+5.421 # invalid fluent preconditions found in getPFC in varrestrictions: 0
+5.421 # invalid fluent preconditions found in getPFC via postconditions: 0
+5.421 # invalid subtasks found in getPFC: 3
+5.421 # number effects in operation fact_frames: 1197
+5.421 # number of variables restricted: 11404
+5.421 # number of nodes variables restricted: 6061
+5.421 Exiting happily.
+
+RUNWATCH_RESULT EXIT RETVAL 0 TIME_SECS 5.48717 MEMPEAK_KBS 415792

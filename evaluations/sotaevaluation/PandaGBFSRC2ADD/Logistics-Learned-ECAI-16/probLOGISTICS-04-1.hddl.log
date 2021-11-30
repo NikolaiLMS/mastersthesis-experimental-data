@@ -1,0 +1,401 @@
+pandaPIparser is configured as follows
+  Colors in output: true
+  Mode: parsing mode
+  Parameter splitting: true
+  Conditional effects: exponential encoding
+  Disjunctive preconditions as HTN: false
+  Replace goal with action: false
+  Output: pandaPI format
+General Options
+  Print timings: false
+  Quiet mode: false
+Inference Options
+  H2 mutexes: false
+  FAM groups: false
+Transformation Options
+  Add zero-cost no-op to empty methods: true
+  Remove duplicate actions: true
+  Remove useless literals: true
+  Expand abstract tasks with one method: true
+  Remove empty method preconditions: true
+  Two regularisation: false
+  Compile negative SAS variables: false
+Runtime Optimisations
+  Hierarchy Typing: true
+  Future Caching: false
+  Static Precondition Checking: false
+Output Options
+  Panda planner format: true
+  HDDL: false
+  SAS for Fast Downward (without hierarchy): false
+Output Formatting Options
+  Output only SAS+ variables: false
+  SAS+ delete mode: as input
+Reading input from /home/schnell/lilotane/sotaevaluation//PandaGBFS_runwatchtime_timeout1800_2021-11-16_21:14:14/runwatch_log/113/113.parsed.
+Writing output to /home/schnell/lilotane/sotaevaluation//PandaGBFS_runwatchtime_timeout1800_2021-11-16_21:14:14/runwatch_log/113/113.sas.
+Writing output to standard output.
+Parsing done.
+Conditional Effects expanded
+done.
+Starting Hierarchy Typing
+Total 0.787ms
+Contains 0.121ms
+Restrict 0.11ms
+MPrep 0.122ms
+Finished Hierarchy Typing
+Running PG.
+Process actions without preconditions
+Done.
+Returning from runGpg().
+PG done. Postprocessing
+PG postprocessing done.
+Calculated [276] grounded tasks and [224] reachable facts.
+Running TDG.
+Process actions without preconditions
+Done.
+Returning from runGpg().
+TDG done.
+Calculated [405] grounded tasks and [223] grounded decomposition methods.
+Performing DFS.
+DFS done.
+After DFS: 353 tasks, 211 methods.
+Grounded PG:
+Input was [232, 353], output was [232, 216].
+Simplifying instance.
+Removing useless facts/literals
+Removing method precondition actions whose precondition is empty
+Expanding abstract tasks with only one method
+Starting duplicate elimination.
+Data structure build.
+28 duplicates found.
+Duplicates replaced in methods.
+Further Mutex Groups: 0 strict 0 non strict
+Writing instance to output.
+Final Statistics: F 76 S 0 SC 0 SM 0 NSM 0 I 0 P 92 S 112 A 57 M 147
+Exiting.
+Random seed: 42
+Time limit: 1800 seconds
+Reading input from /home/schnell/lilotane/sotaevaluation//PandaGBFS_runwatchtime_timeout1800_2021-11-16_21:14:14/runwatch_log/113/113.sas.
+- State has 76 bits divided into 76 mutex groups.
+- Domain contains 204 actions.
+- Domain contains 261 tasks.
+- Domain contains 147 methods.
+- The initial state contains 30 set bits.
+- The initial task is "__top[]".
+- State-based goal contains 0 bits.
+- Instance is totally-ordered: yes
+- Instance has unique paths: yes
+- Instance is parallel sequences: yes
+Calculate SCCs...
+- Number of SCCs: 261
+- The problem is cyclic
+- Number of cyclic SCCs: 10
+- Number of cyclic SCCs of size 1: 10
+Selected Planning Algorithm: progression searchParsing heuristics ...
+Number of specified heuristics: 1
+- the option "store cuts" of the RC heuristic can only be used with the inner heuristic LM-Cut. It will be disabled.
+- Calculating minimal implied costs and distances (0 ms)
+Heuristic #0 = hhRC2(add;distance;correct count)
+Search config:
+ - type: path cost
+ - weight: 1
+ - suboptimal: false
+Visited List configured
+- mode: total order
+- hashs to use: state task task-sequence
+- memory information: topological ordering
+- Visited list allows deletion of search nodes: true
+Search Configuration
+- Using JAIR 2020 progression algorithm
+- Search is stopped after first solution is found.
+- A* Search
+- Distance G is "modification depth"
+Search Results
+- Search time 0.019 seconds
+- Visited list time 0.001529 seconds
+- Visited list inserts 361
+- Visited list pruned 41
+- Visited list contains 320
+- Visited list hash collisions 41
+- Visited list used hash buckets 320
+- Generated 1317 search nodes
+  Calculated heuristic for 893 nodes
+  One modifications 170
+  Effectless actions 254
+- including 170 one modification actions
+- including 0 one modification methods
+- and       254 progressions of effectless actions
+- Generated 47000 nodes per second
+- Final fringe contains 8 nodes
+- Status: Solved
+- Found solution of length 264
+- Total costs of actions: 58
+==>
+4 __method_precondition_M10-ACHIEVE-AT[OBJ11,POS2]
+14 __method_precondition_M12-ACHIEVE-AT0[OBJ11,POS2,POS1]
+15 __method_precondition_M4-DO-AT-LOAD-TRUCK0[OBJ11,POS1]
+18 __method_precondition_M33-ACHIEVE-AT[TRU1,POS1]
+19 i-LOCK-AT[TRU1,POS1]
+25 __method_precondition_IFUNLOCK1-AT[TRU1,POS1]
+26 i-UNLOCK-AT[TRU1,POS1]
+27 LOAD-TRUCK[OBJ11,TRU1,POS1]
+36 __method_precondition_M14-ACHIEVE-AT0[OBJ11,POS2,TRU1]
+39 __method_precondition_M6-DO-IN-UNLOAD-TRUCK0[OBJ11,TRU1]
+54 __method_precondition_M34-ACHIEVE-AT[TRU1,APT1]
+62 __method_precondition_M36-ACHIEVE-AT1_base[APT1,TRU1]
+70 __method_precondition_M36-ACHIEVE-AT1_split[CIT1,POS1,POS1,TRU1]
+71 DRIVE-TRUCK[TRU1,POS1,APT1,CIT1]
+74 __method_precondition_M35-ACHIEVE-AT1[TRU1,APT1]
+75 i-LOCK-AT[TRU1,APT1]
+79 __method_precondition_IFUNLOCK1-AT[TRU1,APT1]
+80 i-UNLOCK-AT[TRU1,APT1]
+81 UNLOAD-TRUCK[OBJ11,TRU1,APT1]
+95 __method_precondition_M13-ACHIEVE-AT0[OBJ11,POS2,APT1]
+96 __method_precondition_M5-DO-AT-LOAD-AIRPLANE0[OBJ11,APT1]
+110 __method_precondition_M39-ACHIEVE-AT[APN1,APT1]
+121 __method_precondition_M41-ACHIEVE-AT2[APN1,APT1,APT2]
+124 FLY-AIRPLANE[APN1,APT2,APT1]
+128 __method_precondition_M40-ACHIEVE-AT2[APN1,APT1]
+129 i-LOCK-AT[APN1,APT1]
+133 __method_precondition_IFUNLOCK1-AT[APN1,APT1]
+134 i-UNLOCK-AT[APN1,APT1]
+135 LOAD-AIRPLANE[OBJ11,APN1,APT1]
+139 __method_precondition_M15-ACHIEVE-AT0[APN1,OBJ11,POS2]
+167 __method_precondition_M7-DO-IN-UNLOAD-AIRPLANE0[OBJ11,APN1]
+187 __method_precondition_M39-ACHIEVE-AT[APN1,APT2]
+216 __method_precondition_M41-ACHIEVE-AT2[APN1,APT2,APT1]
+220 FLY-AIRPLANE[APN1,APT1,APT2]
+222 __method_precondition_M40-ACHIEVE-AT2[APN1,APT2]
+223 i-LOCK-AT[APN1,APT2]
+227 __method_precondition_IFUNLOCK1-AT[APN1,APT2]
+228 i-UNLOCK-AT[APN1,APT2]
+229 UNLOAD-AIRPLANE[OBJ11,APN1,APT2]
+276 __method_precondition_M13-ACHIEVE-AT0[OBJ11,POS2,APT2]
+277 __method_precondition_M5-DO-AT-LOAD-AIRPLANE0[OBJ11,APT2]
+292 __method_precondition_M34-ACHIEVE-AT[TRU2,APT2]
+301 __method_precondition_M36-ACHIEVE-AT1_base[APT2,TRU2]
+308 __method_precondition_M35-ACHIEVE-AT1[TRU2,POS2]
+309 DRIVE-TRUCK[TRU2,POS2,APT2,CIT2]
+316 __method_precondition_M36-ACHIEVE-AT1_split[CIT2,APT2,APT2,TRU2]
+317 i-LOCK-AT[TRU2,APT2]
+336 __method_precondition_IFUNLOCK1-AT[TRU2,APT2]
+337 i-UNLOCK-AT[TRU2,APT2]
+338 LOAD-TRUCK[OBJ11,TRU2,APT2]
+377 __method_precondition_M14-ACHIEVE-AT0[OBJ11,POS2,TRU2]
+393 __method_precondition_M6-DO-IN-UNLOAD-TRUCK0[OBJ11,TRU2]
+418 __method_precondition_M34-ACHIEVE-AT[TRU2,POS2]
+446 __method_precondition_M36-ACHIEVE-AT1_base[POS2,TRU2]
+455 __method_precondition_M36-ACHIEVE-AT1_split[CIT2,APT2,APT2,TRU2]
+456 DRIVE-TRUCK[TRU2,APT2,POS2,CIT2]
+458 __method_precondition_M35-ACHIEVE-AT1[TRU2,POS2]
+459 i-LOCK-AT[TRU2,POS2]
+463 __method_precondition_IFUNLOCK1-AT[TRU2,POS2]
+464 i-UNLOCK-AT[TRU2,POS2]
+465 UNLOAD-TRUCK[OBJ11,TRU2,POS2]
+467 __method_precondition_M11-ACHIEVE-AT0[OBJ11,POS2]
+468 i-LOCK-AT[OBJ11,POS2]
+476 __method_precondition_M10-ACHIEVE-AT[OBJ21,APT2]
+548 __method_precondition_M12-ACHIEVE-AT0[OBJ21,APT2,POS2]
+549 __method_precondition_M4-DO-AT-LOAD-TRUCK0[OBJ21,POS2]
+557 __method_precondition_M33-ACHIEVE-AT[TRU2,POS2]
+558 i-LOCK-AT[TRU2,POS2]
+575 __method_precondition_IFUNLOCK1-AT[TRU2,POS2]
+576 i-UNLOCK-AT[TRU2,POS2]
+577 LOAD-TRUCK[OBJ21,TRU2,POS2]
+640 __method_precondition_M14-ACHIEVE-AT0[OBJ21,APT2,TRU2]
+644 __method_precondition_M6-DO-IN-UNLOAD-TRUCK0[OBJ21,TRU2]
+678 __method_precondition_M34-ACHIEVE-AT[TRU2,APT2]
+688 __method_precondition_M36-ACHIEVE-AT1_base[APT2,TRU2]
+692 __method_precondition_M35-ACHIEVE-AT1[TRU2,POS2]
+693 DRIVE-TRUCK[TRU2,POS2,APT2,CIT2]
+700 __method_precondition_M36-ACHIEVE-AT1_split[CIT2,APT2,APT2,TRU2]
+701 i-LOCK-AT[TRU2,APT2]
+705 __method_precondition_IFUNLOCK1-AT[TRU2,APT2]
+706 i-UNLOCK-AT[TRU2,APT2]
+707 UNLOAD-TRUCK[OBJ21,TRU2,APT2]
+709 __method_precondition_M11-ACHIEVE-AT0[OBJ21,APT2]
+710 i-LOCK-AT[OBJ21,APT2]
+718 __method_precondition_M10-ACHIEVE-AT[OBJ13,APT1]
+779 __method_precondition_M12-ACHIEVE-AT0[OBJ13,APT1,POS1]
+780 __method_precondition_M4-DO-AT-LOAD-TRUCK0[OBJ13,POS1]
+800 __method_precondition_M34-ACHIEVE-AT[TRU1,POS1]
+824 __method_precondition_M36-ACHIEVE-AT1_base[POS1,TRU1]
+846 __method_precondition_M35-ACHIEVE-AT1[TRU1,APT1]
+847 DRIVE-TRUCK[TRU1,APT1,POS1,CIT1]
+849 __method_precondition_M36-ACHIEVE-AT1_split[CIT1,POS1,POS1,TRU1]
+850 i-LOCK-AT[TRU1,POS1]
+857 __method_precondition_IFUNLOCK1-AT[TRU1,POS1]
+858 i-UNLOCK-AT[TRU1,POS1]
+859 LOAD-TRUCK[OBJ13,TRU1,POS1]
+903 __method_precondition_M14-ACHIEVE-AT0[OBJ13,APT1,TRU1]
+906 __method_precondition_M6-DO-IN-UNLOAD-TRUCK0[OBJ13,TRU1]
+926 __method_precondition_M34-ACHIEVE-AT[TRU1,APT1]
+940 __method_precondition_M36-ACHIEVE-AT1_base[APT1,TRU1]
+955 __method_precondition_M36-ACHIEVE-AT1_split[CIT1,POS1,POS1,TRU1]
+956 DRIVE-TRUCK[TRU1,POS1,APT1,CIT1]
+959 __method_precondition_M35-ACHIEVE-AT1[TRU1,APT1]
+960 i-LOCK-AT[TRU1,APT1]
+964 __method_precondition_IFUNLOCK1-AT[TRU1,APT1]
+965 i-UNLOCK-AT[TRU1,APT1]
+966 UNLOAD-TRUCK[OBJ13,TRU1,APT1]
+968 __method_precondition_M11-ACHIEVE-AT0[OBJ13,APT1]
+969 i-LOCK-AT[OBJ13,APT1]
+987 __method_precondition_M10-ACHIEVE-AT[OBJ12,APT2]
+1047 __method_precondition_M12-ACHIEVE-AT0[OBJ12,APT2,POS1]
+1048 __method_precondition_M4-DO-AT-LOAD-TRUCK0[OBJ12,POS1]
+1064 __method_precondition_M34-ACHIEVE-AT[TRU1,POS1]
+1067 __method_precondition_M36-ACHIEVE-AT1_base[POS1,TRU1]
+1076 __method_precondition_M35-ACHIEVE-AT1[TRU1,APT1]
+1077 DRIVE-TRUCK[TRU1,APT1,POS1,CIT1]
+1079 __method_precondition_M36-ACHIEVE-AT1_split[CIT1,POS1,POS1,TRU1]
+1080 i-LOCK-AT[TRU1,POS1]
+1086 __method_precondition_IFUNLOCK1-AT[TRU1,POS1]
+1087 i-UNLOCK-AT[TRU1,POS1]
+1088 LOAD-TRUCK[OBJ12,TRU1,POS1]
+1095 __method_precondition_M14-ACHIEVE-AT0[OBJ12,APT2,TRU1]
+1098 __method_precondition_M6-DO-IN-UNLOAD-TRUCK0[OBJ12,TRU1]
+1113 __method_precondition_M34-ACHIEVE-AT[TRU1,APT1]
+1126 __method_precondition_M36-ACHIEVE-AT1_base[APT1,TRU1]
+1134 __method_precondition_M36-ACHIEVE-AT1_split[CIT1,POS1,POS1,TRU1]
+1135 DRIVE-TRUCK[TRU1,POS1,APT1,CIT1]
+1138 __method_precondition_M35-ACHIEVE-AT1[TRU1,APT1]
+1139 i-LOCK-AT[TRU1,APT1]
+1143 __method_precondition_IFUNLOCK1-AT[TRU1,APT1]
+1144 i-UNLOCK-AT[TRU1,APT1]
+1145 UNLOAD-TRUCK[OBJ12,TRU1,APT1]
+1177 __method_precondition_M13-ACHIEVE-AT0[OBJ12,APT2,APT1]
+1178 __method_precondition_M5-DO-AT-LOAD-AIRPLANE0[OBJ12,APT1]
+1187 __method_precondition_M39-ACHIEVE-AT[APN1,APT1]
+1200 __method_precondition_M41-ACHIEVE-AT2[APN1,APT1,APT2]
+1203 FLY-AIRPLANE[APN1,APT2,APT1]
+1207 __method_precondition_M40-ACHIEVE-AT2[APN1,APT1]
+1208 i-LOCK-AT[APN1,APT1]
+1212 __method_precondition_IFUNLOCK1-AT[APN1,APT1]
+1213 i-UNLOCK-AT[APN1,APT1]
+1214 LOAD-AIRPLANE[OBJ12,APN1,APT1]
+1218 __method_precondition_M15-ACHIEVE-AT0[APN1,OBJ12,APT2]
+1246 __method_precondition_M7-DO-IN-UNLOAD-AIRPLANE0[OBJ12,APN1]
+1266 __method_precondition_M39-ACHIEVE-AT[APN1,APT2]
+1295 __method_precondition_M41-ACHIEVE-AT2[APN1,APT2,APT1]
+1299 FLY-AIRPLANE[APN1,APT1,APT2]
+1301 __method_precondition_M40-ACHIEVE-AT2[APN1,APT2]
+1302 i-LOCK-AT[APN1,APT2]
+1306 __method_precondition_IFUNLOCK1-AT[APN1,APT2]
+1307 i-UNLOCK-AT[APN1,APT2]
+1308 UNLOAD-AIRPLANE[OBJ12,APN1,APT2]
+1310 __method_precondition_M11-ACHIEVE-AT0[OBJ12,APT2]
+1311 i-LOCK-AT[OBJ12,APT2]
+root 0
+1309 ACHIEVE-AT0[OBJ12,APT2] -> M11-ACHIEVE-AT0 1310
+1305 IFUNLOCK-AT[APN1,APT2] -> IFUNLOCK1-AT 1306 1307
+1300 ACHIEVE-AT2[APN1,APT2] -> M40-ACHIEVE-AT2 1301
+1298 _splitting_method_M41-ACHIEVE-AT2_splitted_6_splitted_17[APN1,APT1] -> _splitting_method__splitting_method_M41-ACHIEVE-AT2_splitted_6_splitted_17 1299
+1294 M41-ACHIEVE-AT2_splitted_6[APN1,APT2] -> _splitting_method_M41-ACHIEVE-AT2_splitted_6 1295 1298
+1278 ACHIEVE-AT2[APN1,APT2] -> M41-ACHIEVE-AT2 1294 1300
+1265 ACHIEVE-AT-AIR[APN1,APT2] -> M39-ACHIEVE-AT 1266 1278 1302
+1245 M15-ACHIEVE-AT0_splitted_4[OBJ12,APN1] -> <_splitting_method_M15-ACHIEVE-AT0_splitted_4;DO-IN-UNLOAD-AIRPLANE0[OBJ12,APN1,APT2];M7-DO-IN-UNLOAD-AIRPLANE0;0;-1,-2,-3,-4> 1246 1265 1305 1308
+1217 ACHIEVE-AT0[OBJ12,APT2] -> M15-ACHIEVE-AT0 1218 1245 1309
+1211 IFUNLOCK-AT[APN1,APT1] -> IFUNLOCK1-AT 1212 1213
+1206 ACHIEVE-AT2[APN1,APT1] -> M40-ACHIEVE-AT2 1207
+1202 _splitting_method_M41-ACHIEVE-AT2_splitted_6_splitted_17[APN1,APT2] -> _splitting_method__splitting_method_M41-ACHIEVE-AT2_splitted_6_splitted_17 1203
+1199 M41-ACHIEVE-AT2_splitted_6[APN1,APT1] -> _splitting_method_M41-ACHIEVE-AT2_splitted_6 1200 1202
+1196 ACHIEVE-AT2[APN1,APT1] -> M41-ACHIEVE-AT2 1199 1206
+1186 ACHIEVE-AT-AIR[APN1,APT1] -> M39-ACHIEVE-AT 1187 1196 1208
+1176 M13-ACHIEVE-AT0_splitted_2[OBJ12,APN1,APT2] -> <_splitting_method_M13-ACHIEVE-AT0_splitted_2;DO-AT-LOAD-AIRPLANE0[OBJ12,APN1,APT1];M5-DO-AT-LOAD-AIRPLANE0;1;0,-1,-2,-3,-4> 1177 1178 1186 1211 1214
+1147 ACHIEVE-AT0[OBJ12,APT2] -> M13-ACHIEVE-AT0 1176 1217
+1142 IFUNLOCK-AT[TRU1,APT1] -> IFUNLOCK1-AT 1143 1144
+1137 ACHIEVE-AT1[TRU1,APT1] -> M35-ACHIEVE-AT1 1138
+1133 M36-ACHIEVE-AT1_splitted_5[TRU1] -> _splitting_method_M36-ACHIEVE-AT1_splitted_5 1134 1135
+1125 ACHIEVE-AT1[TRU1,APT1] -> M36-ACHIEVE-AT1 1126 1133 1137
+1112 ACHIEVE-AT-TRK[TRU1,APT1] -> M34-ACHIEVE-AT 1113 1125 1139
+1097 M14-ACHIEVE-AT0_splitted_3[OBJ12,TRU1] -> <_splitting_method_M14-ACHIEVE-AT0_splitted_3;DO-IN-UNLOAD-TRUCK0[OBJ12,TRU1,APT1];M6-DO-IN-UNLOAD-TRUCK0;0;-1,-2,-3,-4> 1098 1112 1142 1145
+1094 M14-ACHIEVE-AT0_splitted_16[OBJ12,APT2] -> _splitting_method_M14-ACHIEVE-AT0_splitted_16 1095 1097
+1093 ACHIEVE-AT0[OBJ12,APT2] -> M14-ACHIEVE-AT0 1094 1147
+1085 IFUNLOCK-AT[TRU1,POS1] -> IFUNLOCK1-AT 1086 1087
+1078 ACHIEVE-AT1[TRU1,POS1] -> M35-ACHIEVE-AT1 1079
+1075 M36-ACHIEVE-AT1_splitted_5[TRU1] -> _splitting_method_M36-ACHIEVE-AT1_splitted_5 1076 1077
+1066 ACHIEVE-AT1[TRU1,POS1] -> M36-ACHIEVE-AT1 1067 1075 1078
+1063 ACHIEVE-AT-TRK[TRU1,POS1] -> M34-ACHIEVE-AT 1064 1066 1080
+1046 M12-ACHIEVE-AT0_splitted_1[OBJ12,APT2] -> <<_splitting_method_M12-ACHIEVE-AT0_splitted_1;_splitting_method_M12-ACHIEVE-AT0_splitted_1_splitted_15[OBJ12,POS1];_splitting_method__splitting_method_M12-ACHIEVE-AT0_splitted_1_splitted_15;1;0,-1>;DO-AT-LOAD-TRUCK0[OBJ12,TRU1,POS1];M4-DO-AT-LOAD-TRUCK0;1;0,-1,-2,-3,-4> 1047 1048 1063 1085 1088
+1010 ACHIEVE-AT0[OBJ12,APT2] -> M12-ACHIEVE-AT0 1046 1093
+986 ACHIEVE-AT[OBJ12,APT2] -> M10-ACHIEVE-AT 987 1010 1311
+967 ACHIEVE-AT0[OBJ13,APT1] -> M11-ACHIEVE-AT0 968
+963 IFUNLOCK-AT[TRU1,APT1] -> IFUNLOCK1-AT 964 965
+958 ACHIEVE-AT1[TRU1,APT1] -> M35-ACHIEVE-AT1 959
+954 M36-ACHIEVE-AT1_splitted_5[TRU1] -> _splitting_method_M36-ACHIEVE-AT1_splitted_5 955 956
+939 ACHIEVE-AT1[TRU1,APT1] -> M36-ACHIEVE-AT1 940 954 958
+925 ACHIEVE-AT-TRK[TRU1,APT1] -> M34-ACHIEVE-AT 926 939 960
+905 M14-ACHIEVE-AT0_splitted_3[OBJ13,TRU1] -> <_splitting_method_M14-ACHIEVE-AT0_splitted_3;DO-IN-UNLOAD-TRUCK0[OBJ13,TRU1,APT1];M6-DO-IN-UNLOAD-TRUCK0;0;-1,-2,-3,-4> 906 925 963 966
+902 M14-ACHIEVE-AT0_splitted_16[OBJ13,APT1] -> _splitting_method_M14-ACHIEVE-AT0_splitted_16 903 905
+864 ACHIEVE-AT0[OBJ13,APT1] -> M14-ACHIEVE-AT0 902 967
+856 IFUNLOCK-AT[TRU1,POS1] -> IFUNLOCK1-AT 857 858
+848 ACHIEVE-AT1[TRU1,POS1] -> M35-ACHIEVE-AT1 849
+845 M36-ACHIEVE-AT1_splitted_5[TRU1] -> _splitting_method_M36-ACHIEVE-AT1_splitted_5 846 847
+823 ACHIEVE-AT1[TRU1,POS1] -> M36-ACHIEVE-AT1 824 845 848
+799 ACHIEVE-AT-TRK[TRU1,POS1] -> M34-ACHIEVE-AT 800 823 850
+778 M12-ACHIEVE-AT0_splitted_1[OBJ13,APT1] -> <<_splitting_method_M12-ACHIEVE-AT0_splitted_1;_splitting_method_M12-ACHIEVE-AT0_splitted_1_splitted_15[OBJ13,POS1];_splitting_method__splitting_method_M12-ACHIEVE-AT0_splitted_1_splitted_15;1;0,-1>;DO-AT-LOAD-TRUCK0[OBJ13,TRU1,POS1];M4-DO-AT-LOAD-TRUCK0;1;0,-1,-2,-3,-4> 779 780 799 856 859
+732 ACHIEVE-AT0[OBJ13,APT1] -> M12-ACHIEVE-AT0 778 864
+717 ACHIEVE-AT[OBJ13,APT1] -> M10-ACHIEVE-AT 718 732 969
+708 ACHIEVE-AT0[OBJ21,APT2] -> M11-ACHIEVE-AT0 709
+704 IFUNLOCK-AT[TRU2,APT2] -> IFUNLOCK1-AT 705 706
+699 ACHIEVE-AT1[TRU2,APT2] -> M35-ACHIEVE-AT1 700
+691 M36-ACHIEVE-AT1_splitted_5[TRU2] -> _splitting_method_M36-ACHIEVE-AT1_splitted_5 692 693
+687 ACHIEVE-AT1[TRU2,APT2] -> M36-ACHIEVE-AT1 688 691 699
+677 ACHIEVE-AT-TRK[TRU2,APT2] -> M34-ACHIEVE-AT 678 687 701
+643 M14-ACHIEVE-AT0_splitted_3[OBJ21,TRU2] -> <_splitting_method_M14-ACHIEVE-AT0_splitted_3;DO-IN-UNLOAD-TRUCK0[OBJ21,TRU2,APT2];M6-DO-IN-UNLOAD-TRUCK0;0;-1,-2,-3,-4> 644 677 704 707
+639 M14-ACHIEVE-AT0_splitted_16[OBJ21,APT2] -> _splitting_method_M14-ACHIEVE-AT0_splitted_16 640 643
+582 ACHIEVE-AT0[OBJ21,APT2] -> M14-ACHIEVE-AT0 639 708
+574 IFUNLOCK-AT[TRU2,POS2] -> IFUNLOCK1-AT 575 576
+556 ACHIEVE-AT-TRK[TRU2,POS2] -> M33-ACHIEVE-AT 557 558
+547 M12-ACHIEVE-AT0_splitted_1[OBJ21,APT2] -> <<_splitting_method_M12-ACHIEVE-AT0_splitted_1;_splitting_method_M12-ACHIEVE-AT0_splitted_1_splitted_15[OBJ21,POS2];_splitting_method__splitting_method_M12-ACHIEVE-AT0_splitted_1_splitted_15;1;0,-1>;DO-AT-LOAD-TRUCK0[OBJ21,TRU2,POS2];M4-DO-AT-LOAD-TRUCK0;1;0,-1,-2,-3,-4> 548 549 556 574 577
+506 ACHIEVE-AT0[OBJ21,APT2] -> M12-ACHIEVE-AT0 547 582
+475 ACHIEVE-AT[OBJ21,APT2] -> M10-ACHIEVE-AT 476 506 710
+466 ACHIEVE-AT0[OBJ11,POS2] -> M11-ACHIEVE-AT0 467
+462 IFUNLOCK-AT[TRU2,POS2] -> IFUNLOCK1-AT 463 464
+457 ACHIEVE-AT1[TRU2,POS2] -> M35-ACHIEVE-AT1 458
+454 M36-ACHIEVE-AT1_splitted_5[TRU2] -> _splitting_method_M36-ACHIEVE-AT1_splitted_5 455 456
+445 ACHIEVE-AT1[TRU2,POS2] -> M36-ACHIEVE-AT1 446 454 457
+417 ACHIEVE-AT-TRK[TRU2,POS2] -> M34-ACHIEVE-AT 418 445 459
+392 M14-ACHIEVE-AT0_splitted_3[OBJ11,TRU2] -> <_splitting_method_M14-ACHIEVE-AT0_splitted_3;DO-IN-UNLOAD-TRUCK0[OBJ11,TRU2,POS2];M6-DO-IN-UNLOAD-TRUCK0;0;-1,-2,-3,-4> 393 417 462 465
+376 M14-ACHIEVE-AT0_splitted_16[OBJ11,POS2] -> _splitting_method_M14-ACHIEVE-AT0_splitted_16 377 392
+343 ACHIEVE-AT0[OBJ11,POS2] -> M14-ACHIEVE-AT0 376 466
+335 IFUNLOCK-AT[TRU2,APT2] -> IFUNLOCK1-AT 336 337
+315 ACHIEVE-AT1[TRU2,APT2] -> M35-ACHIEVE-AT1 316
+307 M36-ACHIEVE-AT1_splitted_5[TRU2] -> _splitting_method_M36-ACHIEVE-AT1_splitted_5 308 309
+300 ACHIEVE-AT1[TRU2,APT2] -> M36-ACHIEVE-AT1 301 307 315
+291 ACHIEVE-AT-TRK[TRU2,APT2] -> M34-ACHIEVE-AT 292 300 317
+275 M12-ACHIEVE-AT0_splitted_1[OBJ11,POS2] -> <<_splitting_method_M12-ACHIEVE-AT0_splitted_1;_splitting_method_M12-ACHIEVE-AT0_splitted_1_splitted_15[OBJ11,APT2];_splitting_method__splitting_method_M12-ACHIEVE-AT0_splitted_1_splitted_15;1;0,-1>;DO-AT-LOAD-TRUCK0[OBJ11,TRU2,APT2];M4-DO-AT-LOAD-TRUCK0;1;0,-1,-2,-3,-4> 276 277 291 335 338
+233 ACHIEVE-AT0[OBJ11,POS2] -> M12-ACHIEVE-AT0 275 343
+226 IFUNLOCK-AT[APN1,APT2] -> IFUNLOCK1-AT 227 228
+221 ACHIEVE-AT2[APN1,APT2] -> M40-ACHIEVE-AT2 222
+219 _splitting_method_M41-ACHIEVE-AT2_splitted_6_splitted_17[APN1,APT1] -> _splitting_method__splitting_method_M41-ACHIEVE-AT2_splitted_6_splitted_17 220
+215 M41-ACHIEVE-AT2_splitted_6[APN1,APT2] -> _splitting_method_M41-ACHIEVE-AT2_splitted_6 216 219
+211 ACHIEVE-AT2[APN1,APT2] -> M41-ACHIEVE-AT2 215 221
+186 ACHIEVE-AT-AIR[APN1,APT2] -> M39-ACHIEVE-AT 187 211 223
+166 M15-ACHIEVE-AT0_splitted_4[OBJ11,APN1] -> <_splitting_method_M15-ACHIEVE-AT0_splitted_4;DO-IN-UNLOAD-AIRPLANE0[OBJ11,APN1,APT2];M7-DO-IN-UNLOAD-AIRPLANE0;0;-1,-2,-3,-4> 167 186 226 229
+138 ACHIEVE-AT0[OBJ11,POS2] -> M15-ACHIEVE-AT0 139 166 233
+132 IFUNLOCK-AT[APN1,APT1] -> IFUNLOCK1-AT 133 134
+127 ACHIEVE-AT2[APN1,APT1] -> M40-ACHIEVE-AT2 128
+123 _splitting_method_M41-ACHIEVE-AT2_splitted_6_splitted_17[APN1,APT2] -> _splitting_method__splitting_method_M41-ACHIEVE-AT2_splitted_6_splitted_17 124
+120 M41-ACHIEVE-AT2_splitted_6[APN1,APT1] -> _splitting_method_M41-ACHIEVE-AT2_splitted_6 121 123
+119 ACHIEVE-AT2[APN1,APT1] -> M41-ACHIEVE-AT2 120 127
+109 ACHIEVE-AT-AIR[APN1,APT1] -> M39-ACHIEVE-AT 110 119 129
+94 M13-ACHIEVE-AT0_splitted_2[OBJ11,APN1,POS2] -> <_splitting_method_M13-ACHIEVE-AT0_splitted_2;DO-AT-LOAD-AIRPLANE0[OBJ11,APN1,APT1];M5-DO-AT-LOAD-AIRPLANE0;1;0,-1,-2,-3,-4> 95 96 109 132 135
+83 ACHIEVE-AT0[OBJ11,POS2] -> M13-ACHIEVE-AT0 94 138
+78 IFUNLOCK-AT[TRU1,APT1] -> IFUNLOCK1-AT 79 80
+73 ACHIEVE-AT1[TRU1,APT1] -> M35-ACHIEVE-AT1 74
+69 M36-ACHIEVE-AT1_splitted_5[TRU1] -> _splitting_method_M36-ACHIEVE-AT1_splitted_5 70 71
+61 ACHIEVE-AT1[TRU1,APT1] -> M36-ACHIEVE-AT1 62 69 73
+53 ACHIEVE-AT-TRK[TRU1,APT1] -> M34-ACHIEVE-AT 54 61 75
+38 M14-ACHIEVE-AT0_splitted_3[OBJ11,TRU1] -> <_splitting_method_M14-ACHIEVE-AT0_splitted_3;DO-IN-UNLOAD-TRUCK0[OBJ11,TRU1,APT1];M6-DO-IN-UNLOAD-TRUCK0;0;-1,-2,-3,-4> 39 53 78 81
+35 M14-ACHIEVE-AT0_splitted_16[OBJ11,POS2] -> _splitting_method_M14-ACHIEVE-AT0_splitted_16 36 38
+32 ACHIEVE-AT0[OBJ11,POS2] -> M14-ACHIEVE-AT0 35 83
+24 IFUNLOCK-AT[TRU1,POS1] -> IFUNLOCK1-AT 25 26
+17 ACHIEVE-AT-TRK[TRU1,POS1] -> M33-ACHIEVE-AT 18 19
+13 M12-ACHIEVE-AT0_splitted_1[OBJ11,POS2] -> <<_splitting_method_M12-ACHIEVE-AT0_splitted_1;_splitting_method_M12-ACHIEVE-AT0_splitted_1_splitted_15[OBJ11,POS1];_splitting_method__splitting_method_M12-ACHIEVE-AT0_splitted_1_splitted_15;1;0,-1>;DO-AT-LOAD-TRUCK0[OBJ11,TRU1,POS1];M4-DO-AT-LOAD-TRUCK0;1;0,-1,-2,-3,-4> 14 15 17 24 27
+8 ACHIEVE-AT0[OBJ11,POS2] -> M12-ACHIEVE-AT0 13 32
+3 ACHIEVE-AT[OBJ11,POS2] -> M10-ACHIEVE-AT 4 8 468
+0 __top[] -> __top_method 3 475 717 986
+<==
+
+RUNWATCH_RESULT EXIT RETVAL 0 TIME_SECS 0.179688 MEMPEAK_KBS 932

@@ -1,0 +1,194 @@
+pandaPIparser is configured as follows
+  Colors in output: true
+  Mode: parsing mode
+  Parameter splitting: true
+  Conditional effects: exponential encoding
+  Disjunctive preconditions as HTN: false
+  Replace goal with action: false
+  Output: pandaPI format
+General Options
+  Print timings: false
+  Quiet mode: false
+Inference Options
+  H2 mutexes: false
+  FAM groups: false
+Transformation Options
+  Add zero-cost no-op to empty methods: true
+  Remove duplicate actions: true
+  Remove useless literals: true
+  Expand abstract tasks with one method: true
+  Remove empty method preconditions: true
+  Two regularisation: false
+  Compile negative SAS variables: false
+Runtime Optimisations
+  Hierarchy Typing: true
+  Future Caching: false
+  Static Precondition Checking: false
+Output Options
+  Panda planner format: true
+  HDDL: false
+  SAS for Fast Downward (without hierarchy): false
+Output Formatting Options
+  Output only SAS+ variables: false
+  SAS+ delete mode: as input
+Reading input from /home/schnell/lilotane/sotaevaluation//PandaGBFS_runwatchtime_timeout1800_2021-11-16_21:14:14/runwatch_log/622/622.parsed.
+Writing output to /home/schnell/lilotane/sotaevaluation//PandaGBFS_runwatchtime_timeout1800_2021-11-16_21:14:14/runwatch_log/622/622.sas.
+Writing output to standard output.
+Parsing done.
+Conditional Effects expanded
+done.
+Starting Hierarchy Typing
+Total 0.754ms
+Contains 0.086ms
+Restrict 0.106ms
+MPrep 0.093ms
+Finished Hierarchy Typing
+Running PG.
+Process actions without preconditions
+Done.
+Returning from runGpg().
+PG done. Postprocessing
+PG postprocessing done.
+Calculated [179] grounded tasks and [76] reachable facts.
+Running TDG.
+Process actions without preconditions
+Done.
+Returning from runGpg().
+TDG done.
+Calculated [310] grounded tasks and [225] grounded decomposition methods.
+Performing DFS.
+DFS done.
+After DFS: 226 tasks, 168 methods.
+Grounded PG:
+Input was [124, 226], output was [124, 71].
+Simplifying instance.
+Removing useless facts/literals
+Removing method precondition actions whose precondition is empty
+Expanding abstract tasks with only one method
+Starting duplicate elimination.
+Data structure build.
+12 duplicates found.
+Duplicates replaced in methods.
+Further Mutex Groups: 0 strict 0 non strict
+Writing instance to output.
+Final Statistics: F 56 S 0 SC 0 SM 0 NSM 0 I 0 P 52 S 60 A 39 M 105
+Exiting.
+Random seed: 42
+Time limit: 1800 seconds
+Reading input from /home/schnell/lilotane/sotaevaluation//PandaGBFS_runwatchtime_timeout1800_2021-11-16_21:14:14/runwatch_log/622/622.sas.
+- State has 56 bits divided into 56 mutex groups.
+- Domain contains 112 actions.
+- Domain contains 151 tasks.
+- Domain contains 105 methods.
+- The initial state contains 24 set bits.
+- The initial task is "__top[]".
+- State-based goal contains 4 bits.
+- Instance is totally-ordered: yes
+- Instance has unique paths: yes
+- Instance is parallel sequences: yes
+Calculate SCCs...
+- Number of SCCs: 151
+- The problem is acyclic
+Selected Planning Algorithm: progression searchParsing heuristics ...
+Number of specified heuristics: 1
+- the option "store cuts" of the RC heuristic can only be used with the inner heuristic LM-Cut. It will be disabled.
+- Calculating minimal implied costs and distances (0 ms)
+Heuristic #0 = hhRC2(add;distance;correct count)
+Search config:
+ - type: path cost
+ - weight: 1
+ - suboptimal: false
+Visited List configured
+- mode: total order
+- hashs to use: state task task-sequence
+- memory information: topological ordering
+- Visited list allows deletion of search nodes: true
+Search Configuration
+- Using JAIR 2020 progression algorithm
+- Search is stopped after first solution is found.
+- A* Search
+- Distance G is "modification depth"
+Search Results
+- Search time 0.002 seconds
+- Visited list time 0.00023 seconds
+- Visited list inserts 50
+- Visited list pruned 2
+- Visited list contains 48
+- Visited list hash collisions 2
+- Visited list used hash buckets 48
+- Generated 238 search nodes
+  Calculated heuristic for 131 nodes
+  One modifications 44
+  Effectless actions 63
+- including 44 one modification actions
+- including 0 one modification methods
+- and       63 progressions of effectless actions
+- Generated 65500 nodes per second
+- Final fringe contains 9 nodes
+- Status: Solved
+- Found solution of length 59
+- Total costs of actions: 24
+==>
+2 __method_precondition_m0_do_put_on[crate3,pallet1]
+3 nop[]
+31 __method_precondition_m10_do_load_truck[crate2,crate1,distributor1,hoist2]
+38 __method_precondition_m7_do_get_truck[truck1,distributor1]
+45 Drive[truck1,depot0,distributor1]
+46 __method_precondition_m4_do_clear[crate2,distributor1]
+47 nop[]
+48 Lift[hoist2,crate2,crate1,distributor1]
+49 Load[hoist2,crate2,truck1,distributor1]
+50 Drive[truck1,distributor1,depot0]
+51 __method_precondition_m11_do_unload_truck[crate2,pallet0,depot0,truck1,hoist0]
+54 __method_precondition_m5_do_clear[pallet0,depot0,crate0,hoist0]
+55 __method_precondition_m4_do_clear[crate0,depot0]
+56 nop[]
+57 Lift[hoist0,crate0,pallet0,depot0]
+62 __method_precondition_m6_do_get_truck[truck0,depot0]
+63 nop[]
+64 Load[hoist0,crate0,truck0,depot0]
+65 Unload[hoist0,crate2,truck1,depot0]
+66 Drop[hoist0,crate2,pallet0,depot0]
+124 __method_precondition_m10_do_load_truck[crate1,pallet2,distributor1,hoist2]
+143 __method_precondition_m7_do_get_truck[truck0,distributor1]
+201 Drive[truck0,depot0,distributor1]
+203 __method_precondition_m4_do_clear[crate1,distributor1]
+204 nop[]
+205 Lift[hoist2,crate1,pallet2,distributor1]
+206 Load[hoist2,crate1,truck0,distributor1]
+207 Drive[truck0,distributor1,distributor0]
+208 __method_precondition_m11_do_unload_truck[crate1,crate3,distributor0,truck0,hoist1]
+211 __method_precondition_m4_do_clear[crate3,distributor0]
+212 nop[]
+213 Unload[hoist1,crate1,truck0,distributor0]
+214 Drop[hoist1,crate1,crate3,distributor0]
+219 __method_precondition_m2_do_put_on[crate0,truck0]
+225 __method_precondition_m7_do_get_truck[truck0,distributor1]
+228 Drive[truck0,distributor0,distributor1]
+231 __method_precondition_m4_do_clear[pallet2,distributor1]
+232 nop[]
+233 Unload[hoist2,crate0,truck0,distributor1]
+234 Drop[hoist2,crate0,pallet2,distributor1]
+root 0
+230 do_clear[pallet2,distributor1] -> m4_do_clear 231 232
+227 m7_do_get_truck_splitted_2[truck0,distributor1] -> _splitting_method_m7_do_get_truck_splitted_2 228
+224 do_get_truck[truck0,distributor1] -> m7_do_get_truck 225 227
+218 do_put_on[crate0,pallet2] -> <<m2_do_put_on;m2_do_put_on_splitted_6[truck0,pallet2,crate0];_splitting_method_m2_do_put_on_splitted_6;1;0,-1,-2,-3>;m2_do_put_on_splitted_4[crate0,truck0,distributor1,pallet2];_splitting_method_m2_do_put_on_splitted_4;3;0,1,2,-1,-2> 219 224 230 233 234
+210 do_clear[crate3,distributor0] -> m4_do_clear 211 212
+202 do_clear[crate1,distributor1] -> m4_do_clear 203 204
+200 m7_do_get_truck_splitted_2[truck0,distributor1] -> _splitting_method_m7_do_get_truck_splitted_2 201
+142 do_get_truck[truck0,distributor1] -> m7_do_get_truck 143 200
+123 m3_do_put_on_splitted_7[truck0,distributor0,crate1] -> <<_splitting_method_m3_do_put_on_splitted_7;m3_do_put_on_splitted_5[crate1,distributor1,truck0];_splitting_method_m3_do_put_on_splitted_5;0;-1,1>;do_load_truck[crate1,pallet2,distributor1,truck0];m10_do_load_truck;0;-1,-2,-3,-4,-5,1> 124 142 202 205 206 207
+73 do_put_on[crate1,crate3] -> <m3_do_put_on;do_unload_truck[crate1,crate3,distributor0,truck0];m11_do_unload_truck;1;0,-1,-2,-3,-4> 123 208 210 213 214
+61 do_get_truck[truck0,depot0] -> m6_do_get_truck 62 63
+59 m5_do_clear_splitted_1[depot0,hoist0,crate0] -> _splitting_method_m5_do_clear_splitted_1 61 64
+53 do_clear[pallet0,depot0] -> <m5_do_clear;do_clear[crate0,depot0];m4_do_clear;1;0,-1,-2,2,3> 54 55 56 57 59
+44 m7_do_get_truck_splitted_2[truck1,distributor1] -> _splitting_method_m7_do_get_truck_splitted_2 45
+37 do_get_truck[truck1,distributor1] -> m7_do_get_truck 38 44
+30 m3_do_put_on_splitted_7[truck1,depot0,crate2] -> <<_splitting_method_m3_do_put_on_splitted_7;m3_do_put_on_splitted_5[crate2,distributor1,truck1];_splitting_method_m3_do_put_on_splitted_5;0;-1,1>;do_load_truck[crate2,crate1,distributor1,truck1];<m10_do_load_truck;do_clear[crate2,distributor1];m4_do_clear;2;0,1,-1,-2,3,4>;0;-1,-2,-3,-4,-5,-6,1> 31 37 46 47 48 49 50
+16 do_put_on[crate2,pallet0] -> <m3_do_put_on;do_unload_truck[crate2,pallet0,depot0,truck1];m11_do_unload_truck;1;0,-1,-2,-3,-4> 30 51 53 65 66
+1 do_put_on[crate3,pallet1] -> m0_do_put_on 2 3
+0 __top[] -> __top_method 1 16 73 218
+<==
+
+RUNWATCH_RESULT EXIT RETVAL 0 TIME_SECS 0.143311 MEMPEAK_KBS 932

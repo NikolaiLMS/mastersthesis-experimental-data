@@ -1,0 +1,124 @@
+    _           _         _
+   \ |         \ |       | |                       
+   | |     __  | |      _| |______                
+   | |     \/  | |     /_   ______\                
+   | |      _  | |   __  | |  ___   ___   ___       
+   | |___  | | | |  / .\ | | / , | |   \ / ·_\    
+   \_____\ |_| |__\ \__/ |_| \___) |_|_| \___\  
+[39mL i l o t a n e  version rls-glucose4
+by Dominik Schreiber <dominik.schreiber@kit.edu> 2020-2021
+using SAT solver glucose4
+
+0.021 Parser finished.
+0.022 Structures extracted.
+0.023 80 operators and 79 methods created.
+0.269 Mined 78 new reduction preconditions (+7800.0%).
+0.269 Iteration 0.
+0.269 Creating initial layer of size 2
+0.292 Attempting to solve formula with 5 clauses (6 literals) and 1 assumptions
+0.292 Unsolvable at layer 0 -- expanding.
+0.292 Iteration 1.
+0.292 New layer size: 2
+0.292 Instantiating ...
+0.438 Collected 1 relevant facts at this layer
+0.438 Encoding ...
+0.439 Attempting to solve formula with 673 clauses (1435 literals) and 1 assumptions
+0.439 Unsolvable at layer 1 -- expanding.
+0.439 Iteration 2.
+0.440 New layer size: 2
+0.440 Instantiating ...
+0.602 Collected 1 relevant facts at this layer
+0.602 Encoding ...
+0.604 Attempting to solve formula with 802 clauses (1762 literals) and 1 assumptions
+0.604 Unsolvable at layer 2 -- expanding.
+0.604 Iteration 3.
+0.604 New layer size: 7
+0.604 Instantiating ...
+0.788 Collected 229 relevant facts at this layer
+0.788 Encoding ...
+0.794 Attempting to solve formula with 4506 clauses (11998 literals) and 4 assumptions
+0.794 Unsolvable at layer 3 -- expanding.
+0.794 Iteration 4.
+0.794 New layer size: 27
+0.794 Instantiating ...
+1.439 Collected 607 relevant facts at this layer
+1.439 Encoding ...
+1.483 Attempting to solve formula with 44188 clauses (134264 literals) and 22 assumptions
+1.484 Unsolvable at layer 4 -- expanding.
+1.484 Iteration 5.
+1.484 New layer size: 76
+1.484 Instantiating ...
+2.313 Collected 609 relevant facts at this layer
+2.313 Encoding ...
+2.436 Attempting to solve formula with 144799 clauses (433330 literals) and 40 assumptions
+2.444 Unsolvable at layer 5 -- expanding.
+2.444 Iteration 6.
+2.444 New layer size: 203
+2.444 Instantiating ...
+3.819 Collected 664 relevant facts at this layer
+3.819 Encoding ...
+4.104 Attempting to solve formula with 362532 clauses (1081289 literals) and 98 assumptions
+c last restart ## conflicts  :  5 4739 
+4.148 Found a solution at layer 6.
+==>
+36703 SHOP_methodm_provide_medical_attention_in_hospital_precondition person_121967 head_injury park_ridge
+46803 SHOP_methodm_get_to_as_cargo_precondition person_121967 park_ridge marketplace pvan2
+52183 SHOP_methodm_get_to_vehicle_gets_driven_precondition pvan2 marketplace brighton_dump pu2
+54745 SHOP_methodm_drive_to_precondition pvan2 brighton_dump pu2
+54820 p_1Navegate_vehicle
+57419 SHOP_methodm_get_in_ambulatory_person_precondition person_121967 marketplace pvan2
+58144 p_2Climb_in
+60863 SHOP_methodm_get_to_vehicle_gets_driven_precondition pvan2 park_ridge marketplace pu2
+60871 SHOP_methodm_drive_to_precondition pvan2 marketplace pu2
+60893 navegate_vehicle pu2 pvan2 park_ridge marketplace
+63423 climb_out person_121967 pvan2 park_ridge
+71329 treat_in_hospital person_121967 park_ridge
+root 9
+9 tlt -> m_tlt_provide_medical_attention 63
+63 provide_medical_attention person_121967 -> m_provide_medical_attention_in_hospital 36703 352 71329
+352 get_to person_121967 park_ridge -> m_get_to_as_cargo 46803 4582 5252 5882 63422
+4582 get_to pvan2 marketplace -> m_get_to_vehicle_gets_driven 52183 20782
+5252 get_in person_121967 pvan2 -> m_get_in_ambulatory_person 57419 58143
+5882 get_to pvan2 park_ridge -> m_get_to_vehicle_gets_driven 60863 25094
+20782 drive_to pu2 pvan2 marketplace -> m_drive_to 54745 54819
+25094 drive_to pu2 pvan2 park_ridge -> m_drive_to 60871 60892
+54819 cnavegate_vehicle pu2 pvan2 marketplace brighton_dump -> prefix_1 54820
+58143 cclimb_in person_121967 pvan2 marketplace -> prefix_2 58144
+60892 cnavegate_vehicle pu2 pvan2 park_ridge marketplace -> regular_2 60893
+63422 get_out person_121967 pvan2 -> m_get_out_ambulatory_person 63423
+<==
+4.157 End of solution plan. (counted length of 12)
+4.157 Total amount of clauses encoded: 362532
+4.157 - directframeaxioms : 245226 cls
+4.157 - qfactsemantics : 52387 cls
+4.157 - indirectframeaxioms : 23829 cls
+4.157 - reductionconstraints : 21532 cls
+4.157 - actionconstraints : 9344 cls
+4.157 - atmostoneelement : 3519 cls
+4.157 - expansions : 2087 cls
+4.157 - predecessors : 1424 cls
+4.157 - substitutionconstraints : 1320 cls
+4.157 - truefacts : 664 cls
+4.157 - qconstequality : 544 cls
+4.157 - qtypeconstraints : 341 cls
+4.157 - actioneffects : 313 cls
+4.157 - axiomaticops : 2 cls
+4.157 # instantiated positions: 318
+4.157 # instantiated actions: 1024
+4.157 # instantiated reductions: 401
+4.157 # introduced pseudo-constants: 342
+4.157 # retroactive prunings: 3
+4.157 # retroactively pruned operations: 3
+4.157 # dominated operations: 46
+4.157 # total invalid rigid preconditions found in getPFC: 806
+4.157 # invalid rigid preconditions found in getPFC: 806
+4.157 # invalid rigid preconditions found in getPFC in varrestrictions: 0
+4.157 # total invalid fluent preconditions found in getPFC: 1
+4.157 # invalid fluent preconditions found in getPFC: 1
+4.157 # invalid fluent preconditions found in getPFC in varrestrictions: 0
+4.157 # invalid fluent preconditions found in getPFC via postconditions: 0
+4.157 # invalid subtasks found in getPFC: 3
+4.157 # number effects in operation fact_frames: 726
+4.157 Exiting happily.
+
+RUNWATCH_RESULT EXIT RETVAL 0 TIME_SECS 4.18951 MEMPEAK_KBS 300360

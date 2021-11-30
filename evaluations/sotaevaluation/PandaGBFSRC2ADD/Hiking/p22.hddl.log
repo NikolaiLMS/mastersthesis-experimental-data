@@ -1,0 +1,458 @@
+pandaPIparser is configured as follows
+  Colors in output: true
+  Mode: parsing mode
+  Parameter splitting: true
+  Conditional effects: exponential encoding
+  Disjunctive preconditions as HTN: false
+  Replace goal with action: false
+  Output: pandaPI format
+General Options
+  Print timings: false
+  Quiet mode: false
+Inference Options
+  H2 mutexes: false
+  FAM groups: false
+Transformation Options
+  Add zero-cost no-op to empty methods: true
+  Remove duplicate actions: true
+  Remove useless literals: true
+  Expand abstract tasks with one method: true
+  Remove empty method preconditions: true
+  Two regularisation: false
+  Compile negative SAS variables: false
+Runtime Optimisations
+  Hierarchy Typing: true
+  Future Caching: false
+  Static Precondition Checking: false
+Output Options
+  Panda planner format: true
+  HDDL: false
+  SAS for Fast Downward (without hierarchy): false
+Output Formatting Options
+  Output only SAS+ variables: false
+  SAS+ delete mode: as input
+Reading input from /home/schnell/lilotane/sotaevaluation//PandaGBFS_runwatchtime_timeout1800_2021-11-16_21:14:14/runwatch_log/262/262.parsed.
+Writing output to /home/schnell/lilotane/sotaevaluation//PandaGBFS_runwatchtime_timeout1800_2021-11-16_21:14:14/runwatch_log/262/262.sas.
+Writing output to standard output.
+Parsing done.
+Conditional Effects expanded
+done.
+Starting Hierarchy Typing
+Total 0.485ms
+Contains 0.033ms
+Restrict 0.075ms
+MPrep 0.048ms
+Finished Hierarchy Typing
+Running PG.
+Process actions without preconditions
+Done.
+ ---> Disabling potentially consistent extension checking for action:           2 (drive_passenger)
+ ---> Disabling potentially consistent extension checking for action:           18 (__method_precondition_m3_trip_to2)
+ ---> Disabling potentially consistent extension checking for action:           4 (drive_tent)
+ ---> Disabling potentially consistent extension checking for action:           10 (__method_precondition_m7_bring_tent)
+ ---> Disabling potentially consistent extension checking for action:           11 (__method_precondition_m8_bring_tent)
+ ---> Disabling potentially consistent extension checking for action:           1 (put_up)
+ ---> Disabling potentially consistent extension checking for action:           0 (put_down)
+ ---> Disabling potentially consistent extension checking for action:           13 (__method_precondition_m10_bring_tent)
+ ---> Disabling potentially consistent extension checking for action:           25 (__method_precondition_m14_everyone_go_hiking_split)
+ ---> Disabling potentially consistent extension checking for action:           29 (__method_precondition_m0_trip_to1_split)
+ ---> Disabling potentially consistent extension checking for action:           31 (__method_precondition_m5_walk_everyone_split)
+ ---> Disabling potentially consistent extension checking for action:           21 (__method_precondition_m11_bring_cars_split)
+Returning from runGpg().
+PG done. Postprocessing
+PG postprocessing done.
+Calculated [269946] grounded tasks and [316] reachable facts.
+Running TDG.
+Process actions without preconditions
+Done.
+ ---> Disabling potentially consistent extension checking for action:           6 (m8_bring_tent)
+ ---> Disabling potentially consistent extension checking for action:           25 (_splitting_method_m5_walk_everyone_splitted_7)
+ ---> Disabling potentially consistent extension checking for action:           23 (m3_trip_to2)
+Returning from runGpg().
+TDG done.
+Calculated [270879] grounded tasks and [118684] grounded decomposition methods.
+Performing DFS.
+DFS done.
+After DFS: 170352 tasks, 118173 methods.
+Grounded PG:
+Input was [169930, 170352], output was [169930, 316].
+Simplifying instance.
+Removing useless facts/literals
+Removing method precondition actions whose precondition is empty
+Expanding abstract tasks with only one method
+Starting duplicate elimination.
+Data structure build.
+80745 duplicates found.
+Duplicates replaced in methods.
+Further Mutex Groups: 0 strict 0 non strict
+Writing instance to output.
+Final Statistics: F 302 S 0 SC 0 SM 0 NSM 0 I 0 P 52431 S 36736 A 203 M 117954
+Exiting.
+Random seed: 42
+Time limit: 1800 seconds
+Reading input from /home/schnell/lilotane/sotaevaluation//PandaGBFS_runwatchtime_timeout1800_2021-11-16_21:14:14/runwatch_log/262/262.sas.
+- State has 302 bits divided into 302 mutex groups.
+- Domain contains 89167 actions.
+- Domain contains 89370 tasks.
+- Domain contains 117954 methods.
+- The initial state contains 43 set bits.
+- The initial task is "__top[]".
+- State-based goal contains 7 bits.
+- Instance is totally-ordered: yes
+- Instance has unique paths: yes
+- Instance is parallel sequences: yes
+Calculate SCCs...
+- Number of SCCs: 89370
+- The problem is cyclic
+- Number of cyclic SCCs: 106
+- Number of cyclic SCCs of size 1: 106
+Selected Planning Algorithm: progression searchParsing heuristics ...
+Number of specified heuristics: 1
+- the option "store cuts" of the RC heuristic can only be used with the inner heuristic LM-Cut. It will be disabled.
+- Calculating minimal implied costs and distances (4528 ms)
+Heuristic #0 = hhRC2(add;distance;correct count)
+Search config:
+ - type: path cost
+ - weight: 1
+ - suboptimal: false
+Visited List configured
+- mode: total order
+- hashs to use: state task task-sequence
+- memory information: topological ordering
+- Visited list allows deletion of search nodes: true
+Search Configuration
+- Using JAIR 2020 progression algorithm
+- Search is stopped after first solution is found.
+- A* Search
+- Distance G is "modification depth"
+   2s visitime    0.00s generated nodes     11231 nodes/sec    4793 cur h 43502 mod.depth    4 inserts        10 dups         0 size        10 hash fail      0 hash buckets     10
+   4s visitime    0.00s generated nodes     22390 nodes/sec    5418 cur h 43502 mod.depth    4 inserts        11 dups         0 size        11 hash fail      0 hash buckets     11
+   5s visitime    0.00s generated nodes     33549 nodes/sec    5599 cur h 43502 mod.depth    4 inserts        12 dups         0 size        12 hash fail      0 hash buckets     12
+   7s visitime    0.00s generated nodes     44708 nodes/sec    5634 cur h 43502 mod.depth    4 inserts        13 dups         0 size        13 hash fail      0 hash buckets     13
+   9s visitime    0.00s generated nodes     55867 nodes/sec    5627 cur h 43502 mod.depth    4 inserts        14 dups         0 size        14 hash fail      0 hash buckets     14
+  11s visitime    0.00s generated nodes     67026 nodes/sec    5679 cur h 43502 mod.depth    4 inserts        15 dups         0 size        15 hash fail      0 hash buckets     15
+  13s visitime    0.00s generated nodes     78185 nodes/sec    5719 cur h 43502 mod.depth    4 inserts        16 dups         0 size        16 hash fail      0 hash buckets     16
+  20s visitime    0.01s generated nodes     83239 nodes/sec    4038 cur h 53708 mod.depth    9 inserts      1246 dups      1146 size       100 hash fail   1146 hash buckets    100
+  22s visitime    0.01s generated nodes     94278 nodes/sec    4280 cur h 53715 mod.depth    8 inserts      1955 dups      1834 size       121 hash fail   1834 hash buckets    121
+  23s visitime    0.01s generated nodes    105254 nodes/sec    4493 cur h 53715 mod.depth    9 inserts      1969 dups      1834 size       135 hash fail   1834 hash buckets    135
+  26s visitime    0.02s generated nodes    110449 nodes/sec    4233 cur h 6650 mod.depth   93 inserts      2494 dups      1932 size       562 hash fail   1932 hash buckets    562
+  27s visitime    0.02s generated nodes    115457 nodes/sec    4152 cur h   65 mod.depth  236 inserts      3171 dups      2235 size       936 hash fail   2235 hash buckets    936
+  29s visitime    0.03s generated nodes    120461 nodes/sec    4122 cur h   13 mod.depth  280 inserts      4213 dups      2797 size      1416 hash fail   2797 hash buckets   1416
+Search Results
+- Search time 29.32 seconds
+- Visited list time 0.03 seconds
+- Visited list inserts 4355
+- Visited list pruned 2897
+- Visited list contains 1458
+- Visited list hash collisions 2897
+- Visited list used hash buckets 1458
+- Generated 120896 search nodes
+  Calculated heuristic for 109672 nodes
+  One modifications 4775
+  Effectless actions 6449
+- including 4775 one modification actions
+- including 0 one modification methods
+- and       6449 progressions of effectless actions
+- Generated 3740 nodes per second
+- Final fringe contains 397 nodes
+- Status: Solved
+- Found solution of length 293
+- Total costs of actions: 114
+==>
+43 __method_precondition_m5_walk_everyone_split[place0,guy3,girl3,couple3]
+55757 __method_precondition_m10_bring_tent[place0,girl3,tent4]
+55758 put_down[girl3,place0,tent4]
+79265 __method_precondition_m11_bring_cars_split[place0,car1,car2]
+79266 nop[]
+82002 __method_precondition_m5_walk_everyone_split[place0,guy3,girl3,couple3]
+106373 __method_precondition_m3_trip_to2[couple3,place0,place1,guy3,car5,girl3,car7,tent3]
+106374 drive_tent[guy3,place0,place1,car5,tent3]
+106375 drive[girl3,place0,place1,car7]
+106376 put_up[guy3,place1,tent3]
+106377 drive_passenger[girl3,place1,place0,car7,guy3]
+108166 __method_precondition_m5_walk_everyone_split[place0,guy3,girl3,couple3]
+108167 walk_together[tent3,place1,guy3,place0,girl3,couple3]
+108185 __method_precondition_m5_walk_everyone_split[place0,guy4,girl4,couple4]
+108186 walk_together[tent3,place1,guy4,place0,girl4,couple4]
+108247 __method_precondition_m5_walk_everyone_split[place0,guy5,girl5,couple5]
+108248 walk_together[tent3,place1,guy5,place0,girl5,couple5]
+108304 __method_precondition_m5_walk_everyone_split[place0,guy2,girl2,couple2]
+108305 walk_together[tent3,place1,guy2,place0,girl2,couple2]
+108343 __method_precondition_m5_walk_everyone_split[place0,guy6,girl6,couple6]
+108344 walk_together[tent3,place1,guy6,place0,girl6,couple6]
+108369 __method_precondition_m5_walk_everyone_split[place0,guy1,girl1,couple1]
+108370 walk_together[tent3,place1,guy1,place0,girl1,couple1]
+108395 __method_precondition_m5_walk_everyone_split[place0,guy0,girl0,couple0]
+108396 walk_together[tent3,place1,guy0,place0,girl0,couple0]
+108403 nop[]
+108404 put_down[girl3,place1,tent3]
+108405 drive_passenger[guy3,place1,place0,car5,girl3]
+108406 drive[guy3,place0,place1,car5]
+108407 drive[girl3,place0,place1,car7]
+109082 __method_precondition_m3_trip_to2[couple3,place1,place2,guy3,car5,girl3,car7,tent3]
+109083 drive_tent[guy3,place1,place2,car5,tent3]
+109084 drive[girl3,place1,place2,car7]
+109085 put_up[guy3,place2,tent3]
+109086 drive_passenger[girl3,place2,place1,car7,guy3]
+109321 __method_precondition_m5_walk_everyone_split[place1,guy3,girl3,couple3]
+109322 walk_together[tent3,place2,guy3,place1,girl3,couple3]
+109331 __method_precondition_m5_walk_everyone_split[place1,guy1,girl1,couple1]
+109332 walk_together[tent3,place2,guy1,place1,girl1,couple1]
+109402 __method_precondition_m5_walk_everyone_split[place1,guy0,girl0,couple0]
+109403 walk_together[tent3,place2,guy0,place1,girl0,couple0]
+109445 __method_precondition_m5_walk_everyone_split[place1,guy5,girl5,couple5]
+109446 walk_together[tent3,place2,guy5,place1,girl5,couple5]
+109496 __method_precondition_m5_walk_everyone_split[place1,guy4,girl4,couple4]
+109497 walk_together[tent3,place2,guy4,place1,girl4,couple4]
+109526 __method_precondition_m5_walk_everyone_split[place1,guy6,girl6,couple6]
+109527 walk_together[tent3,place2,guy6,place1,girl6,couple6]
+109548 __method_precondition_m5_walk_everyone_split[place1,guy2,girl2,couple2]
+109549 walk_together[tent3,place2,guy2,place1,girl2,couple2]
+109555 nop[]
+109556 put_down[girl3,place2,tent3]
+109557 drive_passenger[guy3,place2,place1,car5,girl3]
+109558 drive[guy3,place1,place2,car5]
+109559 drive[girl3,place1,place2,car7]
+110246 __method_precondition_m3_trip_to2[couple3,place2,place3,guy3,car5,girl3,car7,tent3]
+110247 drive_tent[guy3,place2,place3,car5,tent3]
+110248 drive[girl3,place2,place3,car7]
+110249 put_up[guy3,place3,tent3]
+110250 drive_passenger[girl3,place3,place2,car7,guy3]
+110473 __method_precondition_m5_walk_everyone_split[place2,guy3,girl3,couple3]
+110474 walk_together[tent3,place3,guy3,place2,girl3,couple3]
+110498 __method_precondition_m5_walk_everyone_split[place2,guy1,girl1,couple1]
+110499 walk_together[tent3,place3,guy1,place2,girl1,couple1]
+110550 __method_precondition_m5_walk_everyone_split[place2,guy6,girl6,couple6]
+110551 walk_together[tent3,place3,guy6,place2,girl6,couple6]
+110599 __method_precondition_m5_walk_everyone_split[place2,guy5,girl5,couple5]
+110600 walk_together[tent3,place3,guy5,place2,girl5,couple5]
+110639 __method_precondition_m5_walk_everyone_split[place2,guy2,girl2,couple2]
+110640 walk_together[tent3,place3,guy2,place2,girl2,couple2]
+110679 __method_precondition_m5_walk_everyone_split[place2,guy0,girl0,couple0]
+110680 walk_together[tent3,place3,guy0,place2,girl0,couple0]
+110701 __method_precondition_m5_walk_everyone_split[place2,guy4,girl4,couple4]
+110702 walk_together[tent3,place3,guy4,place2,girl4,couple4]
+110707 nop[]
+110708 put_down[girl3,place3,tent3]
+110709 drive_passenger[guy3,place3,place2,car5,girl3]
+110710 drive[guy3,place2,place3,car5]
+110711 drive[girl3,place2,place3,car7]
+111392 __method_precondition_m3_trip_to2[couple3,place3,place4,guy3,car5,girl3,car7,tent3]
+111393 drive_tent[guy3,place3,place4,car5,tent3]
+111394 drive[girl3,place3,place4,car7]
+111395 put_up[guy3,place4,tent3]
+111396 drive_passenger[girl3,place4,place3,car7,guy3]
+111625 __method_precondition_m5_walk_everyone_split[place3,guy3,girl3,couple3]
+111626 walk_together[tent3,place4,guy3,place3,girl3,couple3]
+111647 __method_precondition_m5_walk_everyone_split[place3,guy5,girl5,couple5]
+111648 walk_together[tent3,place4,guy5,place3,girl5,couple5]
+111699 __method_precondition_m5_walk_everyone_split[place3,guy4,girl4,couple4]
+111700 walk_together[tent3,place4,guy4,place3,girl4,couple4]
+111755 __method_precondition_m5_walk_everyone_split[place3,guy0,girl0,couple0]
+111756 walk_together[tent3,place4,guy0,place3,girl0,couple0]
+111791 __method_precondition_m5_walk_everyone_split[place3,guy2,girl2,couple2]
+111792 walk_together[tent3,place4,guy2,place3,girl2,couple2]
+111827 __method_precondition_m5_walk_everyone_split[place3,guy6,girl6,couple6]
+111828 walk_together[tent3,place4,guy6,place3,girl6,couple6]
+111855 __method_precondition_m5_walk_everyone_split[place3,guy1,girl1,couple1]
+111856 walk_together[tent3,place4,guy1,place3,girl1,couple1]
+111859 nop[]
+111860 put_down[girl3,place4,tent3]
+111861 drive_passenger[guy3,place4,place3,car5,girl3]
+111862 drive[guy3,place3,place4,car5]
+111863 drive[girl3,place3,place4,car7]
+112550 __method_precondition_m3_trip_to2[couple3,place4,place5,guy3,car5,girl3,car7,tent3]
+112551 drive_tent[guy3,place4,place5,car5,tent3]
+112552 drive[girl3,place4,place5,car7]
+112553 put_up[guy3,place5,tent3]
+112554 drive_passenger[girl3,place5,place4,car7,guy3]
+112765 __method_precondition_m5_walk_everyone_split[place4,guy3,girl3,couple3]
+112766 walk_together[tent3,place5,guy3,place4,girl3,couple3]
+112787 __method_precondition_m5_walk_everyone_split[place4,guy6,girl6,couple6]
+112788 walk_together[tent3,place5,guy6,place4,girl6,couple6]
+112849 __method_precondition_m5_walk_everyone_split[place4,guy4,girl4,couple4]
+112850 walk_together[tent3,place5,guy4,place4,girl4,couple4]
+112903 __method_precondition_m5_walk_everyone_split[place4,guy0,girl0,couple0]
+112904 walk_together[tent3,place5,guy0,place4,girl0,couple0]
+112950 __method_precondition_m5_walk_everyone_split[place4,guy5,girl5,couple5]
+112951 walk_together[tent3,place5,guy5,place4,girl5,couple5]
+112981 __method_precondition_m5_walk_everyone_split[place4,guy2,girl2,couple2]
+112982 walk_together[tent3,place5,guy2,place4,girl2,couple2]
+113008 __method_precondition_m5_walk_everyone_split[place4,guy1,girl1,couple1]
+113009 walk_together[tent3,place5,guy1,place4,girl1,couple1]
+113011 nop[]
+113012 put_down[girl3,place5,tent3]
+113013 drive_passenger[guy3,place5,place4,car5,girl3]
+113014 drive[guy3,place4,place5,car5]
+113015 drive[girl3,place4,place5,car7]
+114286 __method_precondition_m3_trip_to2[couple3,place5,place6,guy3,car7,girl3,car5,tent3]
+114287 drive_tent[guy3,place5,place6,car7,tent3]
+114288 drive[girl3,place5,place6,car5]
+114289 put_up[guy3,place6,tent3]
+114290 drive_passenger[girl3,place6,place5,car5,guy3]
+114522 __method_precondition_m5_walk_everyone_split[place5,guy3,girl3,couple3]
+114523 walk_together[tent3,place6,guy3,place5,girl3,couple3]
+114563 __method_precondition_m5_walk_everyone_split[place5,guy1,girl1,couple1]
+114564 walk_together[tent3,place6,guy1,place5,girl1,couple1]
+114618 __method_precondition_m5_walk_everyone_split[place5,guy2,girl2,couple2]
+114619 walk_together[tent3,place6,guy2,place5,girl2,couple2]
+114984 __method_precondition_m5_walk_everyone_split[place5,guy5,girl5,couple5]
+114985 walk_together[tent3,place6,guy5,place5,girl5,couple5]
+115282 __method_precondition_m5_walk_everyone_split[place5,guy6,girl6,couple6]
+115283 walk_together[tent3,place6,guy6,place5,girl6,couple6]
+115574 __method_precondition_m5_walk_everyone_split[place5,guy0,girl0,couple0]
+115575 walk_together[tent3,place6,guy0,place5,girl0,couple0]
+115761 __method_precondition_m5_walk_everyone_split[place5,guy4,girl4,couple4]
+115762 walk_together[tent3,place6,guy4,place5,girl4,couple4]
+115764 nop[]
+115765 put_down[girl3,place6,tent3]
+115766 drive_passenger[guy3,place6,place5,car7,girl3]
+115767 drive[guy3,place5,place6,car7]
+115768 drive[girl3,place5,place6,car5]
+116051 __method_precondition_m3_trip_to2[couple3,place6,place7,guy3,car7,girl3,car5,tent3]
+116052 drive_tent[guy3,place6,place7,car7,tent3]
+116053 drive[girl3,place6,place7,car5]
+116054 put_up[guy3,place7,tent3]
+116055 drive_passenger[girl3,place7,place6,car5,guy3]
+116368 __method_precondition_m5_walk_everyone_split[place6,guy3,girl3,couple3]
+116369 walk_together[tent3,place7,guy3,place6,girl3,couple3]
+116409 __method_precondition_m5_walk_everyone_split[place6,guy6,girl6,couple6]
+116410 walk_together[tent3,place7,guy6,place6,girl6,couple6]
+116809 __method_precondition_m5_walk_everyone_split[place6,guy5,girl5,couple5]
+116810 walk_together[tent3,place7,guy5,place6,girl5,couple5]
+117958 __method_precondition_m5_walk_everyone_split[place6,guy0,girl0,couple0]
+117959 walk_together[tent3,place7,guy0,place6,girl0,couple0]
+119380 __method_precondition_m5_walk_everyone_split[place6,guy4,girl4,couple4]
+119381 walk_together[tent3,place7,guy4,place6,girl4,couple4]
+120259 __method_precondition_m5_walk_everyone_split[place6,guy2,girl2,couple2]
+120260 walk_together[tent3,place7,guy2,place6,girl2,couple2]
+120885 __method_precondition_m5_walk_everyone_split[place6,guy1,girl1,couple1]
+120886 walk_together[tent3,place7,guy1,place6,girl1,couple1]
+120889 nop[]
+120890 put_down[girl3,place7,tent3]
+120891 drive_passenger[guy3,place7,place6,car7,girl3]
+120892 drive[guy3,place6,place7,car7]
+120893 drive[girl3,place6,place7,car5]
+root 0
+120888 walk_everyone[tent3,place7,place6] -> m4_walk_everyone 120889
+120884 m5_walk_everyone_splitted_7[tent3,place7,place6] -> _splitting_method_m5_walk_everyone_splitted_7 120885 120886
+120272 walk_everyone[tent3,place7,place6] -> m5_walk_everyone 120884 120888
+120258 m5_walk_everyone_splitted_7[tent3,place7,place6] -> _splitting_method_m5_walk_everyone_splitted_7 120259 120260
+119388 walk_everyone[tent3,place7,place6] -> m5_walk_everyone 120258 120272
+119379 m5_walk_everyone_splitted_7[tent3,place7,place6] -> _splitting_method_m5_walk_everyone_splitted_7 119380 119381
+117977 walk_everyone[tent3,place7,place6] -> m5_walk_everyone 119379 119388
+117957 m5_walk_everyone_splitted_7[tent3,place7,place6] -> _splitting_method_m5_walk_everyone_splitted_7 117958 117959
+116837 walk_everyone[tent3,place7,place6] -> m5_walk_everyone 117957 117977
+116808 m5_walk_everyone_splitted_7[tent3,place7,place6] -> _splitting_method_m5_walk_everyone_splitted_7 116809 116810
+116450 walk_everyone[tent3,place7,place6] -> m5_walk_everyone 116808 116837
+116408 m5_walk_everyone_splitted_7[tent3,place7,place6] -> _splitting_method_m5_walk_everyone_splitted_7 116409 116410
+116394 walk_everyone[tent3,place7,place6] -> m5_walk_everyone 116408 116450
+116367 m5_walk_everyone_splitted_7[tent3,place7,place6] -> _splitting_method_m5_walk_everyone_splitted_7 116368 116369
+116280 walk_everyone[tent3,place7,place6] -> m5_walk_everyone 116367 116394
+116050 trip_to2[couple3,place6,place7] -> m3_trip_to2 116051 116052 116053 116054 116055 116280 120890 120891 120892 120893
+115763 walk_everyone[tent3,place6,place5] -> m4_walk_everyone 115764
+115760 m5_walk_everyone_splitted_7[tent3,place6,place5] -> _splitting_method_m5_walk_everyone_splitted_7 115761 115762
+115589 walk_everyone[tent3,place6,place5] -> m5_walk_everyone 115760 115763
+115573 m5_walk_everyone_splitted_7[tent3,place6,place5] -> _splitting_method_m5_walk_everyone_splitted_7 115574 115575
+115296 walk_everyone[tent3,place6,place5] -> m5_walk_everyone 115573 115589
+115281 m5_walk_everyone_splitted_7[tent3,place6,place5] -> _splitting_method_m5_walk_everyone_splitted_7 115282 115283
+114996 walk_everyone[tent3,place6,place5] -> m5_walk_everyone 115281 115296
+114983 m5_walk_everyone_splitted_7[tent3,place6,place5] -> _splitting_method_m5_walk_everyone_splitted_7 114984 114985
+114661 walk_everyone[tent3,place6,place5] -> m5_walk_everyone 114983 114996
+114617 m5_walk_everyone_splitted_7[tent3,place6,place5] -> _splitting_method_m5_walk_everyone_splitted_7 114618 114619
+114609 walk_everyone[tent3,place6,place5] -> m5_walk_everyone 114617 114661
+114562 m5_walk_everyone_splitted_7[tent3,place6,place5] -> _splitting_method_m5_walk_everyone_splitted_7 114563 114564
+114548 walk_everyone[tent3,place6,place5] -> m5_walk_everyone 114562 114609
+114521 m5_walk_everyone_splitted_7[tent3,place6,place5] -> _splitting_method_m5_walk_everyone_splitted_7 114522 114523
+114517 walk_everyone[tent3,place6,place5] -> m5_walk_everyone 114521 114548
+114285 trip_to2[couple3,place5,place6] -> m3_trip_to2 114286 114287 114288 114289 114290 114517 115765 115766 115767 115768
+113010 walk_everyone[tent3,place5,place4] -> m4_walk_everyone 113011
+113007 m5_walk_everyone_splitted_7[tent3,place5,place4] -> _splitting_method_m5_walk_everyone_splitted_7 113008 113009
+113000 walk_everyone[tent3,place5,place4] -> m5_walk_everyone 113007 113010
+112980 m5_walk_everyone_splitted_7[tent3,place5,place4] -> _splitting_method_m5_walk_everyone_splitted_7 112981 112982
+112975 walk_everyone[tent3,place5,place4] -> m5_walk_everyone 112980 113000
+112949 m5_walk_everyone_splitted_7[tent3,place5,place4] -> _splitting_method_m5_walk_everyone_splitted_7 112950 112951
+112941 walk_everyone[tent3,place5,place4] -> m5_walk_everyone 112949 112975
+112902 m5_walk_everyone_splitted_7[tent3,place5,place4] -> _splitting_method_m5_walk_everyone_splitted_7 112903 112904
+112870 walk_everyone[tent3,place5,place4] -> m5_walk_everyone 112902 112941
+112848 m5_walk_everyone_splitted_7[tent3,place5,place4] -> _splitting_method_m5_walk_everyone_splitted_7 112849 112850
+112839 walk_everyone[tent3,place5,place4] -> m5_walk_everyone 112848 112870
+112786 m5_walk_everyone_splitted_7[tent3,place5,place4] -> _splitting_method_m5_walk_everyone_splitted_7 112787 112788
+112785 walk_everyone[tent3,place5,place4] -> m5_walk_everyone 112786 112839
+112764 m5_walk_everyone_splitted_7[tent3,place5,place4] -> _splitting_method_m5_walk_everyone_splitted_7 112765 112766
+112754 walk_everyone[tent3,place5,place4] -> m5_walk_everyone 112764 112785
+112549 trip_to2[couple3,place4,place5] -> m3_trip_to2 112550 112551 112552 112553 112554 112754 113012 113013 113014 113015
+111858 walk_everyone[tent3,place4,place3] -> m4_walk_everyone 111859
+111854 m5_walk_everyone_splitted_7[tent3,place4,place3] -> _splitting_method_m5_walk_everyone_splitted_7 111855 111856
+111841 walk_everyone[tent3,place4,place3] -> m5_walk_everyone 111854 111858
+111826 m5_walk_everyone_splitted_7[tent3,place4,place3] -> _splitting_method_m5_walk_everyone_splitted_7 111827 111828
+111823 walk_everyone[tent3,place4,place3] -> m5_walk_everyone 111826 111841
+111790 m5_walk_everyone_splitted_7[tent3,place4,place3] -> _splitting_method_m5_walk_everyone_splitted_7 111791 111792
+111789 walk_everyone[tent3,place4,place3] -> m5_walk_everyone 111790 111823
+111754 m5_walk_everyone_splitted_7[tent3,place4,place3] -> _splitting_method_m5_walk_everyone_splitted_7 111755 111756
+111718 walk_everyone[tent3,place4,place3] -> m5_walk_everyone 111754 111789
+111698 m5_walk_everyone_splitted_7[tent3,place4,place3] -> _splitting_method_m5_walk_everyone_splitted_7 111699 111700
+111659 walk_everyone[tent3,place4,place3] -> m5_walk_everyone 111698 111718
+111646 m5_walk_everyone_splitted_7[tent3,place4,place3] -> _splitting_method_m5_walk_everyone_splitted_7 111647 111648
+111633 walk_everyone[tent3,place4,place3] -> m5_walk_everyone 111646 111659
+111624 m5_walk_everyone_splitted_7[tent3,place4,place3] -> _splitting_method_m5_walk_everyone_splitted_7 111625 111626
+111605 walk_everyone[tent3,place4,place3] -> m5_walk_everyone 111624 111633
+111391 trip_to2[couple3,place3,place4] -> m3_trip_to2 111392 111393 111394 111395 111396 111605 111860 111861 111862 111863
+110706 walk_everyone[tent3,place3,place2] -> m4_walk_everyone 110707
+110700 m5_walk_everyone_splitted_7[tent3,place3,place2] -> _splitting_method_m5_walk_everyone_splitted_7 110701 110702
+110696 walk_everyone[tent3,place3,place2] -> m5_walk_everyone 110700 110706
+110678 m5_walk_everyone_splitted_7[tent3,place3,place2] -> _splitting_method_m5_walk_everyone_splitted_7 110679 110680
+110664 walk_everyone[tent3,place3,place2] -> m5_walk_everyone 110678 110696
+110638 m5_walk_everyone_splitted_7[tent3,place3,place2] -> _splitting_method_m5_walk_everyone_splitted_7 110639 110640
+110630 walk_everyone[tent3,place3,place2] -> m5_walk_everyone 110638 110664
+110598 m5_walk_everyone_splitted_7[tent3,place3,place2] -> _splitting_method_m5_walk_everyone_splitted_7 110599 110600
+110566 walk_everyone[tent3,place3,place2] -> m5_walk_everyone 110598 110630
+110549 m5_walk_everyone_splitted_7[tent3,place3,place2] -> _splitting_method_m5_walk_everyone_splitted_7 110550 110551
+110535 walk_everyone[tent3,place3,place2] -> m5_walk_everyone 110549 110566
+110497 m5_walk_everyone_splitted_7[tent3,place3,place2] -> _splitting_method_m5_walk_everyone_splitted_7 110498 110499
+110481 walk_everyone[tent3,place3,place2] -> m5_walk_everyone 110497 110535
+110472 m5_walk_everyone_splitted_7[tent3,place3,place2] -> _splitting_method_m5_walk_everyone_splitted_7 110473 110474
+110450 walk_everyone[tent3,place3,place2] -> m5_walk_everyone 110472 110481
+110245 trip_to2[couple3,place2,place3] -> m3_trip_to2 110246 110247 110248 110249 110250 110450 110708 110709 110710 110711
+109554 walk_everyone[tent3,place2,place1] -> m4_walk_everyone 109555
+109547 m5_walk_everyone_splitted_7[tent3,place2,place1] -> _splitting_method_m5_walk_everyone_splitted_7 109548 109549
+109537 walk_everyone[tent3,place2,place1] -> m5_walk_everyone 109547 109554
+109525 m5_walk_everyone_splitted_7[tent3,place2,place1] -> _splitting_method_m5_walk_everyone_splitted_7 109526 109527
+109505 walk_everyone[tent3,place2,place1] -> m5_walk_everyone 109525 109537
+109495 m5_walk_everyone_splitted_7[tent3,place2,place1] -> _splitting_method_m5_walk_everyone_splitted_7 109496 109497
+109464 walk_everyone[tent3,place2,place1] -> m5_walk_everyone 109495 109505
+109444 m5_walk_everyone_splitted_7[tent3,place2,place1] -> _splitting_method_m5_walk_everyone_splitted_7 109445 109446
+109442 walk_everyone[tent3,place2,place1] -> m5_walk_everyone 109444 109464
+109401 m5_walk_everyone_splitted_7[tent3,place2,place1] -> _splitting_method_m5_walk_everyone_splitted_7 109402 109403
+109376 walk_everyone[tent3,place2,place1] -> m5_walk_everyone 109401 109442
+109330 m5_walk_everyone_splitted_7[tent3,place2,place1] -> _splitting_method_m5_walk_everyone_splitted_7 109331 109332
+109329 walk_everyone[tent3,place2,place1] -> m5_walk_everyone 109330 109376
+109320 m5_walk_everyone_splitted_7[tent3,place2,place1] -> _splitting_method_m5_walk_everyone_splitted_7 109321 109322
+109298 walk_everyone[tent3,place2,place1] -> m5_walk_everyone 109320 109329
+109081 trip_to2[couple3,place1,place2] -> m3_trip_to2 109082 109083 109084 109085 109086 109298 109556 109557 109558 109559
+108402 walk_everyone[tent3,place1,place0] -> m4_walk_everyone 108403
+108394 m5_walk_everyone_splitted_7[tent3,place1,place0] -> _splitting_method_m5_walk_everyone_splitted_7 108395 108396
+108385 walk_everyone[tent3,place1,place0] -> m5_walk_everyone 108394 108402
+108368 m5_walk_everyone_splitted_7[tent3,place1,place0] -> _splitting_method_m5_walk_everyone_splitted_7 108369 108370
+108353 walk_everyone[tent3,place1,place0] -> m5_walk_everyone 108368 108385
+108342 m5_walk_everyone_splitted_7[tent3,place1,place0] -> _splitting_method_m5_walk_everyone_splitted_7 108343 108344
+108312 walk_everyone[tent3,place1,place0] -> m5_walk_everyone 108342 108353
+108303 m5_walk_everyone_splitted_7[tent3,place1,place0] -> _splitting_method_m5_walk_everyone_splitted_7 108304 108305
+108262 walk_everyone[tent3,place1,place0] -> m5_walk_everyone 108303 108312
+108246 m5_walk_everyone_splitted_7[tent3,place1,place0] -> _splitting_method_m5_walk_everyone_splitted_7 108247 108248
+108224 walk_everyone[tent3,place1,place0] -> m5_walk_everyone 108246 108262
+108184 m5_walk_everyone_splitted_7[tent3,place1,place0] -> _splitting_method_m5_walk_everyone_splitted_7 108185 108186
+108177 walk_everyone[tent3,place1,place0] -> m5_walk_everyone 108184 108224
+108165 m5_walk_everyone_splitted_7[tent3,place1,place0] -> _splitting_method_m5_walk_everyone_splitted_7 108166 108167
+108023 walk_everyone[tent3,place1,place0] -> m5_walk_everyone 108165 108177
+106372 trip_to2[couple3,place0,place1] -> m3_trip_to2 106373 106374 106375 106376 106377 108023 108404 108405 108406 108407
+82001 m0_trip_to1_splitted_10[couple3,place7] -> <<_splitting_method_m0_trip_to1_splitted_10;trip_to2[couple3,place0,place7];<m2_trip_to2;trip_to2[couple3,place1,place7];<m2_trip_to2;trip_to2[couple3,place2,place7];<m2_trip_to2;trip_to2[couple3,place3,place7];<m2_trip_to2;trip_to2[couple3,place4,place7];<m2_trip_to2;trip_to2[couple3,place5,place7];m2_trip_to2;1;0,-1,-2>;1;0,-1,-2,-3>;1;0,-1,-2,-3,-4>;1;0,-1,-2,-3,-4,-5>;1;0,-1,-2,-3,-4,-5,-6>;1;0,-1,-2,-3,-4,-5,-6,-7>;m0_trip_to1_splitted_6[couple3,place0];_splitting_method_m0_trip_to1_splitted_6;0;-1,1,2,3,4,5,6,7> 82002 106372 109081 110245 111391 112549 114285 116050
+79264 m11_bring_cars_splitted_1[place0] -> _splitting_method_m11_bring_cars_splitted_1 79265
+78374 bring_cars[place0] -> m11_bring_cars 79264 79266
+55756 bring_tent[place0] -> m10_bring_tent 55757 55758
+42 m14_everyone_go_hiking_splitted_8[couple3] -> <<_splitting_method_m14_everyone_go_hiking_splitted_8;prepare_trip[place0];m6_prepare_trip;1;0,-1,-2>;m14_everyone_go_hiking_splitted_4[place0,couple3];_splitting_method_m14_everyone_go_hiking_splitted_4;0;-1,1,2> 43 55756 78374
+5 m14_everyone_go_hiking_splitted_11[place7] -> <_splitting_method_m14_everyone_go_hiking_splitted_11;trip_to1[couple3,place7];m0_trip_to1;1;0,-1> 42 82001
+0 __top[] -> <__top_method;everyone_go_hiking[place7];m14_everyone_go_hiking;0;-1> 5
+<==
+
+RUNWATCH_RESULT EXIT RETVAL 0 TIME_SECS 44.2998 MEMPEAK_KBS 3752

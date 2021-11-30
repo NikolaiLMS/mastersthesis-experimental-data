@@ -1,0 +1,118 @@
+    _           _         _
+   \ |         \ |       | |                       
+   | |     __  | |      _| |______                
+   | |     \/  | |     /_   ______\                
+   | |      _  | |   __  | |  ___   ___   ___       
+   | |___  | | | |  / .\ | | / , | |   \ / ·_\    
+   \_____\ |_| |__\ \__/ |_| \___) |_|_| \___\  
+[39mL i l o t a n e  version rls-cadical
+by Dominik Schreiber <dominik.schreiber@kit.edu> 2020-2021
+using SAT solver cadical
+
+0.020 Parser finished.
+0.021 Structures extracted.
+0.022 80 operators and 79 methods created.
+0.041 Mined 78 new reduction preconditions (+7800.0%).
+0.041 Iteration 0.
+0.041 Creating initial layer of size 2
+0.053 Attempting to solve formula with 5 clauses (6 literals) and 1 assumptions
+0.053 Unsolvable at layer 0 -- expanding.
+0.053 Iteration 1.
+0.053 New layer size: 2
+0.053 Instantiating ...
+0.126 Collected 1 relevant facts at this layer
+0.126 Encoding ...
+0.127 Attempting to solve formula with 1099 clauses (2356 literals) and 1 assumptions
+0.127 Unsolvable at layer 1 -- expanding.
+0.127 Iteration 2.
+0.127 New layer size: 2
+0.127 Instantiating ...
+0.129 Retroactively prune reduction (m_tlt_clear_road_tree Q_1,0_point:0_4f9c08ee259c63cf Q_1,0_point:1_4f9c08ee259c63cf)@(1,0): no children at offset 0
+0.197 Collected 1 relevant facts at this layer
+0.197 Encoding ...
+0.199 Attempting to solve formula with 1248 clauses (2722 literals) and 1 assumptions
+0.199 Unsolvable at layer 2 -- expanding.
+0.199 Iteration 3.
+0.199 New layer size: 7
+0.199 Instantiating ...
+0.226 Retroactively prune reduction (m_clear_road_wreck Q_1,0_point:0_4f9c08ee259c63cf Q_1,0_point:1_4f9c08ee259c63cf)@(2,0): no children at offset 1
+0.318 Collected 229 relevant facts at this layer
+0.318 Encoding ...
+0.324 Attempting to solve formula with 5000 clauses (13055 literals) and 4 assumptions
+0.325 Unsolvable at layer 3 -- expanding.
+0.325 Iteration 4.
+0.325 New layer size: 27
+0.325 Instantiating ...
+0.452 Retroactively prune reduction (m_clean_up_hazard_normal Q_1,0_point:0_4f9c08ee259c63cf Q_3,1_hazard_team:0_de988e578880ff18 Q_1,0_point:1_4f9c08ee259c63cf very_hazardous very_hazardous)@(3,1): no children at offset 2
+0.595 Collected 607 relevant facts at this layer
+0.595 Encoding ...
+0.649 Attempting to solve formula with 46560 clauses (139693 literals) and 22 assumptions
+0.650 Unsolvable at layer 4 -- expanding.
+0.650 Iteration 5.
+0.650 New layer size: 77
+0.650 Instantiating ...
+1.039 Collected 609 relevant facts at this layer
+1.039 Encoding ...
+1.162 Attempting to solve formula with 147563 clauses (439591 literals) and 40 assumptions
+1.167 Unsolvable at layer 5 -- expanding.
+1.167 Iteration 6.
+1.167 New layer size: 204
+1.167 Instantiating ...
+1.834 Collected 664 relevant facts at this layer
+1.834 Encoding ...
+2.114 Attempting to solve formula with 365855 clauses (1088883 literals) and 98 assumptions
+2.141 Found a solution at layer 6.
+==>
+37541 SHOP_methodm_provide_medical_attention_in_hospital_precondition person_121967 head_injury rochester_general
+47636 SHOP_methodm_get_to_as_cargo_precondition person_121967 rochester_general marketplace pvan2
+53036 SHOP_methodm_get_to_vehicle_gets_driven_precondition pvan2 marketplace brighton_dump pu2
+55581 SHOP_methodm_drive_to_precondition pvan2 brighton_dump pu2
+55663 p_1Navegate_vehicle
+58272 SHOP_methodm_get_in_ambulatory_person_precondition person_121967 marketplace pvan2
+58996 p_2Climb_in
+61712 SHOP_methodm_get_to_vehicle_gets_driven_precondition pvan2 rochester_general marketplace pu2
+61720 SHOP_methodm_drive_to_precondition pvan2 marketplace pu2
+61742 navegate_vehicle pu2 pvan2 rochester_general marketplace
+64270 climb_out person_121967 pvan2 rochester_general
+72180 treat_in_hospital person_121967 rochester_general
+root 9
+9 tlt -> m_tlt_provide_medical_attention 67
+67 provide_medical_attention person_121967 -> m_provide_medical_attention_in_hospital 37541 361 72180
+361 get_to person_121967 rochester_general -> m_get_to_as_cargo 47636 5419 6084 6718 64269
+5419 get_to pvan2 marketplace -> m_get_to_vehicle_gets_driven 53036 21621
+6084 get_in person_121967 pvan2 -> m_get_in_ambulatory_person 58272 58995
+6718 get_to pvan2 rochester_general -> m_get_to_vehicle_gets_driven 61712 25938
+21621 drive_to pu2 pvan2 marketplace -> m_drive_to 55581 55662
+25938 drive_to pu2 pvan2 rochester_general -> m_drive_to 61720 61741
+55662 cnavegate_vehicle pu2 pvan2 marketplace brighton_dump -> prefix_1 55663
+58995 cclimb_in person_121967 pvan2 marketplace -> prefix_2 58996
+61741 cnavegate_vehicle pu2 pvan2 rochester_general marketplace -> regular_2 61742
+64269 get_out person_121967 pvan2 -> m_get_out_ambulatory_person 64270
+<==
+2.151 End of solution plan. (counted length of 12)
+2.151 Total amount of clauses encoded: 365855
+2.151 - directframeaxioms : 247634 cls
+2.151 - qfactsemantics : 52579 cls
+2.151 - indirectframeaxioms : 23881 cls
+2.151 - reductionconstraints : 22083 cls
+2.151 - actionconstraints : 9211 cls
+2.151 - atmostoneelement : 3632 cls
+2.151 - expansions : 2106 cls
+2.151 - predecessors : 1439 cls
+2.151 - substitutionconstraints : 1372 cls
+2.151 - truefacts : 664 cls
+2.151 - qconstequality : 580 cls
+2.151 - qtypeconstraints : 341 cls
+2.151 - actioneffects : 323 cls
+2.151 - forbiddenoperations : 8 cls
+2.151 - axiomaticops : 2 cls
+2.151 # instantiated positions: 320
+2.151 # instantiated actions: 1030
+2.151 # instantiated reductions: 418
+2.151 # introduced pseudo-constants: 347
+2.151 # retroactive prunings: 3
+2.151 # retroactively pruned operations: 15
+2.151 # dominated operations: 42
+2.151 Exiting happily (no cleaning up).
+
+RUNWATCH_RESULT EXIT RETVAL 0 TIME_SECS 2.1792 MEMPEAK_KBS 253184

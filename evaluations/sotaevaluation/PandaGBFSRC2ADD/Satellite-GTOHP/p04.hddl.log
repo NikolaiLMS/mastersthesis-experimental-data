@@ -1,0 +1,251 @@
+pandaPIparser is configured as follows
+  Colors in output: true
+  Mode: parsing mode
+  Parameter splitting: true
+  Conditional effects: exponential encoding
+  Disjunctive preconditions as HTN: false
+  Replace goal with action: false
+  Output: pandaPI format
+General Options
+  Print timings: false
+  Quiet mode: false
+Inference Options
+  H2 mutexes: false
+  FAM groups: false
+Transformation Options
+  Add zero-cost no-op to empty methods: true
+  Remove duplicate actions: true
+  Remove useless literals: true
+  Expand abstract tasks with one method: true
+  Remove empty method preconditions: true
+  Two regularisation: false
+  Compile negative SAS variables: false
+Runtime Optimisations
+  Hierarchy Typing: true
+  Future Caching: false
+  Static Precondition Checking: false
+Output Options
+  Panda planner format: true
+  HDDL: false
+  SAS for Fast Downward (without hierarchy): false
+Output Formatting Options
+  Output only SAS+ variables: false
+  SAS+ delete mode: as input
+Reading input from /home/schnell/lilotane/sotaevaluation//PandaGBFS_runwatchtime_timeout1800_2021-11-16_21:14:14/runwatch_log/207/207.parsed.
+Writing output to /home/schnell/lilotane/sotaevaluation//PandaGBFS_runwatchtime_timeout1800_2021-11-16_21:14:14/runwatch_log/207/207.sas.
+Writing output to standard output.
+Parsing done.
+Conditional Effects expanded
+done.
+Starting Hierarchy Typing
+Total 0.415ms
+Contains 0.07ms
+Restrict 0.05ms
+MPrep 0.058ms
+Finished Hierarchy Typing
+Running PG.
+Process actions without preconditions
+Done.
+Returning from runGpg().
+PG done. Postprocessing
+PG postprocessing done.
+Calculated [3097] grounded tasks and [269] reachable facts.
+Running TDG.
+Process actions without preconditions
+Done.
+Returning from runGpg().
+TDG done.
+Calculated [5245] grounded tasks and [5348] grounded decomposition methods.
+Performing DFS.
+DFS done.
+After DFS: 2344 tasks, 1678 methods.
+Grounded PG:
+Input was [1978, 2344], output was [1444, 241].
+Grounded TDG:
+Input was [1678, 1444], output was [1411, 1444].
+Simplifying instance.
+Removing useless facts/literals
+Removing method precondition actions whose precondition is empty
+Expanding abstract tasks with only one method
+Starting duplicate elimination.
+Data structure build.
+12 duplicates found.
+Duplicates replaced in methods.
+Further Mutex Groups: 0 strict 0 non strict
+Writing instance to output.
+Final Statistics: F 166 S 0 SC 0 SM 0 NSM 0 I 0 P 699 S 722 A 116 M 1161
+Exiting.
+Random seed: 42
+Time limit: 1800 seconds
+Reading input from /home/schnell/lilotane/sotaevaluation//PandaGBFS_runwatchtime_timeout1800_2021-11-16_21:14:14/runwatch_log/207/207.sas.
+- State has 166 bits divided into 166 mutex groups.
+- Domain contains 1421 actions.
+- Domain contains 1537 tasks.
+- Domain contains 1161 methods.
+- The initial state contains 73 set bits.
+- The initial task is "__top[]".
+- State-based goal contains 12 bits.
+- Instance is totally-ordered: yes
+- Instance has unique paths: yes
+- Instance is parallel sequences: yes
+Calculate SCCs...
+- Number of SCCs: 1504
+- The problem is cyclic
+- Number of cyclic SCCs: 11
+- Number of cyclic SCCs of size 1: 0
+Selected Planning Algorithm: progression searchParsing heuristics ...
+Number of specified heuristics: 1
+- the option "store cuts" of the RC heuristic can only be used with the inner heuristic LM-Cut. It will be disabled.
+- Calculating minimal implied costs and distances (1 ms)
+Heuristic #0 = hhRC2(add;distance;correct count)
+Search config:
+ - type: path cost
+ - weight: 1
+ - suboptimal: false
+Visited List configured
+- mode: total order
+- hashs to use: state task task-sequence
+- memory information: topological ordering
+- Visited list allows deletion of search nodes: true
+Search Configuration
+- Using JAIR 2020 progression algorithm
+- Search is stopped after first solution is found.
+- A* Search
+- Distance G is "modification depth"
+Search Results
+- Search time 0.025 seconds
+- Visited list time 0.000443 seconds
+- Visited list inserts 56
+- Visited list pruned 0
+- Visited list contains 56
+- Visited list hash collisions 0
+- Visited list used hash buckets 56
+- Generated 493 search nodes
+  Calculated heuristic for 397 nodes
+  One modifications 33
+  Effectless actions 63
+- including 33 one modification actions
+- including 0 one modification methods
+- and       63 progressions of effectless actions
+- Generated 15880 nodes per second
+- Final fringe contains 54 nodes
+- Status: Solved
+- Found solution of length 112
+- Total costs of actions: 40
+==>
+8 __method_precondition_m3_do_switching[satellite3,instrument7]
+9 switch_on[instrument7,satellite3]
+30 __method_precondition_m5_do_calibration[instrument7]
+32 __method_precondition_m4_do_switching[instrument7]
+33 nop[]
+40 __method_precondition_m8_do_turning[satellite3,Star4,GroundStation3]
+41 turn_to[satellite3,Star4,GroundStation3]
+42 calibrate[satellite3,instrument7,Star4]
+58 __method_precondition_m8_do_turning[satellite3,Planet5,Star4]
+59 turn_to[satellite3,Planet5,Star4]
+60 take_image[satellite3,Planet5,instrument7,image4]
+73 __method_precondition_m4_do_switching[instrument7]
+74 nop[]
+85 __method_precondition_m8_do_turning[satellite3,Star6,Planet5]
+86 turn_to[satellite3,Star6,Planet5]
+87 take_image[satellite3,Star6,instrument7,infrared3]
+99 __method_precondition_m4_do_switching[instrument7]
+100 nop[]
+105 __method_precondition_m8_do_turning[satellite3,Star7,Star6]
+106 turn_to[satellite3,Star7,Star6]
+107 take_image[satellite3,Star7,instrument7,image4]
+125 __method_precondition_m4_do_switching[instrument7]
+126 nop[]
+132 __method_precondition_m8_do_turning[satellite3,Phenomenon8,Star7]
+133 turn_to[satellite3,Phenomenon8,Star7]
+134 take_image[satellite3,Phenomenon8,instrument7,image4]
+178 __method_precondition_m3_do_switching[satellite2,instrument5]
+179 switch_on[instrument5,satellite2]
+200 __method_precondition_m5_do_calibration[instrument5]
+207 __method_precondition_m4_do_switching[instrument5]
+208 nop[]
+283 __method_precondition_m8_do_turning[satellite2,Star0,Star1]
+284 turn_to[satellite2,Star0,Star1]
+285 calibrate[satellite2,instrument5,Star0]
+311 __method_precondition_m8_do_turning[satellite2,Planet9,Star0]
+312 turn_to[satellite2,Planet9,Star0]
+313 take_image[satellite2,Planet9,instrument5,infrared0]
+322 __method_precondition_m4_do_switching[instrument7]
+323 nop[]
+343 __method_precondition_m8_do_turning[satellite3,Planet10,Phenomenon8]
+344 turn_to[satellite3,Planet10,Phenomenon8]
+345 take_image[satellite3,Planet10,instrument7,infrared3]
+354 __method_precondition_m4_do_switching[instrument7]
+355 nop[]
+366 __method_precondition_m8_do_turning[satellite3,Star12,Planet10]
+367 turn_to[satellite3,Star12,Planet10]
+368 take_image[satellite3,Star12,instrument7,image4]
+380 __method_precondition_m4_do_switching[instrument7]
+381 nop[]
+389 __method_precondition_m8_do_turning[satellite3,Phenomenon13,Star12]
+390 turn_to[satellite3,Phenomenon13,Star12]
+391 take_image[satellite3,Phenomenon13,instrument7,image4]
+405 __method_precondition_m4_do_switching[instrument7]
+406 nop[]
+419 __method_precondition_m8_do_turning[satellite3,Phenomenon14,Phenomenon13]
+420 turn_to[satellite3,Phenomenon14,Phenomenon13]
+421 take_image[satellite3,Phenomenon14,instrument7,spectrograph1]
+430 __method_precondition_m4_do_switching[instrument7]
+431 nop[]
+446 __method_precondition_m8_do_turning[satellite3,Star15,Phenomenon14]
+447 turn_to[satellite3,Star15,Phenomenon14]
+448 take_image[satellite3,Star15,instrument7,spectrograph1]
+454 __method_precondition_m4_do_switching[instrument5]
+455 nop[]
+469 __method_precondition_m8_do_turning[satellite2,Star16,Planet9]
+470 turn_to[satellite2,Star16,Planet9]
+471 take_image[satellite2,Star16,instrument5,image2]
+483 __method_precondition_m8_do_turning[satellite4,Planet9,Planet10]
+484 turn_to[satellite4,Planet9,Planet10]
+root 0
+482 do_turning[satellite4,Planet9] -> m8_do_turning 483 484
+468 do_turning[satellite2,Star16] -> m8_do_turning 469 470
+453 do_switching[satellite2,instrument5] -> m4_do_switching 454 455
+451 do_mission[Star16,image2] -> <m0_do_mission;do_prepare[satellite2,instrument5,Star16];m1_do_prepare;0;-1,-2,1> 453 468 471
+445 do_turning[satellite3,Star15] -> m8_do_turning 446 447
+429 do_switching[satellite3,instrument7] -> m4_do_switching 430 431
+425 do_mission[Star15,spectrograph1] -> <m0_do_mission;do_prepare[satellite3,instrument7,Star15];m1_do_prepare;0;-1,-2,1> 429 445 448
+418 do_turning[satellite3,Phenomenon14] -> m8_do_turning 419 420
+404 do_switching[satellite3,instrument7] -> m4_do_switching 405 406
+401 do_mission[Phenomenon14,spectrograph1] -> <m0_do_mission;do_prepare[satellite3,instrument7,Phenomenon14];m1_do_prepare;0;-1,-2,1> 404 418 421
+388 do_turning[satellite3,Phenomenon13] -> m8_do_turning 389 390
+379 do_switching[satellite3,instrument7] -> m4_do_switching 380 381
+376 do_mission[Phenomenon13,image4] -> <m0_do_mission;do_prepare[satellite3,instrument7,Phenomenon13];m1_do_prepare;0;-1,-2,1> 379 388 391
+365 do_turning[satellite3,Star12] -> m8_do_turning 366 367
+353 do_switching[satellite3,instrument7] -> m4_do_switching 354 355
+348 do_mission[Star12,image4] -> <m0_do_mission;do_prepare[satellite3,instrument7,Star12];m1_do_prepare;0;-1,-2,1> 353 365 368
+342 do_turning[satellite3,Planet10] -> m8_do_turning 343 344
+321 do_switching[satellite3,instrument7] -> m4_do_switching 322 323
+317 do_mission[Planet10,infrared3] -> <m0_do_mission;do_prepare[satellite3,instrument7,Planet10];m1_do_prepare;0;-1,-2,1> 321 342 345
+310 do_turning[satellite2,Planet9] -> m8_do_turning 311 312
+282 do_turning[satellite2,Star0] -> m8_do_turning 283 284
+206 do_switching[satellite2,instrument5] -> m4_do_switching 207 208
+199 do_calibration[satellite2,instrument5,Star0] -> <m5_do_calibration;do_prepare[satellite2,instrument5,Star0];m1_do_prepare;1;0,-1,-2,2> 200 206 282 285
+188 m3_do_switching_splitted_2[satellite2,instrument5] -> _splitting_method_m3_do_switching_splitted_2 199
+177 do_switching[satellite2,instrument5] -> m3_do_switching 178 179 188
+148 do_mission[Planet9,infrared0] -> <m0_do_mission;do_prepare[satellite2,instrument5,Planet9];m1_do_prepare;0;-1,-2,1> 177 310 313
+131 do_turning[satellite3,Phenomenon8] -> m8_do_turning 132 133
+124 do_switching[satellite3,instrument7] -> m4_do_switching 125 126
+121 do_mission[Phenomenon8,image4] -> <m0_do_mission;do_prepare[satellite3,instrument7,Phenomenon8];m1_do_prepare;0;-1,-2,1> 124 131 134
+104 do_turning[satellite3,Star7] -> m8_do_turning 105 106
+98 do_switching[satellite3,instrument7] -> m4_do_switching 99 100
+95 do_mission[Star7,image4] -> <m0_do_mission;do_prepare[satellite3,instrument7,Star7];m1_do_prepare;0;-1,-2,1> 98 104 107
+84 do_turning[satellite3,Star6] -> m8_do_turning 85 86
+72 do_switching[satellite3,instrument7] -> m4_do_switching 73 74
+67 do_mission[Star6,infrared3] -> <m0_do_mission;do_prepare[satellite3,instrument7,Star6];m1_do_prepare;0;-1,-2,1> 72 84 87
+57 do_turning[satellite3,Planet5] -> m8_do_turning 58 59
+39 do_turning[satellite3,Star4] -> m8_do_turning 40 41
+31 do_switching[satellite3,instrument7] -> m4_do_switching 32 33
+29 do_calibration[satellite3,instrument7,Star4] -> <m5_do_calibration;do_prepare[satellite3,instrument7,Star4];m1_do_prepare;1;0,-1,-2,2> 30 31 39 42
+25 m3_do_switching_splitted_2[satellite3,instrument7] -> _splitting_method_m3_do_switching_splitted_2 29
+7 do_switching[satellite3,instrument7] -> m3_do_switching 8 9 25
+1 do_mission[Planet5,image4] -> <m0_do_mission;do_prepare[satellite3,instrument7,Planet5];m1_do_prepare;0;-1,-2,1> 7 57 60
+0 __top[] -> __top_method 1 67 95 121 148 317 348 376 401 425 451 482
+<==
+
+RUNWATCH_RESULT EXIT RETVAL 0 TIME_SECS 0.259766 MEMPEAK_KBS 932

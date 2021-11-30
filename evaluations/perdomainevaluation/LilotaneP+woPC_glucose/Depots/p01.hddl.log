@@ -1,0 +1,113 @@
+    _           _         _
+   \ |         \ |       | |                       
+   | |     __  | |      _| |______                
+   | |     \/  | |     /_   ______\                
+   | |      _  | |   __  | |  ___   ___   ___       
+   | |___  | | | |  / .\ | | / , | |   \ / ·_\    
+   \_____\ |_| |__\ \__/ |_| \___) |_|_| \___\  
+[39mL i l o t a n e  version rls-glucose4
+by Dominik Schreiber <dominik.schreiber@kit.edu> 2020-2021
+using SAT solver glucose4
+
+0.004 Parser finished.
+0.005 Structures extracted.
+0.005 23 operators and 15 methods created.
+0.014 Mined 9 new reduction preconditions (+36.0%).
+0.014 Iteration 0.
+0.014 Creating initial layer of size 2
+0.017 Attempting to solve formula with 7 clauses (9 literals) and 1 assumptions
+0.017 Unsolvable at layer 0 -- expanding.
+0.017 Iteration 1.
+0.017 New layer size: 3
+0.017 Instantiating ...
+0.021 Collected 7 relevant facts at this layer
+0.021 Encoding ...
+0.021 Attempting to solve formula with 67 clauses (146 literals) and 2 assumptions
+0.021 Unsolvable at layer 1 -- expanding.
+0.021 Iteration 2.
+0.021 New layer size: 9
+0.021 Instantiating ...
+0.024 Collected 37 relevant facts at this layer
+0.024 Encoding ...
+0.025 Attempting to solve formula with 614 clauses (1712 literals) and 4 assumptions
+0.025 Unsolvable at layer 2 -- expanding.
+0.025 Iteration 3.
+0.025 New layer size: 13
+0.025 Instantiating ...
+0.028 Collected 41 relevant facts at this layer
+0.028 Encoding ...
+0.029 Attempting to solve formula with 1215 clauses (3413 literals) and 4 assumptions
+0.029 Unsolvable at layer 3 -- expanding.
+0.029 Iteration 4.
+0.029 New layer size: 22
+0.029 Instantiating ...
+0.031 Collected 43 relevant facts at this layer
+0.031 Encoding ...
+0.033 Attempting to solve formula with 1899 clauses (5423 literals) and 3 assumptions
+c last restart ## conflicts  :  0 94 
+0.033 Found a solution at layer 4.
+==>
+406 nop
+411 nop
+415 Lift hoist0 crate1 pallet0 depot0
+417 Load hoist0 crate1 truck1 depot0
+428 Drive truck1 depot0 distributor0
+431 nop
+434 Lift hoist1 crate0 pallet1 distributor0
+437 nop
+460 Load hoist1 crate0 truck1 distributor0
+469 Unload hoist1 crate1 truck1 distributor0
+474 Drop hoist1 crate1 pallet1 distributor0
+481 Drive truck1 distributor0 distributor1
+519 nop
+525 Unload hoist2 crate0 truck1 distributor1
+545 Drop hoist2 crate0 pallet2 distributor1
+root 9 22
+9 do_put_on crate1 pallet1 -> m3_do_put_on 258 428 95
+22 do_put_on crate0 pallet2 -> m2_do_put_on 148 518 525 545
+95 do_unload_truck crate1 pallet1 distributor0 truck1 -> m11_do_unload_truck 268 469 474
+148 do_get_truck truck1 distributor1 -> m7_do_get_truck 481
+258 do_load_truck crate1 pallet0 depot0 truck1 -> m10_do_load_truck 405 410 415 417
+268 do_clear pallet1 distributor0 -> m5_do_clear 430 434 436 460
+405 do_get_truck truck1 depot0 -> m6_do_get_truck 406
+410 do_clear crate1 depot0 -> m4_do_clear 411
+430 do_clear crate0 distributor0 -> m4_do_clear 431
+436 do_get_truck truck1 distributor0 -> m6_do_get_truck 437
+518 do_clear pallet2 distributor1 -> m4_do_clear 519
+<==
+0.034 End of solution plan. (counted length of 15)
+0.034 Total amount of clauses encoded: 1899
+0.034 - directframeaxioms : 592 cls
+0.034 - qfactsemantics : 313 cls
+0.034 - indirectframeaxioms : 272 cls
+0.034 - substitutionconstraints : 120 cls
+0.034 - reductionconstraints : 112 cls
+0.034 - actionconstraints : 102 cls
+0.034 - expansions : 89 cls
+0.034 - predecessors : 86 cls
+0.034 - actioneffects : 71 cls
+0.034 - atmostoneelement : 70 cls
+0.034 - truefacts : 43 cls
+0.034 - qconstequality : 27 cls
+0.034 - axiomaticops : 2 cls
+0.034 # instantiated positions: 48
+0.034 # instantiated actions: 70
+0.034 # instantiated reductions: 18
+0.034 # introduced pseudo-constants: 19
+0.034 # retroactive prunings: 1
+0.034 # retroactively pruned operations: 1
+0.034 # dominated operations: 0
+0.034 # total invalid rigid preconditions found in getPFC: 0
+0.034 # invalid rigid preconditions found in getPFC: 0
+0.034 # invalid rigid preconditions found in getPFC in varrestrictions: 0
+0.034 # total invalid fluent preconditions found in getPFC: 29
+0.034 # invalid fluent preconditions found in getPFC: 28
+0.034 # invalid fluent preconditions found in getPFC in varrestrictions: 1
+0.034 # invalid fluent preconditions found in getPFC via postconditions: 0
+0.034 # invalid subtasks found in getPFC: 1
+0.034 # number effects in operation fact_frames: 282
+0.034 # number of variables restricted: 113
+0.034 # number of nodes variables restricted: 59
+0.034 Exiting happily.
+
+RUNWATCH_RESULT EXIT RETVAL 0 TIME_SECS 0.0400391 MEMPEAK_KBS 812

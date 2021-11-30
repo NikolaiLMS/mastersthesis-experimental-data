@@ -1,0 +1,141 @@
+    _           _         _
+   \ |         \ |       | |                       
+   | |     __  | |      _| |______                
+   | |     \/  | |     /_   ______\                
+   | |      _  | |   __  | |  ___   ___   ___       
+   | |___  | | | |  / .\ | | / , | |   \ / ·_\    
+   \_____\ |_| |__\ \__/ |_| \___) |_|_| \___\  
+[39mL i l o t a n e  version rls-glucose4
+by Dominik Schreiber <dominik.schreiber@kit.edu> 2020-2021
+using SAT solver glucose4
+
+0.019 Parser finished.
+0.019 Structures extracted.
+0.020 91 operators and 86 methods created.
+0.063 Mined 98 new reduction preconditions (+9800.0%).
+0.063 Iteration 0.
+0.063 Creating initial layer of size 2
+0.071 Attempting to solve formula with 5 clauses (6 literals) and 1 assumptions
+0.071 Unsolvable at layer 0 -- expanding.
+0.071 Iteration 1.
+0.071 New layer size: 2
+0.071 Instantiating ...
+0.152 Collected 1 relevant facts at this layer
+0.152 Encoding ...
+0.154 Attempting to solve formula with 496 clauses (1062 literals) and 1 assumptions
+0.154 Unsolvable at layer 1 -- expanding.
+0.154 Iteration 2.
+0.154 New layer size: 2
+0.154 Instantiating ...
+0.226 Collected 1 relevant facts at this layer
+0.226 Encoding ...
+0.227 Attempting to solve formula with 607 clauses (1349 literals) and 1 assumptions
+0.227 Unsolvable at layer 2 -- expanding.
+0.227 Iteration 3.
+0.227 New layer size: 7
+0.227 Instantiating ...
+0.284 Collected 49 relevant facts at this layer
+0.284 Encoding ...
+0.288 Attempting to solve formula with 1898 clauses (4746 literals) and 4 assumptions
+0.288 Unsolvable at layer 3 -- expanding.
+0.288 Iteration 4.
+0.288 New layer size: 27
+0.288 Instantiating ...
+0.291 Retroactively prune reduction (m_shut_off_water Q_1,0_point:0_d917add5bc78e029 Q_1,0_point:1_d917add5bc78e029 Q_3,0_waterco:0_af42b69c4eb07cd1)@(3,0): no children at offset 1
+0.420 Collected 268 relevant facts at this layer
+0.420 Encoding ...
+0.439 Attempting to solve formula with 16389 clauses (47613 literals) and 16 assumptions
+0.439 Unsolvable at layer 4 -- expanding.
+0.439 Iteration 5.
+0.439 New layer size: 64
+0.439 Instantiating ...
+0.683 Collected 401 relevant facts at this layer
+0.683 Encoding ...
+0.729 Attempting to solve formula with 60411 clauses (178436 literals) and 29 assumptions
+0.732 Unsolvable at layer 5 -- expanding.
+0.732 Iteration 6.
+0.732 New layer size: 146
+0.732 Instantiating ...
+1.164 Collected 525 relevant facts at this layer
+1.164 Encoding ...
+1.288 Attempting to solve formula with 175143 clauses (522577 literals) and 69 assumptions
+c last restart ## conflicts  :  1 2729 
+1.297 Found a solution at layer 6.
+==>
+15915 SHOP_methodm_quell_riot_precondition rochester_general rochester
+19660 p_1Call
+24018 p_2Call
+25392 SHOP_methodm_get_to_person_drives_themself_precondition pu1 rochester_general pvan1 strong
+26707 SHOP_methodm_drive_to_precondition pvan1 strong pu1
+26748 p_3Navegate_vehicle
+36430 SHOP_methodm_get_to_as_cargo_precondition pu2 rochester_general park_ridge pvan1
+36435 SHOP_methodm_get_to_vehicle_gets_driven_precondition pvan1 park_ridge rochester_general pu1
+36440 SHOP_methodm_drive_to_precondition pvan1 rochester_general pu1
+36447 p_4Navegate_vehicle
+36509 SHOP_methodm_get_in_ambulatory_person_precondition pu2 park_ridge pvan1
+37077 p_5Climb_in
+39357 SHOP_methodm_get_to_vehicle_gets_driven_precondition pvan1 rochester_general park_ridge pu1
+39366 SHOP_methodm_drive_to_precondition pvan1 park_ridge pu1
+39385 p_6Navegate_vehicle
+41638 p_7Climb_out
+46114 set_up_barricades pu1
+46117 set_up_barricades pu2
+root 8
+8 tlt -> m_tlt_quell_riot 60
+60 quell_riot rochester_general -> m_quell_riot 15915 155 219 312 46114 46117
+155 declare_curfew rochester -> m_declare_curfew 19659 24017
+219 get_to pu1 rochester_general -> m_get_to_person_drives_themself 25392 2072
+312 get_to pu2 rochester_general -> m_get_to_as_cargo 36430 3771 3802 4089 4386
+2072 drive_to pu1 pvan1 rochester_general -> m_drive_to 26707 26747
+3771 get_to pvan1 park_ridge -> m_get_to_vehicle_gets_driven 36435 13429
+3802 get_in pu2 pvan1 -> m_get_in_ambulatory_person 36509 37076
+4089 get_to pvan1 rochester_general -> m_get_to_vehicle_gets_driven 39357 14460
+4386 get_out pu2 pvan1 -> m_get_out_ambulatory_person 41637
+13429 drive_to pu1 pvan1 park_ridge -> m_drive_to 36440 36446
+14460 drive_to pu1 pvan1 rochester_general -> m_drive_to 39366 39384
+19659 ccall ebs -> prefix_1 19660
+24017 ccall police_chief -> prefix_2 24018
+26747 cnavegate_vehicle pu1 pvan1 rochester_general strong -> prefix_3 26748
+36446 cnavegate_vehicle pu1 pvan1 park_ridge rochester_general -> prefix_4 36447
+37076 cclimb_in pu2 pvan1 park_ridge -> prefix_5 37077
+39384 cnavegate_vehicle pu1 pvan1 rochester_general park_ridge -> prefix_6 39385
+41637 cclimb_out pu2 pvan1 rochester_general -> prefix_7 41638
+<==
+1.302 End of solution plan. (counted length of 18)
+1.302 Total amount of clauses encoded: 175143
+1.302 - directframeaxioms : 113324 cls
+1.302 - qfactsemantics : 28772 cls
+1.302 - reductionconstraints : 14291 cls
+1.302 - indirectframeaxioms : 9037 cls
+1.302 - actionconstraints : 3245 cls
+1.302 - atmostoneelement : 1677 cls
+1.302 - expansions : 1157 cls
+1.302 - predecessors : 908 cls
+1.302 - qtypeconstraints : 820 cls
+1.302 - substitutionconstraints : 758 cls
+1.302 - truefacts : 525 cls
+1.302 - qconstequality : 374 cls
+1.302 - actioneffects : 246 cls
+1.302 - forbiddenoperations : 7 cls
+1.302 - axiomaticops : 2 cls
+1.302 # instantiated positions: 249
+1.302 # instantiated actions: 658
+1.302 # instantiated reductions: 258
+1.302 # introduced pseudo-constants: 219
+1.302 # retroactive prunings: 12
+1.302 # retroactively pruned operations: 21
+1.302 # dominated operations: 20
+1.302 # total invalid rigid preconditions found in getPFC: 247
+1.302 # invalid rigid preconditions found in getPFC: 5
+1.302 # invalid rigid preconditions found in getPFC in varrestrictions: 242
+1.302 # total invalid fluent preconditions found in getPFC: 48
+1.302 # invalid fluent preconditions found in getPFC: 46
+1.302 # invalid fluent preconditions found in getPFC in varrestrictions: 0
+1.302 # invalid fluent preconditions found in getPFC via postconditions: 2
+1.302 # invalid subtasks found in getPFC: 11
+1.302 # number effects in operation fact_frames: 1251
+1.302 # number of variables restricted: 1560
+1.302 # number of nodes variables restricted: 889
+1.302 Exiting happily.
+
+RUNWATCH_RESULT EXIT RETVAL 0 TIME_SECS 1.3197 MEMPEAK_KBS 98168
