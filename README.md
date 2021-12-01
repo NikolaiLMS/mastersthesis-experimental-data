@@ -1,6 +1,6 @@
 # mastersthesis-experimental-data
 
-This repository serves as a documentation for the experiments described in my Master's Thesis "Pruning Techniques for Lifted SAT-Based Hierarchical Planning".
+This repository serves as a documentation for the experiments described in the Master's Thesis "Pruning Techniques for Lifted SAT-Based Hierarchical Planning" (https://github.com/NikolaiLMS/lilotane).
 
 ## Used Software
 
