@@ -15,8 +15,12 @@ The softwares we evaluated are located here:
 Additionally we used the following software to help with test execution:
 * Runwatch: https://github.com/domschrei/runwatch
 
-## Content
+## Execution of Planners
+* Hypertension was executed with the commands shown in [runwatch_commands.txt](https://github.com/NikolaiLMS/mastersthesis-experimental-data/blob/main/evaluations/sotaevaluation/Hypertension_IPC/runwatch_commands.txt), we did not use the the IPC optimizations as was later discovered and described in [#1](https://github.com/NikolaiLMS/mastersthesis-experimental-data/issues/1)
+* PandaGBFS was executed with the commands shown in [runwatch_commands.txt](https://github.com/NikolaiLMS/mastersthesis-experimental-data/blob/main/evaluations/sotaevaluation/PandaGBFSRC2ADD/runwatch_commands.txt) and the [execute_pandagbfs.sh script](https://github.com/NikolaiLMS/mastersthesis-experimental-data/blob/main/util/execute_pandagbfs.sh)
+* PandaSAT was executed with the commands shown in [runwatch_commands.txt](https://github.com/NikolaiLMS/mastersthesis-experimental-data/blob/main/evaluations/sotaevaluation/PandaSAT/runwatch_commands.txt) and the [execute_pandasat.sh script](https://github.com/NikolaiLMS/mastersthesis-experimental-data/blob/main/util/execute_pandasat.sh)
 
+## Content
 * `instances/` contains our training and test data, which consists of the total-order instances of the IPC 2020 (https://github.com/panda-planner-dev/ipc2020-domains/tree/master/total-order)
 
 * `evaluations/` contains the experimental data for the Parameter Evaluation, the Per Domain Evaluation and State of The Art Evaluation sections of the thesis, consisting of the logs for each instance, aswell as additional files that contain already computed metrics like IPC-Score, PAR2-Score, Coverage etc.
